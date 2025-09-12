@@ -86,6 +86,11 @@
             border-color: rgba(166, 227, 161, 0.3);
         }
 
+        .parser-card.improved {
+            --accent-color: #fab387;
+            border-color: rgba(250, 179, 135, 0.3);
+        }
+
         .parser-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -378,6 +383,64 @@
                 </button>
             </div>
 
+            <div class="parser-card improved">
+                <div class="parser-title">
+                    <i class="fas fa-cogs"></i>
+                    Improved Edition
+                    <span class="parser-version">Smart</span>
+                </div>
+                <p class="parser-description">
+                    Улучшенный парсер, который использует найденные данные из отладки для более точного анализа. 
+                    Ищет известные статистические значения и использует их для определения структуры файла.
+                </p>
+                
+                <div class="parser-features">
+                    <div class="feature">
+                        <i class="fas fa-target feature-icon"></i>
+                        <span>Поиск известных значений из игры</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-sync-alt feature-icon"></i>
+                        <span>Двойной анализ: массив + биты</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <span>Точная статистика с правильными offset'ами</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt feature-icon"></i>
+                        <span>Оптимизированные алгоритмы поиска</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-universal-access feature-icon"></i>
+                        <span>Работает с любыми файлами Isaac</span>
+                    </div>
+                </div>
+
+                <div class="parser-stats">
+                    <div class="stat">
+                        <div class="stat-value">85-95%</div>
+                        <div class="stat-label">Точность</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Universal</div>
+                        <div class="stat-label">Оптимизирован для</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">34</div>
+                        <div class="stat-label">Персонажей</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">45</div>
+                        <div class="stat-label">Челленджей</div>
+                    </div>
+                </div>
+
+                <button class="parser-button" onclick="location.href='index-improved.html'">
+                    <i class="fas fa-cogs"></i> Попробовать Improved Edition
+                </button>
+            </div>
+
             <div class="parser-card accurate">
                 <div class="parser-title">
                     <i class="fas fa-microscope"></i>
@@ -446,6 +509,7 @@
                     <tr>
                         <th>Функция</th>
                         <th>Debug Edition</th>
+                        <th>Improved Edition</th>
                         <th>Accurate Edition</th>
                     </tr>
                 </thead>
@@ -453,42 +517,56 @@
                     <tr>
                         <td>Repentance файлы</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-partial"><i class="fas fa-exclamation"></i> Частично</td>
                     </tr>
                     <tr>
                         <td>Afterbirth+ файлы</td>
                         <td class="check-partial"><i class="fas fa-exclamation"></i> Частично</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                     </tr>
                     <tr>
                         <td>Поиск реальных данных</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                     </tr>
                     <tr>
                         <td>Точные offset'ы</td>
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-partial"><i class="fas fa-exclamation"></i> Частично</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                     </tr>
                     <tr>
                         <td>Hex просмотр</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                     </tr>
                     <tr>
                         <td>Режим отладки</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Расширенный</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Улучшенный</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Базовый</td>
                     </tr>
                     <tr>
                         <td>Контрольная сумма</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                         <td class="check-yes"><i class="fas fa-check"></i> CRC32</td>
                     </tr>
                     <tr>
                         <td>Completion marks</td>
                         <td class="check-partial"><i class="fas fa-exclamation"></i> 12 (эвристика)</td>
+                        <td class="check-partial"><i class="fas fa-exclamation"></i> 12 (умный поиск)</td>
                         <td class="check-yes"><i class="fas fa-check"></i> 9 (точно)</td>
+                    </tr>
+                    <tr>
+                        <td>Двойной анализ</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                     </tr>
                 </tbody>
             </table>
@@ -503,11 +581,14 @@
                 Тот, который покажет данные ближе к вашей игровой статистике — подходит лучше.
             </p>
             <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <button style="background: linear-gradient(135deg, #74c7ec, #a6e3a1); color: #1e1e2e; border: none; padding: 12px 25px; border-radius: 8px; font-family: inherit; font-weight: 600; cursor: pointer;" onclick="location.href='index.html'">
-                    Начать с Debug Edition
+                <button style="background: linear-gradient(135deg, #74c7ec, #fab387); color: #1e1e2e; border: none; padding: 12px 25px; border-radius: 8px; font-family: inherit; font-weight: 600; cursor: pointer;" onclick="location.href='index.html'">
+                    Debug Edition
+                </button>
+                <button style="background: linear-gradient(135deg, #fab387, #a6e3a1); color: #1e1e2e; border: none; padding: 12px 25px; border-radius: 8px; font-family: inherit; font-weight: 600; cursor: pointer;" onclick="location.href='index-improved.html'">
+                    Improved Edition
                 </button>
                 <button style="background: linear-gradient(135deg, #a6e3a1, #74c7ec); color: #1e1e2e; border: none; padding: 12px 25px; border-radius: 8px; font-family: inherit; font-weight: 600; cursor: pointer;" onclick="location.href='index-accurate.html'">
-                    Начать с Accurate Edition
+                    Accurate Edition
                 </button>
             </div>
         </div>

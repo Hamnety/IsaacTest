@@ -424,62 +424,87 @@ class IsaacSaveParser {
     async searchCharactersAndChallenges(startOffset) {
         console.log(`Поиск персонажей и челленджей начиная с offset ${startOffset}`);
         
-        // Ищем паттерны для персонажей (34 персонажа)
-        let unlockedCharacters = 0;
-        const charactersArea = this.findCharactersArea(startOffset);
-        
-        if (charactersArea) {
-            this.analysisResults.debugInfo.push(`Область персонажей: offset ${charactersArea.offset}`);
-            
-            for (let i = 0; i < this.TOTAL_CHARACTERS; i++) {
-                const charOffset = charactersArea.offset + (i * charactersArea.stride);
-                if (charOffset < this.fileData.length) {
-                    const isUnlocked = this.fileData[charOffset] > 0;
-                    if (isUnlocked) unlockedCharacters++;
-                    
-                    // Анализируем completion marks
-                    let completedMarks = 0;
-                    const completionMarks = this.gameData.characters[i].completionMarks.map((mark, markIndex) => {
-                        const markOffset = charOffset + 1 + markIndex;
-                        const isCompleted = markOffset < this.fileData.length && this.fileData[markOffset] > 100;
-                        if (isCompleted) completedMarks++;
-                        return { ...mark, completed: isCompleted };
-                    });
-                    
-                    this.analysisResults.characters[i] = {
-                        ...this.gameData.characters[i],
-                        unlocked: isUnlocked,
-                        completionMarks: completionMarks,
-                        completedMarks: completedMarks
-                    };
-                }
-            }
-        }
-        
-        this.analysisResults.stats.charactersUnlocked = unlockedCharacters;
-        
-        // Ищем челленджи
-        const challengesArea = this.findChallengesArea(startOffset);
+        // Используем найденную область челленджей из отладки
+        const challengesOffset = 11831; // Из отладочной информации
         let completedChallenges = 0;
         
-        if (challengesArea) {
-            this.analysisResults.debugInfo.push(`Область челленджей: offset ${challengesArea.offset}`);
-            
-            for (let i = 0; i < this.TOTAL_CHALLENGES; i++) {
-                const challengeOffset = challengesArea.offset + i;
-                if (challengeOffset < this.fileData.length) {
-                    const isCompleted = this.fileData[challengeOffset] > 0;
-                    if (isCompleted) completedChallenges++;
-                    
-                    this.analysisResults.challenges[i] = {
-                        ...this.gameData.challenges[i],
-                        completed: isCompleted
-                    };
-                }
+        this.analysisResults.debugInfo.push(`Область челленджей: offset ${challengesOffset}`);
+        
+        // Парсим челленджи (45 челленджей)
+        for (let i = 0; i < this.TOTAL_CHALLENGES; i++) {
+            const challengeOffset = challengesOffset + i;
+            if (challengeOffset < this.fileData.length) {
+                const isCompleted = this.fileData[challengeOffset] > 0;
+                if (isCompleted) completedChallenges++;
+                
+                this.analysisResults.challenges[i] = {
+                    ...this.gameData.challenges[i],
+                    completed: isCompleted
+                };
             }
         }
         
         this.analysisResults.stats.challengesCompleted = completedChallenges;
+        
+        // Ищем персонажей в области после статистики
+        // В Repentance персонажи обычно идут после статистики
+        const charactersStartOffset = startOffset + 1000; // Примерно после статистики
+        let unlockedCharacters = 0;
+        
+        // Ищем область персонажей (34 персонажа с completion marks)
+        for (let i = charactersStartOffset; i < this.fileData.length - 34 * 20; i++) {
+            let validChars = 0;
+            let totalMarks = 0;
+            
+            // Проверяем 34 персонажа с 12 completion marks каждый
+            for (let charIndex = 0; charIndex < this.TOTAL_CHARACTERS; charIndex++) {
+                const charOffset = i + charIndex * 20; // 20 байт на персонажа
+                if (charOffset + 12 < this.fileData.length) {
+                    const isUnlocked = this.fileData[charOffset] > 0;
+                    if (isUnlocked) validChars++;
+                    
+                    // Считаем completion marks (следующие 12 байт)
+                    for (let markIndex = 0; markIndex < 12; markIndex++) {
+                        const markOffset = charOffset + 1 + markIndex;
+                        if (markOffset < this.fileData.length && this.fileData[markOffset] > 0) {
+                            totalMarks++;
+                        }
+                    }
+                }
+            }
+            
+            // Если нашли разумное количество персонажей и marks
+            if (validChars > 5 && totalMarks > 20) {
+                this.analysisResults.debugInfo.push(`Найдена область персонажей в offset ${i}, разблокировано: ${validChars}, marks: ${totalMarks}`);
+                
+                for (let charIndex = 0; charIndex < this.TOTAL_CHARACTERS; charIndex++) {
+                    const charOffset = i + charIndex * 20;
+                    if (charOffset < this.fileData.length) {
+                        const isUnlocked = this.fileData[charOffset] > 0;
+                        if (isUnlocked) unlockedCharacters++;
+                        
+                        // Анализируем completion marks
+                        let completedMarks = 0;
+                        const completionMarks = this.gameData.characters[charIndex].completionMarks.map((mark, markIndex) => {
+                            const markOffset = charOffset + 1 + markIndex;
+                            const isCompleted = markOffset < this.fileData.length && this.fileData[markOffset] > 0;
+                            if (isCompleted) completedMarks++;
+                            return { ...mark, completed: isCompleted };
+                        });
+                        
+                        this.analysisResults.characters[charIndex] = {
+                            ...this.gameData.characters[charIndex],
+                            unlocked: isUnlocked,
+                            completionMarks: completionMarks,
+                            completedMarks: completedMarks
+                        };
+                    }
+                }
+                break;
+            }
+        }
+        
+        this.analysisResults.stats.charactersUnlocked = unlockedCharacters;
     }
 
     findCharactersArea(startOffset) {
@@ -552,44 +577,92 @@ class IsaacSaveParser {
     }
 
     async analyzeItemCollection() {
-        // Ищем коллекцию предметов (716 предметов = ~90 байт битовых флагов)
-        const itemBytes = Math.ceil(this.TOTAL_ITEMS / 8);
+        // В Repentance предметы обычно хранятся как массив байтов (1 байт на предмет)
+        // Ищем область с 716 байтами, где большинство значений 0 или 1
         let foundItems = 0;
+        let bestItemArea = null;
+        let maxFoundItems = 0;
         
-        // Ищем плотные области с битовыми флагами для предметов
-        for (let i = 100; i < this.fileData.length - itemBytes; i++) {
-            let setBits = 0;
+        // Ищем область предметов после области статистики
+        const searchStart = 2000; // После статистики
+        const searchEnd = this.fileData.length - this.TOTAL_ITEMS;
+        
+        for (let i = searchStart; i < searchEnd; i++) {
+            let validItems = 0;
+            let foundCount = 0;
             
-            for (let j = 0; j < itemBytes; j++) {
+            // Проверяем 716 байт подряд
+            for (let j = 0; j < this.TOTAL_ITEMS; j++) {
                 const byte = this.fileData[i + j];
-                for (let bit = 0; bit < 8; bit++) {
-                    if (j * 8 + bit >= this.TOTAL_ITEMS) break;
-                    if ((byte >> bit) & 1) {
-                        setBits++;
-                    }
+                // Валидные значения для предметов: 0 (не найден), 1 (найден), иногда 2-3
+                if (byte === 0 || byte === 1 || (byte >= 2 && byte <= 10)) {
+                    validItems++;
+                    if (byte > 0) foundCount++;
                 }
             }
             
-            // Если плотность битов разумная, считаем это коллекцией предметов
-            const density = setBits / this.TOTAL_ITEMS;
-            if (density > 0.2 && density < 0.8) {
-                foundItems = setBits;
-                
-                // Обновляем статус предметов
-                for (let itemId = 0; itemId < this.TOTAL_ITEMS; itemId++) {
-                    const byteIndex = Math.floor(itemId / 8);
-                    const bitIndex = itemId % 8;
-                    const byte = this.fileData[i + byteIndex];
-                    const isFound = ((byte >> bitIndex) & 1) === 1;
+            // Если большинство байтов валидны и есть найденные предметы
+            if (validItems > this.TOTAL_ITEMS * 0.8 && foundCount > 0) {
+                if (foundCount > maxFoundItems) {
+                    maxFoundItems = foundCount;
+                    bestItemArea = { offset: i, count: foundCount };
+                }
+            }
+        }
+        
+        if (bestItemArea) {
+            this.analysisResults.debugInfo.push(`Коллекция предметов найдена в offset ${bestItemArea.offset}, найдено предметов: ${bestItemArea.count}`);
+            foundItems = bestItemArea.count;
+            
+            // Обновляем статус предметов
+            for (let itemId = 0; itemId < this.TOTAL_ITEMS; itemId++) {
+                const itemOffset = bestItemArea.offset + itemId;
+                if (itemOffset < this.fileData.length) {
+                    const isFound = this.fileData[itemOffset] > 0;
                     
                     this.analysisResults.items[itemId] = {
                         ...this.gameData.items[itemId],
                         found: isFound
                     };
                 }
+            }
+        } else {
+            // Fallback: используем эвристический поиск по битовым флагам
+            this.analysisResults.debugInfo.push('Область предметов не найдена, используется битовый анализ');
+            
+            const itemBytes = Math.ceil(this.TOTAL_ITEMS / 8);
+            for (let i = 100; i < this.fileData.length - itemBytes; i++) {
+                let setBits = 0;
                 
-                this.analysisResults.debugInfo.push(`Коллекция предметов найдена в offset ${i}, найдено предметов: ${setBits}`);
-                break;
+                for (let j = 0; j < itemBytes; j++) {
+                    const byte = this.fileData[i + j];
+                    for (let bit = 0; bit < 8; bit++) {
+                        if (j * 8 + bit >= this.TOTAL_ITEMS) break;
+                        if ((byte >> bit) & 1) {
+                            setBits++;
+                        }
+                    }
+                }
+                
+                const density = setBits / this.TOTAL_ITEMS;
+                if (density > 0.1 && density < 0.9 && setBits > foundItems) {
+                    foundItems = setBits;
+                    
+                    // Обновляем статус предметов
+                    for (let itemId = 0; itemId < this.TOTAL_ITEMS; itemId++) {
+                        const byteIndex = Math.floor(itemId / 8);
+                        const bitIndex = itemId % 8;
+                        const byte = this.fileData[i + byteIndex];
+                        const isFound = ((byte >> bitIndex) & 1) === 1;
+                        
+                        this.analysisResults.items[itemId] = {
+                            ...this.gameData.items[itemId],
+                            found: isFound
+                        };
+                    }
+                    
+                    this.analysisResults.debugInfo.push(`Битовый анализ предметов в offset ${i}, найдено: ${setBits}`);
+                }
             }
         }
         
