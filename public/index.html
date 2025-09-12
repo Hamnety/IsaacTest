@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac Save Editor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .upload-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .upload-area {
+            border: 3px dashed #667eea;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-area:hover {
+            border-color: #764ba2;
+            background-color: #f8f9ff;
+        }
+
+        .upload-area.dragover {
+            border-color: #764ba2;
+            background-color: #f0f2ff;
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .upload-text {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .save-info {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .save-info.show {
+            display: block;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .info-card .value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .stats-section {
+            margin-top: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .stat-item {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #c62828;
+        }
+
+        .success {
+            background: #e8f5e8;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .demo-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .github-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .github-link a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .github-link a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Isaac Save Editor</h1>
+            <p>Веб-приложение для просмотра и редактирования файлов сохранения The Binding of Isaac</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>О проекте</h2>
+            <div class="demo-text">
+                <p>Это веб-приложение позволяет загружать и анализировать файлы сохранения The Binding of Isaac. 
+                Вы можете просматривать свой прогресс, статистику по персонажам, разблокированные предметы и достижения.</p>
+                
+                <p><strong>Примечание:</strong> Для полной функциональности требуется запуск локального сервера. 
+                Статическая версия на GitHub Pages показывает только демонстрацию интерфейса.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <h3>📊 Анализ сохранений</h3>
+                    <p>Загружайте файлы .dat и просматривайте детальную статистику вашего прогресса в игре.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>👥 Персонажи</h3>
+                    <p>Отслеживайте прогресс по каждому персонажу, включая количество побед и смертей.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🏆 Достижения</h3>
+                    <p>Просматривайте разблокированные достижения и предметы.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>🔧 Отладка</h3>
+                    <p>Используйте hex-дамп для анализа структуры файла сохранения.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="upload-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📁</div>
+                <div class="upload-text">
+                    Для полной функциональности запустите локальный сервер
+                </div>
+                <button class="btn" onclick="showInstructions()">
+                    Показать инструкции
+                </button>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Обработка файла сохранения...</p>
+        </div>
+
+        <div class="save-info" id="saveInfo">
+            <h2>Информация о сохранении</h2>
+            <p>Здесь будет отображаться информация о загруженном файле сохранения.</p>
+        </div>
+
+        <div class="github-link">
+            <a href="https://github.com/yourusername/isaac-save-editor" target="_blank">
+                📁 Посмотреть на GitHub
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function showInstructions() {
+            alert(`Для запуска Isaac Save Editor:
+
+1. Клонируйте репозиторий:
+   git clone https://github.com/yourusername/isaac-save-editor
+
+2. Установите зависимости:
+   npm install
+
+3. Соберите проект:
+   npm run build
+
+4. Запустите сервер:
+   npm start
+
+5. Откройте http://localhost:3000 в браузере
+
+6. Загрузите файл сохранения (.dat) из папки:
+   C:\\Users\\[Ваше имя]\\Documents\\My Games\\Binding of Isaac Rebirth\\`);
+        }
+
+        // Демонстрация drag & drop
+        const uploadArea = document.getElementById('uploadArea');
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            alert('Для обработки файлов запустите локальный сервер (см. инструкции выше)');
+        });
+    </script>
+</body>
+</html>
