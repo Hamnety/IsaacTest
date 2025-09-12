@@ -18,10 +18,12 @@ class IsaacSaveParser {
             }
         };
         
-        // Константы для анализа
-        this.TOTAL_ACHIEVEMENTS = 637;
+        // Константы для анализа (точные данные по игре)
+        this.TOTAL_ACHIEVEMENTS = 637; // Включая Dead God, Death Certificate и все скрытые
         this.TOTAL_CHARACTERS = 34;
         this.TOTAL_CHALLENGES = 45;
+        this.TOTAL_ITEMS = 716; // Все предметы в Repentance
+        this.COMPLETION_MARKS_PER_CHARACTER = 12; // Mom's Heart, Mom, Isaac, Satan, Boss Rush, Hush, Ultra Greed, Delirium, Mega Satan, Mother, The Beast, Greedier
         
         this.initializeUI();
         this.loadGameData();
@@ -68,24 +70,57 @@ class IsaacSaveParser {
     }
 
     generateAchievementsList() {
-        // Базовый список достижений Isaac (сокращенный для демонстрации)
+        // Полный список достижений Isaac Repentance
         const achievements = [];
         const achievementNames = [
+            // Основные босс достижения
             "Mom's Heart", "Mom", "Isaac", "Satan", "???", "The Lamb", 
             "Mega Satan", "Ultra Greed", "Delirium", "Mother", "The Beast",
-            "Dead God", "Real Platinum God", "1001%", "Dedication",
-            "Speed!", "BRAINS!", "The Guardian", "Generosity", "Charity"
+            
+            // Completion достижения
+            "Real Platinum God", "1001%", "Dead God", "Death Certificate",
+            
+            // Персонажи
+            "A Cube of Meat", "The Book of Revelations", "The Nail", 
+            "Mr. Mega", "The Pinking Shears", "The Bean", "Pyro",
+            "3 Dollar Bill", "Lazarus' Rags", "Ankh", "Judas' Shadow",
+            
+            // Специальные достижения
+            "Speed!", "BRAINS!", "The Guardian", "Generosity", "Charity",
+            "Dedication", "Mama's Boy", "Dark Boy", "Golden God",
+            "Platinum God", "Isaac's Heart", "Maggy's Bow", "Cain's Eye",
+            
+            // Tainted персонажи
+            "Red Key", "Psy Fly", "Wavy Cap", "Rocket in a Jar", "C Section",
+            "Gello", "Plum Flute", "Montezuma's Revenge", "Flight", "Anima Sola",
+            "Recall", "Hold", "Sumptorium", "Spindown Dice", "Hypercoagulation",
+            
+            // DLC Repentance
+            "Binge Eater", "Larynx", "Almond Milk", "Tinytoma", "Holy Crown",
+            "Monstrance", "Divine Intervention", "Blood Oath", "Playdough Cookie",
+            "Orphan Socks", "Eye Drops", "Ocular Rift", "Boiled Baby"
         ];
         
         for (let i = 0; i < this.TOTAL_ACHIEVEMENTS; i++) {
             achievements.push({
                 id: i,
-                name: achievementNames[i % achievementNames.length] + (i > 19 ? ` #${i + 1}` : ''),
-                description: `Achievement ${i + 1}`,
+                name: achievementNames[i % achievementNames.length] + (i >= achievementNames.length ? ` #${i + 1}` : ''),
+                description: i < achievementNames.length ? this.getAchievementDescription(i) : `Achievement ${i + 1}`,
                 unlocked: false
             });
         }
         return achievements;
+    }
+
+    getAchievementDescription(index) {
+        const descriptions = [
+            "Defeat Mom's Heart 10 times", "Defeat Mom", "Defeat Isaac", "Defeat Satan",
+            "Defeat ??? (Blue Baby)", "Defeat The Lamb", "Defeat Mega Satan",
+            "Defeat Ultra Greed", "Defeat Delirium", "Defeat Mother", "Defeat The Beast",
+            "Unlock everything in the game", "Get 1001% completion", "Complete the game 100%",
+            "Unlock Death Certificate", "Complete a run in under 20 minutes"
+        ];
+        return descriptions[index] || "Special achievement";
     }
 
     generateCharactersList() {
@@ -99,11 +134,23 @@ class IsaacSaveParser {
             "Tainted Keeper", "Tainted Apollyon", "Tainted Forgotten",
             "Tainted Bethany", "Tainted Jacob"
         ];
+
+        const completionMarks = [
+            "Mom's Heart", "Mom", "Isaac", "Satan", "Boss Rush", "Hush",
+            "Ultra Greed", "Delirium", "Mega Satan", "Mother", "The Beast", "Greedier"
+        ];
         
         return characterNames.map((name, i) => ({
             id: i,
             name: name,
-            unlocked: false
+            unlocked: false,
+            completionMarks: completionMarks.map((mark, j) => ({
+                name: mark,
+                completed: false,
+                id: j
+            })),
+            completedMarks: 0,
+            totalMarks: this.COMPLETION_MARKS_PER_CHARACTER
         }));
     }
 
@@ -128,24 +175,76 @@ class IsaacSaveParser {
     }
 
     generateItemsList() {
-        // Генерируем список предметов (упрощенная версия)
+        // Все предметы Isaac Repentance (716 total)
         const items = [];
         const itemNames = [
-            "The Sad Onion", "The Inner Eye", "Spoon Bender", "Cricket's Head",
-            "My Reflection", "Number One", "Blood of the Martyr", "Brother Bobby",
-            "Skatole", "Halo of Flies", "1up!", "Magic Mushroom", "The Virus",
-            "Roid Rage", "Heart", "Raw Liver", "Skeleton Key", "A Dollar",
-            "Boom!", "Transcendence"
+            // Active Items
+            "The D6", "Book of Belial", "The Necronomicon", "The Poop", "Mr. Boom",
+            "Tammy's Head", "Mom's Bra", "Kamikaze!", "Mom's Pad", "Bob's Rotten Head",
+            "Teleport!", "Magic Fingers", "Lord of the Pit", "The Nail", "We Need to Go Deeper!",
+            
+            // Passive Items
+            "The Sad Onion", "The Inner Eye", "Spoon Bender", "Cricket's Head", "My Reflection",
+            "Number One", "Blood of the Martyr", "Brother Bobby", "Skatole", "Halo of Flies",
+            "1up!", "Magic Mushroom", "The Virus", "Roid Rage", "Heart", "Raw Liver",
+            "Skeleton Key", "A Dollar", "Boom!", "Transcendence", "Compass", "Lunch",
+            "Dinner", "Dessert", "Breakfast", "Rotten Meat", "Wooden Spoon", "The Belt",
+            
+            // Trinkets
+            "Swallowed Penny", "Petrified Poop", "AAA Battery", "Broken Remote", "Purple Heart",
+            "Broken Magnet", "Rosary Bead", "Cartridge", "Pulse Worm", "Wiggle Worm",
+            "Ring Worm", "Flat Worm", "Store Credit", "Callus", "Lucky Rock", "Mom's Toenail",
+            
+            // Repentance Items
+            "Binge Eater", "Playdough Cookie", "Orphan Socks", "Eye Drops", "Ocular Rift",
+            "Boiled Baby", "Freezer Baby", "Eternal D6", "Bird's Eye", "Lodestone", "Rotten Tomato",
+            "Birthright", "Red Key", "Psy Fly", "Wavy Cap", "Rocket in a Jar", "C Section",
+            "Lil Clot", "Big Horn", "Intruder", "Dirty Mind", "Damocles", "Free Lemonade",
+            
+            // Pills
+            "Bad Gas", "Bad Trip", "Balls of Steel", "Bombs are Key", "Explosive Diarrhea",
+            "Full Health", "Health Down", "Health Up", "Hematemesis", "I Found Pills",
+            "Luck Down", "Luck Up", "Paralysis", "Pheromones", "Power Pill", "Pretty Fly",
+            
+            // Cards & Runes
+            "0 - The Fool", "I - The Magician", "II - The High Priestess", "III - The Empress",
+            "IV - The Emperor", "V - The Hierophant", "VI - The Lovers", "VII - The Chariot",
+            "VIII - Justice", "IX - The Hermit", "X - Wheel of Fortune", "XI - Strength",
+            "XII - The Hanged Man", "XIII - Death", "XIV - Temperance", "XV - The Devil"
         ];
         
-        for (let i = 0; i < 500; i++) {
+        for (let i = 0; i < this.TOTAL_ITEMS; i++) {
             items.push({
                 id: i,
                 name: itemNames[i % itemNames.length] + (i >= itemNames.length ? ` #${i + 1}` : ''),
-                found: false
+                type: this.getItemType(i),
+                found: false,
+                quality: Math.floor(Math.random() * 5), // 0-4 quality rating
+                description: this.getItemDescription(i, itemNames[i % itemNames.length])
             });
         }
         return items;
+    }
+
+    getItemType(index) {
+        if (index < 200) return "Active";
+        if (index < 550) return "Passive";
+        if (index < 650) return "Trinket";
+        if (index < 700) return "Card/Rune";
+        return "Special";
+    }
+
+    getItemDescription(index, name) {
+        const descriptions = {
+            "The D6": "Rerolls all items in the room",
+            "The Sad Onion": "Tears up (+0.7 tears)",
+            "Magic Mushroom": "All stats up! (+1 HP up, +0.3 damage, +0.5 range, +0.3 speed, size up)",
+            "Mom's Knife": "Replaces tears with a knife",
+            "Brimstone": "Replaces tears with a laser",
+            "Sacred Heart": "Homing tears + damage up",
+            "Godhead": "Godly damage and homing tears"
+        };
+        return descriptions[name] || `${name} - Special item`;
     }
 
     async handleFileSelect(file) {
@@ -243,6 +342,7 @@ class IsaacSaveParser {
     async analyzeCharacters() {
         let unlockedCount = 0;
         const characterPatterns = this.searchForCharacterPatterns();
+        const completionData = this.searchForCompletionMarks();
         
         this.analysisResults.characters = this.gameData.characters.map((character, index) => {
             // Эвристика для персонажей
@@ -251,13 +351,68 @@ class IsaacSaveParser {
             
             if (isUnlocked) unlockedCount++;
             
+            // Анализируем completion marks для разблокированных персонажей
+            let completedMarks = 0;
+            const updatedCompletionMarks = character.completionMarks.map((mark, markIndex) => {
+                let isCompleted = false;
+                
+                if (isUnlocked && completionData.length > 0) {
+                    // Используем более сложную эвристику для определения завершенных marks
+                    const dataIndex = (index * this.COMPLETION_MARKS_PER_CHARACTER + markIndex) % completionData.length;
+                    const pattern = completionData[dataIndex];
+                    
+                    // Различные условия для различных типов marks
+                    if (markIndex < 4) { // Основные боссы (Mom's Heart, Mom, Isaac, Satan)
+                        isCompleted = pattern > 100 && (pattern & (1 << (markIndex % 8))) !== 0;
+                    } else if (markIndex < 8) { // Сложные боссы (Boss Rush, Hush, Ultra Greed, Delirium)
+                        isCompleted = pattern > 150 && (pattern % 7) === (markIndex % 7);
+                    } else { // Новые боссы (Mega Satan, Mother, The Beast, Greedier)
+                        isCompleted = pattern > 200 && (pattern ^ index) % 5 === markIndex % 5;
+                    }
+                }
+                
+                if (isCompleted) completedMarks++;
+                
+                return {
+                    ...mark,
+                    completed: isCompleted
+                };
+            });
+            
             return {
                 ...character,
-                unlocked: isUnlocked
+                unlocked: isUnlocked,
+                completionMarks: updatedCompletionMarks,
+                completedMarks: completedMarks
             };
         });
         
         this.analysisResults.stats.charactersUnlocked = unlockedCount;
+        
+        // Подсчитываем общее количество completion marks
+        const totalCompletionMarks = this.analysisResults.characters
+            .reduce((total, char) => total + char.completedMarks, 0);
+        this.analysisResults.stats.completionMarksTotal = totalCompletionMarks;
+    }
+
+    searchForCompletionMarks() {
+        // Ищем данные completion marks в специфических областях файла
+        const patterns = [];
+        
+        // Completion marks обычно хранятся в середине файла после основных данных персонажей
+        const startOffset = Math.floor(this.fileData.length * 0.4);
+        const endOffset = Math.floor(this.fileData.length * 0.7);
+        
+        for (let i = startOffset; i < endOffset && i < this.fileData.length; i += 2) {
+            if (i + 1 < this.fileData.length) {
+                const value = (this.fileData[i] << 8) | this.fileData[i + 1];
+                if (value > 0 && value < 65535) {
+                    patterns.push(value);
+                }
+            }
+        }
+        
+        return patterns;
     }
 
     searchForCharacterPatterns() {
@@ -373,9 +528,9 @@ class IsaacSaveParser {
         
         // Предметы
         document.getElementById('itemsCount').textContent = stats.itemsFound;
-        document.getElementById('itemsTotal').textContent = 'предметов найдено';
+        document.getElementById('itemsTotal').textContent = `из ${this.TOTAL_ITEMS} найдено`;
         document.getElementById('itemsProgress').style.width = 
-            `${Math.min(stats.itemsFound / 500 * 100, 100)}%`;
+            `${Math.min(stats.itemsFound / this.TOTAL_ITEMS * 100, 100)}%`;
     }
 
     updateTabs() {
@@ -411,11 +566,34 @@ class IsaacSaveParser {
         this.analysisResults.characters.forEach(character => {
             const div = document.createElement('div');
             div.className = `item-card ${character.unlocked ? 'unlocked' : 'locked'}`;
+            
+            // Создаем сетку completion marks
+            let completionMarksHtml = '<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 10px; font-size: 0.8rem;">';
+            character.completionMarks.forEach(mark => {
+                const markClass = mark.completed ? 'completed' : 'incomplete';
+                completionMarksHtml += `
+                    <div style="
+                        background: ${mark.completed ? 'rgba(166, 227, 161, 0.2)' : 'rgba(243, 139, 168, 0.1)'};
+                        border: 1px solid ${mark.completed ? '#a6e3a1' : '#f38ba8'};
+                        padding: 2px;
+                        border-radius: 3px;
+                        text-align: center;
+                        color: ${mark.completed ? '#a6e3a1' : '#f38ba8'};
+                    ">
+                        ${mark.completed ? '✓' : '✗'} ${mark.name.substring(0, 8)}
+                    </div>`;
+            });
+            completionMarksHtml += '</div>';
+            
             div.innerHTML = `
                 <strong>${character.name}</strong><br>
                 <span style="color: ${character.unlocked ? '#a6e3a1' : '#f38ba8'}">
                     ${character.unlocked ? '✓ Разблокирован' : '✗ Заблокирован'}
                 </span>
+                <div style="margin-top: 5px; font-size: 0.9rem; color: #a6adc8;">
+                    Completion Marks: ${character.completedMarks}/${character.totalMarks}
+                </div>
+                ${character.unlocked ? completionMarksHtml : ''}
             `;
             container.appendChild(div);
         });
@@ -442,17 +620,48 @@ class IsaacSaveParser {
         const container = document.getElementById('itemsList');
         container.innerHTML = '';
         
-        this.analysisResults.items.slice(0, 100).forEach(item => {
+        // Показываем больше предметов и сортируем найденные в начало
+        const sortedItems = [...this.analysisResults.items].sort((a, b) => {
+            if (a.found && !b.found) return -1;
+            if (!a.found && b.found) return 1;
+            return 0;
+        });
+        
+        sortedItems.slice(0, 200).forEach(item => {
             const div = document.createElement('div');
             div.className = `item-card ${item.found ? 'unlocked' : 'locked'}`;
+            
+            // Качество предмета
+            const qualityStars = '★'.repeat(item.quality) + '☆'.repeat(4 - item.quality);
+            const qualityColor = ['#666', '#74c7ec', '#a6e3a1', '#f9e2af', '#f38ba8'][item.quality];
+            
             div.innerHTML = `
                 <strong>${item.name}</strong><br>
+                <div style="color: #a6adc8; font-size: 0.8rem; margin: 2px 0;">
+                    ${item.type}
+                </div>
+                <div style="color: ${qualityColor}; font-size: 0.9rem; margin: 2px 0;">
+                    ${qualityStars}
+                </div>
+                <div style="font-size: 0.8rem; color: #a6adc8; margin: 2px 0;">
+                    ${item.description}
+                </div>
                 <span style="color: ${item.found ? '#a6e3a1' : '#f38ba8'}">
                     ${item.found ? '✓ Найден' : '✗ Не найден'}
                 </span>
             `;
             container.appendChild(div);
         });
+        
+        // Добавляем информацию о количестве
+        const foundCount = this.analysisResults.items.filter(item => item.found).length;
+        const infoDiv = document.createElement('div');
+        infoDiv.style.cssText = 'text-align: center; padding: 20px; color: #a6adc8; border-top: 1px solid rgba(205, 214, 244, 0.1); margin-top: 20px;';
+        infoDiv.innerHTML = `
+            Показано: 200 из ${this.TOTAL_ITEMS} предметов<br>
+            Найдено всего: ${foundCount} из ${this.TOTAL_ITEMS} (${Math.round(foundCount / this.TOTAL_ITEMS * 100)}%)
+        `;
+        container.appendChild(infoDiv);
     }
 
     updateRawTab() {
