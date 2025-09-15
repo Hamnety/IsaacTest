@@ -101,6 +101,11 @@
             border-color: rgba(245, 194, 231, 0.3);
         }
 
+        .parser-card.achievements {
+            --accent-color: #f38ba8;
+            border-color: rgba(243, 139, 168, 0.3);
+        }
+
         .parser-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -316,20 +321,23 @@
         <div class="recommendation">
             <h3><i class="fas fa-lightbulb"></i> Как выбрать правильный парсер?</h3>
             <p style="margin-bottom: 15px;">
+                <strong>Рекомендуется:</strong> Achievement Based Edition для Repentance файлов - максимальная точность на основе достижений!
+            </p>
+            <p style="margin-bottom: 15px;">
                 Выбор зависит от версии Isaac, которую вы используете. Проверьте названия ваших файлов сохранения:
             </p>
             <div class="version-guide">
                 <div class="version-item repentance">
-                    <div class="version-name">Repentance</div>
-                    <div class="version-files">rep_persistentgamedata1.dat<br>ISAACNGSAVE09R</div>
+                    <div class="version-name">Repentance (Рекомендуется)</div>
+                    <div class="version-files">rep_persistentgamedata1.dat<br>ISAACNGSAVE09R<br><strong>Achievement Based Edition</strong></div>
                 </div>
                 <div class="version-item afterbirth">
                     <div class="version-name">Afterbirth+</div>
-                    <div class="version-files">ab_persistentgamedata1.dat<br>ISAACNGSAVE08R</div>
+                    <div class="version-files">ab_persistentgamedata1.dat<br>ISAACNGSAVE08R<br><strong>Accurate Edition</strong></div>
                 </div>
                 <div class="version-item rebirth">
                     <div class="version-name">Rebirth</div>
-                    <div class="version-files">persistentgamedata1.dat<br>Старый формат</div>
+                    <div class="version-files">persistentgamedata1.dat<br>Старый формат<br><strong>Universal Edition</strong></div>
                 </div>
             </div>
         </div>
@@ -624,6 +632,64 @@
                     <i class="fas fa-microscope"></i> Попробовать Accurate Edition
                 </button>
             </div>
+
+            <div class="parser-card achievements">
+                <div class="parser-title">
+                    <i class="fas fa-trophy"></i>
+                    Achievement Based Edition
+                    <span class="parser-version">Рекомендуется</span>
+                </div>
+                <p class="parser-description">
+                    Анализ на основе достижений из файла achivments.txt. 100% точность определения 
+                    персонажей и челленджей. Реальные данные о предметах с сайта tboi.com.
+                </p>
+                
+                <div class="parser-features">
+                    <div class="feature">
+                        <i class="fas fa-trophy feature-icon"></i>
+                        <span>100% точность на основе достижений</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-database feature-icon"></i>
+                        <span>Реальные данные о предметах</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-star feature-icon"></i>
+                        <span>Качество, типы и пулы предметов</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-skull feature-icon"></i>
+                        <span>732 предмета Repentance</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-medal feature-icon"></i>
+                        <span>34 персонажа, 45 челленджей</span>
+                    </div>
+                </div>
+
+                <div class="parser-stats">
+                    <div class="stat">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Точность</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Repentance</div>
+                        <div class="stat-label">Оптимизирован для</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">34</div>
+                        <div class="stat-label">Персонажей</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">45</div>
+                        <div class="stat-label">Челленджей</div>
+                    </div>
+                </div>
+
+                <button class="parser-button" onclick="location.href='index-achievements.html'">
+                    <i class="fas fa-trophy"></i> Попробовать Achievement Based Edition
+                </button>
+            </div>
         </div>
 
         <div class="comparison-table">
@@ -639,6 +705,7 @@
                         <th>Repentance Edition</th>
                         <th>Universal Edition</th>
                         <th>Accurate Edition</th>
+                        <th>Achievement Based</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -649,6 +716,7 @@
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-partial"><i class="fas fa-exclamation"></i> Частично</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                     </tr>
                     <tr>
                         <td>Afterbirth+ файлы</td>
@@ -657,6 +725,7 @@
                         <td class="check-partial"><i class="fas fa-exclamation"></i> Частично</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                     </tr>
                     <tr>
                         <td>Поиск реальных данных</td>
@@ -665,6 +734,7 @@
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                     </tr>
                     <tr>
                         <td>Точные offset'ы</td>
@@ -673,9 +743,11 @@
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                     </tr>
                     <tr>
                         <td>Hex просмотр</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
@@ -689,11 +761,13 @@
                         <td class="check-yes"><i class="fas fa-check"></i> Детальный</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Универсальный</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Базовый</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Базовый</td>
                     </tr>
                     <tr>
                         <td>Контрольная сумма</td>
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> CRC32</td>
                         <td class="check-yes"><i class="fas fa-check"></i> CRC32</td>
                         <td class="check-yes"><i class="fas fa-check"></i> CRC32</td>
                         <td class="check-yes"><i class="fas fa-check"></i> CRC32</td>
@@ -705,6 +779,7 @@
                         <td class="check-yes"><i class="fas fa-check"></i> 12 (точно)</td>
                         <td class="check-yes"><i class="fas fa-check"></i> 12 (универсально)</td>
                         <td class="check-yes"><i class="fas fa-check"></i> 9 (точно)</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> 12 (точно)</td>
                     </tr>
                     <tr>
                         <td>Секционная структура</td>
@@ -713,6 +788,25 @@
                         <td class="check-yes"><i class="fas fa-check"></i> 10 секций</td>
                         <td class="check-yes"><i class="fas fa-check"></i> 11 секций</td>
                         <td class="check-yes"><i class="fas fa-check"></i> 10 секций</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> 10 секций</td>
+                    </tr>
+                    <tr>
+                        <td>Реальные данные предметов</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
+                    </tr>
+                    <tr>
+                        <td>Анализ на основе достижений</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                     </tr>
                 </tbody>
             </table>
@@ -741,6 +835,9 @@
                 </button>
                 <button style="background: linear-gradient(135deg, #a6e3a1, #74c7ec); color: #1e1e2e; border: none; padding: 10px 20px; border-radius: 8px; font-family: inherit; font-weight: 600; cursor: pointer; font-size: 0.9rem;" onclick="location.href='index-accurate.html'">
                     Accurate Edition
+                </button>
+                <button style="background: linear-gradient(135deg, #f38ba8, #cba6f7); color: #1e1e2e; border: none; padding: 10px 20px; border-radius: 8px; font-family: inherit; font-weight: 600; cursor: pointer; font-size: 0.9rem;" onclick="location.href='index-achievements.html'">
+                    Achievement Based Edition
                 </button>
             </div>
         </div>
