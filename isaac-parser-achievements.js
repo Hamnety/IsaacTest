@@ -1044,13 +1044,17 @@ class IsaacAchievementParser {
             div.style.fontSize = '0.5rem';
             
                     div.innerHTML = `
-                <strong style="font-size: 0.5rem;">#${achievement.id} ${achievement.name}</strong><br>
-                <div style="color: #ffd700; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
+                <div style="font-size: 0.6rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px;">
+                    #${achievement.id} ${achievement.name}
+                </div>
+                <div style="color: #a0aec0; font-size: 0.5rem; margin: 4px 0; line-height: 1.2;">
                     ${achievement.unlockCondition}
                 </div>
-                <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.4rem;">
-                            ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
-                        </span>
+                <div style="margin-top: auto; text-align: center;">
+                    <span style="color: ${achievement.unlocked ? '#ffd700' : '#4c566a'}; font-size: 0.5rem; font-weight: bold;">
+                        ${achievement.unlocked ? '✓ ПОЛУЧЕНО' : '✗ ЗАБЛОКИРОВАНО'}
+                    </span>
+                </div>
                     `;
             mainGrid.appendChild(div);
                 });
