@@ -386,11 +386,6 @@ class IsaacAchievementParser {
     }
 
     async parseAchievements(sections) {
-        // Отладочная информация о загруженных данных
-        this.analysisResults.debugInfo.push(`Данные достижений загружены: ${this.achievementsData ? 'Да' : 'Нет'}`);
-        if (this.achievementsData) {
-            this.analysisResults.debugInfo.push(`Количество достижений в данных: ${Object.keys(this.achievementsData.achievements).length}`);
-        }
         
         // Ищем секцию достижений (тип 1)
         const achievementSection = sections.find(s => s.type === 1);
@@ -541,10 +536,6 @@ class IsaacAchievementParser {
         }
         if (this.gameData && this.gameData.challenges[id]) {
             return this.gameData.challenges[id].name;
-        }
-        // Отладочная информация
-        if (id <= 10) {
-            this.analysisResults.debugInfo.push(`Достижение ${id}: не найдено в данных`);
         }
         return `#${id} Achievement`;
     }
@@ -1054,10 +1045,7 @@ class IsaacAchievementParser {
             
                     div.innerHTML = `
                 <strong style="font-size: 0.5rem;">#${achievement.id} ${achievement.name}</strong><br>
-                <div style="color: #a6adc8; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
-                    ${achievement.description}
-                </div>
-                <div style="color: #ffd700; font-size: 0.4rem; margin: 1px 0;">
+                <div style="color: #ffd700; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
                     ${achievement.unlockCondition}
                 </div>
                 <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.4rem;">
