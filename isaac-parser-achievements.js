@@ -1079,18 +1079,15 @@ class IsaacAchievementParser {
         this.analysisResults.characters.forEach(character => {
             const div = document.createElement('div');
             div.className = `item-card ${character.unlocked ? 'unlocked' : 'locked'}`;
-            div.style.padding = '16px';
-            div.style.minHeight = '140px';
-            div.style.fontSize = '0.8rem';
             div.innerHTML = `
-                <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
+                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${character.name}
                 </div>
-                <div style="color: #a0aec0; font-size: 0.75rem; margin: 8px 0; line-height: 1.4;">
+                <div style="color: #a0aec0; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
                     ${character.unlockCondition}
                 </div>
                 <div style="margin-top: auto; text-align: center; padding-top: 8px;">
-                    <span style="color: ${character.unlocked ? '#ffd700' : '#4c566a'}; font-size: 0.7rem; font-weight: bold;">
+                    <span style="color: ${character.unlocked ? '#ffd700' : '#4c566a'}; font-size: 0.8rem; font-weight: bold;">
                         ${character.unlocked ? '✓ РАЗБЛОКИРОВАН' : '✗ ЗАБЛОКИРОВАН'}
                     </span>
                 </div>
@@ -1106,18 +1103,15 @@ class IsaacAchievementParser {
         this.analysisResults.challenges.forEach(challenge => {
             const div = document.createElement('div');
             div.className = `item-card ${challenge.completed ? 'unlocked' : 'locked'}`;
-            div.style.padding = '16px';
-            div.style.minHeight = '140px';
-            div.style.fontSize = '0.8rem';
             div.innerHTML = `
-                <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
+                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${challenge.name}
                 </div>
-                <div style="color: #a0aec0; font-size: 0.75rem; margin: 8px 0; line-height: 1.4;">
+                <div style="color: #a0aec0; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
                     ${challenge.unlockCondition}
                 </div>
                 <div style="margin-top: auto; text-align: center; padding-top: 8px;">
-                    <span style="color: ${challenge.completed ? '#ffd700' : '#4c566a'}; font-size: 0.7rem; font-weight: bold;">
+                    <span style="color: ${challenge.completed ? '#ffd700' : '#4c566a'}; font-size: 0.8rem; font-weight: bold;">
                         ${challenge.completed ? '✓ ЗАВЕРШЕН' : '✗ НЕ ЗАВЕРШЕН'}
                     </span>
                 </div>
@@ -1140,23 +1134,20 @@ class IsaacAchievementParser {
         sortedItems.forEach(item => {
             const div = document.createElement('div');
             div.className = `item-card ${item.found ? 'unlocked' : 'locked'}`;
-            div.style.padding = '16px';
-            div.style.minHeight = '140px';
-            div.style.fontSize = '0.8rem';
             
             const qualityColor = this.getQualityColor(item.quality);
             const typeIcon = this.getTypeIcon(item.type);
             const poolColor = this.getPoolColor(item.pool);
             
             div.innerHTML = `
-                <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
+                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${item.name}
                 </div>
-                <div style="color: ${qualityColor}; font-size: 0.75rem; margin: 8px 0; line-height: 1.4;">
+                <div style="color: ${qualityColor}; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
                     Quality ${item.quality} • <span style="color: ${poolColor}">${item.pool}</span>
                 </div>
                 <div style="margin-top: auto; text-align: center; padding-top: 8px;">
-                    <span style="color: ${item.found ? '#ffd700' : '#4c566a'}; font-size: 0.7rem; font-weight: bold;">
+                    <span style="color: ${item.found ? '#ffd700' : '#4c566a'}; font-size: 0.8rem; font-weight: bold;">
                         ${item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН'}
                     </span>
                 </div>
