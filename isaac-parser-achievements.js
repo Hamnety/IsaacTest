@@ -14,13 +14,8 @@ class IsaacAchievementParser {
             debugInfo: []
         };
         
-        // Инициализируем данные игры с fallback данными
-        this.gameData = {
-            characters: {},
-            challenges: {},
-            completionMarks: {},
-            totals: { characters: 34, challenges: 45, items: 720, achievements: 640 }
-        };
+        // Инициализируем данные игры
+        this.gameData = null;
         
         this.initializeUI();
     }
@@ -31,15 +26,8 @@ class IsaacAchievementParser {
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
-            const data = await response.json();
-            
-            // Проверяем структуру данных
-            if (data.characters && data.challenges && data.totals) {
-                this.gameData = data;
-                this.analysisResults.debugInfo.push('Данные игры загружены из JSON файла');
-            } else {
-                throw new Error('Неверная структура JSON файла');
-            }
+            this.gameData = await response.json();
+            this.analysisResults.debugInfo.push('Данные игры загружены из JSON файла');
         } catch (error) {
             this.analysisResults.debugInfo.push('Ошибка загрузки данных игры: ' + error.message);
             this.analysisResults.debugInfo.push('Используем fallback данные');
@@ -487,32 +475,26 @@ class IsaacAchievementParser {
     }
 
     getAchievementName(id) {
-        if (this.achievementData.characters[id]) {
-            return this.achievementData.characters[id].name;
+        if (this.gameData && this.gameData.characters[id]) {
+            return this.gameData.characters[id].name;
         }
-        if (this.achievementData.challenges[id]) {
-            return this.achievementData.challenges[id].name;
+        if (this.gameData && this.gameData.challenges[id]) {
+            return this.gameData.challenges[id].name;
         }
         return `Achievement ${id}`;
     }
 
     getAchievementType(id) {
-        if (this.achievementData.characters[id]) return 'character';
-        if (this.achievementData.challenges[id]) return 'challenge';
+        if (this.gameData && this.gameData.characters[id]) return 'character';
+        if (this.gameData && this.gameData.challenges[id]) return 'challenge';
         return 'other';
     }
 
     async analyzeProgressFromAchievements() {
         // Проверяем, загружены ли данные игры
-        if (!this.gameData || !this.gameData.characters || !this.gameData.challenges) {
-            this.analysisResults.debugInfo.push('Ошибка: Данные игры не загружены или неполные');
-            this.analysisResults.debugInfo.push('Попытка загрузки данных...');
-            await this.loadGameData();
-            
-            if (!this.gameData || !this.gameData.characters || !this.gameData.challenges) {
-                this.analysisResults.debugInfo.push('Критическая ошибка: Не удалось загрузить данные игры');
-                return;
-            }
+        if (!this.gameData) {
+            this.analysisResults.debugInfo.push('Ошибка: Данные игры не загружены');
+            return;
         }
         
         // Анализируем персонажей на основе достижений
