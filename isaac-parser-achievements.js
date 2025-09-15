@@ -1001,11 +1001,11 @@ class IsaacAchievementParser {
             const div = document.createElement('div');
             div.className = `item-card ${character.unlocked ? 'unlocked' : 'locked'}`;
             div.innerHTML = `
-                <strong>${character.name}</strong><br>
-                <div style="color: #a6adc8; font-size: 0.8rem; margin: 5px 0;">
+                <strong style="font-size: 0.6rem;">${character.name}</strong><br>
+                <div style="color: #a6adc8; font-size: 0.5rem; margin: 3px 0; line-height: 1.2;">
                     ${character.unlockCondition}
                 </div>
-                <span style="color: ${character.unlocked ? '#a6e3a1' : '#f38ba8'}">
+                <span style="color: ${character.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.5rem;">
                     ${character.unlocked ? '✓ Разблокирован' : '✗ Заблокирован'}
                 </span>
             `;
@@ -1021,11 +1021,11 @@ class IsaacAchievementParser {
             const div = document.createElement('div');
             div.className = `item-card ${challenge.completed ? 'unlocked' : 'locked'}`;
             div.innerHTML = `
-                <strong>${challenge.name}</strong><br>
-                <div style="color: #a6adc8; font-size: 0.8rem; margin: 5px 0;">
+                <strong style="font-size: 0.6rem;">${challenge.name}</strong><br>
+                <div style="color: #a6adc8; font-size: 0.5rem; margin: 3px 0; line-height: 1.2;">
                     ${challenge.unlockCondition}
                 </div>
-                <span style="color: ${challenge.completed ? '#a6e3a1' : '#f38ba8'}">
+                <span style="color: ${challenge.completed ? '#a6e3a1' : '#f38ba8'}; font-size: 0.5rem;">
                     ${challenge.completed ? '✓ Завершен' : '✗ Не завершен'}
                 </span>
             `;
@@ -1052,14 +1052,14 @@ class IsaacAchievementParser {
             const poolColor = this.getPoolColor(item.pool);
             
             div.innerHTML = `
-                <strong>${item.name}</strong><br>
-                <div style="color: #a6adc8; font-size: 0.8rem; margin: 5px 0;">
+                <strong style="font-size: 0.6rem;">${item.name}</strong><br>
+                <div style="color: #a6adc8; font-size: 0.5rem; margin: 3px 0; line-height: 1.2;">
                     ${typeIcon} ${item.type} • ${item.description}
                 </div>
-                <div style="color: ${qualityColor}; font-size: 0.7rem; margin: 3px 0;">
+                <div style="color: ${qualityColor}; font-size: 0.5rem; margin: 2px 0;">
                     Quality ${item.quality} • <span style="color: ${poolColor}">${item.pool}</span>
                 </div>
-                <span style="color: ${item.found ? '#a6e3a1' : '#f38ba8'}">
+                <span style="color: ${item.found ? '#a6e3a1' : '#f38ba8'}; font-size: 0.5rem;">
                     ${item.found ? '✓ Найден' : '✗ Не найден'}
                 </span>
             `;

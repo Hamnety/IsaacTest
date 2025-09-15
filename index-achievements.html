@@ -59,11 +59,11 @@
             text-align: center;
             color: #ff6b6b;
             margin-bottom: 15px;
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             text-shadow: 
                 2px 2px 0px #8b0000,
                 4px 4px 0px #000000;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
@@ -71,21 +71,21 @@
             text-align: center;
             color: #ffd700;
             margin-bottom: 30px;
-            font-size: 0.8rem;
+            font-size: 0.6rem;
             text-shadow: 1px 1px 0px #8b0000;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .achievement-badge {
             background: #ffd700;
             color: #8b0000;
-            padding: 6px 12px;
+            padding: 4px 8px;
             border: 2px solid #8b0000;
             border-radius: 0;
-            font-size: 0.6rem;
+            font-size: 0.5rem;
             margin-left: 15px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-shadow: 1px 1px 0px #000000;
             box-shadow: 2px 2px 0px #8b0000;
         }
@@ -218,17 +218,17 @@
         }
 
         .stat-title {
-            font-size: 0.8rem;
-            margin-bottom: 15px;
+            font-size: 0.6rem;
+            margin-bottom: 10px;
             color: #ffd700;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             text-shadow: 1px 1px 0px #8b0000;
         }
 
         .stat-value {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #ff6b6b;
             margin-bottom: 5px;
             text-shadow: 2px 2px 0px #8b0000;
@@ -237,7 +237,7 @@
         .stat-subtitle {
             color: #e0e0e0;
             opacity: 0.8;
-            font-size: 0.6rem;
+            font-size: 0.5rem;
             text-shadow: 1px 1px 0px #000000;
         }
 
@@ -275,14 +275,14 @@
             background: #2a0a0a;
             border: 2px solid #8b0000;
             color: #e0e0e0;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 0;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: inherit;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-shadow: 1px 1px 0px #000000;
         }
 
@@ -321,18 +321,22 @@
 
         .item-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
         }
 
         .item-card {
             background: #2a0a0a;
             border-radius: 0;
-            padding: 12px;
+            padding: 10px;
             border: 2px solid #8b0000;
             transition: all 0.3s ease;
             position: relative;
             box-shadow: 0 0 10px rgba(139, 0, 0, 0.2);
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .item-card:hover {
@@ -358,13 +362,13 @@
 
         .achievement-category h3 {
             color: #ffd700;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
             border-bottom: 3px solid #8b0000;
             text-shadow: 2px 2px 0px #8b0000;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .loading {
@@ -579,18 +583,13 @@
 
             <div class="details-section">
                 <div class="details-tabs">
-                    <button class="tab-button active" data-tab="achievements">Достижения</button>
-                    <button class="tab-button" data-tab="characters">Персонажи</button>
+                    <button class="tab-button active" data-tab="characters">Персонажи</button>
                     <button class="tab-button" data-tab="challenges">Челленджи</button>
                     <button class="tab-button" data-tab="items">Предметы</button>
                     <button class="tab-button" data-tab="raw">Отладка</button>
                 </div>
 
-                <div class="tab-content active" id="achievementsTab">
-                    <div class="item-grid" id="achievementsList"></div>
-                </div>
-
-                <div class="tab-content" id="charactersTab">
+                <div class="tab-content active" id="charactersTab">
                     <div class="item-grid" id="charactersList"></div>
                 </div>
 
