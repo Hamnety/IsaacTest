@@ -997,9 +997,9 @@ class IsaacAchievementParser {
         // Создаем горизонтальный контейнер для категорий
         const horizontalContainer = document.createElement('div');
         horizontalContainer.style.display = 'flex';
-        horizontalContainer.style.gap = '20px';
-        horizontalContainer.style.flexWrap = 'wrap';
-        horizontalContainer.style.justifyContent = 'flex-start';
+        horizontalContainer.style.gap = '15px';
+        horizontalContainer.style.flexWrap = 'nowrap';
+        horizontalContainer.style.justifyContent = 'space-between';
         horizontalContainer.style.width = '100%';
         
         // Показываем достижения по категориям
@@ -1015,15 +1015,15 @@ class IsaacAchievementParser {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'achievement-category';
                 categoryDiv.style.flex = '1';
-                categoryDiv.style.minWidth = '300px';
-                categoryDiv.style.maxWidth = '400px';
+                categoryDiv.style.width = '100%';
+                categoryDiv.style.minWidth = '0';
                 categoryDiv.innerHTML = `<h3>${this.getCategoryName(category)} (${achievements.filter(a => a.unlocked).length}/${achievements.length})</h3>`;
                 
                 // Создаем сетку для достижений в каждой категории
                 const achievementsGrid = document.createElement('div');
                 achievementsGrid.style.display = 'grid';
-                achievementsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(140px, 1fr))';
-                achievementsGrid.style.gap = '8px';
+                achievementsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(120px, 1fr))';
+                achievementsGrid.style.gap = '6px';
                 achievementsGrid.style.marginTop = '10px';
                 achievementsGrid.style.width = '100%';
                 
