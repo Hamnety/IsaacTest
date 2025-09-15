@@ -28,6 +28,15 @@ class IsaacAchievementParser {
             }
             this.gameData = await response.json();
             this.analysisResults.debugInfo.push('Данные игры загружены из JSON файла');
+            
+            // Загружаем полные данные предметов
+            const itemsResponse = await fetch('isaac-items-full.json');
+            if (itemsResponse.ok) {
+                this.fullItemsData = await itemsResponse.json();
+                this.analysisResults.debugInfo.push('Полные данные предметов загружены');
+            } else {
+                this.analysisResults.debugInfo.push('Не удалось загрузить полные данные предметов, используем базовые');
+            }
         } catch (error) {
             this.analysisResults.debugInfo.push('Ошибка загрузки данных игры: ' + error.message);
             this.analysisResults.debugInfo.push('Используем fallback данные');
@@ -593,7 +602,13 @@ class IsaacAchievementParser {
             
             // Посчитаем, сколько валидных предметов есть в JSON данных
             let validItemsInJSON = 0;
-            if (ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance) {
+            if (this.fullItemsData) {
+                for (let i = 1; i < 1000; i++) {
+                    if (this.fullItemsData[i]) {
+                        validItemsInJSON++;
+                    }
+                }
+            } else if (ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance) {
                 for (let i = 1; i < 1000; i++) {
                     if (ISAAC_ITEMS_DATA.repentance[i]) {
                         validItemsInJSON++;
@@ -749,7 +764,12 @@ class IsaacAchievementParser {
         }
         
         // Проверяем, что предмет есть в JSON данных (как в официальном viewer'е)
-        // Если предмет есть в ISAAC_ITEMS_DATA, то он валидный
+        // Если предмет есть в полных данных предметов, то он валидный
+        if (this.fullItemsData && this.fullItemsData[id]) {
+            return true;
+        }
+        
+        // Fallback: проверяем базовые данные
         if (ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance && ISAAC_ITEMS_DATA.repentance[id]) {
             return true;
         }
@@ -764,7 +784,19 @@ class IsaacAchievementParser {
     }
 
     getItemData(itemId) {
-        // Check Repentance items first
+        // Check full items data first
+        if (this.fullItemsData && this.fullItemsData[itemId]) {
+            const item = this.fullItemsData[itemId];
+            return {
+                name: item.name || `Item ${itemId}`,
+                quality: this.getItemQuality(itemId),
+                type: this.getItemType(itemId),
+                description: item.text || item.description || '',
+                pool: this.getItemPool(itemId)
+            };
+        }
+        
+        // Check Repentance items
         if (ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance[itemId]) {
             return ISAAC_ITEMS_DATA.repentance[itemId];
         }
