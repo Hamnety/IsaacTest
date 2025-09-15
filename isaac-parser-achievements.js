@@ -944,54 +944,12 @@ class IsaacAchievementParser {
     }
 
     updateTabs() {
-        this.updateAchievementsTab();
         this.updateCharactersTab();
         this.updateChallengesTab();
         this.updateItemsTab();
         this.updateRawTab();
     }
 
-    updateAchievementsTab() {
-        const container = document.getElementById('achievementsList');
-        container.innerHTML = '';
-        
-        // Показываем достижения по категориям
-        const categories = {
-            characters: this.analysisResults.achievements.filter(a => a.type === 'character'),
-            challenges: this.analysisResults.achievements.filter(a => a.type === 'challenge'),
-            other: this.analysisResults.achievements.filter(a => a.type === 'other')
-        };
-        
-        for (const [category, achievements] of Object.entries(categories)) {
-            if (achievements.length > 0) {
-                const categoryDiv = document.createElement('div');
-                categoryDiv.className = 'achievement-category';
-                categoryDiv.innerHTML = `<h3>${this.getCategoryName(category)} (${achievements.filter(a => a.unlocked).length}/${achievements.length})</h3>`;
-                container.appendChild(categoryDiv);
-                
-                achievements.slice(0, 20).forEach(achievement => {
-                    const div = document.createElement('div');
-                    div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
-                    div.innerHTML = `
-                        <strong>${achievement.name}</strong><br>
-                        <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}">
-                            ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
-                        </span>
-                    `;
-                    container.appendChild(div);
-                });
-            }
-        }
-    }
-
-    getCategoryName(category) {
-        const names = {
-            characters: 'Персонажи',
-            challenges: 'Челленджи', 
-            other: 'Другие достижения'
-        };
-        return names[category] || category;
-    }
 
     updateCharactersTab() {
         const container = document.getElementById('charactersList');
