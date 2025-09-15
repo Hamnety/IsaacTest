@@ -435,27 +435,32 @@ class IsaacAchievementParser {
         const maxItems = 1000; // Максимальный ID предмета
         
         for (let i = 1; i < maxItems; i++) {
-            const itemData = this.getItemData(i);
-            
-            // Проверяем, существует ли предмет с таким ID
-            if (!this.isValidCollectibleID(i, itemData)) {
-                continue; // Пропускаем несуществующие предметы
-            }
-            
             // Простая эвристика: ищем байты со значением 1 в области предметов
             const isFound = this.searchForItemPattern(i);
             
-            if (isFound) foundItems++;
+            // Если предмет "найден", проверяем его валидность
+            if (isFound) {
+                const itemData = this.getItemData(i);
+                if (!this.isValidCollectibleID(i, itemData)) {
+                    continue; // Пропускаем невалидные предметы
+                }
+                
+                foundItems++;
+            }
             
-            this.analysisResults.items[i-1] = {
-                id: i,
-                name: itemData.name,
-                found: isFound,
-                type: itemData.type,
-                quality: itemData.quality,
-                description: itemData.description,
-                pool: itemData.pool
-            };
+            // Добавляем предмет в результаты (только если он валидный)
+            const itemData = this.getItemData(i);
+            if (this.isValidCollectibleID(i, itemData)) {
+                this.analysisResults.items[i-1] = {
+                    id: i,
+                    name: itemData.name,
+                    found: isFound,
+                    type: itemData.type,
+                    quality: itemData.quality,
+                    description: itemData.description,
+                    pool: itemData.pool
+                };
+            }
         }
         
         this.analysisResults.debugInfo.push(`Предметы (эвристика): ${foundItems} найдено`);
@@ -569,28 +574,37 @@ class IsaacAchievementParser {
             let foundItemsCount = 0;
             
             for (let i = 1; i < maxItems; i++) {
-                // Проверяем, существует ли предмет с таким ID
-                const itemData = this.getItemData(i);
-                if (!this.isValidCollectibleID(i, itemData)) {
-                    continue; // Пропускаем несуществующие предметы
-                }
-                
-                validItemsCount++;
-                
                 // Проверяем, был ли предмет "потроган" (seenById)
                 const isFound = seenById[i] !== 0;
                 
-                if (isFound) foundItemsCount++;
+                // Если предмет "потроган", проверяем его валидность
+                if (isFound) {
+                    const itemData = this.getItemData(i);
+                    if (!this.isValidCollectibleID(i, itemData)) {
+                        continue; // Пропускаем невалидные предметы
+                    }
+                    
+                    foundItemsCount++;
+                }
                 
-                this.analysisResults.items[i-1] = {
-                    id: i,
-                    name: itemData.name,
-                    found: isFound,
-                    type: itemData.type,
-                    quality: itemData.quality,
-                    description: itemData.description,
-                    pool: itemData.pool
-                };
+                // Считаем общее количество валидных предметов для статистики
+                const itemData = this.getItemData(i);
+                if (this.isValidCollectibleID(i, itemData)) {
+                    validItemsCount++;
+                }
+                
+                // Добавляем предмет в результаты (только если он валидный)
+                if (this.isValidCollectibleID(i, itemData)) {
+                    this.analysisResults.items[i-1] = {
+                        id: i,
+                        name: itemData.name,
+                        found: isFound,
+                        type: itemData.type,
+                        quality: itemData.quality,
+                        description: itemData.description,
+                        pool: itemData.pool
+                    };
+                }
             }
             
             foundItems = foundItemsCount;
