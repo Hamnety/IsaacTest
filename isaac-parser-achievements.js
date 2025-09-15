@@ -14,8 +14,13 @@ class IsaacAchievementParser {
             debugInfo: []
         };
         
-        // Инициализируем данные игры
-        this.gameData = null;
+        // Инициализируем данные игры с fallback данными
+        this.gameData = {
+            characters: {},
+            challenges: {},
+            completionMarks: {},
+            totals: { characters: 34, challenges: 45, items: 720, achievements: 640 }
+        };
         
         this.initializeUI();
     }
@@ -23,14 +28,43 @@ class IsaacAchievementParser {
     async loadGameData() {
         try {
             const response = await fetch('isaac-game-data.json');
-            this.gameData = await response.json();
-            this.analysisResults.debugInfo.push('Данные игры загружены из JSON файла');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            const data = await response.json();
+            
+            // Проверяем структуру данных
+            if (data.characters && data.challenges && data.totals) {
+                this.gameData = data;
+                this.analysisResults.debugInfo.push('Данные игры загружены из JSON файла');
+            } else {
+                throw new Error('Неверная структура JSON файла');
+            }
         } catch (error) {
             this.analysisResults.debugInfo.push('Ошибка загрузки данных игры: ' + error.message);
-            // Fallback данные
+            this.analysisResults.debugInfo.push('Используем fallback данные');
+            
+            // Fallback данные с базовыми персонажами и челленджами
             this.gameData = {
-                characters: {},
-                challenges: {},
+                characters: {
+                    "1": { "name": "Магдалена", "unlock": "Имейте 7 или больше контейнеров красных сердец одновременно" },
+                    "2": { "name": "Каин", "unlock": "Держите 55 или больше монет одновременно" },
+                    "3": { "name": "Иуда", "unlock": "Победите Сатану/Satan" },
+                    "32": { "name": "???", "unlock": "Победите Сердце Мамы/Mom's Heart 10 раз" },
+                    "42": { "name": "Ева", "unlock": "Не поднимайте никаких сердец 2 этажа подряд" },
+                    "67": { "name": "Самсон", "unlock": "Пройдите 2 этажа подряд без получения урона" },
+                    "80": { "name": "Лазарь", "unlock": "Имейте 4 или больше сердец души одновременно" },
+                    "79": { "name": "Азазель", "unlock": "Совершите 3 сделки с Дьяволом в одном забеге" },
+                    "81": { "name": "Эдем", "unlock": "Завершите 4 главу" },
+                    "82": { "name": "Лост (Потерянный)", "unlock": "Специальные условия смерти" }
+                },
+                challenges: {
+                    "89": { "name": "Кромешная тьма", "unlock": "Завершите 'Кромешная тьма/Pitch Black' испытание #1" },
+                    "90": { "name": "Сноб", "unlock": "Завершите 'Сноб/High Brow' испытание #2" },
+                    "91": { "name": "Травма головы", "unlock": "Завершите 'Травма головы/Head Trauma' испытание #3" },
+                    "92": { "name": "Тьма наступает", "unlock": "Завершите 'Тьма наступает/Darkness Falls' испытание #4" },
+                    "93": { "name": "Танк", "unlock": "Завершите 'Танк/The Tank' испытание #5" }
+                },
                 completionMarks: {},
                 totals: { characters: 34, challenges: 45, items: 720, achievements: 640 }
             };
@@ -288,7 +322,7 @@ class IsaacAchievementParser {
         await this.parseAchievements(sections);
         
         // Анализируем прогресс на основе достижений
-        this.analyzeProgressFromAchievements();
+        await this.analyzeProgressFromAchievements();
     }
 
     findSections() {
@@ -468,11 +502,17 @@ class IsaacAchievementParser {
         return 'other';
     }
 
-    analyzeProgressFromAchievements() {
+    async analyzeProgressFromAchievements() {
         // Проверяем, загружены ли данные игры
-        if (!this.gameData) {
-            this.analysisResults.debugInfo.push('Ошибка: Данные игры не загружены');
-            return;
+        if (!this.gameData || !this.gameData.characters || !this.gameData.challenges) {
+            this.analysisResults.debugInfo.push('Ошибка: Данные игры не загружены или неполные');
+            this.analysisResults.debugInfo.push('Попытка загрузки данных...');
+            await this.loadGameData();
+            
+            if (!this.gameData || !this.gameData.characters || !this.gameData.challenges) {
+                this.analysisResults.debugInfo.push('Критическая ошибка: Не удалось загрузить данные игры');
+                return;
+            }
         }
         
         // Анализируем персонажей на основе достижений
