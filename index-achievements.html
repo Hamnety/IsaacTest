@@ -318,6 +318,22 @@
         .tab-content.active {
             display: block;
         }
+
+        .item-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        /* Специальный стиль только для достижений */
+        .achievements-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+            gap: 10px !important;
+            width: 100% !important;
+            grid-auto-rows: min-content !important;
+        }
+
         .item-card {
             background: #2a0a0a;
             border-radius: 0;

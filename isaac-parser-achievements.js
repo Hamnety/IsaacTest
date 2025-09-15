@@ -996,10 +996,12 @@ class IsaacAchievementParser {
         
         // Создаем один общий контейнер для ВСЕХ достижений
         const mainGrid = document.createElement('div');
+        mainGrid.className = 'achievements-grid'; // Специальный класс только для достижений
         mainGrid.style.display = 'grid';
         mainGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(150px, 1fr))';
         mainGrid.style.gap = '10px';
         mainGrid.style.width = '100%';
+        mainGrid.style.gridAutoRows = 'min-content';
         
         // Собираем ВСЕ достижения в один массив по порядку: персонажи, челленджи, предметы, другие
         const allAchievements = [
