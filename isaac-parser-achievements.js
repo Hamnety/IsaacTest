@@ -14,13 +14,27 @@ class IsaacAchievementParser {
             debugInfo: []
         };
         
-        // Данные о достижениях из achivments.txt
-        this.achievementData = this.loadAchievementData();
-        this.characterData = this.loadCharacterData();
-        this.challengeData = this.loadChallengeData();
-        this.itemData = this.loadItemData();
+        // Инициализируем данные игры
+        this.gameData = null;
         
         this.initializeUI();
+    }
+
+    async loadGameData() {
+        try {
+            const response = await fetch('isaac-game-data.json');
+            this.gameData = await response.json();
+            this.analysisResults.debugInfo.push('Данные игры загружены из JSON файла');
+        } catch (error) {
+            this.analysisResults.debugInfo.push('Ошибка загрузки данных игры: ' + error.message);
+            // Fallback данные
+            this.gameData = {
+                characters: {},
+                challenges: {},
+                completionMarks: {},
+                totals: { characters: 34, challenges: 45, items: 720, achievements: 640 }
+            };
+        }
     }
 
     loadAchievementData() {
@@ -214,6 +228,11 @@ class IsaacAchievementParser {
 
     async parseFile() {
         this.analysisResults.debugInfo = [];
+        
+        // Инициализируем данные игры, если они не загружены
+        if (!this.gameData) {
+            await this.loadGameData();
+        }
         
         // Проверяем заголовок
         const header = this.getString(0, 16);
@@ -450,11 +469,17 @@ class IsaacAchievementParser {
     }
 
     analyzeProgressFromAchievements() {
+        // Проверяем, загружены ли данные игры
+        if (!this.gameData) {
+            this.analysisResults.debugInfo.push('Ошибка: Данные игры не загружены');
+            return;
+        }
+        
         // Анализируем персонажей на основе достижений
         this.analysisResults.characters = [];
         let unlockedCharacters = 0;
         
-        for (const [id, charData] of Object.entries(this.achievementData.characters)) {
+        for (const [id, charData] of Object.entries(this.gameData.characters)) {
             const achievementId = parseInt(id);
             const isUnlocked = this.analysisResults.achievements[achievementId-1]?.unlocked || false;
             
@@ -464,7 +489,8 @@ class IsaacAchievementParser {
                 id: achievementId,
                 name: charData.name,
                 unlocked: isUnlocked,
-                unlockCondition: charData.unlock
+                unlockCondition: charData.unlock,
+                completionMarks: this.getCharacterCompletionMarks(achievementId, isUnlocked)
             });
         }
         
@@ -472,7 +498,7 @@ class IsaacAchievementParser {
         this.analysisResults.challenges = [];
         let completedChallenges = 0;
         
-        for (const [id, challengeData] of Object.entries(this.achievementData.challenges)) {
+        for (const [id, challengeData] of Object.entries(this.gameData.challenges)) {
             const achievementId = parseInt(id);
             const isCompleted = this.analysisResults.achievements[achievementId-1]?.unlocked || false;
             
@@ -519,16 +545,96 @@ class IsaacAchievementParser {
         }
         
         // Обновляем статистику
-        this.analysisResults.stats = {
+        this.analysisResults.statistics = {
             achievementsUnlocked: this.analysisResults.achievements.filter(a => a.unlocked).length,
             charactersUnlocked: unlockedCharacters,
             challengesCompleted: completedChallenges,
             itemsFound: foundItems
         };
         
-        this.analysisResults.debugInfo.push(`Персонажи: ${unlockedCharacters}/${this.characterData.total} разблокировано`);
-        this.analysisResults.debugInfo.push(`Челленджи: ${completedChallenges}/${this.challengeData.total} завершено`);
-        this.analysisResults.debugInfo.push(`Предметы: ${foundItems}/${this.itemData.total} найдено`);
+        this.analysisResults.debugInfo.push(`Персонажи: ${unlockedCharacters}/${this.gameData.totals.characters} разблокировано`);
+        this.analysisResults.debugInfo.push(`Челленджи: ${completedChallenges}/${this.gameData.totals.challenges} завершено`);
+        this.analysisResults.debugInfo.push(`Предметы: ${foundItems}/${this.gameData.totals.items} найдено`);
+    }
+    
+    getCharacterCompletionMarks(characterId, isUnlocked) {
+        if (!isUnlocked) return [];
+        
+        // Получаем отметки из JSON данных
+        const characterIndex = this.getCharacterIndex(characterId);
+        if (characterIndex && this.gameData.completionMarks[characterIndex]) {
+            const marks = this.gameData.completionMarks[characterIndex].marks;
+            return marks.map(mark => ({
+                name: mark,
+                completed: this.checkCompletionMark(characterId, mark)
+            }));
+        }
+        
+        // Fallback - базовые отметки
+        const marks = [
+            { name: "Isaac", completed: false },
+            { name: "Satan", completed: false },
+            { name: "???", completed: false },
+            { name: "The Lamb", completed: false },
+            { name: "Boss Rush", completed: false },
+            { name: "Hush", completed: false },
+            { name: "Mega Satan", completed: false },
+            { name: "Delirium", completed: false },
+            { name: "Greed Mode", completed: false },
+            { name: "Greedier Mode", completed: false },
+            { name: "Mother", completed: false },
+            { name: "The Beast", completed: false }
+        ];
+        
+        return marks;
+    }
+    
+    getCharacterIndex(achievementId) {
+        // Маппинг ID достижений на индексы персонажей
+        const characterMap = {
+            1: 1,   // Магдалена
+            2: 2,   // Каин
+            3: 3,   // Иуда
+            32: 4,  // ???
+            42: 5,  // Ева
+            67: 6,  // Самсон
+            80: 7,  // Лазарь
+            79: 8,  // Азазель
+            81: 9,  // Эдем
+            82: 10, // Лост
+            199: 11, // Лилит
+            251: 12, // Хранитель
+            340: 13, // Аполион
+            390: 14, // Забытый
+            404: 15, // Бетани
+            405: 16, // Иаков и Исав
+            474: 17, // Порченный Айзек
+            475: 18, // Порченная Магдалена
+            476: 19, // Порченный Каин
+            477: 20, // Порченный Иуда
+            478: 21, // Порченный ???
+            479: 22, // Порченный Еву
+            480: 23, // Порченный Самсон
+            481: 24, // Порченный Азазель
+            482: 25, // Порченный Лазарь
+            483: 26, // Порченный Иден
+            484: 27, // Порченный Лост
+            485: 28, // Порченный Лилит
+            486: 29, // Порченный Хранитель
+            487: 30, // Порченный Аполлион
+            488: 31, // Порченный Забытый
+            489: 32, // Порченный Беттани
+            490: 33  // Порченный Иаков и Исав
+        };
+        
+        return characterMap[achievementId];
+    }
+    
+    checkCompletionMark(characterId, markName) {
+        // Здесь можно добавить логику для проверки завершенных отметок
+        // на основе достижений или других данных из файла сохранения
+        // Пока возвращаем false для всех отметок
+        return false;
     }
 
     getItemData(itemId) {
