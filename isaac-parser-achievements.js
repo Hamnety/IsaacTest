@@ -306,6 +306,11 @@ class IsaacAchievementParser {
         const sections = this.findSections();
         this.analysisResults.debugInfo.push(`Найдено секций: ${sections.length}`);
         
+        // Отладочная информация о секциях
+        sections.forEach((section, index) => {
+            this.analysisResults.debugInfo.push(`Секция ${index + 1}: тип ${section.type}, размер ${section.size}, количество ${section.count}`);
+        });
+        
         // Парсим достижения
         await this.parseAchievements(sections);
         
@@ -572,6 +577,15 @@ class IsaacAchievementParser {
             
             let validItemsCount = 0;
             let foundItemsCount = 0;
+            let totalFoundInArray = 0;
+            
+            // Сначала посчитаем, сколько всего "потроган" предметов в массиве
+            for (let i = 1; i < maxItems; i++) {
+                if (seenById[i] !== 0) {
+                    totalFoundInArray++;
+                }
+            }
+            this.analysisResults.debugInfo.push(`Всего "потроган" предметов в массиве: ${totalFoundInArray}`);
             
             for (let i = 1; i < maxItems; i++) {
                 // Проверяем, был ли предмет "потроган" (seenById)
@@ -581,6 +595,7 @@ class IsaacAchievementParser {
                 if (isFound) {
                     const itemData = this.getItemData(i);
                     if (!this.isValidCollectibleID(i, itemData)) {
+                        this.analysisResults.debugInfo.push(`Предмет ${i} потроган, но невалидный: ${itemData.name}`);
                         continue; // Пропускаем невалидные предметы
                     }
                     
