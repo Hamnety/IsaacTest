@@ -634,8 +634,10 @@ class IsaacAchievementParser {
                 }
                 
                 // Считаем общее количество валидных предметов для статистики
-                const itemData = this.getItemData(i);
-                if (this.isValidCollectibleID(i, itemData)) {
+                // Только те предметы, которые есть в JSON данных
+                if (this.fullItemsData && this.fullItemsData[i]) {
+                    validItemsCount++;
+                } else if (!this.fullItemsData && ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance && ISAAC_ITEMS_DATA.repentance[i]) {
                     validItemsCount++;
                 }
                 
@@ -770,17 +772,12 @@ class IsaacAchievementParser {
         }
         
         // Fallback: проверяем базовые данные
-        if (ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance && ISAAC_ITEMS_DATA.repentance[id]) {
+        if (!this.fullItemsData && ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance && ISAAC_ITEMS_DATA.repentance[id]) {
             return true;
         }
         
-        // Fallback: более мягкая валидация
-        const isValid = itemData.name && 
-                       itemData.name !== 'Unknown Item' &&
-                       !itemData.name.includes('undefined') &&
-                       !itemData.name.includes('null');
-        
-        return isValid;
+        // Если нет полных данных, не считаем предмет валидным
+        return false;
     }
 
     getItemData(itemId) {
