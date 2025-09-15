@@ -1019,10 +1019,10 @@ class IsaacAchievementParser {
                 
                 categoryDiv.innerHTML = `<h3>${this.getCategoryName(category)} (${achievements.filter(a => a.unlocked).length}/${achievements.length})</h3>`;
                 
-                // Создаем сетку для достижений в каждой категории
+                // Создаем горизонтальную сетку для достижений в каждой категории
                 const achievementsGrid = document.createElement('div');
-                achievementsGrid.style.display = 'grid';
-                achievementsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(120px, 1fr))';
+                achievementsGrid.style.display = 'flex';
+                achievementsGrid.style.flexWrap = 'wrap';
                 achievementsGrid.style.gap = '6px';
                 achievementsGrid.style.marginTop = '10px';
                 achievementsGrid.style.width = '100%';
@@ -1032,6 +1032,8 @@ class IsaacAchievementParser {
                     div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
                     div.style.padding = '8px';
                     div.style.minHeight = '60px';
+                    div.style.width = '120px';
+                    div.style.flexShrink = '0';
                     div.innerHTML = `
                         <strong style="font-size: 0.5rem;">${achievement.name}</strong><br>
                         <div style="color: #a6adc8; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
