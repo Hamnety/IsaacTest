@@ -503,7 +503,15 @@ class IsaacAchievementParser {
         
         for (const [id, charData] of Object.entries(this.gameData.characters)) {
             const achievementId = parseInt(id);
-            const isUnlocked = this.analysisResults.achievements[achievementId-1]?.unlocked || false;
+            let isUnlocked = false;
+            
+            // Исаак (ID 0) доступен с самого начала
+            if (achievementId === 0) {
+                isUnlocked = true;
+            } else {
+                // Остальные персонажи разблокируются через достижения
+                isUnlocked = this.analysisResults.achievements[achievementId-1]?.unlocked || false;
+            }
             
             if (isUnlocked) unlockedCharacters++;
             
@@ -534,23 +542,30 @@ class IsaacAchievementParser {
             });
         }
         
-        // Анализируем предметы
+        // Анализируем предметы (Collectibles Touched)
         this.analysisResults.items = [];
         let foundItems = 0;
         
-        // Ищем секцию предметов (тип 4)
+        // Ищем секцию предметов (тип 4 - CollectiblesChunk)
         const itemSection = this.findSections().find(s => s.type === 4);
         if (itemSection) {
-            const maxItems = Math.min(itemSection.count, 800); // Ограничиваем для старых версий
+            // Согласно официальному viewer'у, предметы считаются как seenById
+            // ID от 1 до 999, но не все ID существуют
+            const maxItems = 1000; // Максимальный ID предмета
             
             for (let i = 1; i < maxItems; i++) {
-                const itemOffset = i;
-                const isFound = itemOffset < itemSection.data.length && 
-                               itemSection.data[itemOffset] === 1;
+                // Проверяем, есть ли предмет с таким ID в данных
+                const itemData = this.getItemData(i);
+                if (!itemData || itemData.name === `Item ${i}`) {
+                    continue; // Пропускаем несуществующие предметы
+                }
+                
+                // Проверяем, был ли предмет "потроган" (seenById)
+                const isFound = i < itemSection.data.length && 
+                               itemSection.data[i] === 1;
                 
                 if (isFound) foundItems++;
                 
-                const itemData = this.getItemData(i);
                 this.analysisResults.items[i-1] = {
                     id: i,
                     name: itemData.name,

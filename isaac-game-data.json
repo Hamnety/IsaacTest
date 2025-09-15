@@ -1,5 +1,6 @@
 {
   "characters": {
+    "0": { "name": "Исаак", "unlock": "" },
     "1": { "name": "Магдалена", "unlock": "Имейте 7 или больше контейнеров красных сердец одновременно" },
     "2": { "name": "Каин", "unlock": "Держите 55 или больше монет одновременно" },
     "3": { "name": "Иуда", "unlock": "Победите Сатану/Satan" },
@@ -118,7 +119,7 @@
     "34": { "name": "Порченный Иаков и Исав", "marks": ["Isaac", "Satan", "???", "The Lamb", "Boss Rush", "Hush", "Mega Satan", "Delirium", "Greed Mode", "Greedier Mode", "Mother", "The Beast"] }
   },
   "totals": {
-    "characters": 34,
+    "characters": 35,
     "challenges": 45,
     "items": 720,
     "achievements": 640
