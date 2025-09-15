@@ -1035,13 +1035,13 @@ class IsaacAchievementParser {
         
         // Показываем ВСЕ достижения одним списком
         allAchievements.forEach(achievement => {
-            const div = document.createElement('div');
-            div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
+                    const div = document.createElement('div');
+                    div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
             div.style.padding = '10px';
             div.style.minHeight = '80px';
             div.style.fontSize = '0.5rem';
             
-            div.innerHTML = `
+                    div.innerHTML = `
                 <strong style="font-size: 0.5rem;">#${achievement.id} ${achievement.name}</strong><br>
                 <div style="color: #a6adc8; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
                     ${achievement.description}
@@ -1050,11 +1050,11 @@ class IsaacAchievementParser {
                     ${achievement.unlockCondition}
                 </div>
                 <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.4rem;">
-                    ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
-                </span>
-            `;
+                            ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
+                        </span>
+                    `;
             mainGrid.appendChild(div);
-        });
+                });
         
         container.appendChild(mainGrid);
     }
