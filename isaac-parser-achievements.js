@@ -587,6 +587,17 @@ class IsaacAchievementParser {
             }
             this.analysisResults.debugInfo.push(`Всего "потроган" предметов в массиве: ${totalFoundInArray}`);
             
+            // Посчитаем, сколько валидных предметов есть в JSON данных
+            let validItemsInJSON = 0;
+            if (ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance) {
+                for (let i = 1; i < 1000; i++) {
+                    if (ISAAC_ITEMS_DATA.repentance[i]) {
+                        validItemsInJSON++;
+                    }
+                }
+            }
+            this.analysisResults.debugInfo.push(`Валидных предметов в JSON: ${validItemsInJSON}`);
+            
             for (let i = 1; i < maxItems; i++) {
                 // Проверяем, был ли предмет "потроган" (seenById)
                 const isFound = seenById[i] !== 0;
@@ -731,11 +742,21 @@ class IsaacAchievementParser {
             return false;
         }
         
-        // Проверяем, что предмет имеет валидные данные
-        // Разрешаем fallback имена, но исключаем явно невалидные
+        // Проверяем, что предмет есть в JSON данных (как в официальном viewer'е)
+        // Если предмет есть в ISAAC_ITEMS_DATA, то он валидный
+        if (ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance && ISAAC_ITEMS_DATA.repentance[id]) {
+            return true;
+        }
+        
+        // Fallback: проверяем базовые условия
         const isValid = itemData.name && 
                        itemData.name !== 'Unknown Item' &&
-                       !itemData.name.includes('undefined');
+                       !itemData.name.includes('undefined') &&
+                       !itemData.name.startsWith('Item ') &&
+                       !itemData.name.startsWith('Active Item ') &&
+                       !itemData.name.startsWith('Passive Item ') &&
+                       !itemData.name.startsWith('Trinket ') &&
+                       !itemData.name.startsWith('Special Item ');
         
         return isValid;
     }
