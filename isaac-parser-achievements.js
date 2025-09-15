@@ -456,7 +456,7 @@ class IsaacAchievementParser {
             // Добавляем предмет в результаты (только если он валидный)
             const itemData = this.getItemData(i);
             if (this.isValidCollectibleID(i, itemData)) {
-                this.analysisResults.items[i-1] = {
+                this.analysisResults.items.push({
                     id: i,
                     name: itemData.name,
                     found: isFound,
@@ -464,7 +464,7 @@ class IsaacAchievementParser {
                     quality: itemData.quality,
                     description: itemData.description,
                     pool: itemData.pool
-                };
+                });
             }
         }
         
@@ -621,7 +621,7 @@ class IsaacAchievementParser {
                 
                 // Добавляем предмет в результаты (только если он валидный)
                 if (this.isValidCollectibleID(i, itemData)) {
-                    this.analysisResults.items[i-1] = {
+                    this.analysisResults.items.push({
                         id: i,
                         name: itemData.name,
                         found: isFound,
@@ -629,7 +629,7 @@ class IsaacAchievementParser {
                         quality: itemData.quality,
                         description: itemData.description,
                         pool: itemData.pool
-                    };
+                    });
                 }
             }
             
