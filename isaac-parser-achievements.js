@@ -555,6 +555,8 @@ class IsaacAchievementParser {
         // Ищем секцию предметов (тип 4 - CollectiblesChunk)
         const itemSection = this.findSections().find(s => s.type === 4);
         if (itemSection) {
+            this.analysisResults.debugInfo.push(`Найдена секция предметов: тип ${itemSection.type}, длина ${itemSection.data.length}`);
+            
             // Согласно официальному Isaac Save Viewer:
             // 1. Считаем только существующие предметы (ID от 1 до 999)
             // 2. Проверяем seenById массив: если things[i] !== 0, то предмет "потроган"
@@ -563,6 +565,9 @@ class IsaacAchievementParser {
             const seenById = itemSection.data;
             const maxItems = Math.min(seenById.length, 1000);
             
+            let validItemsCount = 0;
+            let foundItemsCount = 0;
+            
             for (let i = 1; i < maxItems; i++) {
                 // Проверяем, существует ли предмет с таким ID
                 const itemData = this.getItemData(i);
@@ -570,10 +575,12 @@ class IsaacAchievementParser {
                     continue; // Пропускаем несуществующие предметы
                 }
                 
+                validItemsCount++;
+                
                 // Проверяем, был ли предмет "потроган" (seenById)
                 const isFound = seenById[i] !== 0;
                 
-                if (isFound) foundItems++;
+                if (isFound) foundItemsCount++;
                 
                 this.analysisResults.items[i-1] = {
                     id: i,
@@ -585,6 +592,9 @@ class IsaacAchievementParser {
                     pool: itemData.pool
                 };
             }
+            
+            foundItems = foundItemsCount;
+            this.analysisResults.debugInfo.push(`Валидных предметов: ${validItemsCount}, найдено: ${foundItemsCount}`);
         } else {
             this.analysisResults.debugInfo.push('Предупреждение: Не найдена секция предметов, используем эвристический поиск');
             this.parseItemsHeuristic();
@@ -685,12 +695,20 @@ class IsaacAchievementParser {
     
     isValidCollectibleID(id, itemData) {
         // Валидация существования предмета по логике официального viewer'а
-        if (!itemData) return false;
-        if (itemData.name === `Item ${id}`) return false;
-        if (id <= 0 || id >= 1000) return false;
+        if (!itemData) {
+            return false;
+        }
+        if (id <= 0 || id >= 1000) {
+            return false;
+        }
         
         // Проверяем, что предмет имеет валидные данные
-        return itemData.name && itemData.name !== 'Unknown Item';
+        // Разрешаем fallback имена, но исключаем явно невалидные
+        const isValid = itemData.name && 
+                       itemData.name !== 'Unknown Item' &&
+                       !itemData.name.includes('undefined');
+        
+        return isValid;
     }
 
     getItemData(itemId) {
