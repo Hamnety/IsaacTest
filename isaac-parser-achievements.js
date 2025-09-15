@@ -42,12 +42,12 @@ class IsaacAchievementParser {
             }
             
             // Загружаем данные достижений
-            const achievementsResponse = await fetch('isaac-achievements-sorted.json');
+            const achievementsResponse = await fetch('achievements_unlock_final.json');
             if (achievementsResponse.ok) {
                 this.achievementsData = await achievementsResponse.json();
-                this.analysisResults.debugInfo.push('Отсортированные данные достижений загружены');
+                this.analysisResults.debugInfo.push('Финальные данные достижений загружены');
             } else {
-                this.analysisResults.debugInfo.push('Не удалось загрузить отсортированные данные достижений');
+                this.analysisResults.debugInfo.push('Не удалось загрузить финальные данные достижений');
             }
             
             // Загружаем константы предметов
