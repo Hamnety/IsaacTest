@@ -96,6 +96,11 @@
             border-color: rgba(203, 166, 247, 0.3);
         }
 
+        .parser-card.universal {
+            --accent-color: #f5c2e7;
+            border-color: rgba(245, 194, 231, 0.3);
+        }
+
         .parser-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
@@ -504,6 +509,64 @@
                 </button>
             </div>
 
+            <div class="parser-card universal">
+                <div class="parser-title">
+                    <i class="fas fa-globe"></i>
+                    Universal Edition
+                    <span class="parser-version">Official</span>
+                </div>
+                <p class="parser-description">
+                    Универсальный парсер на основе официального Isaac Save Viewer от Zamiell. 
+                    Поддерживает все версии Isaac и использует структуру файлов, обработанную через Kaitai Struct.
+                </p>
+                
+                <div class="parser-features">
+                    <div class="feature">
+                        <i class="fas fa-globe feature-icon"></i>
+                        <span>Поддерживает все версии Isaac</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-microscope feature-icon"></i>
+                        <span>Основан на Kaitai Struct декодере</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-layer-group feature-icon"></i>
+                        <span>11 типов секций файла</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt feature-icon"></i>
+                        <span>Оптимизированные алгоритмы</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-universal-access feature-icon"></i>
+                        <span>Автоматическое определение версии</span>
+                    </div>
+                </div>
+
+                <div class="parser-stats">
+                    <div class="stat">
+                        <div class="stat-value">95%+</div>
+                        <div class="stat-label">Точность</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">All Versions</div>
+                        <div class="stat-label">Оптимизирован для</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">All</div>
+                        <div class="stat-label">Персонажей</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">All</div>
+                        <div class="stat-label">Челленджей</div>
+                    </div>
+                </div>
+
+                <button class="parser-button" onclick="location.href='index-universal.html'">
+                    <i class="fas fa-globe"></i> Попробовать Universal Edition
+                </button>
+            </div>
+
             <div class="parser-card accurate">
                 <div class="parser-title">
                     <i class="fas fa-microscope"></i>
@@ -574,12 +637,14 @@
                         <th>Debug Edition</th>
                         <th>Improved Edition</th>
                         <th>Repentance Edition</th>
+                        <th>Universal Edition</th>
                         <th>Accurate Edition</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Repentance файлы</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
@@ -591,12 +656,14 @@
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-partial"><i class="fas fa-exclamation"></i> Частично</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                     </tr>
                     <tr>
                         <td>Поиск реальных данных</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                     </tr>
                     <tr>
@@ -605,9 +672,11 @@
                         <td class="check-partial"><i class="fas fa-exclamation"></i> Частично</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                     </tr>
                     <tr>
                         <td>Hex просмотр</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Да</td>
@@ -618,6 +687,7 @@
                         <td class="check-yes"><i class="fas fa-check"></i> Расширенный</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Улучшенный</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Детальный</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> Универсальный</td>
                         <td class="check-yes"><i class="fas fa-check"></i> Базовый</td>
                     </tr>
                     <tr>
@@ -626,12 +696,14 @@
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                         <td class="check-yes"><i class="fas fa-check"></i> CRC32</td>
                         <td class="check-yes"><i class="fas fa-check"></i> CRC32</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> CRC32</td>
                     </tr>
                     <tr>
                         <td>Completion marks</td>
                         <td class="check-partial"><i class="fas fa-exclamation"></i> 12 (эвристика)</td>
                         <td class="check-partial"><i class="fas fa-exclamation"></i> 12 (умный поиск)</td>
                         <td class="check-yes"><i class="fas fa-check"></i> 12 (точно)</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> 12 (универсально)</td>
                         <td class="check-yes"><i class="fas fa-check"></i> 9 (точно)</td>
                     </tr>
                     <tr>
@@ -639,6 +711,7 @@
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                         <td class="check-no"><i class="fas fa-times"></i> Нет</td>
                         <td class="check-yes"><i class="fas fa-check"></i> 10 секций</td>
+                        <td class="check-yes"><i class="fas fa-check"></i> 11 секций</td>
                         <td class="check-yes"><i class="fas fa-check"></i> 10 секций</td>
                     </tr>
                 </tbody>
@@ -662,6 +735,9 @@
                 </button>
                 <button style="background: linear-gradient(135deg, #cba6f7, #a6e3a1); color: #1e1e2e; border: none; padding: 10px 20px; border-radius: 8px; font-family: inherit; font-weight: 600; cursor: pointer; font-size: 0.9rem;" onclick="location.href='index-repentance.html'">
                     Repentance Edition
+                </button>
+                <button style="background: linear-gradient(135deg, #f5c2e7, #a6e3a1); color: #1e1e2e; border: none; padding: 10px 20px; border-radius: 8px; font-family: inherit; font-weight: 600; cursor: pointer; font-size: 0.9rem;" onclick="location.href='index-universal.html'">
+                    Universal Edition
                 </button>
                 <button style="background: linear-gradient(135deg, #a6e3a1, #74c7ec); color: #1e1e2e; border: none; padding: 10px 20px; border-radius: 8px; font-family: inherit; font-weight: 600; cursor: pointer; font-size: 0.9rem;" onclick="location.href='index-accurate.html'">
                     Accurate Edition
