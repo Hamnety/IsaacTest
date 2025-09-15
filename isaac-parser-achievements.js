@@ -46,6 +46,7 @@ class IsaacAchievementParser {
             if (achievementsResponse.ok) {
                 this.achievementsData = await achievementsResponse.json();
                 this.analysisResults.debugInfo.push('Финальные данные достижений загружены');
+                this.analysisResults.debugInfo.push(`Загружено ${Object.keys(this.achievementsData.achievements).length} достижений`);
             } else {
                 this.analysisResults.debugInfo.push('Не удалось загрузить финальные данные достижений');
             }
@@ -385,6 +386,12 @@ class IsaacAchievementParser {
     }
 
     async parseAchievements(sections) {
+        // Отладочная информация о загруженных данных
+        this.analysisResults.debugInfo.push(`Данные достижений загружены: ${this.achievementsData ? 'Да' : 'Нет'}`);
+        if (this.achievementsData) {
+            this.analysisResults.debugInfo.push(`Количество достижений в данных: ${Object.keys(this.achievementsData.achievements).length}`);
+        }
+        
         // Ищем секцию достижений (тип 1)
         const achievementSection = sections.find(s => s.type === 1);
         if (!achievementSection) {
@@ -535,7 +542,11 @@ class IsaacAchievementParser {
         if (this.gameData && this.gameData.challenges[id]) {
             return this.gameData.challenges[id].name;
         }
-        return `Achievement ${id}`;
+        // Отладочная информация
+        if (id <= 10) {
+            this.analysisResults.debugInfo.push(`Достижение ${id}: не найдено в данных`);
+        }
+        return `#${id} Achievement`;
     }
 
     getAchievementType(id) {
@@ -546,7 +557,7 @@ class IsaacAchievementParser {
 
     getAchievementDescription(id) {
         if (this.achievementsData && this.achievementsData.achievements[id]) {
-            return this.achievementsData.achievements[id].description || 'Достижение';
+            return this.achievementsData.achievements[id].unlock || 'Достижение';
         }
         return 'Достижение';
     }
