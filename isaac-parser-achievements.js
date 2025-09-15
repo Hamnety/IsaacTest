@@ -432,15 +432,21 @@ class IsaacAchievementParser {
         
         // Ищем паттерны предметов в файле
         let foundItems = 0;
-        const maxItems = 800; // Максимум для старых версий
+        const maxItems = 1000; // Максимальный ID предмета
         
         for (let i = 1; i < maxItems; i++) {
+            const itemData = this.getItemData(i);
+            
+            // Проверяем, существует ли предмет с таким ID
+            if (!this.isValidCollectibleID(i, itemData)) {
+                continue; // Пропускаем несуществующие предметы
+            }
+            
             // Простая эвристика: ищем байты со значением 1 в области предметов
             const isFound = this.searchForItemPattern(i);
             
             if (isFound) foundItems++;
             
-            const itemData = this.getItemData(i);
             this.analysisResults.items[i-1] = {
                 id: i,
                 name: itemData.name,
@@ -452,7 +458,7 @@ class IsaacAchievementParser {
             };
         }
         
-        this.analysisResults.debugInfo.push(`Предметы (эвристика): ${foundItems}/${maxItems-1} найдено`);
+        this.analysisResults.debugInfo.push(`Предметы (эвристика): ${foundItems} найдено`);
     }
 
     searchForItemPattern(itemId) {
@@ -542,27 +548,30 @@ class IsaacAchievementParser {
             });
         }
         
-        // Анализируем предметы (Collectibles Touched)
+        // Анализируем предметы (Collectibles Touched) - по логике официального viewer'а
         this.analysisResults.items = [];
         let foundItems = 0;
         
         // Ищем секцию предметов (тип 4 - CollectiblesChunk)
         const itemSection = this.findSections().find(s => s.type === 4);
         if (itemSection) {
-            // Согласно официальному viewer'у, предметы считаются как seenById
-            // ID от 1 до 999, но не все ID существуют
-            const maxItems = 1000; // Максимальный ID предмета
+            // Согласно официальному Isaac Save Viewer:
+            // 1. Считаем только существующие предметы (ID от 1 до 999)
+            // 2. Проверяем seenById массив: если things[i] !== 0, то предмет "потроган"
+            // 3. Пропускаем несуществующие ID
+            
+            const seenById = itemSection.data;
+            const maxItems = Math.min(seenById.length, 1000);
             
             for (let i = 1; i < maxItems; i++) {
-                // Проверяем, есть ли предмет с таким ID в данных
+                // Проверяем, существует ли предмет с таким ID
                 const itemData = this.getItemData(i);
-                if (!itemData || itemData.name === `Item ${i}`) {
+                if (!this.isValidCollectibleID(i, itemData)) {
                     continue; // Пропускаем несуществующие предметы
                 }
                 
                 // Проверяем, был ли предмет "потроган" (seenById)
-                const isFound = i < itemSection.data.length && 
-                               itemSection.data[i] === 1;
+                const isFound = seenById[i] !== 0;
                 
                 if (isFound) foundItems++;
                 
@@ -672,6 +681,16 @@ class IsaacAchievementParser {
         // на основе достижений или других данных из файла сохранения
         // Пока возвращаем false для всех отметок
         return false;
+    }
+    
+    isValidCollectibleID(id, itemData) {
+        // Валидация существования предмета по логике официального viewer'а
+        if (!itemData) return false;
+        if (itemData.name === `Item ${id}`) return false;
+        if (id <= 0 || id >= 1000) return false;
+        
+        // Проверяем, что предмет имеет валидные данные
+        return itemData.name && itemData.name !== 'Unknown Item';
     }
 
     getItemData(itemId) {
