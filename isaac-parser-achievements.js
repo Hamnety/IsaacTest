@@ -994,48 +994,71 @@ class IsaacAchievementParser {
         const container = document.getElementById('achievementsList');
         container.innerHTML = '';
         
-        // Показываем достижения по категориям
+        // Создаем горизонтальный контейнер для категорий
+        const horizontalContainer = document.createElement('div');
+        horizontalContainer.style.display = 'flex';
+        horizontalContainer.style.gap = '20px';
+        horizontalContainer.style.flexWrap = 'wrap';
+        horizontalContainer.style.justifyContent = 'space-between';
+        
+        // Показываем достижения по категориям в горизонтальном порядке
         const categories = {
             characters: this.analysisResults.achievements.filter(a => a.type === 'character'),
             challenges: this.analysisResults.achievements.filter(a => a.type === 'challenge'),
-            items: this.analysisResults.achievements.filter(a => a.type === 'item'),
-            other: this.analysisResults.achievements.filter(a => a.type === 'other')
+            other: this.analysisResults.achievements.filter(a => a.type === 'item' || a.type === 'other')
         };
         
         for (const [category, achievements] of Object.entries(categories)) {
             if (achievements.length > 0) {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'achievement-category';
+                categoryDiv.style.flex = '1';
+                categoryDiv.style.minWidth = '300px';
+                categoryDiv.style.maxWidth = '400px';
+                
                 categoryDiv.innerHTML = `<h3>${this.getCategoryName(category)} (${achievements.filter(a => a.unlocked).length}/${achievements.length})</h3>`;
-                container.appendChild(categoryDiv);
+                
+                // Создаем сетку для достижений в каждой категории
+                const achievementsGrid = document.createElement('div');
+                achievementsGrid.style.display = 'grid';
+                achievementsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(140px, 1fr))';
+                achievementsGrid.style.gap = '8px';
+                achievementsGrid.style.marginTop = '10px';
                 
                 achievements.forEach(achievement => {
                     const div = document.createElement('div');
                     div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
+                    div.style.padding = '8px';
+                    div.style.minHeight = '60px';
                     div.innerHTML = `
-                        <strong style="font-size: 0.6rem;">${achievement.name}</strong><br>
-                        <div style="color: #a6adc8; font-size: 0.5rem; margin: 3px 0; line-height: 1.2;">
-                            ${achievement.description}
+                        <strong style="font-size: 0.5rem;">${achievement.name}</strong><br>
+                        <div style="color: #a6adc8; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
+                            ${achievement.description || ''}
                         </div>
-                        <div style="color: #ffd700; font-size: 0.5rem; margin: 2px 0;">
-                            ${achievement.unlockCondition}
+                        <div style="color: #ffd700; font-size: 0.4rem; margin: 1px 0;">
+                            ${achievement.unlockCondition || ''}
                         </div>
-                        <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.5rem;">
+                        <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.4rem;">
                             ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
                         </span>
                     `;
-                    categoryDiv.appendChild(div);
+                    achievementsGrid.appendChild(div);
                 });
+                
+                categoryDiv.appendChild(achievementsGrid);
+                horizontalContainer.appendChild(categoryDiv);
             }
         }
+        
+        container.appendChild(horizontalContainer);
     }
 
     getCategoryName(category) {
         const names = {
-            characters: 'Персонажи',
-            challenges: 'Челленджи',
-            items: 'Предметы',
-            other: 'Другие достижения'
+            characters: 'ПЕРСОНАЖИ',
+            challenges: 'ЧЕЛЛЕНДЖИ',
+            items: 'ПРЕДМЕТЫ',
+            other: 'ДРУГИЕ ДОСТИЖЕНИЯ'
         };
         return names[category] || category;
     }
