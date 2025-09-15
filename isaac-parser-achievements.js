@@ -781,7 +781,12 @@ class IsaacAchievementParser {
     }
 
     updateStats() {
-        const stats = this.analysisResults.stats;
+        const stats = this.analysisResults.statistics;
+        
+        if (!stats || !this.gameData) {
+            console.error('Статистика или данные игры не загружены');
+            return;
+        }
         
         document.getElementById('achievementsCount').textContent = stats.achievementsUnlocked;
         document.getElementById('achievementsTotal').textContent = `из ${this.analysisResults.achievements.length} получено`;
@@ -789,19 +794,19 @@ class IsaacAchievementParser {
             `${(stats.achievementsUnlocked / Math.max(this.analysisResults.achievements.length, 1) * 100)}%`;
         
         document.getElementById('charactersCount').textContent = stats.charactersUnlocked;
-        document.getElementById('charactersTotal').textContent = `из ${this.characterData.total} разблокировано`;
-        document.getElementById('charactersProgress').style.width = 
-            `${(stats.charactersUnlocked / this.characterData.total * 100)}%`;
+        document.getElementById('charactersTotal').textContent = `из ${this.gameData.totals.characters} разблокировано`;
+        document.getElementById('charactersProgress').style.width =
+            `${(stats.charactersUnlocked / this.gameData.totals.characters * 100)}%`;
         
         document.getElementById('challengesCount').textContent = stats.challengesCompleted;
-        document.getElementById('challengesTotal').textContent = `из ${this.challengeData.total} завершено`;
-        document.getElementById('challengesProgress').style.width = 
-            `${(stats.challengesCompleted / this.challengeData.total * 100)}%`;
+        document.getElementById('challengesTotal').textContent = `из ${this.gameData.totals.challenges} завершено`;
+        document.getElementById('challengesProgress').style.width =
+            `${(stats.challengesCompleted / this.gameData.totals.challenges * 100)}%`;
         
         document.getElementById('itemsCount').textContent = stats.itemsFound;
-        document.getElementById('itemsTotal').textContent = `из ${this.itemData.total} найдено`;
-        document.getElementById('itemsProgress').style.width = 
-            `${(stats.itemsFound / this.itemData.total * 100)}%`;
+        document.getElementById('itemsTotal').textContent = `из ${this.gameData.totals.items} найдено`;
+        document.getElementById('itemsProgress').style.width =
+            `${(stats.itemsFound / this.gameData.totals.items * 100)}%`;
     }
 
     updateTabs() {
