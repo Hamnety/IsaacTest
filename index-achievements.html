@@ -583,13 +583,18 @@
 
             <div class="details-section">
                 <div class="details-tabs">
-                    <button class="tab-button active" data-tab="characters">Персонажи</button>
+                    <button class="tab-button active" data-tab="achievements">Достижения</button>
+                    <button class="tab-button" data-tab="characters">Персонажи</button>
                     <button class="tab-button" data-tab="challenges">Челленджи</button>
                     <button class="tab-button" data-tab="items">Предметы</button>
                     <button class="tab-button" data-tab="raw">Отладка</button>
                 </div>
 
-                <div class="tab-content active" id="charactersTab">
+                <div class="tab-content active" id="achievementsTab">
+                    <div class="item-grid" id="achievementsList"></div>
+                </div>
+
+                <div class="tab-content" id="charactersTab">
                     <div class="item-grid" id="charactersList"></div>
                 </div>
 

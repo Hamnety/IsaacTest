@@ -16,6 +16,9 @@ class IsaacAchievementParser {
         
         // Инициализируем данные игры
         this.gameData = null;
+        this.fullItemsData = null;
+        this.achievementsData = null;
+        this.itemConstants = null;
         
         this.initializeUI();
     }
@@ -36,6 +39,24 @@ class IsaacAchievementParser {
                 this.analysisResults.debugInfo.push('Полные данные предметов загружены');
             } else {
                 this.analysisResults.debugInfo.push('Не удалось загрузить полные данные предметов, используем базовые');
+            }
+            
+            // Загружаем данные достижений
+            const achievementsResponse = await fetch('isaac-achievements-data.json');
+            if (achievementsResponse.ok) {
+                this.achievementsData = await achievementsResponse.json();
+                this.analysisResults.debugInfo.push('Данные достижений загружены');
+            } else {
+                this.analysisResults.debugInfo.push('Не удалось загрузить данные достижений');
+            }
+            
+            // Загружаем константы предметов
+            const constantsResponse = await fetch('isaac-item-constants.json');
+            if (constantsResponse.ok) {
+                this.itemConstants = await constantsResponse.json();
+                this.analysisResults.debugInfo.push('Константы предметов загружены');
+            } else {
+                this.analysisResults.debugInfo.push('Не удалось загрузить константы предметов');
             }
         } catch (error) {
             this.analysisResults.debugInfo.push('Ошибка загрузки данных игры: ' + error.message);
@@ -859,40 +880,58 @@ class IsaacAchievementParser {
     }
 
     getQualityColor(quality) {
+        if (this.itemConstants && this.itemConstants.qualityColors) {
+            return this.itemConstants.qualityColors[quality] || this.itemConstants.qualityColors[1];
+        }
+        // Fallback цвета
         const colors = {
-            0: "#6c7086", // Quality 0
+            0: "#8b0000", // Quality 0
             1: "#a6adc8", // Quality 1
             2: "#a6e3a1", // Quality 2
-            3: "#74c7ec", // Quality 3
+            3: "#f9e2af", // Quality 3
             4: "#cba6f7"  // Quality 4
         };
         return colors[quality] || colors[1];
     }
 
     getTypeIcon(type) {
+        if (this.itemConstants && this.itemConstants.typeIcons) {
+            return this.itemConstants.typeIcons[type.toLowerCase()] || this.itemConstants.typeIcons.other;
+        }
+        // Fallback иконки
         const icons = {
-            "Active": "⚡",
-            "Passive": "💎",
-            "Trinket": "🔑",
-            "Special": "⭐"
+            "active": "⚡",
+            "passive": "🔮",
+            "familiar": "👻",
+            "trinket": "💍",
+            "card": "🃏",
+            "pill": "💊",
+            "rune": "🔮"
         };
-        return icons[type] || "❓";
+        return icons[type.toLowerCase()] || "❓";
     }
 
     getPoolColor(pool) {
+        if (this.itemConstants && this.itemConstants.poolColors) {
+            return this.itemConstants.poolColors[pool.toLowerCase()] || this.itemConstants.poolColors.other;
+        }
+        // Fallback цвета
         const colors = {
-            "Item Room": "#a6e3a1",
-            "Devil Room": "#f38ba8",
-            "Angel Room": "#74c7ec",
-            "Secret Room": "#fab387",
-            "Shop": "#cba6f7",
-            "Boss Room": "#e78284",
-            "Special": "#f5c2e7",
-            "Greed Mode Item Room": "#a6e3a1",
-            "Red Chest": "#f38ba8",
-            "Curse Room": "#e78284"
+            "treasure": "#f9e2af",
+            "shop": "#a6e3a1", 
+            "boss": "#f38ba8",
+            "devil": "#8b0000",
+            "angel": "#a6e3a1",
+            "secret": "#cba6f7",
+            "library": "#89b4fa",
+            "curse": "#f38ba8",
+            "challenge": "#fab387",
+            "golden": "#f9e2af",
+            "red": "#f38ba8",
+            "beggar": "#a6adc8",
+            "demon": "#8b0000"
         };
-        return colors[pool] || "#a6adc8";
+        return colors[pool.toLowerCase()] || "#a6adc8";
     }
 
     getString(offset, length) {
@@ -944,12 +983,62 @@ class IsaacAchievementParser {
     }
 
     updateTabs() {
+        this.updateAchievementsTab();
         this.updateCharactersTab();
         this.updateChallengesTab();
         this.updateItemsTab();
         this.updateRawTab();
     }
 
+    updateAchievementsTab() {
+        const container = document.getElementById('achievementsList');
+        container.innerHTML = '';
+        
+        // Показываем достижения по категориям
+        const categories = {
+            characters: this.analysisResults.achievements.filter(a => a.type === 'character'),
+            challenges: this.analysisResults.achievements.filter(a => a.type === 'challenge'),
+            items: this.analysisResults.achievements.filter(a => a.type === 'item'),
+            other: this.analysisResults.achievements.filter(a => a.type === 'other')
+        };
+        
+        for (const [category, achievements] of Object.entries(categories)) {
+            if (achievements.length > 0) {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'achievement-category';
+                categoryDiv.innerHTML = `<h3>${this.getCategoryName(category)} (${achievements.filter(a => a.unlocked).length}/${achievements.length})</h3>`;
+                container.appendChild(categoryDiv);
+                
+                achievements.forEach(achievement => {
+                    const div = document.createElement('div');
+                    div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
+                    div.innerHTML = `
+                        <strong style="font-size: 0.6rem;">${achievement.name}</strong><br>
+                        <div style="color: #a6adc8; font-size: 0.5rem; margin: 3px 0; line-height: 1.2;">
+                            ${achievement.description}
+                        </div>
+                        <div style="color: #ffd700; font-size: 0.5rem; margin: 2px 0;">
+                            ${achievement.unlockCondition}
+                        </div>
+                        <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.5rem;">
+                            ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
+                        </span>
+                    `;
+                    categoryDiv.appendChild(div);
+                });
+            }
+        }
+    }
+
+    getCategoryName(category) {
+        const names = {
+            characters: 'Персонажи',
+            challenges: 'Челленджи',
+            items: 'Предметы',
+            other: 'Другие достижения'
+        };
+        return names[category] || category;
+    }
 
     updateCharactersTab() {
         const container = document.getElementById('charactersList');
@@ -1001,7 +1090,8 @@ class IsaacAchievementParser {
             return 0;
         });
         
-        sortedItems.slice(0, 100).forEach(item => {
+        // Показываем ВСЕ предметы без описаний
+        sortedItems.forEach(item => {
             const div = document.createElement('div');
             div.className = `item-card ${item.found ? 'unlocked' : 'locked'}`;
             
@@ -1011,9 +1101,6 @@ class IsaacAchievementParser {
             
             div.innerHTML = `
                 <strong style="font-size: 0.6rem;">${item.name}</strong><br>
-                <div style="color: #a6adc8; font-size: 0.5rem; margin: 3px 0; line-height: 1.2;">
-                    ${typeIcon} ${item.type} • ${item.description}
-                </div>
                 <div style="color: ${qualityColor}; font-size: 0.5rem; margin: 2px 0;">
                     Quality ${item.quality} • <span style="color: ${poolColor}">${item.pool}</span>
                 </div>

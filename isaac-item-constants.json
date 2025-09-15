@@ -1,0 +1,52 @@
+{
+  "qualityColors": {
+    "0": "#8b0000",
+    "1": "#a6adc8", 
+    "2": "#a6e3a1",
+    "3": "#f9e2af",
+    "4": "#cba6f7"
+  },
+  "qualityNames": {
+    "0": "Quality 0",
+    "1": "Quality 1", 
+    "2": "Quality 2",
+    "3": "Quality 3",
+    "4": "Quality 4"
+  },
+  "typeIcons": {
+    "passive": "🔮",
+    "active": "⚡",
+    "familiar": "👻",
+    "trinket": "💍",
+    "card": "🃏",
+    "pill": "💊",
+    "rune": "🔮",
+    "other": "❓"
+  },
+  "poolColors": {
+    "treasure": "#f9e2af",
+    "shop": "#a6e3a1", 
+    "boss": "#f38ba8",
+    "devil": "#8b0000",
+    "angel": "#a6e3a1",
+    "secret": "#cba6f7",
+    "library": "#89b4fa",
+    "curse": "#f38ba8",
+    "challenge": "#fab387",
+    "golden": "#f9e2af",
+    "red": "#f38ba8",
+    "beggar": "#a6adc8",
+    "demon": "#8b0000",
+    "other": "#a6adc8"
+  },
+  "itemTypes": {
+    "passive": "Пассивный",
+    "active": "Активный", 
+    "familiar": "Спутник",
+    "trinket": "Безделушка",
+    "card": "Карта",
+    "pill": "Таблетка",
+    "rune": "Руна",
+    "other": "Другое"
+  }
+}

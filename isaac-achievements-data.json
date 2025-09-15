@@ -1,0 +1,72 @@
+{
+  "achievements": {
+    "1": {
+      "name": "Magdalene",
+      "type": "character",
+      "description": "Открыт новый персонаж",
+      "unlockCondition": "Имейте 7 или больше контейнеров красных сердец одновременно"
+    },
+    "2": {
+      "name": "Cain",
+      "type": "character", 
+      "description": "Открыт новый персонаж",
+      "unlockCondition": "Держите 55 или больше монет одновременно"
+    },
+    "3": {
+      "name": "Judas",
+      "type": "character",
+      "description": "Открыт новый персонаж", 
+      "unlockCondition": "Победите Сатану/Satan"
+    },
+    "4": {
+      "name": "The Womb",
+      "type": "chapter",
+      "description": "Глава 4 - Матка разблокирована",
+      "unlockCondition": "Победите Маму/Mom"
+    },
+    "5": {
+      "name": "The Harbingers",
+      "type": "boss",
+      "description": "Всадники свободны",
+      "unlockCondition": "Победите Маму/Mom"
+    },
+    "6": {
+      "name": "A Cube of Meat",
+      "type": "item",
+      "description": "Разблокирован новый предмет",
+      "unlockCondition": "Победите Маму/Mom"
+    },
+    "7": {
+      "name": "The Book of Revelations",
+      "type": "item",
+      "description": "Разблокирован новый предмет",
+      "unlockCondition": "Победите Предвестника/Harbinger"
+    },
+    "8": {
+      "name": "A Noose",
+      "type": "item",
+      "description": "Разблокирован новый предмет",
+      "unlockCondition": "Победите Сердце Мамы/Mom's Heart 3 раза"
+    },
+    "9": {
+      "name": "The Nail",
+      "type": "item",
+      "description": "Разблокирован новый предмет",
+      "unlockCondition": "Завершите Марафон Боссов/Boss Rush за Азазеля/Azazel"
+    },
+    "10": {
+      "name": "A Quarter",
+      "type": "item",
+      "description": "Разблокирован новый предмет",
+      "unlockCondition": "Победите Сердце Мамы/Mom's Heart 8 раз"
+    }
+  },
+  "categories": {
+    "character": "Персонажи",
+    "item": "Предметы",
+    "boss": "Боссы",
+    "chapter": "Главы",
+    "challenge": "Челленджи",
+    "other": "Другие достижения"
+  }
+}
