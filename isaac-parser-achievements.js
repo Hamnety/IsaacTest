@@ -996,8 +996,8 @@ class IsaacAchievementParser {
         
         // Создаем один общий контейнер для ВСЕХ достижений
         const mainGrid = document.createElement('div');
-        mainGrid.style.display = 'flex';
-        mainGrid.style.flexWrap = 'wrap';
+        mainGrid.style.display = 'grid';
+        mainGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(150px, 1fr))';
         mainGrid.style.gap = '10px';
         mainGrid.style.width = '100%';
         
@@ -1015,9 +1015,7 @@ class IsaacAchievementParser {
             div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
             div.style.padding = '10px';
             div.style.minHeight = '80px';
-            div.style.width = '150px';
             div.style.fontSize = '0.5rem';
-            div.style.flex = '0 0 auto';
             
             div.innerHTML = `
                 <strong style="font-size: 0.5rem;">${achievement.name}</strong><br>
