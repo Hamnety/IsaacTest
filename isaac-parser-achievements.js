@@ -994,16 +994,14 @@ class IsaacAchievementParser {
         const container = document.getElementById('achievementsList');
         container.innerHTML = '';
         
-        // Создаем горизонтальный контейнер для категорий
-        const horizontalContainer = document.createElement('div');
-        horizontalContainer.style.display = 'flex';
-        horizontalContainer.style.gap = '20px';
-        horizontalContainer.style.flexWrap = 'nowrap';
-        horizontalContainer.style.justifyContent = 'flex-start';
-        horizontalContainer.style.width = '100%';
-        horizontalContainer.style.overflowX = 'auto';
+        // Создаем вертикальный контейнер для категорий (как на рисунке)
+        const verticalContainer = document.createElement('div');
+        verticalContainer.style.display = 'flex';
+        verticalContainer.style.flexDirection = 'column';
+        verticalContainer.style.gap = '30px';
+        verticalContainer.style.width = '100%';
         
-        // Показываем достижения по категориям
+        // Показываем достижения по категориям вертикально
         const categories = {
             characters: this.analysisResults.achievements.filter(a => a.type === 'character'),
             challenges: this.analysisResults.achievements.filter(a => a.type === 'challenge'),
@@ -1015,27 +1013,26 @@ class IsaacAchievementParser {
             if (achievements.length > 0) {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'achievement-category';
-                categoryDiv.style.flex = '0 0 auto';
-                categoryDiv.style.width = '400px';
-                categoryDiv.style.minWidth = '350px';
-                categoryDiv.style.maxWidth = '450px';
-                categoryDiv.style.marginRight = '20px';
+                categoryDiv.style.width = '100%';
+                categoryDiv.style.marginBottom = '20px';
                 categoryDiv.innerHTML = `<h3>${this.getCategoryName(category)} (${achievements.filter(a => a.unlocked).length}/${achievements.length})</h3>`;
                 
-                // Создаем сетку для достижений в каждой категории
+                // Создаем горизонтальную сетку для достижений в каждой категории
                 const achievementsGrid = document.createElement('div');
-                achievementsGrid.style.display = 'grid';
-                achievementsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(140px, 1fr))';
-                achievementsGrid.style.gap = '8px';
-                achievementsGrid.style.marginTop = '10px';
+                achievementsGrid.style.display = 'flex';
+                achievementsGrid.style.flexWrap = 'wrap';
+                achievementsGrid.style.gap = '10px';
+                achievementsGrid.style.marginTop = '15px';
                 achievementsGrid.style.width = '100%';
                 
                 achievements.forEach(achievement => {
                     const div = document.createElement('div');
                     div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
-                    div.style.padding = '8px';
-                    div.style.minHeight = '70px';
+                    div.style.padding = '10px';
+                    div.style.minHeight = '80px';
+                    div.style.width = '150px';
                     div.style.fontSize = '0.5rem';
+                    div.style.flex = '0 0 auto';
                     
                     div.innerHTML = `
                         <strong style="font-size: 0.5rem;">${achievement.name}</strong><br>
@@ -1053,11 +1050,11 @@ class IsaacAchievementParser {
                 });
                 
                 categoryDiv.appendChild(achievementsGrid);
-                horizontalContainer.appendChild(categoryDiv);
+                verticalContainer.appendChild(categoryDiv);
             }
         }
         
-        container.appendChild(horizontalContainer);
+        container.appendChild(verticalContainer);
     }
 
     getCategoryName(category) {
