@@ -218,8 +218,10 @@ class IsaacAchievementParser {
         // Проверяем заголовок
         const header = this.getString(0, 16);
         this.analysisResults.debugInfo.push(`Заголовок: ${header}`);
+        this.analysisResults.debugInfo.push(`Длина заголовка: ${header.length}`);
+        this.analysisResults.debugInfo.push(`Первые 13 символов: ${header.substring(0, 13)}`);
         
-        // Поддерживаемые форматы Isaac
+        // Поддерживаемые форматы Isaac (проверяем начало заголовка)
         const supportedHeaders = [
             "ISAACNGSAVE09R", // Repentance
             "ISAACNGSAVE08R", // Afterbirth+
@@ -233,16 +235,29 @@ class IsaacAchievementParser {
             "ISAACNGSAVE00R"  // Rebirth (изначальный)
         ];
         
-        if (!supportedHeaders.includes(header)) {
+        // Проверяем, начинается ли заголовок с поддерживаемого формата
+        let detectedVersion = null;
+        for (const supportedHeader of supportedHeaders) {
+            this.analysisResults.debugInfo.push(`Проверяем: ${supportedHeader} в ${header.substring(0, supportedHeader.length)}`);
+            if (header.startsWith(supportedHeader)) {
+                detectedVersion = supportedHeader;
+                this.analysisResults.debugInfo.push(`✓ Найден формат: ${supportedHeader}`);
+                break;
+            }
+        }
+        
+        if (!detectedVersion) {
             throw new Error(`Неподдерживаемый формат файла: ${header}. Поддерживаются форматы Isaac: ${supportedHeaders.join(', ')}`);
         }
         
+        this.analysisResults.debugInfo.push(`Обнаружен формат: ${detectedVersion}`);
+        
         // Определяем версию игры
         let gameVersion = "Unknown";
-        if (header === "ISAACNGSAVE09R") gameVersion = "Repentance";
-        else if (header === "ISAACNGSAVE08R") gameVersion = "Afterbirth+";
-        else if (header === "ISAACNGSAVE07R") gameVersion = "Afterbirth";
-        else if (header.startsWith("ISAACNGSAVE0")) gameVersion = "Rebirth";
+        if (detectedVersion === "ISAACNGSAVE09R") gameVersion = "Repentance";
+        else if (detectedVersion === "ISAACNGSAVE08R") gameVersion = "Afterbirth+";
+        else if (detectedVersion === "ISAACNGSAVE07R") gameVersion = "Afterbirth";
+        else if (detectedVersion.startsWith("ISAACNGSAVE0")) gameVersion = "Rebirth";
         
         this.analysisResults.debugInfo.push(`Версия игры: ${gameVersion}`);
         
