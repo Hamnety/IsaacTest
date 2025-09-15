@@ -642,6 +642,7 @@ class IsaacAchievementParser {
                 }
                 
                 // Добавляем предмет в результаты (только если он валидный)
+                const itemData = this.getItemData(i);
                 if (this.isValidCollectibleID(i, itemData)) {
                     this.analysisResults.items.push({
                         id: i,
