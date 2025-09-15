@@ -1039,19 +1039,19 @@ class IsaacAchievementParser {
         allAchievements.forEach(achievement => {
                     const div = document.createElement('div');
                     div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
-            div.style.padding = '10px';
-            div.style.minHeight = '80px';
-            div.style.fontSize = '0.5rem';
+            div.style.padding = '16px';
+            div.style.minHeight = '140px';
+            div.style.fontSize = '0.8rem';
             
                     div.innerHTML = `
-                <div style="font-size: 0.6rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px;">
+                <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     #${achievement.id} ${achievement.name}
                 </div>
-                <div style="color: #a0aec0; font-size: 0.5rem; margin: 4px 0; line-height: 1.2;">
+                <div style="color: #a0aec0; font-size: 0.75rem; margin: 8px 0; line-height: 1.4;">
                     ${achievement.unlockCondition}
                 </div>
-                <div style="margin-top: auto; text-align: center;">
-                    <span style="color: ${achievement.unlocked ? '#ffd700' : '#4c566a'}; font-size: 0.5rem; font-weight: bold;">
+                <div style="margin-top: auto; text-align: center; padding-top: 8px;">
+                    <span style="color: ${achievement.unlocked ? '#ffd700' : '#4c566a'}; font-size: 0.7rem; font-weight: bold;">
                         ${achievement.unlocked ? '✓ ПОЛУЧЕНО' : '✗ ЗАБЛОКИРОВАНО'}
                     </span>
                 </div>
