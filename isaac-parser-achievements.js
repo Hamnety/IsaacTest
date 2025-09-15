@@ -994,67 +994,47 @@ class IsaacAchievementParser {
         const container = document.getElementById('achievementsList');
         container.innerHTML = '';
         
-        // Создаем вертикальный контейнер для категорий (как на рисунке)
-        const verticalContainer = document.createElement('div');
-        verticalContainer.style.display = 'flex';
-        verticalContainer.style.flexDirection = 'column';
-        verticalContainer.style.gap = '30px';
-        verticalContainer.style.width = '100%';
+        // Создаем один общий контейнер для ВСЕХ достижений
+        const mainGrid = document.createElement('div');
+        mainGrid.style.display = 'flex';
+        mainGrid.style.flexWrap = 'wrap';
+        mainGrid.style.gap = '10px';
+        mainGrid.style.width = '100%';
         
-        // Показываем достижения по категориям вертикально
-        const categories = {
-            characters: this.analysisResults.achievements.filter(a => a.type === 'character'),
-            challenges: this.analysisResults.achievements.filter(a => a.type === 'challenge'),
-            items: this.analysisResults.achievements.filter(a => a.type === 'item'),
-            other: this.analysisResults.achievements.filter(a => a.type === 'other')
-        };
+        // Собираем ВСЕ достижения в один массив по порядку: персонажи, челленджи, предметы, другие
+        const allAchievements = [
+            ...this.analysisResults.achievements.filter(a => a.type === 'character'),
+            ...this.analysisResults.achievements.filter(a => a.type === 'challenge'), 
+            ...this.analysisResults.achievements.filter(a => a.type === 'item'),
+            ...this.analysisResults.achievements.filter(a => a.type === 'other')
+        ];
         
-        for (const [category, achievements] of Object.entries(categories)) {
-            if (achievements.length > 0) {
-                const categoryDiv = document.createElement('div');
-                categoryDiv.className = 'achievement-category';
-                categoryDiv.style.width = '100%';
-                categoryDiv.style.marginBottom = '20px';
-                categoryDiv.innerHTML = `<h3>${this.getCategoryName(category)} (${achievements.filter(a => a.unlocked).length}/${achievements.length})</h3>`;
-                
-                // Создаем горизонтальную сетку для достижений в каждой категории
-                const achievementsGrid = document.createElement('div');
-                achievementsGrid.style.display = 'flex';
-                achievementsGrid.style.flexWrap = 'wrap';
-                achievementsGrid.style.gap = '10px';
-                achievementsGrid.style.marginTop = '15px';
-                achievementsGrid.style.width = '100%';
-                
-                achievements.forEach(achievement => {
-                    const div = document.createElement('div');
-                    div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
-                    div.style.padding = '10px';
-                    div.style.minHeight = '80px';
-                    div.style.width = '150px';
-                    div.style.fontSize = '0.5rem';
-                    div.style.flex = '0 0 auto';
-                    
-                    div.innerHTML = `
-                        <strong style="font-size: 0.5rem;">${achievement.name}</strong><br>
-                        <div style="color: #a6adc8; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
-                            ${achievement.description}
-                        </div>
-                        <div style="color: #ffd700; font-size: 0.4rem; margin: 1px 0;">
-                            ${achievement.unlockCondition}
-                        </div>
-                        <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.4rem;">
-                            ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
-                        </span>
-                    `;
-                    achievementsGrid.appendChild(div);
-                });
-                
-                categoryDiv.appendChild(achievementsGrid);
-                verticalContainer.appendChild(categoryDiv);
-            }
-        }
+        // Показываем ВСЕ достижения одним списком
+        allAchievements.forEach(achievement => {
+            const div = document.createElement('div');
+            div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
+            div.style.padding = '10px';
+            div.style.minHeight = '80px';
+            div.style.width = '150px';
+            div.style.fontSize = '0.5rem';
+            div.style.flex = '0 0 auto';
+            
+            div.innerHTML = `
+                <strong style="font-size: 0.5rem;">${achievement.name}</strong><br>
+                <div style="color: #a6adc8; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
+                    ${achievement.description || 'Достижение'}
+                </div>
+                <div style="color: #ffd700; font-size: 0.4rem; margin: 1px 0;">
+                    ${achievement.unlockCondition || 'Условие разблокировки'}
+                </div>
+                <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.4rem;">
+                    ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
+                </span>
+            `;
+            mainGrid.appendChild(div);
+        });
         
-        container.appendChild(verticalContainer);
+        container.appendChild(mainGrid);
     }
 
     getCategoryName(category) {
