@@ -998,9 +998,10 @@ class IsaacAchievementParser {
         const horizontalContainer = document.createElement('div');
         horizontalContainer.style.display = 'flex';
         horizontalContainer.style.gap = '20px';
-        horizontalContainer.style.flexWrap = 'wrap';
+        horizontalContainer.style.flexWrap = 'nowrap';
         horizontalContainer.style.justifyContent = 'flex-start';
         horizontalContainer.style.width = '100%';
+        horizontalContainer.style.overflowX = 'auto';
         
         // Показываем достижения по категориям
         const categories = {
@@ -1015,10 +1016,10 @@ class IsaacAchievementParser {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'achievement-category';
                 categoryDiv.style.flex = '0 0 auto';
-                categoryDiv.style.width = '300px';
-                categoryDiv.style.minWidth = '280px';
-                categoryDiv.style.maxWidth = '350px';
-                categoryDiv.style.marginBottom = '20px';
+                categoryDiv.style.width = '400px';
+                categoryDiv.style.minWidth = '350px';
+                categoryDiv.style.maxWidth = '450px';
+                categoryDiv.style.marginRight = '20px';
                 categoryDiv.innerHTML = `<h3>${this.getCategoryName(category)} (${achievements.filter(a => a.unlocked).length}/${achievements.length})</h3>`;
                 
                 // Создаем сетку для достижений в каждой категории
