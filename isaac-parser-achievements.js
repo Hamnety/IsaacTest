@@ -645,7 +645,7 @@ class IsaacAchievementParser {
                 
                 // Если предмет "потроган", проверяем его валидность
                 if (isFound) {
-                    const itemData = this.getItemData(i);
+                const itemData = this.getItemData(i);
                     if (!this.isValidCollectibleID(i, itemData)) {
                         this.analysisResults.debugInfo.push(`Предмет ${i} потроган, но невалидный: ${itemData.name}`);
                         continue; // Пропускаем невалидные предметы
@@ -666,13 +666,13 @@ class IsaacAchievementParser {
                 const itemData = this.getItemData(i);
                 if (this.isValidCollectibleID(i, itemData)) {
                     this.analysisResults.items.push({
-                        id: i,
-                        name: itemData.name,
-                        found: isFound,
-                        type: itemData.type,
-                        quality: itemData.quality,
-                        description: itemData.description,
-                        pool: itemData.pool
+                    id: i,
+                    name: itemData.name,
+                    found: isFound,
+                    type: itemData.type,
+                    quality: itemData.quality,
+                    description: itemData.description,
+                    pool: itemData.pool
                     });
                 }
             }
@@ -968,17 +968,17 @@ class IsaacAchievementParser {
         
         document.getElementById('charactersCount').textContent = stats.charactersUnlocked;
         document.getElementById('charactersTotal').textContent = `из ${this.gameData.totals.characters} разблокировано`;
-        document.getElementById('charactersProgress').style.width =
+        document.getElementById('charactersProgress').style.width = 
             `${(stats.charactersUnlocked / this.gameData.totals.characters * 100)}%`;
         
         document.getElementById('challengesCount').textContent = stats.challengesCompleted;
         document.getElementById('challengesTotal').textContent = `из ${this.gameData.totals.challenges} завершено`;
-        document.getElementById('challengesProgress').style.width =
+        document.getElementById('challengesProgress').style.width = 
             `${(stats.challengesCompleted / this.gameData.totals.challenges * 100)}%`;
         
         document.getElementById('itemsCount').textContent = stats.itemsFound;
         document.getElementById('itemsTotal').textContent = `из ${this.gameData.totals.items} найдено`;
-        document.getElementById('itemsProgress').style.width =
+        document.getElementById('itemsProgress').style.width = 
             `${(stats.itemsFound / this.gameData.totals.items * 100)}%`;
     }
 
@@ -998,15 +998,16 @@ class IsaacAchievementParser {
         const horizontalContainer = document.createElement('div');
         horizontalContainer.style.display = 'flex';
         horizontalContainer.style.gap = '20px';
-        horizontalContainer.style.flexWrap = 'nowrap';
-        horizontalContainer.style.justifyContent = 'space-between';
+        horizontalContainer.style.flexWrap = 'wrap';
+        horizontalContainer.style.justifyContent = 'flex-start';
         horizontalContainer.style.width = '100%';
         
-        // Показываем достижения по категориям в горизонтальном порядке
+        // Показываем достижения по категориям
         const categories = {
             characters: this.analysisResults.achievements.filter(a => a.type === 'character'),
             challenges: this.analysisResults.achievements.filter(a => a.type === 'challenge'),
-            other: this.analysisResults.achievements.filter(a => a.type === 'item' || a.type === 'other')
+            items: this.analysisResults.achievements.filter(a => a.type === 'item'),
+            other: this.analysisResults.achievements.filter(a => a.type === 'other')
         };
         
         for (const [category, achievements] of Object.entries(categories)) {
@@ -1014,16 +1015,15 @@ class IsaacAchievementParser {
                 const categoryDiv = document.createElement('div');
                 categoryDiv.className = 'achievement-category';
                 categoryDiv.style.flex = '1';
-                categoryDiv.style.width = '33.33%';
-                categoryDiv.style.minWidth = '0';
-                
+                categoryDiv.style.minWidth = '300px';
+                categoryDiv.style.maxWidth = '400px';
                 categoryDiv.innerHTML = `<h3>${this.getCategoryName(category)} (${achievements.filter(a => a.unlocked).length}/${achievements.length})</h3>`;
                 
-                // Создаем горизонтальную сетку для достижений в каждой категории
+                // Создаем сетку для достижений в каждой категории
                 const achievementsGrid = document.createElement('div');
-                achievementsGrid.style.display = 'flex';
-                achievementsGrid.style.flexWrap = 'wrap';
-                achievementsGrid.style.gap = '6px';
+                achievementsGrid.style.display = 'grid';
+                achievementsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(140px, 1fr))';
+                achievementsGrid.style.gap = '8px';
                 achievementsGrid.style.marginTop = '10px';
                 achievementsGrid.style.width = '100%';
                 
@@ -1031,16 +1031,16 @@ class IsaacAchievementParser {
                     const div = document.createElement('div');
                     div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
                     div.style.padding = '8px';
-                    div.style.minHeight = '60px';
-                    div.style.width = '120px';
-                    div.style.flexShrink = '0';
+                    div.style.minHeight = '70px';
+                    div.style.fontSize = '0.5rem';
+                    
                     div.innerHTML = `
                         <strong style="font-size: 0.5rem;">${achievement.name}</strong><br>
                         <div style="color: #a6adc8; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
-                            ${achievement.description || ''}
+                            ${achievement.description}
                         </div>
                         <div style="color: #ffd700; font-size: 0.4rem; margin: 1px 0;">
-                            ${achievement.unlockCondition || ''}
+                            ${achievement.unlockCondition}
                         </div>
                         <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.4rem;">
                             ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
@@ -1059,10 +1059,10 @@ class IsaacAchievementParser {
 
     getCategoryName(category) {
         const names = {
-            characters: 'ПЕРСОНАЖИ',
-            challenges: 'ЧЕЛЛЕНДЖИ',
-            items: 'ПРЕДМЕТЫ',
-            other: 'ДРУГИЕ ДОСТИЖЕНИЯ'
+            characters: 'Персонажи',
+            challenges: 'Челленджи', 
+            items: 'Предметы',
+            other: 'Другие достижения'
         };
         return names[category] || category;
     }
