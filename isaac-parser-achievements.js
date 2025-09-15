@@ -42,12 +42,12 @@ class IsaacAchievementParser {
             }
             
             // Загружаем данные достижений
-            const achievementsResponse = await fetch('isaac-achievements-data.json');
+            const achievementsResponse = await fetch('isaac-achievements-sorted.json');
             if (achievementsResponse.ok) {
                 this.achievementsData = await achievementsResponse.json();
-                this.analysisResults.debugInfo.push('Данные достижений загружены');
+                this.analysisResults.debugInfo.push('Отсортированные данные достижений загружены');
             } else {
-                this.analysisResults.debugInfo.push('Не удалось загрузить данные достижений');
+                this.analysisResults.debugInfo.push('Не удалось загрузить отсортированные данные достижений');
             }
             
             // Загружаем константы предметов
@@ -411,7 +411,9 @@ class IsaacAchievementParser {
                 id: i,
                 name: this.getAchievementName(i),
                 unlocked: isUnlocked,
-                type: this.getAchievementType(i)
+                type: this.getAchievementType(i),
+                description: this.getAchievementDescription(i),
+                unlockCondition: this.getAchievementUnlockCondition(i)
             };
         }
         
@@ -436,7 +438,9 @@ class IsaacAchievementParser {
                 id: i,
                 name: this.getAchievementName(i),
                 unlocked: isUnlocked,
-                type: this.getAchievementType(i)
+                type: this.getAchievementType(i),
+                description: this.getAchievementDescription(i),
+                unlockCondition: this.getAchievementUnlockCondition(i)
             };
         }
         
@@ -522,6 +526,9 @@ class IsaacAchievementParser {
     }
 
     getAchievementName(id) {
+        if (this.achievementsData && this.achievementsData.achievements[id]) {
+            return this.achievementsData.achievements[id].name;
+        }
         if (this.gameData && this.gameData.characters[id]) {
             return this.gameData.characters[id].name;
         }
@@ -535,6 +542,26 @@ class IsaacAchievementParser {
         if (this.gameData && this.gameData.characters[id]) return 'character';
         if (this.gameData && this.gameData.challenges[id]) return 'challenge';
         return 'other';
+    }
+
+    getAchievementDescription(id) {
+        if (this.achievementsData && this.achievementsData.achievements[id]) {
+            return this.achievementsData.achievements[id].description || 'Достижение';
+        }
+        return 'Достижение';
+    }
+
+    getAchievementUnlockCondition(id) {
+        if (this.achievementsData && this.achievementsData.achievements[id]) {
+            return this.achievementsData.achievements[id].unlock || 'Условие разблокировки';
+        }
+        if (this.gameData && this.gameData.characters[id]) {
+            return this.gameData.characters[id].unlock || 'Условие разблокировки';
+        }
+        if (this.gameData && this.gameData.challenges[id]) {
+            return this.gameData.challenges[id].unlock || 'Условие разблокировки';
+        }
+        return 'Условие разблокировки';
     }
 
     async analyzeProgressFromAchievements() {
@@ -1003,13 +1030,8 @@ class IsaacAchievementParser {
         mainGrid.style.width = '100%';
         mainGrid.style.gridAutoRows = 'min-content';
         
-        // Собираем ВСЕ достижения в один массив по порядку: персонажи, челленджи, предметы, другие
-        const allAchievements = [
-            ...this.analysisResults.achievements.filter(a => a.type === 'character'),
-            ...this.analysisResults.achievements.filter(a => a.type === 'challenge'), 
-            ...this.analysisResults.achievements.filter(a => a.type === 'item'),
-            ...this.analysisResults.achievements.filter(a => a.type === 'other')
-        ];
+        // Собираем ВСЕ достижения и сортируем по ID
+        const allAchievements = [...this.analysisResults.achievements].sort((a, b) => a.id - b.id);
         
         // Показываем ВСЕ достижения одним списком
         allAchievements.forEach(achievement => {
@@ -1020,12 +1042,12 @@ class IsaacAchievementParser {
             div.style.fontSize = '0.5rem';
             
             div.innerHTML = `
-                <strong style="font-size: 0.5rem;">${achievement.name}</strong><br>
+                <strong style="font-size: 0.5rem;">#${achievement.id} ${achievement.name}</strong><br>
                 <div style="color: #a6adc8; font-size: 0.4rem; margin: 2px 0; line-height: 1.1;">
-                    ${achievement.description || 'Достижение'}
+                    ${achievement.description}
                 </div>
                 <div style="color: #ffd700; font-size: 0.4rem; margin: 1px 0;">
-                    ${achievement.unlockCondition || 'Условие разблокировки'}
+                    ${achievement.unlockCondition}
                 </div>
                 <span style="color: ${achievement.unlocked ? '#a6e3a1' : '#f38ba8'}; font-size: 0.4rem;">
                     ${achievement.unlocked ? '✓ Получено' : '✗ Заблокировано'}
