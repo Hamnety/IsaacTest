@@ -250,6 +250,7 @@ class IsaacAchievementParser {
 
     async parseFile() {
         this.analysisResults.debugInfo = [];
+        console.log('Начинаем парсинг файла...');
         
         // Инициализируем данные игры, если они не загружены
         if (!this.gameData) {
@@ -566,6 +567,7 @@ class IsaacAchievementParser {
         const itemSection = this.findSections().find(s => s.type === 4);
         if (itemSection) {
             this.analysisResults.debugInfo.push(`Найдена секция предметов: тип ${itemSection.type}, длина ${itemSection.data.length}`);
+            console.log(`Найдена секция предметов: тип ${itemSection.type}, длина ${itemSection.data.length}`);
             
             // Согласно официальному Isaac Save Viewer:
             // 1. Считаем только существующие предметы (ID от 1 до 999)
@@ -574,6 +576,7 @@ class IsaacAchievementParser {
             
             const seenById = itemSection.data;
             const maxItems = Math.min(seenById.length, 1000);
+            console.log(`Максимальный ID для проверки: ${maxItems}`);
             
             let validItemsCount = 0;
             let foundItemsCount = 0;
@@ -586,6 +589,7 @@ class IsaacAchievementParser {
                 }
             }
             this.analysisResults.debugInfo.push(`Всего "потроган" предметов в массиве: ${totalFoundInArray}`);
+            console.log(`Всего "потроган" предметов в массиве: ${totalFoundInArray}`);
             
             // Посчитаем, сколько валидных предметов есть в JSON данных
             let validItemsInJSON = 0;
@@ -597,6 +601,7 @@ class IsaacAchievementParser {
                 }
             }
             this.analysisResults.debugInfo.push(`Валидных предметов в JSON: ${validItemsInJSON}`);
+            console.log(`Валидных предметов в JSON: ${validItemsInJSON}`);
             
             for (let i = 1; i < maxItems; i++) {
                 // Проверяем, был ли предмет "потроган" (seenById)
@@ -635,6 +640,7 @@ class IsaacAchievementParser {
             
             foundItems = foundItemsCount;
             this.analysisResults.debugInfo.push(`Валидных предметов: ${validItemsCount}, найдено: ${foundItemsCount}`);
+            console.log(`Валидных предметов: ${validItemsCount}, найдено: ${foundItemsCount}`);
         } else {
             this.analysisResults.debugInfo.push('Предупреждение: Не найдена секция предметов, используем эвристический поиск');
             this.parseItemsHeuristic();
@@ -748,15 +754,11 @@ class IsaacAchievementParser {
             return true;
         }
         
-        // Fallback: проверяем базовые условия
+        // Fallback: более мягкая валидация
         const isValid = itemData.name && 
                        itemData.name !== 'Unknown Item' &&
                        !itemData.name.includes('undefined') &&
-                       !itemData.name.startsWith('Item ') &&
-                       !itemData.name.startsWith('Active Item ') &&
-                       !itemData.name.startsWith('Passive Item ') &&
-                       !itemData.name.startsWith('Trinket ') &&
-                       !itemData.name.startsWith('Special Item ');
+                       !itemData.name.includes('null');
         
         return isValid;
     }
