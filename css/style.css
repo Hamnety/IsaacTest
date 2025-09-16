@@ -142,6 +142,27 @@ h1 {
     line-height: 1.4;
 }
 
+.description-note a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.description-note a:hover {
+    color: #ffd700;
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    transform: translateY(-1px);
+}
+
+.description-note a:active {
+    transform: translateY(0);
+}
+
 .main-content {
     background: #2d3748;
     padding: 20px;
