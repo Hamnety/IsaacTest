@@ -3,73 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac Save File Analyzer - Debug Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Isaac Save Analyzer - Achievement Based (Universal)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Silom&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            font-family: 'Silom', sans-serif;
+            font-size: 16px;
+            font-smooth: never;
+            overflow-x: hidden;
+            height: 100vh;
+            color: #6f6358;
+            -webkit-font-smoothing: none;
+        }
+
         body {
-            font-family: 'JetBrains Mono', monospace;
-            background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
-            color: #cdd6f4;
+            font-family: 'Silom', sans-serif;
+            background: #2d3748;
+            background-image: 
+                radial-gradient(circle at 20% 50%, #1a202c 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #2d3748 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, #1a202c 0%, transparent 50%);
+            color: #e2e8f0;
             min-height: 100vh;
-            padding: 20px;
+            padding: 0;
+            margin: 0;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+            font-smooth: never;
+            -webkit-font-smoothing: none;
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: rgba(30, 30, 46, 0.8);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(205, 214, 244, 0.1);
+            max-width: 100%;
+            margin: 0;
+            background: #24283b;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #24283b;
+            padding: 20px;
+            border-bottom: 2px solid #4c566a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .skull-icon {
+            width: 40px;
+            height: 40px;
+            background: #4c566a;
+            border: 2px solid #e2e8f0;
+            position: relative;
+        }
+
+        .skull-icon::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 8px;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 50%;
+        }
+
+        .skull-icon::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 8px;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 50%;
         }
 
         h1 {
-            text-align: center;
-            color: #f38ba8;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-            font-weight: 600;
-            text-shadow: 0 0 20px rgba(243, 139, 168, 0.5);
+            color: #e2e8f0;
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .subtitle {
-            text-align: center;
-            color: #a6adc8;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-            opacity: 0.8;
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .debug-badge {
-            background: linear-gradient(135deg, #74c7ec, #a6e3a1);
-            color: #1e1e2e;
-            padding: 4px 12px;
-            border-radius: 20px;
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-item {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #ffd700;
+        }
+
+        .patch-notes {
+            background: #1a202c;
+            padding: 10px 15px;
+            border-left: 3px solid #ffd700;
+            margin: 10px 0;
+        }
+
+        .patch-notes p {
+            margin: 0;
             font-size: 0.8rem;
-            font-weight: 600;
+            color: #a0aec0;
+            line-height: 1.4;
+        }
+
+        .main-content {
+            background: #2d3748;
+            padding: 20px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .content-title {
+            text-align: center;
+            color: #e2e8f0;
+            font-size: 2rem;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .content-title::before,
+        .content-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100px;
+            height: 2px;
+            background: #4c566a;
+        }
+
+        .content-title::before {
+            left: 0;
+        }
+
+        .content-title::after {
+            right: 0;
+        }
+
+        .achievement-badge {
+            background: #ffd700;
+            color: #1a202c;
+            padding: 4px 8px;
+            border: 2px solid #ffd700;
+            border-radius: 0;
+            font-size: 0.7rem;
             margin-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+        }
+
+        .parser-info {
+            background: rgba(166, 227, 161, 0.1);
+            border-left: 4px solid #a6e3a1;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .parser-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature {
+            background: rgba(30, 30, 46, 0.6);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(166, 227, 161, 0.3);
+        }
+
+        .feature-title {
+            color: #a6e3a1;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
 
         .upload-zone {
-            border: 3px dashed #f38ba8;
-            border-radius: 15px;
-            padding: 60px 40px;
+            border: 3px dashed #4c566a;
+            border-radius: 0;
+            padding: 40px 20px;
             text-align: center;
-            margin-bottom: 30px;
+            margin: 30px 0;
             transition: all 0.3s ease;
-            background: rgba(243, 139, 168, 0.05);
+            background: #1a202c;
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            box-shadow: inset 0 0 20px rgba(76, 86, 106, 0.2);
         }
 
         .upload-zone::before {
@@ -79,7 +247,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(243, 139, 168, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.3), transparent);
             transition: left 0.5s ease;
         }
 
@@ -88,14 +256,14 @@
         }
 
         .upload-zone.dragover {
-            border-color: #a6e3a1;
-            background: rgba(166, 227, 161, 0.1);
-            box-shadow: 0 0 30px rgba(166, 227, 161, 0.3);
+            border-color: #ffd700;
+            background: rgba(116, 199, 236, 0.1);
+            box-shadow: 0 0 30px rgba(116, 199, 236, 0.3);
         }
 
         .upload-icon {
             font-size: 4rem;
-            color: #f38ba8;
+            color: #a6e3a1;
             margin-bottom: 20px;
             display: block;
         }
@@ -112,30 +280,6 @@
 
         input[type="file"] {
             display: none;
-        }
-
-        .debug-toggle {
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(116, 199, 236, 0.1);
-            border-radius: 10px;
-            border: 1px solid rgba(116, 199, 236, 0.3);
-        }
-
-        .debug-toggle label {
-            color: #74c7ec;
-            cursor: pointer;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .debug-toggle input[type="checkbox"] {
-            transform: scale(1.2);
-            accent-color: #74c7ec;
         }
 
         .file-info {
@@ -160,54 +304,68 @@
         }
 
         .stat-card {
-            background: rgba(45, 45, 68, 0.6);
-            border-radius: 10px;
+            background: #1a202c;
+            border-radius: 0;
             padding: 25px;
-            border: 1px solid rgba(205, 214, 244, 0.1);
+            border: 3px solid #4c566a;
             transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.3),
+                inset 0 0 15px rgba(76, 86, 106, 0.1);
         }
 
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 
+                0 0 25px rgba(139, 0, 0, 0.5),
+                inset 0 0 25px rgba(139, 0, 0, 0.2);
+            border-color: #ff6b6b;
         }
 
         .stat-title {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             margin-bottom: 15px;
-            color: #f38ba8;
+            color: #ffd700;
             display: flex;
             align-items: center;
             gap: 10px;
+            text-shadow: 1px 1px 0px #1a202c;
+            font-weight: bold;
         }
 
         .stat-value {
             font-size: 2rem;
-            font-weight: 600;
-            color: #a6e3a1;
-            margin-bottom: 5px;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 0px #1a202c;
+            font-weight: bold;
         }
 
         .stat-subtitle {
-            color: #a6adc8;
-            opacity: 0.7;
-            font-size: 0.9rem;
+            color: #a0aec0;
+            opacity: 0.9;
+            font-size: 0.8rem;
+            text-shadow: 1px 1px 0px #1a202c;
         }
 
         .progress-bar {
             width: 100%;
-            height: 8px;
-            background: rgba(205, 214, 244, 0.1);
-            border-radius: 4px;
+            height: 16px;
+            background: #1a202c;
+            border: 2px solid #4c566a;
+            border-radius: 0;
             overflow: hidden;
-            margin-top: 10px;
+            margin-top: 12px;
+            box-shadow: inset 0 0 10px rgba(76, 86, 106, 0.3);
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #f38ba8, #a6e3a1);
-            border-radius: 4px;
+            background: linear-gradient(90deg, #ffd700, #ff6b6b);
+            border-radius: 0;
             transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .details-section {
@@ -222,29 +380,48 @@
         }
 
         .tab-button {
-            background: rgba(45, 45, 68, 0.8);
-            border: 1px solid rgba(205, 214, 244, 0.2);
-            color: #cdd6f4;
+            background: #1a202c;
+            border: 2px solid #4c566a;
+            color: #e2e8f0;
             padding: 12px 20px;
-            border-radius: 8px;
+            border-radius: 0;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: inherit;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 0px #1a202c;
+            font-weight: bold;
+        }
+
+        .tab-button:hover {
+            background: #3a1a1a;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
         }
 
         .tab-button.active {
-            background: #f38ba8;
-            color: #1e1e2e;
-            box-shadow: 0 5px 15px rgba(243, 139, 168, 0.3);
+            background: #ffd700;
+            color: #1a202c;
+            border-color: #ffd700;
+            box-shadow: 
+                0 0 20px rgba(255, 215, 0, 0.5),
+                inset 0 0 10px rgba(255, 215, 0, 0.3);
+            text-shadow: none;
+            font-weight: bold;
         }
 
         .tab-content {
             display: none;
-            background: rgba(45, 45, 68, 0.4);
-            border-radius: 10px;
+            background: #2d3748;
+            border-radius: 0;
             padding: 25px;
-            border: 1px solid rgba(205, 214, 244, 0.1);
-            max-height: 600px;
+            border: 2px solid #4c566a;
+            box-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.3),
+                inset 0 0 15px rgba(76, 86, 106, 0.1);
+            max-height: 700px;
             overflow-y: auto;
         }
 
@@ -254,40 +431,154 @@
 
         .item-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 15px;
         }
 
+        /* Специальный стиль только для достижений */
+        .achievements-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+            gap: 15px !important;
+            width: 100% !important;
+            grid-auto-rows: min-content !important;
+        }
+
         .item-card {
-            background: rgba(30, 30, 46, 0.6);
-            border-radius: 8px;
-            padding: 15px;
-            border: 1px solid rgba(205, 214, 244, 0.1);
+            background: #1a202c;
+            border-radius: 0;
+            padding: 20px;
+            border: 2px solid #4c566a;
             transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            font-family: 'Silom', sans-serif;
+        }
+
+        .item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            border-color: #ffd700;
         }
 
         .item-card.unlocked {
-            border-color: #a6e3a1;
-            background: rgba(166, 227, 161, 0.1);
+            border-color: #ffd700;
+            background: rgba(255, 215, 0, 0.05);
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
         }
 
         .item-card.locked {
-            border-color: #f38ba8;
-            background: rgba(243, 139, 168, 0.1);
+            border-color: #4c566a;
+            background: rgba(76, 86, 106, 0.1);
             opacity: 0.7;
+        }
+
+        /* Специальные стили для карточек персонажей */
+        .item-card.character-card {
+            min-height: 250px;
+        }
+
+        .character-status {
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .character-unlock-condition {
+            color: #a0aec0;
+            font-size: 0.7rem;
+            margin: 6px 0;
+            line-height: 1.3;
+        }
+
+        .bosses-section {
+            margin-top: 12px;
+            padding-top: 8px;
+            border-top: 1px solid #4c566a;
+        }
+
+        .bosses-title {
+            color: #ffd700;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .bosses-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .boss-tag {
+            color: #a6e3a1;
+            font-size: 0.65rem;
+            background: rgba(166, 227, 161, 0.1);
+            padding: 2px 6px;
+            border-radius: 3px;
+            border: 1px solid rgba(166, 227, 161, 0.3);
+        }
+
+        .boss-tag.tainted-boss {
+            color: #cba6f7;
+            background: rgba(203, 166, 247, 0.1);
+            border: 1px solid rgba(203, 166, 247, 0.3);
+        }
+
+        .boss-tag.undefeated-boss {
+            color: #a0aec0;
+            background: rgba(160, 174, 192, 0.2);
+            border: 1px solid rgba(160, 174, 192, 0.5);
+            opacity: 1;
+        }
+
+        .boss-tag.undefeated-boss.tainted-boss {
+            color: #cba6f7;
+            background: rgba(203, 166, 247, 0.2);
+            border: 1px solid rgba(203, 166, 247, 0.5);
+        }
+
+        .no-bosses {
+            color: #4c566a;
+            font-size: 0.65rem;
+            font-style: italic;
+        }
+
+        .achievement-category {
+            margin-bottom: 30px;
+        }
+
+        .achievement-category h3 {
+            color: #ffd700;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 3px solid #8b0000;
+            text-shadow: 2px 2px 0px #8b0000;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .loading {
             text-align: center;
             padding: 40px;
-            color: #a6adc8;
+            color: #ffd700;
             display: none;
+            text-shadow: 1px 1px 0px #8b0000;
         }
 
         .spinner {
             animation: spin 1s linear infinite;
             font-size: 2rem;
             margin-bottom: 15px;
+            color: #ff6b6b;
+            text-shadow: 2px 2px 0px #8b0000;
         }
 
         @keyframes spin {
@@ -296,85 +587,17 @@
         }
 
         .error {
-            background: rgba(231, 130, 132, 0.1);
-            border: 1px solid #e78284;
-            color: #e78284;
+            background: rgba(139, 0, 0, 0.2);
+            border: 2px solid #8b0000;
+            color: #ff6b6b;
             padding: 20px;
-            border-radius: 10px;
+            border-radius: 0;
             margin-bottom: 20px;
             display: none;
+            text-shadow: 1px 1px 0px #000000;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.3);
         }
 
-        .export-section {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .export-button {
-            background: linear-gradient(135deg, #74c7ec, #a6e3a1);
-            color: #1e1e2e;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-family: inherit;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(116, 199, 236, 0.3);
-        }
-
-        .export-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(116, 199, 236, 0.4);
-        }
-
-        .statistics-panel {
-            background: rgba(116, 199, 236, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid #74c7ec;
-        }
-
-        .statistics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 10px;
-        }
-
-        .statistic-item {
-            background: rgba(30, 30, 46, 0.6);
-            padding: 10px;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .statistic-value {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #a6e3a1;
-        }
-
-        .statistic-label {
-            color: #a6adc8;
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
-
-        .debug-info {
-            background: rgba(45, 45, 68, 0.6);
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-left: 4px solid #fab387;
-            white-space: pre-wrap;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            max-height: 300px;
-            overflow-y: auto;
-        }
 
         .hex-viewer {
             background: rgba(30, 30, 46, 0.8);
@@ -390,69 +613,103 @@
             border: 1px solid rgba(205, 214, 244, 0.2);
         }
 
+
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 0;
             }
 
-            h1 {
-                font-size: 2rem;
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .content-title {
+                font-size: 1.5rem;
             }
 
             .upload-zone {
-                padding: 40px 20px;
+                padding: 30px 15px;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
             }
-
-            .details-tabs {
-                flex-direction: column;
-            }
-
-            .statistics-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            }
-        }
-
-        .found-value {
-            background: rgba(166, 227, 161, 0.2);
-            color: #a6e3a1;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-
-        .not-found {
-            background: rgba(243, 139, 168, 0.2);
-            color: #f38ba8;
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-
-        .offset-info {
-            color: #74c7ec;
-            font-size: 0.8rem;
-            margin-top: 5px;
-            font-style: italic;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>
-            <i class="fas fa-dice"></i> Isaac Save Analyzer 
-            <span class="debug-badge">Debug Edition</span>
-        </h1>
-        <p class="subtitle">
-            Продвинутый анализ файлов сохранения The Binding of Isaac с поиском реальных данных
-        </p>
+        <div class="header">
+            <div class="logo">
+                <div class="skull-icon"></div>
+                <div>
+                    <h1>Isaac Save Analyzer</h1>
+                    <p class="subtitle">Achievement Based (Universal)</p>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-item">ОБЪЯСНЕНИЕ ХАРАКТЕРИСТИК</a>
+                <a href="#" class="nav-item">О САЙТЕ</a>
+                <a href="#" class="nav-item">ИСТОРИЯ ИЗМЕНЕНИЙ</a>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="content-title">ДОСТИЖЕНИЯ</div>
+            
+            <div class="patch-notes">
+                <p>Вышел патч 1.9.7.14 (Исправления багов патча 1.9.7.13), информация на сайте</p>
+                <p>Для измененных в Rep+ предметов добавлен тег.</p>
+            </div>
+
+        <div class="parser-info">
+            <h3 style="color: #a6e3a1; margin-bottom: 15px;">
+                <i class="fas fa-trophy"></i> О парсере Achievement Based (Universal)
+            </h3>
+            <p style="margin-bottom: 15px;">
+                Универсальный парсер, который работает со <strong>всеми версиями Isaac</strong> и анализирует файл сохранения 
+                на основе достижений из файла achivments.txt. Он точно определяет какие персонажи разблокированы, 
+                какие челленджи пройдены, и какие предметы найдены на основе разблокированных достижений.
+            </p>
+            <div class="parser-features">
+                <div class="feature">
+                    <div class="feature-title">🎯 Точный анализ</div>
+                    <div>На основе достижений из achivments.txt</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-title">🌐 Поддержка</div>
+                    <div>Repentance, Afterbirth+, Afterbirth, Rebirth</div>
+                </div>
+                 <div class="feature">
+                     <div class="feature-title">👥 Персонажи</div>
+                     <div>34 персонажа (Repentance)</div>
+                 </div>
+                <div class="feature">
+                    <div class="feature-title">🏆 Челленджи</div>
+                    <div>45 челленджей (Repentance)</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-title">💎 Предметы</div>
+                    <div>732 предмета Repentance</div>
+                </div>
+            </div>
+            <div style="margin-top: 15px; padding: 10px; background: rgba(116, 199, 236, 0.1); border-radius: 8px; border-left: 4px solid #74c7ec;">
+                <strong>✅ Максимальная точность:</strong> Анализ основан на реальных достижениях из игры, 
+                что обеспечивает 100% точность определения прогресса персонажей и челленджей.
+            </div>
+        </div>
 
         <div class="upload-zone" id="uploadZone">
-            <i class="fas fa-cloud-upload-alt upload-icon"></i>
-            <div class="upload-text">Перетащи .dat файл сохранения сюда</div>
-            <div class="upload-hint">или нажми для выбора файла</div>
+            <i class="fas fa-upload upload-icon"></i>
+            <div class="upload-text">Загрузи .dat файл для анализа на основе достижений</div>
+            <div class="upload-hint">Поддерживает все версии Isaac: Repentance, Afterbirth+, Afterbirth, Rebirth</div>
             <input type="file" id="fileInput" accept=".dat" />
         </div>
 
@@ -465,10 +722,10 @@
         </div>
 
         <div class="loading" id="loading">
-            <div class="spinner"><i class="fas fa-dice-d6"></i></div>
-            <div>Анализируем файл сохранения...</div>
+            <div class="spinner"><i class="fas fa-trophy"></i></div>
+            <div>Анализ на основе достижений...</div>
             <div style="font-size: 0.9rem; margin-top: 10px; color: #a6adc8;">
-                Ищем статистические данные и паттерны в бинарном файле
+                Определяем персонажей, челленджи и предметы
             </div>
         </div>
 
@@ -480,7 +737,7 @@
                         Достижения
                     </div>
                     <div class="stat-value" id="achievementsCount">0</div>
-                    <div class="stat-subtitle" id="achievementsTotal">из 637 получено</div>
+                    <div class="stat-subtitle" id="achievementsTotal">из 0 получено</div>
                     <div class="progress-bar">
                         <div class="progress-fill" id="achievementsProgress"></div>
                     </div>
@@ -492,7 +749,7 @@
                         Персонажи
                     </div>
                     <div class="stat-value" id="charactersCount">0</div>
-                    <div class="stat-subtitle" id="charactersTotal">из 34 разблокировано</div>
+                     <div class="stat-subtitle" id="charactersTotal">из 34 разблокировано</div>
                     <div class="progress-bar">
                         <div class="progress-fill" id="charactersProgress"></div>
                     </div>
@@ -516,7 +773,7 @@
                         Предметы
                     </div>
                     <div class="stat-value" id="itemsCount">0</div>
-                    <div class="stat-subtitle" id="itemsTotal">из 716 найдено</div>
+                    <div class="stat-subtitle" id="itemsTotal">из 732 найдено</div>
                     <div class="progress-bar">
                         <div class="progress-fill" id="itemsProgress"></div>
                     </div>
@@ -529,11 +786,11 @@
                     <button class="tab-button" data-tab="characters">Персонажи</button>
                     <button class="tab-button" data-tab="challenges">Челленджи</button>
                     <button class="tab-button" data-tab="items">Предметы</button>
-                    <button class="tab-button" data-tab="raw">Hex Анализ</button>
+                    <button class="tab-button" data-tab="raw">Отладка</button>
                 </div>
 
                 <div class="tab-content active" id="achievementsTab">
-                    <div class="item-grid" id="achievementsList"></div>
+                    <div id="achievementsList"></div>
                 </div>
 
                 <div class="tab-content" id="charactersTab">
@@ -550,26 +807,19 @@
 
                 <div class="tab-content" id="rawTab">
                     <div style="margin-bottom: 20px;">
-                        <h3 style="color: #f38ba8; margin-bottom: 15px;">
-                            <i class="fas fa-bug"></i> Режим отладки
+                        <h3 style="color: #a6e3a1; margin-bottom: 15px;">
+                            <i class="fas fa-bug"></i> Отладочная информация
                         </h3>
-                        <label style="color: #a6adc8; cursor: pointer; display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-                            <input type="checkbox" id="debugModeToggle" style="transform: scale(1.2); accent-color: #74c7ec;">
-                            Показать отладочную информацию и hex данные
-                        </label>
                     </div>
                     <pre id="rawData" class="hex-viewer"></pre>
                 </div>
             </div>
 
-            <div class="export-section">
-                <button class="export-button" onclick="exportResults()">
-                    <i class="fas fa-download"></i> Экспортировать анализ (с отладкой)
-                </button>
-            </div>
         </div>
     </div>
 
-    <script src="isaac-parser.js"></script>
+    <script src="isaac-data.js"></script>
+    <script src="isaac-items-data.js"></script>
+    <script src="isaac-parser-achievements.js"></script>
 </body>
 </html>
