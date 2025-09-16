@@ -195,6 +195,103 @@ class IsaacAchievementParser {
         };
     }
 
+    loadCharacterBossesData() {
+        // Данные о боссах, которых убивает каждый персонаж (из Kal.txt)
+        return {
+            "Isaac": [
+                { id: 43, name: "Сатана", achievement: "Satan" },
+                { id: 49, name: "???", achievement: "???" },
+                { id: 70, name: "Комната вызова", achievement: "Boss Rush" },
+                { id: 106, name: "Айзек", achievement: "Isaac" },
+                { id: 149, name: "Агнец", achievement: "The Lamb" },
+                { id: 169, name: "Сердце мамы в сложном режиме", achievement: "Mom's Heart (Hard)" },
+                { id: 179, name: "Hush", achievement: "Hush" },
+                { id: 205, name: "Мега сатана", achievement: "Mega Satan" },
+                { id: 282, name: "Делириум", achievement: "Delirium" },
+                { id: 192, name: "Грид мод", achievement: "Greed Mode" },
+                { id: 296, name: "Ультра грид", achievement: "Greedier Mode" },
+                { id: 440, name: "Матерь", achievement: "Mother" },
+                { id: 441, name: "Бист", achievement: "The Beast" }
+            ],
+            "Magdalene": [
+                { id: 45, name: "Сатана", achievement: "Satan" },
+                { id: 50, name: "???", achievement: "???" },
+                { id: 109, name: "Комната вызова", achievement: "Boss Rush" },
+                { id: 20, name: "Айзек", achievement: "Isaac" },
+                { id: 71, name: "Агнец", achievement: "The Lamb" },
+                { id: 168, name: "Сердце мамы в сложном режиме", achievement: "Mom's Heart (Hard)" },
+                { id: 180, name: "Hush", achievement: "Hush" },
+                { id: 206, name: "Мега сатана", achievement: "Mega Satan" },
+                { id: 283, name: "Делириум", achievement: "Delirium" },
+                { id: 193, name: "Грид мод", achievement: "Greed Mode" },
+                { id: 297, name: "Ультра грид", achievement: "Greedier Mode" },
+                { id: 442, name: "Матерь", achievement: "Mother" },
+                { id: 443, name: "Бист", achievement: "The Beast" }
+            ],
+            "Cain": [
+                { id: 46, name: "Сатана", achievement: "Satan" },
+                { id: 75, name: "???", achievement: "???" },
+                { id: 110, name: "Комната вызова", achievement: "Boss Rush" },
+                { id: 21, name: "Айзек", achievement: "Isaac" },
+                { id: 51, name: "Агнец", achievement: "The Lamb" },
+                { id: 171, name: "Сердце мамы в сложном режиме", achievement: "Mom's Heart (Hard)" },
+                { id: 181, name: "Hush", achievement: "Hush" },
+                { id: 207, name: "Мега сатана", achievement: "Mega Satan" },
+                { id: 284, name: "Делириум", achievement: "Delirium" },
+                { id: 194, name: "Грид мод", achievement: "Greed Mode" },
+                { id: 298, name: "Ультра грид", achievement: "Greedier Mode" },
+                { id: 444, name: "Матерь", achievement: "Mother" },
+                { id: 445, name: "Бист", achievement: "The Beast" }
+            ],
+            "Judas": [
+                { id: 72, name: "Сатана", achievement: "Satan" },
+                { id: 75, name: "???", achievement: "???" },
+                { id: 108, name: "Комната вызова", achievement: "Boss Rush" },
+                { id: 107, name: "Айзек", achievement: "Isaac" },
+                { id: 52, name: "Агнец", achievement: "The Lamb" },
+                { id: 170, name: "Сердце мамы в сложном режиме", achievement: "Mom's Heart (Hard)" },
+                { id: 182, name: "Hush", achievement: "Hush" },
+                { id: 208, name: "Мега сатана", achievement: "Mega Satan" },
+                { id: 285, name: "Делириум", achievement: "Delirium" },
+                { id: 195, name: "Грид мод", achievement: "Greed Mode" },
+                { id: 299, name: "Ультра грид", achievement: "Greedier Mode" },
+                { id: 446, name: "Матерь", achievement: "Mother" },
+                { id: 447, name: "Бист", achievement: "The Beast" }
+            ],
+            "???": [],
+            "Eve": [],
+            "Samson": [],
+            "Azazel": [],
+            "Lazarus": [],
+            "Eden": [],
+            "The Lost": [],
+            "Lilith": [],
+            "Keeper": [],
+            "Apollyon": [],
+            "The Forgotten": [],
+            "Bethany": [],
+            "Jacob and Esau": [],
+            // Tainted персонажи (пока пустые, можно добавить позже)
+            "Tainted Isaac": [],
+            "Tainted Magdalene": [],
+            "Tainted Cain": [],
+            "Tainted Judas": [],
+            "Tainted ???": [],
+            "Tainted Eve": [],
+            "Tainted Samson": [],
+            "Tainted Azazel": [],
+            "Tainted Lazarus": [],
+            "Tainted Eden": [],
+            "Tainted Lost": [],
+            "Tainted Lilith": [],
+            "Tainted Keeper": [],
+            "Tainted Apollyon": [],
+            "Tainted Forgotten": [],
+            "Tainted Bethany": [],
+            "Tainted Jacob": []
+        };
+    }
+
     loadChallengeData() {
         return {
             // 45 челленджей для Repentance
@@ -1072,13 +1169,38 @@ class IsaacAchievementParser {
         return names[category] || category;
     }
 
+    getKilledBossesForCharacter(characterName, characterBosses) {
+        // Возвращаем массив ID убитых боссов для персонажа
+        const killedBosses = [];
+        
+        characterBosses.forEach(boss => {
+            // Проверяем, разблокировано ли достижение для этого босса
+            const achievementId = boss.id;
+            const isAchievementUnlocked = this.analysisResults.achievements[achievementId-1]?.unlocked || false;
+            
+            if (isAchievementUnlocked) {
+                killedBosses.push(boss.id);
+            }
+        });
+        
+        return killedBosses;
+    }
+
     updateCharactersTab() {
         const container = document.getElementById('charactersList');
         container.innerHTML = '';
         
+        // Загружаем данные о боссах
+        const bossesData = this.loadCharacterBossesData();
+        
         this.analysisResults.characters.forEach(character => {
             const div = document.createElement('div');
             div.className = `item-card ${character.unlocked ? 'unlocked' : 'locked'}`;
+            
+            // Получаем боссов для этого персонажа
+            const characterBosses = bossesData[character.name] || [];
+            const killedBosses = this.getKilledBossesForCharacter(character.name, characterBosses);
+            
             div.innerHTML = `
                 <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${character.name}
@@ -1091,6 +1213,20 @@ class IsaacAchievementParser {
                         ${character.unlocked ? '✓ РАЗБЛОКИРОВАН' : '✗ ЗАБЛОКИРОВАН'}
                     </span>
                 </div>
+                ${characterBosses.length > 0 ? `
+                    <div class="bosses-section">
+                        <div class="bosses-title">
+                            Убитые боссы (${killedBosses.length}/${characterBosses.length})
+                        </div>
+                        <div class="boss-tags">
+                            ${characterBosses.map(boss => `
+                                <span class="boss-tag ${killedBosses.includes(boss.id) ? 'killed' : ''}">
+                                    ${boss.name}
+                                </span>
+                            `).join('')}
+                        </div>
+                    </div>
+                ` : ''}
             `;
             container.appendChild(div);
         });
