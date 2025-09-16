@@ -238,7 +238,7 @@ h1 {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
     transition: left 0.5s ease;
 }
 
@@ -300,9 +300,9 @@ input[type="file"] {
 .stat-card:hover {
     transform: translateY(-3px);
     box-shadow: 
-        0 0 25px rgba(255, 215, 0, 0.5),
-        inset 0 0 25px rgba(255, 215, 0, 0.2);
-    border-color: #ffd700;
+        0 0 25px rgba(255, 215, 0, 0.3),
+        inset 0 0 25px rgba(255, 215, 0, 0.1);
+    border-color: #d4af37;
 }
 
 .stat-title {
@@ -378,19 +378,19 @@ input[type="file"] {
 }
 
 .tab-button:hover {
-    background: #4a3a1a;
-    border-color: #ffd700;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    background: #374151;
+    border-color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
 }
 
 .tab-button.active {
-    background: #ffd700;
-    color: #1a202c;
+    background: #374151;
+    color: #ffd700;
     border-color: #ffd700;
     box-shadow: 
-        0 0 20px rgba(255, 215, 0, 0.5),
-        inset 0 0 10px rgba(255, 215, 0, 0.3);
-    text-shadow: none;
+        0 0 20px rgba(255, 215, 0, 0.3),
+        inset 0 0 10px rgba(255, 215, 0, 0.1);
+    text-shadow: 1px 1px 0px #1a202c;
     font-weight: bold;
 }
 
