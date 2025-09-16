@@ -1033,10 +1033,11 @@ class IsaacAchievementParser {
             const div = document.createElement('div');
             div.className = `item-card character-card ${character.unlocked ? 'unlocked' : 'locked'}`;
             
-            // Создаем список убитых боссов
+            // Создаем список убитых и не убитых боссов
             let bossesList = '';
             if (character.defeatedBosses && character.defeatedBosses.length > 0) {
                 const defeatedBosses = character.defeatedBosses.filter(boss => boss.defeated);
+                const undefeatedBosses = character.defeatedBosses.filter(boss => !boss.defeated);
                 const totalBosses = character.defeatedBosses.length;
                 const isTainted = character.id >= 474;
                 
@@ -1054,6 +1055,17 @@ class IsaacAchievementParser {
                             '<div class="no-bosses">Нет убитых боссов</div>' : 
                             ''
                         }
+                        
+                        ${undefeatedBosses.length > 0 ? `
+                            <div class="bosses-title" style="margin-top: 12px; color: #4c566a;">
+                                Не убитые боссы (${undefeatedBosses.length}/${totalBosses})
+                            </div>
+                            <div class="bosses-list">
+                                ${undefeatedBosses.map(boss => 
+                                    `<span class="boss-tag undefeated-boss ${isTainted ? 'tainted-boss' : ''}">✗${boss.name}</span>`
+                                ).join('')}
+                            </div>
+                        ` : ''}
                     </div>
                 `;
             }
