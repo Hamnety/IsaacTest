@@ -976,9 +976,6 @@ class IsaacAchievementParser {
         allAchievements.forEach(achievement => {
                     const div = document.createElement('div');
                     div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
-            div.style.padding = '16px';
-            div.style.minHeight = '140px';
-            div.style.fontSize = '0.8rem';
             
                     div.innerHTML = `
                 <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
@@ -987,10 +984,8 @@ class IsaacAchievementParser {
                 <div style="color: #a0aec0; font-size: 0.75rem; margin: 8px 0; line-height: 1.4;">
                     ${achievement.unlockCondition}
                 </div>
-                <div style="margin-top: auto; text-align: center; padding-top: 8px;">
-                    <span style="color: ${achievement.unlocked ? '#ffd700' : '#4c566a'}; font-size: 0.7rem; font-weight: bold;">
-                        ${achievement.unlocked ? '✓ ПОЛУЧЕНО' : '✗ ЗАБЛОКИРОВАНО'}
-                    </span>
+                <div class="status-bottom ${achievement.unlocked ? 'unlocked' : 'locked'}">
+                    ${achievement.unlocked ? '✓ ПОЛУЧЕНО' : '✗ ЗАБЛОКИРОВАНО'}
                 </div>
                     `;
             mainGrid.appendChild(div);
@@ -1084,10 +1079,8 @@ class IsaacAchievementParser {
                 <div style="color: #a0aec0; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
                     ${challenge.unlockCondition}
                 </div>
-                <div style="margin-top: auto; text-align: center; padding-top: 8px;">
-                    <span style="color: ${challenge.completed ? '#ffd700' : '#4c566a'}; font-size: 0.8rem; font-weight: bold;">
-                        ${challenge.completed ? '✓ ЗАВЕРШЕН' : '✗ НЕ ЗАВЕРШЕН'}
-                    </span>
+                <div class="status-bottom ${challenge.completed ? 'unlocked' : 'locked'}">
+                    ${challenge.completed ? '✓ ЗАВЕРШЕН' : '✗ НЕ ЗАВЕРШЕН'}
                 </div>
             `;
             container.appendChild(div);
@@ -1120,10 +1113,8 @@ class IsaacAchievementParser {
                 <div style="color: ${qualityColor}; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
                     Quality ${item.quality} • <span style="color: ${poolColor}">${item.pool}</span>
                 </div>
-                <div style="margin-top: auto; text-align: center; padding-top: 8px;">
-                    <span style="color: ${item.found ? '#ffd700' : '#4c566a'}; font-size: 0.8rem; font-weight: bold;">
-                        ${item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН'}
-                    </span>
+                <div class="status-bottom ${item.found ? 'unlocked' : 'locked'}">
+                    ${item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН'}
                 </div>
             `;
             container.appendChild(div);
@@ -1199,7 +1190,7 @@ class IsaacAchievementParser {
                 }
             }
             
-            item.style.display = shouldShow ? 'block' : 'none';
+            item.style.display = shouldShow ? 'flex' : 'none';
         });
     }
 
