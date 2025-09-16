@@ -13,6 +13,7 @@ class IsaacAchievementParser {
             statistics: {},
             debugInfo: []
         };
+        this.loadedTabs = new Set(); // Кэш загруженных вкладок
         
         // Инициализируем данные игры
         this.gameData = null;
@@ -949,11 +950,12 @@ class IsaacAchievementParser {
     }
 
     updateTabs() {
-        this.updateAchievementsTab();
-        this.updateCharactersTab();
-        this.updateChallengesTab();
-        this.updateItemsTab();
-        this.initializeFilters();
+        // Загружаем только активную вкладку
+        const activeTab = document.querySelector('.tab-button.active');
+        if (activeTab) {
+            const tabName = activeTab.dataset.tab;
+            this.loadTabContent(tabName);
+        }
     }
 
     updateAchievementsTab() {
@@ -1123,11 +1125,100 @@ class IsaacAchievementParser {
 
 
     switchTab(tabName) {
+        // Очищаем контент всех вкладок перед переключением
+        this.clearAllTabs();
+        
         document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
         
         document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
         document.getElementById(`${tabName}Tab`).classList.add('active');
+        
+        // Загружаем контент только для активной вкладки
+        this.loadTabContent(tabName);
+    }
+
+    clearAllTabs() {
+        // Очищаем контент только неактивных вкладок для экономии памяти
+        const tabs = ['achievements', 'characters', 'challenges', 'items'];
+        const activeTab = document.querySelector('.tab-button.active');
+        const activeTabName = activeTab ? activeTab.dataset.tab : null;
+        
+        tabs.forEach(tabName => {
+            // Не очищаем активную вкладку
+            if (tabName === activeTabName) return;
+            
+            const tab = document.getElementById(`${tabName}Tab`);
+            if (!tab) return;
+            
+            // Находим контейнеры с контентом (исключаем фильтры)
+            const contentContainers = tab.querySelectorAll('.item-grid, #achievementsList');
+            contentContainers.forEach(container => {
+                container.innerHTML = '';
+            });
+            
+            // Убираем из кэша загруженных вкладок
+            this.loadedTabs.delete(tabName);
+        });
+    }
+
+    loadTabContent(tabName) {
+        // Если вкладка уже загружена, не перезагружаем
+        if (this.loadedTabs.has(tabName)) {
+            return;
+        }
+        
+        // Показываем индикатор загрузки
+        this.showLoadingIndicator(tabName);
+        
+        // Загружаем контент с небольшой задержкой для плавности
+        setTimeout(() => {
+            switch(tabName) {
+                case 'achievements':
+                    this.updateAchievementsTab();
+                    break;
+                case 'characters':
+                    this.updateCharactersTab();
+                    break;
+                case 'challenges':
+                    this.updateChallengesTab();
+                    break;
+                case 'items':
+                    this.updateItemsTab();
+                    break;
+            }
+            
+            // Отмечаем вкладку как загруженную
+            this.loadedTabs.add(tabName);
+            
+            // Инициализируем фильтры для активной вкладки
+            this.initializeFilters();
+        }, 50);
+    }
+
+    showLoadingIndicator(tabName) {
+        const tab = document.getElementById(`${tabName}Tab`);
+        if (!tab) return;
+        
+        const container = tab.querySelector('.item-grid, #achievementsList');
+        if (!container) return;
+        
+        container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #a0aec0;">
+                <div class="spinner" style="margin-bottom: 15px;"></div>
+                <div>Загрузка ${this.getTabDisplayName(tabName)}...</div>
+            </div>
+        `;
+    }
+
+    getTabDisplayName(tabName) {
+        const names = {
+            'achievements': 'достижений',
+            'characters': 'персонажей',
+            'challenges': 'челленджей',
+            'items': 'предметов'
+        };
+        return names[tabName] || 'данных';
     }
 
     initializeFilters() {
@@ -1192,6 +1283,12 @@ class IsaacAchievementParser {
             
             item.style.display = shouldShow ? 'flex' : 'none';
         });
+    }
+
+    // Функция для принудительной перезагрузки вкладки
+    reloadTab(tabName) {
+        this.loadedTabs.delete(tabName);
+        this.loadTabContent(tabName);
     }
 
     showFileInfo(file) {
