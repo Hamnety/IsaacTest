@@ -444,6 +444,13 @@ class IsaacAchievementParser {
         return `#${achievementId} Boss`;
     }
 
+    getCharacterName(characterId) {
+        if (ISAAC_GAME_DATA.characterNames[characterId]) {
+            return ISAAC_GAME_DATA.characterNames[characterId];
+        }
+        return `#${characterId} Character`;
+    }
+
     getAchievementType(id) {
         if (this.gameData && this.gameData.characters[id]) return 'character';
         if (this.gameData && this.gameData.challenges[id]) return 'challenge';
@@ -490,7 +497,7 @@ class IsaacAchievementParser {
             
             this.analysisResults.characters.push({
                 id: characterId,
-                name: this.getAchievementName(characterId),
+                name: this.getCharacterName(characterId),
                 unlocked: isUnlocked,
                 unlockCondition: this.getAchievementUnlockCondition(characterId),
                 completionMarks: this.getCharacterCompletionMarks(characterId, isUnlocked),
