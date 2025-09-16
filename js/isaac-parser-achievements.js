@@ -953,6 +953,7 @@ class IsaacAchievementParser {
         this.updateCharactersTab();
         this.updateChallengesTab();
         this.updateItemsTab();
+        this.initializeFilters();
     }
 
     updateAchievementsTab() {
@@ -1136,6 +1137,70 @@ class IsaacAchievementParser {
         
         document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
         document.getElementById(`${tabName}Tab`).classList.add('active');
+    }
+
+    initializeFilters() {
+        // Инициализируем фильтры для каждой вкладки
+        this.setupFilterButtons('achievementsTab', 'achievements');
+        this.setupFilterButtons('challengesTab', 'challenges');
+        this.setupFilterButtons('itemsTab', 'items');
+    }
+
+    setupFilterButtons(tabId, dataType) {
+        const tab = document.getElementById(tabId);
+        if (!tab) return;
+
+        const filterButtons = tab.querySelectorAll('.filter-button');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Убираем активный класс со всех кнопок в этой вкладке
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Добавляем активный класс к нажатой кнопке
+                button.classList.add('active');
+                
+                // Применяем фильтр
+                const filter = button.dataset.filter;
+                this.applyFilter(tabId, dataType, filter);
+            });
+        });
+    }
+
+    applyFilter(tabId, dataType, filter) {
+        const tab = document.getElementById(tabId);
+        if (!tab) return;
+
+        const container = tab.querySelector('.item-grid, #achievementsList');
+        if (!container) return;
+
+        const items = container.querySelectorAll('.item-card, .achievement-category');
+        
+        items.forEach(item => {
+            let shouldShow = true;
+            
+            if (filter === 'all') {
+                shouldShow = true;
+            } else if (dataType === 'achievements') {
+                if (filter === 'unlocked') {
+                    shouldShow = item.classList.contains('unlocked');
+                } else if (filter === 'locked') {
+                    shouldShow = item.classList.contains('locked');
+                }
+            } else if (dataType === 'challenges') {
+                if (filter === 'completed') {
+                    shouldShow = item.classList.contains('unlocked');
+                } else if (filter === 'incomplete') {
+                    shouldShow = item.classList.contains('locked');
+                }
+            } else if (dataType === 'items') {
+                if (filter === 'found') {
+                    shouldShow = item.classList.contains('unlocked');
+                } else if (filter === 'missing') {
+                    shouldShow = item.classList.contains('locked');
+                }
+            }
+            
+            item.style.display = shouldShow ? 'block' : 'none';
+        });
     }
 
     showFileInfo(file) {
