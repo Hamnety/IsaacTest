@@ -594,6 +594,64 @@ input[type="file"] {
     border: 1px solid rgba(205, 214, 244, 0.2);
 }
 
+/* Кастомные скроллбары */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a202c;
+    border-radius: 0;
+    border: 1px solid #4c566a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4c566a;
+    border-radius: 0;
+    border: 1px solid #6b7280;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+    border-color: #9ca3af;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #9ca3af;
+}
+
+::-webkit-scrollbar-corner {
+    background: #1a202c;
+}
+
+/* Для Огненной лисички */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #4c566a #1a202c;
+}
+
+/* Специальные стили для контентных областей */
+.tab-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+    background: #2d3748;
+    border-radius: 0;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background: #6b7280;
+    border-radius: 0;
+    border: none;
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 0;
