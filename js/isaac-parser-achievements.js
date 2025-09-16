@@ -953,7 +953,6 @@ class IsaacAchievementParser {
         this.updateCharactersTab();
         this.updateChallengesTab();
         this.updateItemsTab();
-        this.updateRawTab();
     }
 
     updateAchievementsTab() {
@@ -1130,37 +1129,6 @@ class IsaacAchievementParser {
         });
     }
 
-    updateRawTab() {
-        const container = document.getElementById('rawData');
-        let content = '';
-        
-        if (this.analysisResults.debugInfo.length > 0) {
-            content += '=== ACHIEVEMENT-BASED PARSER DEBUG INFO ===\n';
-            this.analysisResults.debugInfo.forEach(info => {
-                content += info + '\n';
-            });
-            content += '\n';
-        }
-        
-        if (this.fileData) {
-            content += '=== HEX DUMP (первые 500 байт) ===\n';
-            for (let i = 0; i < Math.min(500, this.fileData.length); i += 16) {
-                let line = i.toString(16).padStart(8, '0') + ': ';
-                let ascii = '';
-                
-                for (let j = 0; j < 16 && i + j < this.fileData.length; j++) {
-                    const byte = this.fileData[i + j];
-                    line += byte.toString(16).padStart(2, '0') + ' ';
-                    ascii += (byte >= 32 && byte <= 126) ? String.fromCharCode(byte) : '.';
-                }
-                
-                line = line.padEnd(60) + ' ' + ascii;
-                content += line + '\n';
-            }
-        }
-        
-        container.textContent = content;
-    }
 
     switchTab(tabName) {
         document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
