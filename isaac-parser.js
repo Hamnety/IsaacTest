@@ -31,6 +31,11 @@ class IsaacSaveParser {
         
         this.initializeUI();
         this.loadGameData();
+        
+        // Показываем персонажей сразу при загрузке страницы
+        setTimeout(() => {
+            this.displayResults();
+        }, 100);
     }
 
     initializeUI() {
@@ -311,6 +316,9 @@ class IsaacSaveParser {
         this.analysisResults.debugInfo.push(`Заголовок: ${header}`);
         this.analysisResults.debugInfo.push(`Размер файла: ${this.fileData.length} байт`);
         
+        // Инициализируем персонажей данными из gameData
+        this.analysisResults.characters = this.gameData.characters.map(char => ({ ...char }));
+        
         // Поиск конкретных статистических данных из скриншота
         await this.searchForKnownStatistics();
         
@@ -568,7 +576,8 @@ class IsaacSaveParser {
                             ...this.gameData.characters[charIndex],
                             unlocked: isUnlocked,
                             completionMarks: completionMarks,
-                            completedMarks: completedMarks
+                            completedMarks: completedMarks,
+                            defeatedBosses: this.gameData.characters[charIndex].defeatedBosses || []
                         };
                     }
                 }
@@ -830,6 +839,8 @@ class IsaacSaveParser {
         const container = document.getElementById('charactersList');
         container.innerHTML = '';
         
+        console.log('Обновляем вкладку персонажей:', this.analysisResults.characters);
+        
         this.analysisResults.characters.forEach(character => {
             const div = document.createElement('div');
             div.className = `item-card ${character.unlocked ? 'unlocked' : 'locked'}`;
@@ -855,6 +866,7 @@ class IsaacSaveParser {
 
             // HTML для отображения убитых боссов
             let defeatedBossesHtml = '';
+            console.log(`Персонаж ${character.name}, defeatedBosses:`, character.defeatedBosses);
             if (character.defeatedBosses && character.defeatedBosses.length > 0) {
                 defeatedBossesHtml = `
                     <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(205, 214, 244, 0.2);">
