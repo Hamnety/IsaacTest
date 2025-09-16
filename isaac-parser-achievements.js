@@ -1057,7 +1057,7 @@ class IsaacAchievementParser {
                         }
                         
                         ${undefeatedBosses.length > 0 ? `
-                            <div class="bosses-title" style="margin-top: 12px; color: #4c566a;">
+                            <div class="bosses-title" style="margin-top: 12px; color: #a0aec0;">
                                 Не убитые боссы (${undefeatedBosses.length}/${totalBosses})
                             </div>
                             <div class="bosses-list">
