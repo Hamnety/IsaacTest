@@ -663,11 +663,25 @@ class IsaacAchievementParser {
         for (const bossId of bossIds) {
             const isDefeated = this.analysisResults.achievements[bossId - 1]?.unlocked || false;
             const bossName = this.getAchievementName(bossId);
-            defeatedBosses.push({
-                id: bossId,
-                name: bossName,
-                defeated: isDefeated
-            });
+            
+            // Для порченных персонажей показываем объединенные достижения
+            if (characterId >= 474) {
+                // Порченные персонажи имеют объединенные достижения
+                defeatedBosses.push({
+                    id: bossId,
+                    name: bossName,
+                    defeated: isDefeated,
+                    isTainted: true
+                });
+            } else {
+                // Обычные персонажи имеют отдельные достижения для каждого босса
+                defeatedBosses.push({
+                    id: bossId,
+                    name: bossName,
+                    defeated: isDefeated,
+                    isTainted: false
+                });
+            }
         }
         
         return defeatedBosses;
@@ -999,15 +1013,16 @@ class IsaacAchievementParser {
             if (character.defeatedBosses && character.defeatedBosses.length > 0) {
                 const defeatedBosses = character.defeatedBosses.filter(boss => boss.defeated);
                 const totalBosses = character.defeatedBosses.length;
+                const isTainted = character.id >= 474;
                 
                 bossesList = `
                     <div class="bosses-section">
                         <div class="bosses-title">
-                            Убитые боссы (${defeatedBosses.length}/${totalBosses})
+                            ${isTainted ? 'Убитые боссы (объединенные достижения)' : 'Убитые боссы'} (${defeatedBosses.length}/${totalBosses})
                         </div>
                         <div class="bosses-list">
                             ${defeatedBosses.map(boss => 
-                                `<span class="boss-tag">✓${boss.name}</span>`
+                                `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''}">✓${boss.name}</span>`
                             ).join('')}
                         </div>
                         ${defeatedBosses.length === 0 ? 
