@@ -25,15 +25,12 @@ class IsaacAchievementParser {
 
     async loadGameData() {
         try {
-            const response = await fetch('isaac-game-data.json');
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-            }
-            this.gameData = await response.json();
-            this.analysisResults.debugInfo.push('Данные игры загружены из JSON файла');
+            // Используем данные из isaac-data.js
+            this.gameData = ISAAC_GAME_DATA;
+            this.analysisResults.debugInfo.push('Данные игры загружены из isaac-data.js');
             
             // Загружаем полные данные предметов
-            const itemsResponse = await fetch('isaac-items-full.json');
+            const itemsResponse = await fetch('data/isaac-items-full.json');
             if (itemsResponse.ok) {
                 this.fullItemsData = await itemsResponse.json();
                 this.analysisResults.debugInfo.push('Полные данные предметов загружены');
@@ -42,7 +39,7 @@ class IsaacAchievementParser {
             }
             
             // Загружаем данные достижений
-            const achievementsResponse = await fetch('achievements_unlock_final.json');
+            const achievementsResponse = await fetch('data/achievements_unlock_final.json');
             if (achievementsResponse.ok) {
                 this.achievementsData = await achievementsResponse.json();
                 this.analysisResults.debugInfo.push('Финальные данные достижений загружены');
@@ -52,7 +49,7 @@ class IsaacAchievementParser {
             }
             
             // Загружаем константы предметов
-            const constantsResponse = await fetch('isaac-item-constants.json');
+            const constantsResponse = await fetch('data/isaac-item-constants.json');
             if (constantsResponse.ok) {
                 this.itemConstants = await constantsResponse.json();
                 this.analysisResults.debugInfo.push('Константы предметов загружены');
