@@ -642,31 +642,18 @@ class IsaacAchievementParser {
     getCharacterCompletionMarks(characterId, isUnlocked) {
         if (!isUnlocked) return [];
         
-        // Получаем отметки из JSON данных
-        const characterIndex = this.getCharacterIndex(characterId);
-        if (characterIndex && this.gameData.completionMarks[characterIndex]) {
-            const marks = this.gameData.completionMarks[characterIndex].marks;
-            return marks.map(mark => ({
-                name: mark,
-                completed: this.checkCompletionMark(characterId, mark)
-            }));
-        }
+        // Получаем данные о боссах для персонажа
+        const bossData = this.getCharacterDefeatedBosses(characterId);
+        const marks = [];
         
-        // Fallback - базовые отметки
-        const marks = [
-            { name: "Isaac", completed: false },
-            { name: "Satan", completed: false },
-            { name: "???", completed: false },
-            { name: "The Lamb", completed: false },
-            { name: "Boss Rush", completed: false },
-            { name: "Hush", completed: false },
-            { name: "Mega Satan", completed: false },
-            { name: "Delirium", completed: false },
-            { name: "Greed Mode", completed: false },
-            { name: "Greedier Mode", completed: false },
-            { name: "Mother", completed: false },
-            { name: "The Beast", completed: false }
-        ];
+        // Проверяем основные боссы
+        const requiredBosses = ['Сатана', '???', 'Комната вызова', 'Айзек', 'Агнец', 'Сердце мамы', 'Hush', 'Мега сатана', 'Делириум'];
+        
+        for (const boss of bossData) {
+            if (boss.defeated && requiredBosses.includes(boss.name)) {
+                marks.push(boss.name);
+            }
+        }
         
         return marks;
     }
