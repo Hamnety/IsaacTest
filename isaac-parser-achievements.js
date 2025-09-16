@@ -91,207 +91,28 @@ class IsaacAchievementParser {
     }
 
     loadAchievementData() {
-        // Данные о достижениях из файла achivments.txt
-        return {
-            // Персонажи (достижения 1-3, 32, 42, 67, 80, 81, 82, 156, 199, 251, 340, 404, 405, 390)
-            characters: {
-                1: { name: "Magdalene", unlock: "Имейте 7 или больше контейнеров красных сердец одновременно" },
-                2: { name: "Cain", unlock: "Держите 55 или больше монет одновременно" },
-                3: { name: "Judas", unlock: "Победите Сатану/Satan" },
-                32: { name: "???", unlock: "Победите Сердце Мамы/Mom's Heart 10 раз" },
-                42: { name: "Eve", unlock: "Не поднимайте никаких сердец 2 этажа подряд" },
-                67: { name: "Samson", unlock: "Пройдите 2 этажа подряд без получения урона" },
-                80: { name: "Lazarus", unlock: "Имейте 4 или больше сердец души одновременно" },
-                81: { name: "Eden", unlock: "Завершите 4 главу" },
-                82: { name: "The Lost", unlock: "Специальные условия" },
-                156: { name: "Godhead", unlock: "Получите все отметки за прохождение усложнённого режима за Потерянного/The Lost" },
-                199: { name: "Lilith", unlock: "Завершите Алчный Режим/Greed Mode за Азазеля/Azazel" },
-                251: { name: "Keeper", unlock: "Пожертвуйте 1000 монет в автомат для пожертвований алчности" },
-                340: { name: "Apollyon", unlock: "Победите Мега Сатану/Mega Satan" },
-                404: { name: "Bethany", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! за Лазаря/Lazarus в усложнённом режиме не умирая" },
-                405: { name: "Jacob and Esau", unlock: "Победите Матерь/Mother" },
-                390: { name: "The Forgotten", unlock: "Специальные условия" }
-            },
-            
-            // Челленджи (достижения 157-178, 265-276, 277-300, 508-520, 521-540)
-            challenges: {
-                157: { name: "Darkness Falls", unlock: "Repentance: Победите Сердце Мамы/Mom's Heart 11 раз и разблокируйте Еву/Eve" },
-                158: { name: "The Tank", unlock: "Имейте 7 или больше контейнеров красных сердец одновременно" },
-                159: { name: "Solar System", unlock: "Победите Сердце Мамы/Mom's Heart 3 раза" },
-                160: { name: "Suicide King", unlock: "Победите Сердце Мамы/Mom's Heart 11 раз и разблокируйте Лазаря/Lazarus" },
-                161: { name: "Cat Got Your Tongue", unlock: "Поднимите любые 3 предмета, с меткой 'гаппи/guppy', в одном забеге" },
-                162: { name: "Demo Man", unlock: "Победите Сердце Мамы/Mom's Heart 9 раз" },
-                163: { name: "Cursed!", unlock: "Имейте 7 или больше контейнеров красных сердец одновременно" },
-                164: { name: "Glass Cannon", unlock: "Завершите 'Семьянин/The Family Man' испытание #19, победите Локии/Lokii и разблокируйте Иуду/Judas" },
-                165: { name: "The Family Man", unlock: "Поднимите 2 части ключа Ангела в одном забеге" },
-                166: { name: "Purist", unlock: "Победите Маму/Mom" },
-                167: { name: "Lost Baby", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Исаака/Isaac" },
-                168: { name: "Cute Baby", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Магдалину/Magdalene" },
-                169: { name: "Crow Baby", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Еву/Eve" },
-                170: { name: "Shadow Baby", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Иуду/Judas" },
-                171: { name: "Glass Baby", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Каина/Cain" },
-                172: { name: "Wrapped Baby", unlock: "Afterbirth+: Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Азазеля/Azazel" },
-                173: { name: "Begotten Baby", unlock: "Afterbirth+: Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Лазаря/Lazarus" },
-                174: { name: "Dead Baby", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за ???" },
-                175: { name: "-0- Baby", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Потерянного/The Lost" },
-                176: { name: "Glitch Baby", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Эдема/Eden" },
-                177: { name: "Fighting Baby", unlock: "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Самсона/Samson" },
-                178: { name: "Lord of the Flies", unlock: "Поднимите любые 3 предмета, с меткой 'муха/fly', в одном забеге" },
-                265: { name: "XXXXXXXXL", unlock: "Победите Маму/Mom" },
-                266: { name: "SPEED!", unlock: "Победите Маму/Mom" },
-                267: { name: "Blue Bomber", unlock: "Разрушьте 10 меченых камней и победите Сердце Мамы/Mom's Heart 11 раз" },
-                268: { name: "PAY TO PLAY", unlock: "Победите Исаака/Isaac за Каина/Cain" },
-                269: { name: "Have a Heart", unlock: "Победите Маму/Mom" },
-                270: { name: "I RULE!", unlock: "Repentance: Победите ??? или Агнца/The Lamb, и победите Сатану/Satan за Исаака/Isaac" },
-                271: { name: "BRAINS!", unlock: "Победите Исаака/Isaac 5 раз" },
-                272: { name: "PRIDE DAY!", unlock: "Победите Маму/Mom" },
-                273: { name: "Onan's Streak", unlock: "Repentance: Победите Маму/Mom" },
-                274: { name: "The Guardian", unlock: "Победите Маму/Mom" },
-                275: { name: "Generosity", unlock: "Пожертвуйте 999 монет в автомат для пожертвований алчности" },
-                276: { name: "Mega", unlock: "Победите Мега Сатану/Mega Satan за всех не порченых/non-tainted персонажей" },
-                277: { name: "Backasswards", unlock: "Repentance: Победите ??? или Агнца/The Lamb" },
-                278: { name: "Aprils fool", unlock: "Победите Маму/Mom" },
-                279: { name: "Pokey Mans", unlock: "Победите Сердце Мамы/Mom's Heart 11 раз" },
-                280: { name: "Ultra Hard", unlock: "Repentance: Победите ??? или Агнца/The Lamb" },
-                281: { name: "PONG", unlock: "Победите Исаака/Isaac 5 раз" },
-                282: { name: "D Infinity", unlock: "Победите Cумасшествие/Delirium за Исаака/Isaac" },
-                283: { name: "Eucharist", unlock: "Победите Cумасшествие/Delirium за Магдалину/Magdalene" },
-                284: { name: "Silver Dollar", unlock: "Победите Cумасшествие/Delirium за Каина/Cain" },
-                285: { name: "Shade", unlock: "Победите Cумасшествие/Delirium за Иуду/Judas" },
-                286: { name: "King Baby", unlock: "Победите Cумасшествие/Delirium за ???" },
-                287: { name: "Bloody Crown", unlock: "Победите Cумасшествие/Delirium за Самсона/Samson" },
-                288: { name: "Dull Razor", unlock: "Победите Cумасшествие/Delirium за Еву/Eve" },
-                289: { name: "Eden's Soul", unlock: "Победите Cумасшествие/Delirium за Эдема/Eden" },
-                290: { name: "Dark Prince's Crown", unlock: "Победите Cумасшествие/Delirium за Азазеля/Azazel" },
-                291: { name: "Compound Fracture", unlock: "Победите Cумасшествие/Delirium за Лазаря/Lazarus" },
-                292: { name: "Euthanasia", unlock: "Победите Cумасшествие/Delirium за Лилит/Lilith" },
-                293: { name: "Holy Card", unlock: "Победите Cумасшествие/Delirium за Потерянного/The Lost" },
-                294: { name: "Crooked Penny", unlock: "Победите Cумасшествие/Delirium за Хранителя/Keeper" },
-                295: { name: "Void", unlock: "Победите Cумасшествие/Delirium за Аполлиона/Apollyon" },
-                296: { name: "D1", unlock: "Завершите Усложнённый Алчный Режим/Greedier Mode за Исаака/Isaac" },
-                297: { name: "Glyph of Balance", unlock: "Завершите Усложнённый Алчный Режим/Greedier Mode за Магдалину/Magdalene" },
-                298: { name: "Sack of Sacks", unlock: "Завершите Усложнённый Алчный Режим/Greedier Mode за Каина/Cain" },
-                299: { name: "Eye of Belial", unlock: "Завершите Усложнённый Алчный Режим/Greedier Mode за Иуду/Judas" },
-                300: { name: "Meconium", unlock: "Завершите Усложнённый Алчный Режим/Greedier Mode за ???" }
-            }
-        };
+        // Используем данные из внешнего файла
+        return ISAAC_GAME_DATA;
     }
 
     loadCharacterData() {
+        // Используем данные из внешнего файла
         return {
-            // 34 персонажа для Repentance
-            total: 34,
-            list: [
-                "Isaac", "Magdalene", "Cain", "Judas", "???", "Eve", "Samson", 
-                "Azazel", "Lazarus", "Eden", "The Lost", "Lilith", "Keeper", 
-                "Apollyon", "The Forgotten", "Bethany", "Jacob and Esau",
-                // Tainted персонажи
-                "Tainted Isaac", "Tainted Magdalene", "Tainted Cain", "Tainted Judas",
-                "Tainted ???", "Tainted Eve", "Tainted Samson", "Tainted Azazel",
-                "Tainted Lazarus", "Tainted Eden", "Tainted Lost", "Tainted Lilith",
-                "Tainted Keeper", "Tainted Apollyon", "Tainted Forgotten", "Tainted Bethany",
-                "Tainted Jacob"
-            ]
+            total: ISAAC_GAME_DATA.totals.characters,
+            list: ISAAC_GAME_DATA.characters
         };
     }
 
     loadBossData() {
-        // Данные о боссах из Kal.txt - "Открытия предметов"
-        return {
-            // Маппинг персонажей к их убитым боссам (по ID достижений)
-            characterBosses: {
-                0: { // Исаак (ID 0)
-                    name: "Исаак",
-                    bosses: [
-                        { id: 43, name: "Сатана" },
-                        { id: 49, name: "???" },
-                        { id: 70, name: "Комната вызова" },
-                        { id: 106, name: "Айзек" },
-                        { id: 149, name: "Агнец" },
-                        { id: 169, name: "Сердце мамы" },
-                        { id: 179, name: "Hush" },
-                        { id: 205, name: "Мега сатана" },
-                        { id: 282, name: "Делириум" },
-                        { id: 192, name: "Грид мод" },
-                        { id: 296, name: "Ультра грид" },
-                        { id: 440, name: "Матерь" },
-                        { id: 441, name: "Бист" }
-                    ]
-                },
-                1: { // Магдалена (ID 1)
-                    name: "Магдалена",
-                    bosses: [
-                        { id: 45, name: "Сатана" },
-                        { id: 50, name: "???" },
-                        { id: 109, name: "Комната вызова" },
-                        { id: 20, name: "Айзек" },
-                        { id: 71, name: "Агнец" },
-                        { id: 168, name: "Сердце мамы" },
-                        { id: 180, name: "Hush" },
-                        { id: 206, name: "Мега сатана" },
-                        { id: 283, name: "Делириум" },
-                        { id: 193, name: "Грид мод" },
-                        { id: 297, name: "Ультра грид" },
-                        { id: 442, name: "Матерь" },
-                        { id: 443, name: "Бист" }
-                    ]
-                },
-                2: { // Каин (ID 2)
-                    name: "Каин",
-                    bosses: [
-                        { id: 46, name: "Сатана" },
-                        { id: 75, name: "???" },
-                        { id: 110, name: "Комната вызова" },
-                        { id: 21, name: "Айзек" },
-                        { id: 51, name: "Агнец" },
-                        { id: 171, name: "Сердце мамы" },
-                        { id: 181, name: "Hush" },
-                        { id: 207, name: "Мега сатана" },
-                        { id: 284, name: "Делириум" },
-                        { id: 194, name: "Грид мод" },
-                        { id: 298, name: "Ультра грид" },
-                        { id: 444, name: "Матерь" },
-                        { id: 445, name: "Бист" }
-                    ]
-                },
-                3: { // Иуда (ID 3)
-                    name: "Иуда",
-                    bosses: [
-                        { id: 72, name: "Сатана" },
-                        { id: 75, name: "???" },
-                        { id: 108, name: "Комната вызова" },
-                        { id: 107, name: "Айзек" },
-                        { id: 52, name: "Агнец" },
-                        { id: 170, name: "Сердце мамы" },
-                        { id: 182, name: "Hush" },
-                        { id: 208, name: "Мега сатана" },
-                        { id: 285, name: "Делириум" },
-                        { id: 195, name: "Грид мод" },
-                        { id: 299, name: "Ультра грид" },
-                        { id: 446, name: "Матерь" },
-                        { id: 447, name: "Бист" }
-                    ]
-                }
-                // Добавим остальных персонажей позже при необходимости
-            }
-        };
+        // Используем данные из внешнего файла
+        return ISAAC_GAME_DATA;
     }
 
     loadChallengeData() {
+        // Используем данные из внешнего файла
         return {
-            // 45 челленджей для Repentance
-            total: 45,
-            list: [
-                "Pitch Black", "High Brow", "Head Trauma", "Darkness Falls", "The Tank",
-                "Solar System", "Suicide King", "Cat Got Your Tongue", "Demo Man", "Cursed!",
-                "Glass Cannon", "The Family Man", "Purist", "XXXXXXXXL", "SPEED!",
-                "Blue Bomber", "PAY TO PLAY", "Have a Heart", "I RULE!", "BRAINS!",
-                "PRIDE DAY!", "Onan's Streak", "The Guardian", "Backasswards", "Aprils fool",
-                "Pokey Mans", "Ultra Hard", "PONG", "Bloody Mary", "Baptism by Fire",
-                "Isaac's Awakening", "Seeing Double", "Pica Run", "Hot Potato", "Cantripped!",
-                "Red Redemption", "DELETE THIS", "Scat Man", "Bloody Mary", "Baptism by Fire",
-                "Isaac's Awakening", "Seeing Double", "Pica Run", "Hot Potato"
-            ]
+            total: ISAAC_GAME_DATA.totals.challenges,
+            list: ISAAC_GAME_DATA.challenges
         };
     }
 
@@ -613,12 +434,6 @@ class IsaacAchievementParser {
         if (this.achievementsData && this.achievementsData.achievements[id]) {
             return this.achievementsData.achievements[id].name;
         }
-        if (this.gameData && this.gameData.characters[id]) {
-            return this.gameData.characters[id].name;
-        }
-        if (this.gameData && this.gameData.challenges[id]) {
-            return this.gameData.challenges[id].name;
-        }
         return `#${id} Achievement`;
     }
 
@@ -639,12 +454,6 @@ class IsaacAchievementParser {
         if (this.achievementsData && this.achievementsData.achievements[id]) {
             return this.achievementsData.achievements[id].unlock || 'Условие разблокировки';
         }
-        if (this.gameData && this.gameData.characters[id]) {
-            return this.gameData.characters[id].unlock || 'Условие разблокировки';
-        }
-        if (this.gameData && this.gameData.challenges[id]) {
-            return this.gameData.challenges[id].unlock || 'Условие разблокировки';
-        }
         return 'Условие разблокировки';
     }
 
@@ -659,27 +468,26 @@ class IsaacAchievementParser {
         this.analysisResults.characters = [];
         let unlockedCharacters = 0;
         
-        for (const [id, charData] of Object.entries(this.gameData.characters)) {
-            const achievementId = parseInt(id);
+        for (const characterId of ISAAC_GAME_DATA.characters) {
             let isUnlocked = false;
             
             // Исаак (ID 0) доступен с самого начала
-            if (achievementId === 0) {
+            if (characterId === 0) {
                 isUnlocked = true;
             } else {
                 // Остальные персонажи разблокируются через достижения
-                isUnlocked = this.analysisResults.achievements[achievementId-1]?.unlocked || false;
+                isUnlocked = this.analysisResults.achievements[characterId-1]?.unlocked || false;
             }
             
             if (isUnlocked) unlockedCharacters++;
             
             this.analysisResults.characters.push({
-                id: achievementId,
-                name: charData.name,
+                id: characterId,
+                name: this.getAchievementName(characterId),
                 unlocked: isUnlocked,
-                unlockCondition: charData.unlock,
-                completionMarks: this.getCharacterCompletionMarks(achievementId, isUnlocked),
-                defeatedBosses: this.getCharacterDefeatedBosses(achievementId)
+                unlockCondition: this.getAchievementUnlockCondition(characterId),
+                completionMarks: this.getCharacterCompletionMarks(characterId, isUnlocked),
+                defeatedBosses: this.getCharacterDefeatedBosses(characterId)
             });
         }
         
@@ -687,17 +495,16 @@ class IsaacAchievementParser {
         this.analysisResults.challenges = [];
         let completedChallenges = 0;
         
-        for (const [id, challengeData] of Object.entries(this.gameData.challenges)) {
-            const achievementId = parseInt(id);
-            const isCompleted = this.analysisResults.achievements[achievementId-1]?.unlocked || false;
+        for (const challengeId of ISAAC_GAME_DATA.challenges) {
+            const isCompleted = this.analysisResults.achievements[challengeId-1]?.unlocked || false;
             
             if (isCompleted) completedChallenges++;
             
             this.analysisResults.challenges.push({
-                id: achievementId,
-                name: challengeData.name,
+                id: challengeId,
+                name: this.getAchievementName(challengeId),
                 completed: isCompleted,
-                unlockCondition: challengeData.unlock
+                unlockCondition: this.getAchievementUnlockCondition(challengeId)
             });
         }
         
@@ -805,9 +612,9 @@ class IsaacAchievementParser {
             itemsFound: foundItems
         };
         
-        this.analysisResults.debugInfo.push(`Персонажи: ${unlockedCharacters}/${this.gameData.totals.characters} разблокировано`);
-        this.analysisResults.debugInfo.push(`Челленджи: ${completedChallenges}/${this.gameData.totals.challenges} завершено`);
-        this.analysisResults.debugInfo.push(`Предметы: ${foundItems}/${this.gameData.totals.items} найдено`);
+        this.analysisResults.debugInfo.push(`Персонажи: ${unlockedCharacters}/${ISAAC_GAME_DATA.totals.characters} разблокировано`);
+        this.analysisResults.debugInfo.push(`Челленджи: ${completedChallenges}/${ISAAC_GAME_DATA.totals.challenges} завершено`);
+        this.analysisResults.debugInfo.push(`Предметы: ${foundItems}/${ISAAC_GAME_DATA.totals.items} найдено`);
     }
     
     getCharacterCompletionMarks(characterId, isUnlocked) {
@@ -843,22 +650,22 @@ class IsaacAchievementParser {
     }
 
     getCharacterDefeatedBosses(characterId) {
-        // Получаем данные о боссах для персонажа
-        const bossData = this.loadBossData();
-        const characterBosses = bossData.characterBosses[characterId];
+        // Получаем ID боссов для персонажа
+        const bossIds = ISAAC_GAME_DATA.characterBosses[characterId];
         
-        if (!characterBosses) {
+        if (!bossIds) {
             return [];
         }
         
         // Проверяем, какие боссы убиты (на основе достижений)
         const defeatedBosses = [];
         
-        for (const boss of characterBosses.bosses) {
-            const isDefeated = this.analysisResults.achievements[boss.id - 1]?.unlocked || false;
+        for (const bossId of bossIds) {
+            const isDefeated = this.analysisResults.achievements[bossId - 1]?.unlocked || false;
+            const bossName = this.getAchievementName(bossId);
             defeatedBosses.push({
-                id: boss.id,
-                name: boss.name,
+                id: bossId,
+                name: bossName,
                 defeated: isDefeated
             });
         }
@@ -1092,8 +899,8 @@ class IsaacAchievementParser {
     updateStats() {
         const stats = this.analysisResults.statistics;
         
-        if (!stats || !this.gameData) {
-            console.error('Статистика или данные игры не загружены');
+        if (!stats) {
+            console.error('Статистика не загружена');
             return;
         }
         
@@ -1103,19 +910,19 @@ class IsaacAchievementParser {
             `${(stats.achievementsUnlocked / Math.max(this.analysisResults.achievements.length, 1) * 100)}%`;
         
         document.getElementById('charactersCount').textContent = stats.charactersUnlocked;
-        document.getElementById('charactersTotal').textContent = `из ${this.gameData.totals.characters} разблокировано`;
+        document.getElementById('charactersTotal').textContent = `из ${ISAAC_GAME_DATA.totals.characters} разблокировано`;
         document.getElementById('charactersProgress').style.width = 
-            `${(stats.charactersUnlocked / this.gameData.totals.characters * 100)}%`;
+            `${(stats.charactersUnlocked / ISAAC_GAME_DATA.totals.characters * 100)}%`;
         
         document.getElementById('challengesCount').textContent = stats.challengesCompleted;
-        document.getElementById('challengesTotal').textContent = `из ${this.gameData.totals.challenges} завершено`;
+        document.getElementById('challengesTotal').textContent = `из ${ISAAC_GAME_DATA.totals.challenges} завершено`;
         document.getElementById('challengesProgress').style.width = 
-            `${(stats.challengesCompleted / this.gameData.totals.challenges * 100)}%`;
+            `${(stats.challengesCompleted / ISAAC_GAME_DATA.totals.challenges * 100)}%`;
         
         document.getElementById('itemsCount').textContent = stats.itemsFound;
-        document.getElementById('itemsTotal').textContent = `из ${this.gameData.totals.items} найдено`;
+        document.getElementById('itemsTotal').textContent = `из ${ISAAC_GAME_DATA.totals.items} найдено`;
         document.getElementById('itemsProgress').style.width = 
-            `${(stats.itemsFound / this.gameData.totals.items * 100)}%`;
+            `${(stats.itemsFound / ISAAC_GAME_DATA.totals.items * 100)}%`;
     }
 
     updateTabs() {
