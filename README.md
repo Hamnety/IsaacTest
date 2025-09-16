@@ -16,4 +16,4 @@
 
 ## Источник
 
-Source code основан на [Isaac Save Viewer](https://zamiell.github.io/isaac-save-viewer/) от Zamiell
+Исходный код основан на [Isaac Save Viewer](https://zamiell.github.io/isaac-save-viewer/) от Zamiell
