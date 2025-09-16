@@ -1171,17 +1171,7 @@ class IsaacAchievementParser {
     }
 
     showFileInfo(file) {
-        document.getElementById('fileName').textContent = file.name;
-        document.getElementById('fileSize').textContent = this.formatFileSize(file.size);
-        
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            const header = new TextDecoder().decode(e.target.result.slice(0, 20));
-            document.getElementById('fileFormat').textContent = header.replace(/[^\x20-\x7E]/g, '');
-        };
-        reader.readAsArrayBuffer(file.slice(0, 20));
-        
-        document.getElementById('fileInfo').style.display = 'block';
+        // Информация о файле больше не показывается
     }
 
     formatFileSize(bytes) {
