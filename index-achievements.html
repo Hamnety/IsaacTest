@@ -8,6 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Silom&display=swap');
         
         * {
             margin: 0;
@@ -15,79 +16,186 @@
             box-sizing: border-box;
         }
 
+        html {
+            font-family: 'Silom', sans-serif;
+            font-size: 16px;
+            font-smooth: never;
+            overflow-x: hidden;
+            height: 100vh;
+            color: #6f6358;
+            -webkit-font-smoothing: none;
+        }
+
         body {
-            font-family: 'Press Start 2P', 'Courier New', monospace;
-            background: #000000;
+            font-family: 'Silom', sans-serif;
+            background: #2d3748;
             background-image: 
-                radial-gradient(circle at 20% 50%, #1a0a1a 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, #0a1a0a 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, #1a0a0a 0%, transparent 50%);
-            color: #e0e0e0;
+                radial-gradient(circle at 20% 50%, #1a202c 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, #2d3748 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, #1a202c 0%, transparent 50%);
+            color: #e2e8f0;
             min-height: 100vh;
-            padding: 20px;
+            padding: 0;
+            margin: 0;
             image-rendering: pixelated;
             image-rendering: -moz-crisp-edges;
             image-rendering: crisp-edges;
+            font-smooth: never;
+            -webkit-font-smoothing: none;
         }
 
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: #1a0a1a;
-            border: 4px solid #8b0000;
+            max-width: 100%;
+            margin: 0;
+            background: #24283b;
+            border: none;
             border-radius: 0;
+            padding: 0;
+            box-shadow: none;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #24283b;
             padding: 20px;
-            box-shadow: 
-                0 0 20px #8b0000,
-                inset 0 0 20px rgba(139, 0, 0, 0.3);
+            border-bottom: 2px solid #4c566a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .skull-icon {
+            width: 40px;
+            height: 40px;
+            background: #4c566a;
+            border: 2px solid #e2e8f0;
             position: relative;
         }
 
-        .container::before {
+        .skull-icon::before {
             content: '';
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #8b0000, #ff0000, #8b0000);
-            border-radius: 0;
-            z-index: -1;
+            top: 8px;
+            left: 8px;
+            width: 8px;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 50%;
+        }
+
+        .skull-icon::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 8px;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 50%;
         }
 
         h1 {
-            text-align: center;
-            color: #ff6b6b;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            text-shadow: 
-                2px 2px 0px #8b0000,
-                4px 4px 0px #000000;
-            letter-spacing: 1px;
+            color: #e2e8f0;
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin: 0;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .subtitle {
-            text-align: center;
-            color: #ffd700;
-            margin-bottom: 30px;
-            font-size: 0.6rem;
-            text-shadow: 1px 1px 0px #8b0000;
+            color: #a0aec0;
+            font-size: 0.9rem;
+            margin: 0;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-item {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #ffd700;
+        }
+
+        .patch-notes {
+            background: #1a202c;
+            padding: 10px 15px;
+            border-left: 3px solid #ffd700;
+            margin: 10px 0;
+        }
+
+        .patch-notes p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #a0aec0;
+            line-height: 1.4;
+        }
+
+        .main-content {
+            background: #2d3748;
+            padding: 20px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .content-title {
+            text-align: center;
+            color: #e2e8f0;
+            font-size: 2rem;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .content-title::before,
+        .content-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100px;
+            height: 2px;
+            background: #4c566a;
+        }
+
+        .content-title::before {
+            left: 0;
+        }
+
+        .content-title::after {
+            right: 0;
         }
 
         .achievement-badge {
             background: #ffd700;
-            color: #8b0000;
+            color: #1a202c;
             padding: 4px 8px;
-            border: 2px solid #8b0000;
+            border: 2px solid #ffd700;
             border-radius: 0;
-            font-size: 0.5rem;
+            font-size: 0.7rem;
             margin-left: 15px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            text-shadow: 1px 1px 0px #000000;
-            box-shadow: 2px 2px 0px #8b0000;
+            font-weight: bold;
         }
 
         .parser-info {
@@ -119,19 +227,17 @@
         }
 
         .upload-zone {
-            border: 4px dashed #ff6b6b;
+            border: 3px dashed #4c566a;
             border-radius: 0;
             padding: 40px 20px;
             text-align: center;
-            margin-bottom: 30px;
+            margin: 30px 0;
             transition: all 0.3s ease;
-            background: #2a0a0a;
+            background: #1a202c;
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            box-shadow: 
-                inset 0 0 20px rgba(255, 107, 107, 0.2),
-                0 0 20px rgba(255, 107, 107, 0.3);
+            box-shadow: inset 0 0 20px rgba(76, 86, 106, 0.2);
         }
 
         .upload-zone::before {
@@ -198,15 +304,15 @@
         }
 
         .stat-card {
-            background: #2a0a0a;
+            background: #1a202c;
             border-radius: 0;
-            padding: 20px;
-            border: 3px solid #8b0000;
+            padding: 25px;
+            border: 3px solid #4c566a;
             transition: all 0.3s ease;
             position: relative;
             box-shadow: 
-                0 0 15px rgba(139, 0, 0, 0.3),
-                inset 0 0 15px rgba(139, 0, 0, 0.1);
+                0 4px 8px rgba(0, 0, 0, 0.3),
+                inset 0 0 15px rgba(76, 86, 106, 0.1);
         }
 
         .stat-card:hover {
@@ -218,46 +324,48 @@
         }
 
         .stat-title {
-            font-size: 0.6rem;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
             color: #ffd700;
             display: flex;
             align-items: center;
-            gap: 8px;
-            text-shadow: 1px 1px 0px #8b0000;
+            gap: 10px;
+            text-shadow: 1px 1px 0px #1a202c;
+            font-weight: bold;
         }
 
         .stat-value {
-            font-size: 1.2rem;
-            color: #ff6b6b;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 0px #8b0000;
+            font-size: 2rem;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 0px #1a202c;
+            font-weight: bold;
         }
 
         .stat-subtitle {
-            color: #e0e0e0;
-            opacity: 0.8;
-            font-size: 0.5rem;
-            text-shadow: 1px 1px 0px #000000;
+            color: #a0aec0;
+            opacity: 0.9;
+            font-size: 0.8rem;
+            text-shadow: 1px 1px 0px #1a202c;
         }
 
         .progress-bar {
             width: 100%;
-            height: 12px;
-            background: #000000;
-            border: 2px solid #8b0000;
+            height: 16px;
+            background: #1a202c;
+            border: 2px solid #4c566a;
             border-radius: 0;
             overflow: hidden;
-            margin-top: 10px;
-            box-shadow: inset 0 0 10px rgba(139, 0, 0, 0.3);
+            margin-top: 12px;
+            box-shadow: inset 0 0 10px rgba(76, 86, 106, 0.3);
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #ff6b6b, #ffd700);
+            background: linear-gradient(90deg, #ffd700, #ff6b6b);
             border-radius: 0;
             transition: width 0.5s ease;
-            box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .details-section {
@@ -272,18 +380,19 @@
         }
 
         .tab-button {
-            background: #2a0a0a;
-            border: 2px solid #8b0000;
-            color: #e0e0e0;
-            padding: 8px 12px;
+            background: #1a202c;
+            border: 2px solid #4c566a;
+            color: #e2e8f0;
+            padding: 12px 20px;
             border-radius: 0;
             cursor: pointer;
             transition: all 0.3s ease;
             font-family: inherit;
-            font-size: 0.6rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            text-shadow: 1px 1px 0px #000000;
+            text-shadow: 1px 1px 0px #1a202c;
+            font-weight: bold;
         }
 
         .tab-button:hover {
@@ -293,25 +402,26 @@
         }
 
         .tab-button.active {
-            background: #ff6b6b;
-            color: #000000;
+            background: #ffd700;
+            color: #1a202c;
             border-color: #ffd700;
             box-shadow: 
-                0 0 20px rgba(255, 107, 107, 0.5),
+                0 0 20px rgba(255, 215, 0, 0.5),
                 inset 0 0 10px rgba(255, 215, 0, 0.3);
             text-shadow: none;
+            font-weight: bold;
         }
 
         .tab-content {
             display: none;
-            background: #1a0a1a;
+            background: #2d3748;
             border-radius: 0;
-            padding: 20px;
-            border: 2px solid #8b0000;
+            padding: 25px;
+            border: 2px solid #4c566a;
             box-shadow: 
-                0 0 15px rgba(139, 0, 0, 0.3),
-                inset 0 0 15px rgba(139, 0, 0, 0.1);
-            max-height: 600px;
+                0 4px 8px rgba(0, 0, 0, 0.3),
+                inset 0 0 15px rgba(76, 86, 106, 0.1);
+            max-height: 700px;
             overflow-y: auto;
         }
 
@@ -321,48 +431,50 @@
 
         .item-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
         }
 
         /* Специальный стиль только для достижений */
         .achievements-grid {
             display: grid !important;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
-            gap: 10px !important;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+            gap: 15px !important;
             width: 100% !important;
             grid-auto-rows: min-content !important;
         }
 
         .item-card {
-            background: #2a0a0a;
+            background: #1a202c;
             border-radius: 0;
-            padding: 10px;
-            border: 2px solid #8b0000;
+            padding: 20px;
+            border: 2px solid #4c566a;
             transition: all 0.3s ease;
             position: relative;
-            box-shadow: 0 0 10px rgba(139, 0, 0, 0.2);
-            min-height: 80px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            min-height: 160px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            font-family: 'Silom', sans-serif;
         }
 
         .item-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(139, 0, 0, 0.4);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            border-color: #ffd700;
         }
 
         .item-card.unlocked {
             border-color: #ffd700;
-            background: rgba(255, 215, 0, 0.1);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            background: rgba(255, 215, 0, 0.05);
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
         }
 
         .item-card.locked {
-            border-color: #8b0000;
-            background: rgba(139, 0, 0, 0.1);
-            opacity: 0.6;
+            border-color: #4c566a;
+            background: rgba(76, 86, 106, 0.1);
+            opacity: 0.7;
         }
 
         .achievement-category {
@@ -450,17 +562,35 @@
             border: 1px solid rgba(205, 214, 244, 0.2);
         }
 
+        .footer {
+            background: #1a202c;
+            padding: 20px;
+            border-top: 2px solid #4c566a;
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
+                padding: 0;
             }
 
-            h1 {
-                font-size: 2rem;
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .content-title {
+                font-size: 1.5rem;
             }
 
             .upload-zone {
-                padding: 40px 20px;
+                padding: 30px 15px;
             }
 
             .stats-grid {
@@ -471,13 +601,28 @@
 </head>
 <body>
     <div class="container">
-        <h1>
-            <i class="fas fa-trophy"></i> Isaac Save Analyzer 
-            <span class="achievement-badge">Achievement Based (Universal)</span>
-        </h1>
-        <p class="subtitle">
-            Универсальный анализ на основе достижений для всех версий Isaac
-        </p>
+        <div class="header">
+            <div class="logo">
+                <div class="skull-icon"></div>
+                <div>
+                    <h1>Isaac Save Analyzer</h1>
+                    <p class="subtitle">Achievement Based (Universal)</p>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-item">ОБЪЯСНЕНИЕ ХАРАКТЕРИСТИК</a>
+                <a href="#" class="nav-item">О САЙТЕ</a>
+                <a href="#" class="nav-item">ИСТОРИЯ ИЗМЕНЕНИЙ</a>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="content-title">ДОСТИЖЕНИЯ</div>
+            
+            <div class="patch-notes">
+                <p>Вышел патч 1.9.7.14 (Исправления багов патча 1.9.7.13), информация на сайте</p>
+                <p>Для измененных в Rep+ предметов добавлен тег.</p>
+            </div>
 
         <div class="parser-info">
             <h3 style="color: #a6e3a1; margin-bottom: 15px;">
@@ -629,6 +774,12 @@
                 <button class="export-button" onclick="exportResults()">
                     <i class="fas fa-download"></i> Экспорт анализа достижений
                 </button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div style="color: #a0aec0; font-size: 0.8rem;">
+                Нашли ошибку? Сообщите нам!
             </div>
         </div>
     </div>
