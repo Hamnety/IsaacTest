@@ -10,16 +10,39 @@ class IsaacAchievementParser {
             characters: [],
             challenges: [],
             items: [],
+            statistics: {},
             debugInfo: []
         };
+        
+        // Инициализируем данные игры
         this.gameData = null;
+        this.fullItemsData = null;
         this.achievementsData = null;
+        this.itemConstants = null;
+        
+        this.initializeUI();
     }
 
     async loadGameData() {
         try {
+            const response = await fetch('isaac-game-data.json');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            this.gameData = await response.json();
+            this.analysisResults.debugInfo.push('Данные игры загружены из JSON файла');
+            
+            // Загружаем полные данные предметов
+            const itemsResponse = await fetch('isaac-items-full.json');
+            if (itemsResponse.ok) {
+                this.fullItemsData = await itemsResponse.json();
+                this.analysisResults.debugInfo.push('Полные данные предметов загружены');
+            } else {
+                this.analysisResults.debugInfo.push('Не удалось загрузить полные данные предметов, используем базовые');
+            }
+            
             // Загружаем данные достижений
-            const achievementsResponse = await fetch('data/achievements_unlock_final.json');
+            const achievementsResponse = await fetch('achievements_unlock_final.json');
             if (achievementsResponse.ok) {
                 this.achievementsData = await achievementsResponse.json();
                 this.analysisResults.debugInfo.push('Финальные данные достижений загружены');
@@ -28,16 +51,42 @@ class IsaacAchievementParser {
                 this.analysisResults.debugInfo.push('Не удалось загрузить финальные данные достижений');
             }
             
-            // Загружаем данные предметов
-            const itemsResponse = await fetch('data/isaac-items-full.json');
-            if (itemsResponse.ok) {
-                this.gameData = await itemsResponse.json();
-                this.analysisResults.debugInfo.push('Данные предметов загружены');
+            // Загружаем константы предметов
+            const constantsResponse = await fetch('isaac-item-constants.json');
+            if (constantsResponse.ok) {
+                this.itemConstants = await constantsResponse.json();
+                this.analysisResults.debugInfo.push('Константы предметов загружены');
             } else {
-                this.analysisResults.debugInfo.push('Не удалось загрузить данные предметов');
+                this.analysisResults.debugInfo.push('Не удалось загрузить константы предметов');
             }
         } catch (error) {
-            this.analysisResults.debugInfo.push(`Ошибка загрузки данных: ${error.message}`);
+            this.analysisResults.debugInfo.push('Ошибка загрузки данных игры: ' + error.message);
+            this.analysisResults.debugInfo.push('Используем fallback данные');
+            
+            // Fallback данные с базовыми персонажами и челленджами
+            this.gameData = {
+                characters: {
+                    "1": { "name": "Магдалена", "unlock": "Имейте 7 или больше контейнеров красных сердец одновременно" },
+                    "2": { "name": "Каин", "unlock": "Держите 55 или больше монет одновременно" },
+                    "3": { "name": "Иуда", "unlock": "Победите Сатану/Satan" },
+                    "32": { "name": "???", "unlock": "Победите Сердце Мамы/Mom's Heart 10 раз" },
+                    "42": { "name": "Ева", "unlock": "Не поднимайте никаких сердец 2 этажа подряд" },
+                    "67": { "name": "Самсон", "unlock": "Пройдите 2 этажа подряд без получения урона" },
+                    "80": { "name": "Лазарь", "unlock": "Имейте 4 или больше сердец души одновременно" },
+                    "79": { "name": "Азазель", "unlock": "Совершите 3 сделки с Дьяволом в одном забеге" },
+                    "81": { "name": "Эдем", "unlock": "Завершите 4 главу" },
+                    "82": { "name": "Лост (Потерянный)", "unlock": "Специальные условия смерти" }
+                },
+                challenges: {
+                    "89": { "name": "Кромешная тьма", "unlock": "Завершите 'Кромешная тьма/Pitch Black' испытание #1" },
+                    "90": { "name": "Сноб", "unlock": "Завершите 'Сноб/High Brow' испытание #2" },
+                    "91": { "name": "Травма головы", "unlock": "Завершите 'Травма головы/Head Trauma' испытание #3" },
+                    "92": { "name": "Тьма наступает", "unlock": "Завершите 'Тьма наступает/Darkness Falls' испытание #4" },
+                    "93": { "name": "Танк", "unlock": "Завершите 'Танк/The Tank' испытание #5" }
+                },
+                completionMarks: {},
+                totals: { characters: 34, challenges: 45, items: 720, achievements: 640 }
+            };
         }
     }
 
@@ -47,6 +96,7 @@ class IsaacAchievementParser {
     }
 
     loadCharacterData() {
+        // Используем данные из внешнего файла
         return {
             total: ISAAC_GAME_DATA.totals.characters,
             list: ISAAC_GAME_DATA.characters
@@ -54,109 +104,389 @@ class IsaacAchievementParser {
     }
 
     loadBossData() {
+        // Используем данные из внешнего файла
         return ISAAC_GAME_DATA;
     }
 
     loadChallengeData() {
+        // Используем данные из внешнего файла
         return {
             total: ISAAC_GAME_DATA.totals.challenges,
             list: ISAAC_GAME_DATA.challenges
         };
     }
 
-    async parseFile(file) {
-        try {
-            this.analysisResults.debugInfo = [];
-            this.analysisResults.debugInfo.push('Начинаем анализ файла...');
-            
-            // Читаем файл как ArrayBuffer
-            this.fileData = await file.arrayBuffer();
-            this.dataView = new DataView(this.fileData);
-            
-            this.analysisResults.debugInfo.push(`Размер файла: ${this.fileData.byteLength} байт`);
-            
-            // Проверяем заголовок файла
-            const header = this.readHeader();
-            this.analysisResults.debugInfo.push(`Заголовок файла: ${header}`);
-            
-            // Инициализируем данные игры, если они не загружены
-            if (!this.gameData) {
-                await this.loadGameData();
+    loadItemData() {
+        // Данные о предметах из isaac-items-data.js
+        return {
+            total: 732, // Repentance
+            categories: {
+                active: "Активные предметы",
+                passive: "Пассивные предметы", 
+                trinket: "Брелки",
+                special: "Специальные предметы"
             }
+        };
+    }
+
+    initializeUI() {
+        const uploadZone = document.getElementById('uploadZone');
+        const fileInput = document.getElementById('fileInput');
+
+        uploadZone.addEventListener('click', () => fileInput.click());
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) this.handleFileSelect(files[0]);
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) this.handleFileSelect(e.target.files[0]);
+        });
+
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => this.switchTab(button.dataset.tab));
+        });
+    }
+
+    async handleFileSelect(file) {
+        if (!file.name.toLowerCase().endsWith('.dat')) {
+            this.showError('Пожалуйста, выберите .dat файл сохранения Isaac');
+            return;
+        }
+
+        try {
+            this.showFileInfo(file);
+            this.showLoading(true);
             
-            // Анализируем прогресс на основе достижений
-            await this.analyzeProgressFromAchievements();
+            const arrayBuffer = await file.arrayBuffer();
+            this.fileData = new Uint8Array(arrayBuffer);
+            this.dataView = new DataView(arrayBuffer);
             
-            this.analysisResults.debugInfo.push('Анализ завершен успешно');
-            
-            // Обновляем интерфейс
-            this.updateStats();
-            this.updateCharactersTab();
-            this.updateChallengesTab();
-            this.updateItemsTab();
-            this.updateAchievementsTab();
-            
-            // Показываем результаты
-            document.getElementById('analysisSection').style.display = 'block';
-            document.getElementById('loading').style.display = 'none';
+            await this.parseFile();
+            this.displayResults();
             
         } catch (error) {
             console.error('Ошибка при обработке файла:', error);
-            this.showError(`Ошибка при обработке файла: ${error.message}`);
+            this.showError('Ошибка при анализе файла: ' + error.message);
+        } finally {
+            this.showLoading(false);
         }
     }
 
-    readHeader() {
-        // Читаем первые 16 байт как заголовок
-        let header = '';
-        for (let i = 0; i < 16; i++) {
-            const byte = this.dataView.getUint8(i);
-            if (byte === 0) break;
-            header += String.fromCharCode(byte);
+    async parseFile() {
+        this.analysisResults.debugInfo = [];
+        console.log('Начинаем парсинг файла...');
+        
+        // Инициализируем данные игры, если они не загружены
+        if (!this.gameData) {
+            await this.loadGameData();
         }
-        return header;
+        
+        // Проверяем заголовок
+        const header = this.getString(0, 16);
+        this.analysisResults.debugInfo.push(`Заголовок: ${header}`);
+        this.analysisResults.debugInfo.push(`Длина заголовка: ${header.length}`);
+        this.analysisResults.debugInfo.push(`Первые 13 символов: ${header.substring(0, 13)}`);
+        
+        // Поддерживаемые форматы Isaac (проверяем начало заголовка)
+        const supportedHeaders = [
+            "ISAACNGSAVE09R", // Repentance
+            "ISAACNGSAVE08R", // Afterbirth+
+            "ISAACNGSAVE07R", // Afterbirth
+            "ISAACNGSAVE06R", // Rebirth
+            "ISAACNGSAVE05R", // Rebirth (старый)
+            "ISAACNGSAVE04R", // Rebirth (очень старый)
+            "ISAACNGSAVE03R", // Rebirth (древний)
+            "ISAACNGSAVE02R", // Rebirth (архаичный)
+            "ISAACNGSAVE01R", // Rebirth (первобытный)
+            "ISAACNGSAVE00R"  // Rebirth (изначальный)
+        ];
+        
+        // Проверяем, начинается ли заголовок с поддерживаемого формата
+        let detectedVersion = null;
+        for (const supportedHeader of supportedHeaders) {
+            this.analysisResults.debugInfo.push(`Проверяем: ${supportedHeader} в ${header.substring(0, supportedHeader.length)}`);
+            if (header.startsWith(supportedHeader)) {
+                detectedVersion = supportedHeader;
+                this.analysisResults.debugInfo.push(`✓ Найден формат: ${supportedHeader}`);
+                break;
+            }
+        }
+        
+        if (!detectedVersion) {
+            throw new Error(`Неподдерживаемый формат файла: ${header}. Поддерживаются форматы Isaac: ${supportedHeaders.join(', ')}`);
+        }
+        
+        this.analysisResults.debugInfo.push(`Обнаружен формат: ${detectedVersion}`);
+        
+        // Определяем версию игры
+        let gameVersion = "Unknown";
+        if (detectedVersion === "ISAACNGSAVE09R") gameVersion = "Repentance";
+        else if (detectedVersion === "ISAACNGSAVE08R") gameVersion = "Afterbirth+";
+        else if (detectedVersion === "ISAACNGSAVE07R") gameVersion = "Afterbirth";
+        else if (detectedVersion.startsWith("ISAACNGSAVE0")) gameVersion = "Rebirth";
+        
+        this.analysisResults.debugInfo.push(`Версия игры: ${gameVersion}`);
+        
+        // Ищем секции файла
+        const sections = this.findSections();
+        this.analysisResults.debugInfo.push(`Найдено секций: ${sections.length}`);
+        
+        // Отладочная информация о секциях
+        sections.forEach((section, index) => {
+            this.analysisResults.debugInfo.push(`Секция ${index + 1}: тип ${section.type}, размер ${section.size}, количество ${section.count}`);
+        });
+        
+        // Парсим достижения
+        await this.parseAchievements(sections);
+        
+        // Анализируем прогресс на основе достижений
+        await this.analyzeProgressFromAchievements();
     }
 
     findSections() {
         const sections = [];
-        let offset = 16; // Пропускаем заголовок
+        let offset = 0x14; // После заголовка
         
-        while (offset < this.dataView.byteLength) {
-            const sectionType = this.dataView.getUint32(offset, true);
-            const sectionSize = this.dataView.getUint32(offset + 4, true);
-            const sectionCount = this.dataView.getUint32(offset + 8, true);
+        while (offset < this.fileData.length - 20) {
+            const sectionData = new Array(3);
+            for (let j = 0; j < 3; j++) {
+                if (offset + 4 <= this.fileData.length) {
+                    sectionData[j] = this.dataView.getUint32(offset, true);
+                    offset += 4;
+                }
+            }
             
-            if (sectionSize === 0 || sectionCount === 0) break;
+            const sectionType = sectionData[0];
+            const sectionSize = sectionData[1];
+            const entryCount = sectionData[2];
             
-            sections.push({
-                type: sectionType,
-                size: sectionSize,
-                count: sectionCount,
-                offset: offset + 12
-            });
-            
-            offset += 12 + sectionSize;
+            if (sectionType > 0 && sectionType <= 11 && sectionSize > 0 && entryCount > 0) {
+                sections.push({
+                    type: sectionType,
+                    size: sectionSize,
+                    count: entryCount,
+                    offset: offset,
+                    data: this.fileData.slice(offset, offset + sectionSize)
+                });
+                
+                offset += sectionSize;
+            } else {
+                break;
+            }
         }
         
         return sections;
     }
 
-    async analyzeProgressFromAchievements() {
-        this.analysisResults.debugInfo.push('Анализируем прогресс на основе достижений...');
+    async parseAchievements(sections) {
         
-        // Инициализируем массив достижений
-        this.analysisResults.achievements = new Array(640).fill(null).map((_, i) => ({
-            id: i + 1,
-            unlocked: false
-        }));
+        // Ищем секцию достижений (тип 1)
+        const achievementSection = sections.find(s => s.type === 1);
+        if (!achievementSection) {
+            this.analysisResults.debugInfo.push('Предупреждение: Не найдена секция достижений, используем эвристический поиск');
+            // Попробуем найти достижения эвристически
+            this.parseAchievementsHeuristic();
+            return;
+        }
         
-        // Парсим достижения из файла
-        const sections = this.findSections();
-        for (const section of sections) {
-            if (section.type === 1) { // Секция достижений
-                this.parseAchievements(section);
-                break;
+        this.analysisResults.achievements = [];
+        let unlockedCount = 0;
+        
+        // Достижения хранятся как массив байтов
+        const maxAchievements = Math.min(achievementSection.count, 700); // Ограничиваем для старых версий
+        
+        for (let i = 1; i < maxAchievements; i++) {
+            const achievementOffset = i;
+            const isUnlocked = achievementOffset < achievementSection.data.length && 
+                              achievementSection.data[achievementOffset] === 1;
+            
+            if (isUnlocked) unlockedCount++;
+            
+            this.analysisResults.achievements[i-1] = {
+                id: i,
+                name: this.getAchievementName(i),
+                unlocked: isUnlocked,
+                type: this.getAchievementType(i),
+                description: this.getAchievementDescription(i),
+                unlockCondition: this.getAchievementUnlockCondition(i)
+            };
+        }
+        
+        this.analysisResults.debugInfo.push(`Достижения: ${unlockedCount}/${achievementSection.count-1} разблокировано`);
+    }
+
+    parseAchievementsHeuristic() {
+        this.analysisResults.debugInfo.push('Используем эвристический поиск достижений');
+        this.analysisResults.achievements = [];
+        
+        // Ищем паттерны достижений в файле
+        let unlockedCount = 0;
+        const maxAchievements = 700; // Максимум для старых версий
+        
+        for (let i = 1; i < maxAchievements; i++) {
+            // Простая эвристика: ищем байты со значением 1 в области достижений
+            const isUnlocked = this.searchForAchievementPattern(i);
+            
+            if (isUnlocked) unlockedCount++;
+            
+            this.analysisResults.achievements[i-1] = {
+                id: i,
+                name: this.getAchievementName(i),
+                unlocked: isUnlocked,
+                type: this.getAchievementType(i),
+                description: this.getAchievementDescription(i),
+                unlockCondition: this.getAchievementUnlockCondition(i)
+            };
+        }
+        
+        this.analysisResults.debugInfo.push(`Достижения (эвристика): ${unlockedCount}/${maxAchievements-1} разблокировано`);
+    }
+
+    searchForAchievementPattern(achievementId) {
+        // Простая эвристика: ищем байт со значением 1 в области достижений
+        // Начинаем поиск после заголовка
+        const startOffset = 0x14;
+        const searchRange = Math.min(0x1000, this.fileData.length - startOffset);
+        
+        for (let offset = startOffset; offset < startOffset + searchRange; offset++) {
+            if (this.fileData[offset] === 1) {
+                // Проверяем, может ли это быть достижением
+                const relativeId = offset - startOffset;
+                if (relativeId === achievementId) {
+                    return true;
+                }
             }
+        }
+        
+        return false;
+    }
+
+    parseItemsHeuristic() {
+        this.analysisResults.debugInfo.push('Используем эвристический поиск предметов');
+        this.analysisResults.items = [];
+        
+        // Ищем паттерны предметов в файле
+        let foundItems = 0;
+        const maxItems = 1000; // Максимальный ID предмета
+        
+        for (let i = 1; i < maxItems; i++) {
+            // Простая эвристика: ищем байты со значением 1 в области предметов
+            const isFound = this.searchForItemPattern(i);
+            
+            // Если предмет "найден", проверяем его валидность
+            if (isFound) {
+                const itemData = this.getItemData(i);
+                if (!this.isValidCollectibleID(i, itemData)) {
+                    continue; // Пропускаем невалидные предметы
+                }
+                
+                foundItems++;
+            }
+            
+            // Добавляем предмет в результаты (только если он валидный)
+            const itemData = this.getItemData(i);
+            if (this.isValidCollectibleID(i, itemData)) {
+                this.analysisResults.items.push({
+                    id: i,
+                    name: itemData.name,
+                    found: isFound,
+                    type: itemData.type,
+                    quality: itemData.quality,
+                    description: itemData.description,
+                    pool: itemData.pool
+                });
+            }
+        }
+        
+        this.analysisResults.debugInfo.push(`Предметы (эвристика): ${foundItems} найдено`);
+    }
+
+    searchForItemPattern(itemId) {
+        // Простая эвристика: ищем байт со значением 1 в области предметов
+        // Начинаем поиск после заголовка + смещение для предметов
+        const startOffset = 0x14 + 0x1000; // Примерное смещение для предметов
+        const searchRange = Math.min(0x2000, this.fileData.length - startOffset);
+        
+        for (let offset = startOffset; offset < startOffset + searchRange; offset++) {
+            if (this.fileData[offset] === 1) {
+                // Проверяем, может ли это быть предметом
+                const relativeId = offset - startOffset;
+                if (relativeId === itemId) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+
+    getAchievementName(id) {
+        if (this.achievementsData && this.achievementsData.achievements[id]) {
+            return this.achievementsData.achievements[id].name;
+        }
+        return `#${id} Achievement`;
+    }
+
+    getBossName(achievementId) {
+        // Проверяем обычных боссов
+        for (const [bossName, ids] of Object.entries(ISAAC_GAME_DATA.bossData.normal)) {
+            if (ids.includes(achievementId)) {
+                return bossName;
+            }
+        }
+        
+        // Проверяем порченных боссов
+        for (const [bossName, ids] of Object.entries(ISAAC_GAME_DATA.bossData.tainted)) {
+            if (ids.includes(achievementId)) {
+                return bossName;
+            }
+        }
+        
+        return `#${achievementId} Boss`;
+    }
+
+    getCharacterName(characterId) {
+        if (ISAAC_GAME_DATA.characterNames[characterId]) {
+            return ISAAC_GAME_DATA.characterNames[characterId];
+        }
+        return `#${characterId} Character`;
+    }
+
+    getAchievementType(id) {
+        if (this.gameData && this.gameData.characters[id]) return 'character';
+        if (this.gameData && this.gameData.challenges[id]) return 'challenge';
+        return 'other';
+    }
+
+    getAchievementDescription(id) {
+        if (this.achievementsData && this.achievementsData.achievements[id]) {
+            return this.achievementsData.achievements[id].unlock || 'Достижение';
+        }
+        return 'Достижение';
+    }
+
+    getAchievementUnlockCondition(id) {
+        if (this.achievementsData && this.achievementsData.achievements[id]) {
+            return this.achievementsData.achievements[id].unlock || 'Условие разблокировки';
+        }
+        return 'Условие разблокировки';
+    }
+
+    async analyzeProgressFromAchievements() {
+        // Проверяем, загружены ли данные игры
+        if (!this.gameData) {
+            this.analysisResults.debugInfo.push('Ошибка: Данные игры не загружены');
+            return;
         }
         
         // Анализируем персонажей на основе достижений
@@ -203,113 +533,145 @@ class IsaacAchievementParser {
             });
         }
         
-        // Анализируем предметы на основе достижений
+        // Анализируем предметы (Collectibles Touched) - по логике официального viewer'а
         this.analysisResults.items = [];
         let foundItems = 0;
         
-        if (this.gameData && this.gameData.items) {
-            for (const [itemId, itemData] of Object.entries(this.gameData.items)) {
-                const achievementId = itemData.achievement;
-                const isFound = achievementId ? (this.analysisResults.achievements[achievementId-1]?.unlocked || false) : false;
+        // Ищем секцию предметов (тип 4 - CollectiblesChunk)
+        const itemSection = this.findSections().find(s => s.type === 4);
+        if (itemSection) {
+            this.analysisResults.debugInfo.push(`Найдена секция предметов: тип ${itemSection.type}, длина ${itemSection.data.length}`);
+            console.log(`Найдена секция предметов: тип ${itemSection.type}, длина ${itemSection.data.length}`);
+            
+            // Согласно официальному Isaac Save Viewer:
+            // 1. Считаем только существующие предметы (ID от 1 до 999)
+            // 2. Проверяем seenById массив: если things[i] !== 0, то предмет "потроган"
+            // 3. Пропускаем несуществующие ID
+            
+            const seenById = itemSection.data;
+            const maxItems = Math.min(seenById.length, 1000);
+            console.log(`Максимальный ID для проверки: ${maxItems}`);
+            
+            let validItemsCount = 0;
+            let foundItemsCount = 0;
+            let totalFoundInArray = 0;
+            
+            // Сначала посчитаем, сколько всего "потроган" предметов в массиве
+            for (let i = 1; i < maxItems; i++) {
+                if (seenById[i] !== 0) {
+                    totalFoundInArray++;
+                }
+            }
+            this.analysisResults.debugInfo.push(`Всего "потроган" предметов в массиве: ${totalFoundInArray}`);
+            console.log(`Всего "потроган" предметов в массиве: ${totalFoundInArray}`);
+            
+            // Посчитаем, сколько валидных предметов есть в JSON данных
+            let validItemsInJSON = 0;
+            if (this.fullItemsData) {
+                for (let i = 1; i < 1000; i++) {
+                    if (this.fullItemsData[i]) {
+                        validItemsInJSON++;
+                    }
+                }
+            } else if (ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance) {
+                for (let i = 1; i < 1000; i++) {
+                    if (ISAAC_ITEMS_DATA.repentance[i]) {
+                        validItemsInJSON++;
+                    }
+                }
+            }
+            this.analysisResults.debugInfo.push(`Валидных предметов в JSON: ${validItemsInJSON}`);
+            console.log(`Валидных предметов в JSON: ${validItemsInJSON}`);
+            
+            for (let i = 1; i < maxItems; i++) {
+                // Проверяем, был ли предмет "потроган" (seenById)
+                const isFound = seenById[i] !== 0;
                 
-                if (isFound) foundItems++;
+                // Если предмет "потроган", проверяем его валидность
+                if (isFound) {
+                const itemData = this.getItemData(i);
+                    if (!this.isValidCollectibleID(i, itemData)) {
+                        this.analysisResults.debugInfo.push(`Предмет ${i} потроган, но невалидный: ${itemData.name}`);
+                        continue; // Пропускаем невалидные предметы
+                    }
+                    
+                    foundItemsCount++;
+                }
                 
-                this.analysisResults.items.push({
-                    id: parseInt(itemId),
+                // Считаем общее количество валидных предметов для статистики
+                // Только те предметы, которые есть в JSON данных
+                if (this.fullItemsData && this.fullItemsData[i]) {
+                    validItemsCount++;
+                } else if (!this.fullItemsData && ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance && ISAAC_ITEMS_DATA.repentance[i]) {
+                    validItemsCount++;
+                }
+                
+                // Добавляем предмет в результаты (только если он валидный)
+                const itemData = this.getItemData(i);
+                if (this.isValidCollectibleID(i, itemData)) {
+                    this.analysisResults.items.push({
+                    id: i,
                     name: itemData.name,
                     found: isFound,
-                    unlockCondition: this.getAchievementUnlockCondition(achievementId)
-                });
+                    type: itemData.type,
+                    quality: itemData.quality,
+                    description: itemData.description,
+                    pool: itemData.pool
+                    });
+                }
             }
+            
+            foundItems = foundItemsCount;
+            this.analysisResults.debugInfo.push(`Валидных предметов: ${validItemsCount}, найдено: ${foundItemsCount}`);
+            console.log(`Валидных предметов: ${validItemsCount}, найдено: ${foundItemsCount}`);
+        } else {
+            this.analysisResults.debugInfo.push('Предупреждение: Не найдена секция предметов, используем эвристический поиск');
+            this.parseItemsHeuristic();
         }
         
-        this.analysisResults.debugInfo.push(`Разблокировано персонажей: ${unlockedCharacters}/${ISAAC_GAME_DATA.totals.characters}`);
-        this.analysisResults.debugInfo.push(`Завершено челленджей: ${completedChallenges}/${ISAAC_GAME_DATA.totals.challenges}`);
-        this.analysisResults.debugInfo.push(`Найдено предметов: ${foundItems}/${ISAAC_GAME_DATA.totals.items}`);
-    }
-
-    parseAchievements(section) {
-        this.analysisResults.debugInfo.push(`Парсим секцию достижений: ${section.count} достижений`);
+        // Обновляем статистику
+        this.analysisResults.statistics = {
+            achievementsUnlocked: this.analysisResults.achievements.filter(a => a.unlocked).length,
+            charactersUnlocked: unlockedCharacters,
+            challengesCompleted: completedChallenges,
+            itemsFound: foundItems
+        };
         
-        for (let i = 0; i < section.count; i++) {
-            const achievementId = this.dataView.getUint32(section.offset + i * 4, true);
-            if (achievementId > 0 && achievementId <= 640) {
-                this.analysisResults.achievements[achievementId - 1].unlocked = true;
-            }
-        }
+        this.analysisResults.debugInfo.push(`Персонажи: ${unlockedCharacters}/${ISAAC_GAME_DATA.totals.characters} разблокировано`);
+        this.analysisResults.debugInfo.push(`Челленджи: ${completedChallenges}/${ISAAC_GAME_DATA.totals.challenges} завершено`);
+        this.analysisResults.debugInfo.push(`Предметы: ${foundItems}/${ISAAC_GAME_DATA.totals.items} найдено`);
     }
-
+    
     getCharacterCompletionMarks(characterId, isUnlocked) {
         if (!isUnlocked) return [];
         
-        const marks = [];
-        const bossData = this.getCharacterDefeatedBosses(characterId);
-        
-        // Проверяем основные боссы
-        const requiredBosses = ['Сатана', '???', 'Комната вызова', 'Айзек', 'Агнец', 'Сердце мамы', 'Hush', 'Мега сатана', 'Делириум'];
-        
-        for (const boss of bossData) {
-            if (boss.defeated && requiredBosses.includes(boss.name)) {
-                marks.push(boss.name);
-            }
+        // Получаем отметки из JSON данных
+        const characterIndex = this.getCharacterIndex(characterId);
+        if (characterIndex && this.gameData.completionMarks[characterIndex]) {
+            const marks = this.gameData.completionMarks[characterIndex].marks;
+            return marks.map(mark => ({
+                name: mark,
+                completed: this.checkCompletionMark(characterId, mark)
+            }));
         }
+        
+        // Fallback - базовые отметки
+        const marks = [
+            { name: "Isaac", completed: false },
+            { name: "Satan", completed: false },
+            { name: "???", completed: false },
+            { name: "The Lamb", completed: false },
+            { name: "Boss Rush", completed: false },
+            { name: "Hush", completed: false },
+            { name: "Mega Satan", completed: false },
+            { name: "Delirium", completed: false },
+            { name: "Greed Mode", completed: false },
+            { name: "Greedier Mode", completed: false },
+            { name: "Mother", completed: false },
+            { name: "The Beast", completed: false }
+        ];
         
         return marks;
-    }
-
-    isCharacterUnlocked(characterId) {
-        if (characterId === 0) return true; // Исаак всегда разблокирован
-        
-        if (this.analysisResults.achievements[characterId - 1]) {
-            return this.analysisResults.achievements[characterId - 1].unlocked;
-        }
-        
-        return false;
-    }
-
-    getAchievementName(id) {
-        if (this.achievementsData && this.achievementsData.achievements[id]) {
-            return this.achievementsData.achievements[id].name;
-        }
-        return `#${id} Achievement`;
-    }
-
-    getBossName(achievementId) {
-        // Проверяем обычных боссов
-        for (const [bossName, ids] of Object.entries(ISAAC_GAME_DATA.bossData.normal)) {
-            if (ids.includes(achievementId)) {
-                return bossName;
-            }
-        }
-        
-        // Проверяем порченных боссов
-        for (const [bossName, ids] of Object.entries(ISAAC_GAME_DATA.bossData.tainted)) {
-            if (ids.includes(achievementId)) {
-                return bossName;
-            }
-        }
-        
-        return `#${achievementId} Boss`;
-    }
-
-    getCharacterName(characterId) {
-        if (ISAAC_GAME_DATA.characterNames[characterId]) {
-            return ISAAC_GAME_DATA.characterNames[characterId];
-        }
-        return `#${characterId} Character`;
-    }
-
-    getAchievementType(id) {
-        if (this.gameData && this.gameData.characters[id]) return 'character';
-        if (this.gameData && this.gameData.challenges[id]) return 'challenge';
-        return 'other';
-    }
-
-    getAchievementUnlockCondition(id) {
-        if (this.achievementsData && this.achievementsData.achievements[id]) {
-            return this.achievementsData.achievements[id].unlock;
-        }
-        return 'Неизвестно';
     }
 
     getCharacterDefeatedBosses(characterId) {
@@ -351,36 +713,316 @@ class IsaacAchievementParser {
     }
     
     getCharacterIndex(achievementId) {
-        // Ищем персонажа по ID достижения
-        for (const [characterId, bossIds] of Object.entries(ISAAC_GAME_DATA.characterBosses)) {
-            if (bossIds.includes(achievementId)) {
-                return parseInt(characterId);
+        // Маппинг ID достижений на индексы персонажей
+        const characterMap = {
+            1: 1,   // Магдалена
+            2: 2,   // Каин
+            3: 3,   // Иуда
+            32: 4,  // ???
+            42: 5,  // Ева
+            67: 6,  // Самсон
+            80: 7,  // Лазарь
+            79: 8,  // Азазель
+            81: 9,  // Эдем
+            82: 10, // Лост
+            199: 11, // Лилит
+            251: 12, // Хранитель
+            340: 13, // Аполион
+            390: 14, // Забытый
+            404: 15, // Бетани
+            405: 16, // Иаков и Исав
+            474: 17, // Порченный Айзек
+            475: 18, // Порченная Магдалена
+            476: 19, // Порченный Каин
+            477: 20, // Порченный Иуда
+            478: 21, // Порченный ???
+            479: 22, // Порченный Еву
+            480: 23, // Порченный Самсон
+            481: 24, // Порченный Азазель
+            482: 25, // Порченный Лазарь
+            483: 26, // Порченный Иден
+            484: 27, // Порченный Лост
+            485: 28, // Порченный Лилит
+            486: 29, // Порченный Хранитель
+            487: 30, // Порченный Аполлион
+            488: 31, // Порченный Забытый
+            489: 32, // Порченный Беттани
+            490: 33  // Порченный Иаков и Исав
+        };
+        
+        return characterMap[achievementId];
+    }
+    
+    checkCompletionMark(characterId, markName) {
+        // Здесь можно добавить логику для проверки завершенных отметок
+        // на основе достижений или других данных из файла сохранения
+        // Пока возвращаем false для всех отметок
+        return false;
+    }
+    
+    isValidCollectibleID(id, itemData) {
+        // Валидация существования предмета по логике официального viewer'а
+        if (!itemData) {
+            return false;
+        }
+        if (id <= 0 || id >= 1000) {
+            return false;
+        }
+        
+        // Проверяем, что предмет есть в JSON данных (как в официальном viewer'е)
+        // Если предмет есть в полных данных предметов, то он валидный
+        if (this.fullItemsData && this.fullItemsData[id]) {
+            return true;
+        }
+        
+        // Fallback: проверяем базовые данные
+        if (!this.fullItemsData && ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance && ISAAC_ITEMS_DATA.repentance[id]) {
+            return true;
+        }
+        
+        // Если нет полных данных, не считаем предмет валидным
+        return false;
+    }
+
+    getItemData(itemId) {
+        // Check full items data first
+        if (this.fullItemsData && this.fullItemsData[itemId]) {
+            const item = this.fullItemsData[itemId];
+            return {
+                name: item.name || `Item ${itemId}`,
+                quality: this.getItemQuality(itemId),
+                type: this.getItemType(itemId),
+                description: item.text || item.description || '',
+                pool: this.getItemPool(itemId)
+            };
+        }
+        
+        // Check Repentance items
+        if (ISAAC_ITEMS_DATA && ISAAC_ITEMS_DATA.repentance[itemId]) {
+            return ISAAC_ITEMS_DATA.repentance[itemId];
+        }
+        
+        // Fallback for unknown items with version-specific data
+        return {
+            name: this.getItemName(itemId),
+            quality: this.getItemQuality(itemId),
+            type: this.getItemType(itemId),
+            description: this.getItemDescription(itemId),
+            pool: this.getItemPool(itemId)
+        };
+    }
+
+    getItemName(itemId) {
+        // Базовые названия предметов для разных версий
+        if (itemId <= 100) return `Active Item ${itemId}`;
+        if (itemId <= 300) return `Passive Item ${itemId}`;
+        if (itemId <= 400) return `Trinket ${itemId}`;
+        if (itemId <= 500) return `Special Item ${itemId}`;
+        return `Item ${itemId}`;
+    }
+
+    getItemQuality(itemId) {
+        // Простая эвристика качества предметов
+        if (itemId <= 50) return 1; // Базовые предметы
+        if (itemId <= 150) return 2; // Хорошие предметы
+        if (itemId <= 300) return 3; // Отличные предметы
+        if (itemId <= 500) return 4; // Легендарные предметы
+        return 1; // По умолчанию
+    }
+
+    getItemDescription(itemId) {
+        // Простые описания для разных типов предметов
+        const type = this.getItemType(itemId);
+        switch (type) {
+            case "Active": return "Активный предмет";
+            case "Passive": return "Пассивный предмет";
+            case "Trinket": return "Брелок";
+            case "Special": return "Специальный предмет";
+            default: return "Неизвестный предмет";
+        }
+    }
+
+    getItemPool(itemId) {
+        // Простая эвристика пулов предметов
+        if (itemId <= 100) return "Item Room";
+        if (itemId <= 200) return "Devil Room";
+        if (itemId <= 300) return "Angel Room";
+        if (itemId <= 400) return "Secret Room";
+        if (itemId <= 500) return "Shop";
+        return "Unknown";
+    }
+
+    getItemType(itemId) {
+        if (itemId >= 571 && itemId <= 587) return "Active"; // Soul items
+        if (itemId >= 263 && itemId <= 570) return "Passive"; // Repentance items
+        if (itemId <= 100) return "Active";
+        if (itemId <= 300) return "Passive";
+        if (itemId <= 400) return "Trinket";
+        return "Special";
+    }
+
+    getQualityColor(quality) {
+        if (this.itemConstants && this.itemConstants.qualityColors) {
+            return this.itemConstants.qualityColors[quality] || this.itemConstants.qualityColors[1];
+        }
+        // Fallback цвета
+        const colors = {
+            0: "#8b0000", // Quality 0
+            1: "#a6adc8", // Quality 1
+            2: "#a6e3a1", // Quality 2
+            3: "#f9e2af", // Quality 3
+            4: "#cba6f7"  // Quality 4
+        };
+        return colors[quality] || colors[1];
+    }
+
+    getTypeIcon(type) {
+        if (this.itemConstants && this.itemConstants.typeIcons) {
+            return this.itemConstants.typeIcons[type.toLowerCase()] || this.itemConstants.typeIcons.other;
+        }
+        // Fallback иконки
+        const icons = {
+            "active": "⚡",
+            "passive": "🔮",
+            "familiar": "👻",
+            "trinket": "💍",
+            "card": "🃏",
+            "pill": "💊",
+            "rune": "🔮"
+        };
+        return icons[type.toLowerCase()] || "❓";
+    }
+
+    getPoolColor(pool) {
+        if (this.itemConstants && this.itemConstants.poolColors) {
+            return this.itemConstants.poolColors[pool.toLowerCase()] || this.itemConstants.poolColors.other;
+        }
+        // Fallback цвета
+        const colors = {
+            "treasure": "#f9e2af",
+            "shop": "#a6e3a1", 
+            "boss": "#f38ba8",
+            "devil": "#8b0000",
+            "angel": "#a6e3a1",
+            "secret": "#cba6f7",
+            "library": "#89b4fa",
+            "curse": "#f38ba8",
+            "challenge": "#fab387",
+            "golden": "#f9e2af",
+            "red": "#f38ba8",
+            "beggar": "#a6adc8",
+            "demon": "#8b0000"
+        };
+        return colors[pool.toLowerCase()] || "#a6adc8";
+    }
+
+    getString(offset, length) {
+        let result = '';
+        for (let i = 0; i < length && offset + i < this.fileData.length; i++) {
+            const byte = this.fileData[offset + i];
+            if (byte === 0) break;
+            if (byte >= 32 && byte <= 126) {
+                result += String.fromCharCode(byte);
             }
         }
-        return -1;
+        return result;
+    }
+
+    // UI Methods
+    displayResults() {
+        this.updateStats();
+        this.updateTabs();
+        this.showAnalysis(true);
     }
 
     updateStats() {
-        const unlockedAchievements = this.analysisResults.achievements.filter(a => a.unlocked).length;
-        const unlockedCharacters = this.analysisResults.characters.filter(c => c.unlocked).length;
-        const completedChallenges = this.analysisResults.challenges.filter(c => c.completed).length;
-        const foundItems = this.analysisResults.items.filter(i => i.found).length;
+        const stats = this.analysisResults.statistics;
         
-        document.getElementById('achievementsCount').textContent = unlockedAchievements;
-        document.getElementById('achievementsTotal').textContent = `из ${ISAAC_GAME_DATA.totals.achievements} получено`;
-        document.getElementById('achievementsProgress').style.width = `${(unlockedAchievements / ISAAC_GAME_DATA.totals.achievements) * 100}%`;
+        if (!stats) {
+            console.error('Статистика не загружена');
+            return;
+        }
         
-        document.getElementById('charactersCount').textContent = unlockedCharacters;
+        document.getElementById('achievementsCount').textContent = stats.achievementsUnlocked;
+        document.getElementById('achievementsTotal').textContent = `из ${this.analysisResults.achievements.length} получено`;
+        document.getElementById('achievementsProgress').style.width = 
+            `${(stats.achievementsUnlocked / Math.max(this.analysisResults.achievements.length, 1) * 100)}%`;
+        
+        document.getElementById('charactersCount').textContent = stats.charactersUnlocked;
         document.getElementById('charactersTotal').textContent = `из ${ISAAC_GAME_DATA.totals.characters} разблокировано`;
-        document.getElementById('charactersProgress').style.width = `${(unlockedCharacters / ISAAC_GAME_DATA.totals.characters) * 100}%`;
+        document.getElementById('charactersProgress').style.width = 
+            `${(stats.charactersUnlocked / ISAAC_GAME_DATA.totals.characters * 100)}%`;
         
-        document.getElementById('challengesCount').textContent = completedChallenges;
+        document.getElementById('challengesCount').textContent = stats.challengesCompleted;
         document.getElementById('challengesTotal').textContent = `из ${ISAAC_GAME_DATA.totals.challenges} завершено`;
-        document.getElementById('challengesProgress').style.width = `${(completedChallenges / ISAAC_GAME_DATA.totals.challenges) * 100}%`;
+        document.getElementById('challengesProgress').style.width = 
+            `${(stats.challengesCompleted / ISAAC_GAME_DATA.totals.challenges * 100)}%`;
         
-        document.getElementById('itemsCount').textContent = foundItems;
+        document.getElementById('itemsCount').textContent = stats.itemsFound;
         document.getElementById('itemsTotal').textContent = `из ${ISAAC_GAME_DATA.totals.items} найдено`;
-        document.getElementById('itemsProgress').style.width = `${(foundItems / ISAAC_GAME_DATA.totals.items) * 100}%`;
+        document.getElementById('itemsProgress').style.width = 
+            `${(stats.itemsFound / ISAAC_GAME_DATA.totals.items * 100)}%`;
+    }
+
+    updateTabs() {
+        this.updateAchievementsTab();
+        this.updateCharactersTab();
+        this.updateChallengesTab();
+        this.updateItemsTab();
+        this.updateRawTab();
+    }
+
+    updateAchievementsTab() {
+        const container = document.getElementById('achievementsList');
+        container.innerHTML = '';
+        
+        // Создаем один общий контейнер для ВСЕХ достижений
+        const mainGrid = document.createElement('div');
+        mainGrid.className = 'achievements-grid'; // Специальный класс только для достижений
+        mainGrid.style.display = 'grid';
+        mainGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(150px, 1fr))';
+        mainGrid.style.gap = '10px';
+        mainGrid.style.width = '100%';
+        mainGrid.style.gridAutoRows = 'min-content';
+        
+        // Собираем ВСЕ достижения и сортируем по ID
+        const allAchievements = [...this.analysisResults.achievements].sort((a, b) => a.id - b.id);
+        
+        // Показываем ВСЕ достижения одним списком
+        allAchievements.forEach(achievement => {
+                    const div = document.createElement('div');
+                    div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
+            div.style.padding = '16px';
+            div.style.minHeight = '140px';
+            div.style.fontSize = '0.8rem';
+            
+                    div.innerHTML = `
+                <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
+                    #${achievement.id} ${achievement.name}
+                </div>
+                <div style="color: #a0aec0; font-size: 0.75rem; margin: 8px 0; line-height: 1.4;">
+                    ${achievement.unlockCondition}
+                </div>
+                <div style="margin-top: auto; text-align: center; padding-top: 8px;">
+                    <span style="color: ${achievement.unlocked ? '#ffd700' : '#4c566a'}; font-size: 0.7rem; font-weight: bold;">
+                        ${achievement.unlocked ? '✓ ПОЛУЧЕНО' : '✗ ЗАБЛОКИРОВАНО'}
+                    </span>
+                </div>
+                    `;
+            mainGrid.appendChild(div);
+                });
+        
+        container.appendChild(mainGrid);
+    }
+
+    getCategoryName(category) {
+        const names = {
+            characters: 'Персонажи',
+            challenges: 'Челленджи', 
+            items: 'Предметы',
+            other: 'Другие достижения'
+        };
+        return names[category] || category;
     }
 
     updateCharactersTab() {
@@ -451,16 +1093,17 @@ class IsaacAchievementParser {
         this.analysisResults.challenges.forEach(challenge => {
             const div = document.createElement('div');
             div.className = `item-card ${challenge.completed ? 'unlocked' : 'locked'}`;
-            
             div.innerHTML = `
-                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px;">
+                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${challenge.name}
                 </div>
-                <div style="color: ${challenge.completed ? '#ffd700' : '#4c566a'}; font-size: 0.8rem; margin-bottom: 8px;">
-                    ${challenge.completed ? '✓ ЗАВЕРШЕН' : '✗ НЕ ЗАВЕРШЕН'}
-                </div>
-                <div style="color: #a0aec0; font-size: 0.7rem;">
+                <div style="color: #a0aec0; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
                     ${challenge.unlockCondition}
+                </div>
+                <div style="margin-top: auto; text-align: center; padding-top: 8px;">
+                    <span style="color: ${challenge.completed ? '#ffd700' : '#4c566a'}; font-size: 0.8rem; font-weight: bold;">
+                        ${challenge.completed ? '✓ ЗАВЕРШЕН' : '✗ НЕ ЗАВЕРШЕН'}
+                    </span>
                 </div>
             `;
             container.appendChild(div);
@@ -471,162 +1114,157 @@ class IsaacAchievementParser {
         const container = document.getElementById('itemsList');
         container.innerHTML = '';
         
-        this.analysisResults.items.forEach(item => {
+        const sortedItems = [...this.analysisResults.items].sort((a, b) => {
+            if (a.found && !b.found) return -1;
+            if (!a.found && b.found) return 1;
+            return 0;
+        });
+        
+        // Показываем ВСЕ предметы без описаний
+        sortedItems.forEach(item => {
             const div = document.createElement('div');
             div.className = `item-card ${item.found ? 'unlocked' : 'locked'}`;
             
+            const qualityColor = this.getQualityColor(item.quality);
+            const typeIcon = this.getTypeIcon(item.type);
+            const poolColor = this.getPoolColor(item.pool);
+            
             div.innerHTML = `
-                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px;">
+                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${item.name}
                 </div>
-                <div style="color: ${item.found ? '#ffd700' : '#4c566a'}; font-size: 0.8rem; margin-bottom: 8px;">
-                    ${item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН'}
+                <div style="color: ${qualityColor}; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
+                    Quality ${item.quality} • <span style="color: ${poolColor}">${item.pool}</span>
                 </div>
-                <div style="color: #a0aec0; font-size: 0.7rem;">
-                    ${item.unlockCondition}
+                <div style="margin-top: auto; text-align: center; padding-top: 8px;">
+                    <span style="color: ${item.found ? '#ffd700' : '#4c566a'}; font-size: 0.8rem; font-weight: bold;">
+                        ${item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН'}
+                    </span>
                 </div>
             `;
             container.appendChild(div);
         });
     }
 
-    updateAchievementsTab() {
-        const container = document.getElementById('achievementsList');
-        container.innerHTML = '';
+    updateRawTab() {
+        const container = document.getElementById('rawData');
+        let content = '';
         
-        // Группируем достижения по категориям
-        const categories = {
-            characters: [],
-            challenges: [],
-            items: [],
-            other: []
-        };
+        if (this.analysisResults.debugInfo.length > 0) {
+            content += '=== ACHIEVEMENT-BASED PARSER DEBUG INFO ===\n';
+            this.analysisResults.debugInfo.forEach(info => {
+                content += info + '\n';
+            });
+            content += '\n';
+        }
         
-        this.analysisResults.achievements.forEach(achievement => {
-            if (achievement.unlocked) {
-                const type = this.getAchievementType(achievement.id);
-                categories[type].push(achievement);
+        if (this.fileData) {
+            content += '=== HEX DUMP (первые 500 байт) ===\n';
+            for (let i = 0; i < Math.min(500, this.fileData.length); i += 16) {
+                let line = i.toString(16).padStart(8, '0') + ': ';
+                let ascii = '';
+                
+                for (let j = 0; j < 16 && i + j < this.fileData.length; j++) {
+                    const byte = this.fileData[i + j];
+                    line += byte.toString(16).padStart(2, '0') + ' ';
+                    ascii += (byte >= 32 && byte <= 126) ? String.fromCharCode(byte) : '.';
+                }
+                
+                line = line.padEnd(60) + ' ' + ascii;
+                content += line + '\n';
             }
-        });
+        }
         
-        // Отображаем каждую категорию
-        Object.entries(categories).forEach(([categoryName, achievements]) => {
-            if (achievements.length === 0) return;
-            
-            const categoryDiv = document.createElement('div');
-            categoryDiv.className = 'achievement-category';
-            
-            const categoryTitle = {
-                characters: 'Персонажи',
-                challenges: 'Челленджи',
-                items: 'Предметы',
-                other: 'Другие'
-            }[categoryName];
-            
-            categoryDiv.innerHTML = `
-                <h3>${categoryTitle} (${achievements.length})</h3>
-                <div class="achievements-grid">
-                    ${achievements.map(achievement => `
-                        <div class="item-card unlocked">
-                            <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px;">
-                                ${this.getAchievementName(achievement.id)}
-                            </div>
-                            <div style="color: #ffd700; font-size: 0.7rem;">
-                                ✓ РАЗБЛОКИРОВАНО
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-            
-            container.appendChild(categoryDiv);
-        });
+        container.textContent = content;
     }
 
-    showError(message) {
-        const errorDiv = document.getElementById('errorMessage');
-        errorDiv.textContent = message;
-        errorDiv.style.display = 'block';
-        document.getElementById('loading').style.display = 'none';
+    switchTab(tabName) {
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        
+        document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+        document.getElementById(`${tabName}Tab`).classList.add('active');
     }
 
-    handleFileSelect(event) {
-        const file = event.target.files[0];
-        if (!file) return;
-        
-        // Скрываем предыдущие результаты
-        document.getElementById('analysisSection').style.display = 'none';
-        document.getElementById('errorMessage').style.display = 'none';
-        
-        // Показываем информацию о файле
-        document.getElementById('fileInfo').style.display = 'block';
+    showFileInfo(file) {
         document.getElementById('fileName').textContent = file.name;
         document.getElementById('fileSize').textContent = this.formatFileSize(file.size);
-        document.getElementById('fileFormat').textContent = file.name.endsWith('.dat') ? 'Isaac Save File' : 'Unknown';
         
-        // Показываем загрузку
-        document.getElementById('loading').style.display = 'block';
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            const header = new TextDecoder().decode(e.target.result.slice(0, 20));
+            document.getElementById('fileFormat').textContent = header.replace(/[^\x20-\x7E]/g, '');
+        };
+        reader.readAsArrayBuffer(file.slice(0, 20));
         
-        // Анализируем файл
-        this.parseFile(file);
+        document.getElementById('fileInfo').style.display = 'block';
     }
 
     formatFileSize(bytes) {
         if (bytes === 0) return '0 Bytes';
         const k = 1024;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const sizes = ['Bytes', 'KB', 'MB'];
         const i = Math.floor(Math.log(bytes) / Math.log(k));
         return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
     }
+
+    showError(message) {
+        const errorElement = document.getElementById('errorMessage');
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+        setTimeout(() => {
+            errorElement.style.display = 'none';
+        }, 5000);
+    }
+
+    showLoading(show) {
+        document.getElementById('loading').style.display = show ? 'block' : 'none';
+    }
+
+    showAnalysis(show) {
+        document.getElementById('analysisSection').style.display = show ? 'block' : 'none';
+    }
 }
 
-// Инициализация при загрузке страницы
-document.addEventListener('DOMContentLoaded', function() {
-    const parser = new IsaacAchievementParser();
-    
-    // Обработчики событий
-    document.getElementById('fileInput').addEventListener('change', (e) => parser.handleFileSelect(e));
-    
-    // Drag & Drop
-    const uploadZone = document.getElementById('uploadZone');
-    
-    uploadZone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        uploadZone.classList.add('dragover');
-    });
-    
-    uploadZone.addEventListener('dragleave', () => {
-        uploadZone.classList.remove('dragover');
-    });
-    
-    uploadZone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        uploadZone.classList.remove('dragover');
-        
-        const files = e.dataTransfer.files;
-        if (files.length > 0) {
-            document.getElementById('fileInput').files = files;
-            parser.handleFileSelect({ target: { files: files } });
-        }
-    });
-    
-    // Клик по зоне загрузки
-    uploadZone.addEventListener('click', () => {
-        document.getElementById('fileInput').click();
-    });
-    
-    // Переключение вкладок
-    document.querySelectorAll('.tab-button').forEach(button => {
-        button.addEventListener('click', () => {
-            const tabName = button.dataset.tab;
-            
-            // Убираем активный класс со всех кнопок и контента
-            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-            
-            // Добавляем активный класс к выбранной кнопке и контенту
-            button.classList.add('active');
-            document.getElementById(tabName + 'Tab').classList.add('active');
-        });
-    });
+// Export functions
+function exportResults() {
+    if (!window.achievementParser || !window.achievementParser.analysisResults) {
+        alert('Сначала загрузите и проанализируйте файл сохранения');
+        return;
+    }
+
+    const results = window.achievementParser.analysisResults;
+    const data = {
+        timestamp: new Date().toISOString(),
+        parser: 'IsaacAchievementParser',
+        stats: results.stats,
+        debugInfo: results.debugInfo,
+        achievements: results.achievements.filter(a => a.unlocked).map(a => a.name),
+        characters: results.characters.map(c => ({
+            name: c.name,
+            unlocked: c.unlocked,
+            unlockCondition: c.unlockCondition
+        })),
+        challenges: results.challenges.map(c => ({
+            name: c.name,
+            completed: c.completed,
+            unlockCondition: c.unlockCondition
+        })),
+        items: results.items.filter(i => i.found).slice(0, 100).map(i => i.name)
+    };
+
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'isaac-achievement-analysis.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+// Initialize
+document.addEventListener('DOMContentLoaded', () => {
+    window.achievementParser = new IsaacAchievementParser();
 });

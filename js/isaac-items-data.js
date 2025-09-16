@@ -3,111 +3,116 @@
 
 const ISAAC_ITEMS_DATA = {
     // Repentance Items (173 items from tboi.com)
-    items: {
-        1: { name: "Sad Onion", unlock: "Start with it", category: "Passive" },
-        2: { name: "The Inner Eye", unlock: "Beat Mom's Heart 1 time", category: "Passive" },
-        3: { name: "Spoon Bender", unlock: "Beat Mom's Heart 2 times", category: "Passive" },
-        4: { name: "Cricket's Head", unlock: "Beat Mom's Heart 3 times", category: "Passive" },
-        5: { name: "My Reflection", unlock: "Beat Mom's Heart 4 times", category: "Passive" },
-        6: { name: "Number One", unlock: "Beat Mom's Heart 5 times", category: "Passive" },
-        7: { name: "Blood of the Martyr", unlock: "Beat Mom's Heart 6 times", category: "Passive" },
-        8: { name: "Brother Bobby", unlock: "Beat Mom's Heart 7 times", category: "Familiar" },
-        9: { name: "Skatole", unlock: "Beat Mom's Heart 8 times", category: "Passive" },
-        10: { name: "Halo of Flies", unlock: "Beat Mom's Heart 9 times", category: "Passive" },
-        11: { name: "1up!", unlock: "Beat Mom's Heart 10 times", category: "Passive" },
-        12: { name: "Magic Mushroom", unlock: "Beat Mom's Heart 11 times", category: "Passive" },
-        13: { name: "The Virus", unlock: "Beat Mom's Heart 12 times", category: "Passive" },
-        14: { name: "Roid Rage", unlock: "Beat Mom's Heart 13 times", category: "Passive" },
-        15: { name: "Heart", unlock: "Beat Mom's Heart 14 times", category: "Passive" },
-        16: { name: "Raw Liver", unlock: "Beat Mom's Heart 15 times", category: "Passive" },
-        17: { name: "Skeleton Key", unlock: "Beat Mom's Heart 16 times", category: "Passive" },
-        18: { name: "A Dollar", unlock: "Beat Mom's Heart 17 times", category: "Passive" },
-        19: { name: "Boom!", unlock: "Beat Mom's Heart 18 times", category: "Passive" },
-        20: { name: "Transcendence", unlock: "Beat Mom's Heart 19 times", category: "Passive" },
-        21: { name: "The Compass", unlock: "Beat Mom's Heart 20 times", category: "Passive" },
-        22: { name: "Lunch", unlock: "Beat Mom's Heart 21 times", category: "Passive" },
-        23: { name: "Dinner", unlock: "Beat Mom's Heart 22 times", category: "Passive" },
-        24: { name: "Dessert", unlock: "Beat Mom's Heart 23 times", category: "Passive" },
-        25: { name: "Breakfast", unlock: "Beat Mom's Heart 24 times", category: "Passive" },
-        26: { name: "Wooden Spoon", unlock: "Beat Mom's Heart 25 times", category: "Passive" },
-        27: { name: "The Belt", unlock: "Beat Mom's Heart 26 times", category: "Passive" },
-        28: { name: "Mom's Underwear", unlock: "Beat Mom's Heart 27 times", category: "Passive" },
-        29: { name: "Mom's Heels", unlock: "Beat Mom's Heart 28 times", category: "Passive" },
-        30: { name: "Mom's Lipstick", unlock: "Beat Mom's Heart 29 times", category: "Passive" },
-        31: { name: "Wire Coat Hanger", unlock: "Beat Mom's Heart 30 times", category: "Passive" },
-        32: { name: "The Ladder", unlock: "Beat Mom's Heart 31 times", category: "Passive" },
-        33: { name: "Charm of the Vampire", unlock: "Beat Mom's Heart 32 times", category: "Passive" },
-        34: { name: "The Battery", unlock: "Beat Mom's Heart 33 times", category: "Passive" },
-        35: { name: "Steam Sale", unlock: "Beat Mom's Heart 34 times", category: "Passive" },
-        36: { name: "Guppy's Hairball", unlock: "Beat Mom's Heart 35 times", category: "Passive" },
-        37: { name: "Abel", unlock: "Beat Mom's Heart 36 times", category: "Familiar" },
-        38: { name: "SMB Super Fan", unlock: "Beat Mom's Heart 37 times", category: "Passive" },
-        39: { name: "Pyro", unlock: "Beat Mom's Heart 38 times", category: "Passive" },
-        40: { name: "3 Dollar Bill", unlock: "Beat Mom's Heart 39 times", category: "Passive" },
-        41: { name: "Telepathy for Dummies", unlock: "Beat Mom's Heart 40 times", category: "Passive" },
-        42: { name: "MEAT!", unlock: "Beat Mom's Heart 41 times", category: "Passive" },
-        43: { name: "Magic 8 Ball", unlock: "Beat Mom's Heart 42 times", category: "Passive" },
-        44: { name: "Mom's Coin Purse", unlock: "Beat Mom's Heart 43 times", category: "Passive" },
-        45: { name: "Squeezy", unlock: "Beat Mom's Heart 44 times", category: "Passive" },
-        46: { name: "Jesus Juice", unlock: "Beat Mom's Heart 45 times", category: "Passive" },
-        47: { name: "Box", unlock: "Beat Mom's Heart 46 times", category: "Passive" },
-        48: { name: "Mom's Key", unlock: "Beat Mom's Heart 47 times", category: "Passive" },
-        49: { name: "Mom's Eyeshadow", unlock: "Beat Mom's Heart 48 times", category: "Passive" },
-        50: { name: "Iron Bar", unlock: "Beat Mom's Heart 49 times", category: "Passive" },
-        51: { name: "Midas' Touch", unlock: "Beat Mom's Heart 50 times", category: "Passive" },
-        52: { name: "Humbleing Bundle", unlock: "Beat Mom's Heart 51 times", category: "Passive" },
-        53: { name: "Fanny Pack", unlock: "Beat Mom's Heart 52 times", category: "Passive" },
-        54: { name: "Sharp Plug", unlock: "Beat Mom's Heart 53 times", category: "Passive" },
-        55: { name: "Guillotine", unlock: "Beat Mom's Heart 54 times", category: "Passive" },
-        56: { name: "Ball of Bandages", unlock: "Beat Mom's Heart 55 times", category: "Familiar" },
-        57: { name: "Champion Belt", unlock: "Beat Mom's Heart 56 times", category: "Passive" },
-        58: { name: "Butt Bombs", unlock: "Beat Mom's Heart 57 times", category: "Passive" },
-        59: { name: "Gnawed Leaf", unlock: "Beat Mom's Heart 58 times", category: "Passive" },
-        60: { name: "Spiderbaby", unlock: "Beat Mom's Heart 59 times", category: "Familiar" },
-        61: { name: "Guppy's Collar", unlock: "Beat Mom's Heart 60 times", category: "Passive" },
-        62: { name: "Lost Contact", unlock: "Beat Mom's Heart 61 times", category: "Passive" },
-        63: { name: "Anemic", unlock: "Beat Mom's Heart 62 times", category: "Passive" },
-        64: { name: "Goat Head", unlock: "Beat Mom's Heart 63 times", category: "Passive" },
-        65: { name: "Ceremonial Robes", unlock: "Beat Mom's Heart 64 times", category: "Passive" },
-        66: { name: "Mom's Wig", unlock: "Beat Mom's Heart 65 times", category: "Passive" },
-        67: { name: "Placenta", unlock: "Beat Mom's Heart 66 times", category: "Passive" },
-        68: { name: "Old Bandage", unlock: "Beat Mom's Heart 67 times", category: "Passive" },
-        69: { name: "Sad Bombs", unlock: "Beat Mom's Heart 68 times", category: "Passive" },
-        70: { name: "Rubber Cement", unlock: "Beat Mom's Heart 69 times", category: "Passive" },
-        71: { name: "Anti-Gravity", unlock: "Beat Mom's Heart 70 times", category: "Passive" },
-        72: { name: "Pyromaniac", unlock: "Beat Mom's Heart 71 times", category: "Passive" },
-        73: { name: "Cricket's Body", unlock: "Beat Mom's Heart 72 times", category: "Passive" },
-        74: { name: "Gimpy", unlock: "Beat Mom's Heart 73 times", category: "Passive" },
-        75: { name: "Black Lotus", unlock: "Beat Mom's Heart 74 times", category: "Passive" },
-        76: { name: "Piggy Bank", unlock: "Beat Mom's Heart 75 times", category: "Passive" },
-        77: { name: "Mom's Perfume", unlock: "Beat Mom's Heart 76 times", category: "Passive" },
-        78: { name: "Mom's Bra", unlock: "Beat Mom's Heart 77 times", category: "Passive" },
-        79: { name: "Mom's Pad", unlock: "Beat Mom's Heart 78 times", category: "Passive" },
-        80: { name: "Isaac's Tears", unlock: "Beat Mom's Heart 79 times", category: "Passive" },
-        81: { name: "???'s Only Friend", unlock: "Beat Mom's Heart 80 times", category: "Familiar" },
-        82: { name: "Samson's Chains", unlock: "Beat Mom's Heart 81 times", category: "Passive" },
-        83: { name: "Mongo Baby", unlock: "Beat Mom's Heart 82 times", category: "Familiar" },
-        84: { name: "Isaac's Head", unlock: "Beat Mom's Heart 83 times", category: "Familiar" },
-        85: { name: "Maggy's Faith", unlock: "Beat Mom's Heart 84 times", category: "Passive" },
-        86: { name: "Judas' Tongue", unlock: "Beat Mom's Heart 85 times", category: "Passive" },
-        87: { name: "???'s Soul", unlock: "Beat Mom's Heart 86 times", category: "Familiar" },
-        88: { name: "Samson's Lock", unlock: "Beat Mom's Heart 87 times", category: "Passive" },
-        89: { name: "Cain's Eye", unlock: "Beat Mom's Heart 88 times", category: "Passive" },
-        90: { name: "Eve's Mascara", unlock: "Beat Mom's Heart 89 times", category: "Passive" },
-        91: { name: "Judas' Shadow", unlock: "Beat Mom's Heart 90 times", category: "Passive" },
-        92: { name: "Maggy's Bow", unlock: "Beat Mom's Heart 91 times", category: "Passive" },
-        93: { name: "Cain's Other Eye", unlock: "Beat Mom's Heart 92 times", category: "Passive" },
-        94: { name: "???'s Only Friend", unlock: "Beat Mom's Heart 93 times", category: "Familiar" },
-        95: { name: "Samson's Chains", unlock: "Beat Mom's Heart 94 times", category: "Passive" },
-        96: { name: "Mongo Baby", unlock: "Beat Mom's Heart 95 times", category: "Familiar" },
-        97: { name: "Isaac's Head", unlock: "Beat Mom's Heart 96 times", category: "Familiar" },
-        98: { name: "Maggy's Faith", unlock: "Beat Mom's Heart 97 times", category: "Passive" },
-        99: { name: "Judas' Tongue", unlock: "Beat Mom's Heart 98 times", category: "Passive" },
-        100: { name: "???'s Soul", unlock: "Beat Mom's Heart 99 times", category: "Familiar" }
+    repentance: {
+        263: { name: "Clear Rune", quality: 2, type: "Active", description: "Rune mimic", pool: "Secret Room, Crane Game" },
+        553: { name: "Mucormycosis", quality: 3, type: "Passive", description: "Spore shot", pool: "Item Room" },
+        554: { name: "2Spooky", quality: 1, type: "Passive", description: "4me", pool: "Devil Room" },
+        555: { name: "Golden Razor", quality: 1, type: "Active", description: "Pain from gain", pool: "Item Room, Greed Mode Item Room" },
+        556: { name: "Sulfur", quality: 2, type: "Active", description: "Temporary demon form", pool: "Devil Room" },
+        557: { name: "Fortune Cookie", quality: 2, type: "Active", description: "Reusable fortunes", pool: "Item Room" },
+        558: { name: "Eye Sore", quality: 1, type: "Passive", description: "More eyes", pool: "Item Room" },
+        559: { name: "120 Volt", quality: 2, type: "Passive", description: "Zap!", pool: "Item Room" },
+        560: { name: "It Hurts", quality: 1, type: "Passive", description: "No it doesn't...", pool: "Item Room" },
+        561: { name: "Almond Milk", quality: 1, type: "Passive", description: "DMG down + tears up + you feel nutty", pool: "Item Room" },
+        562: { name: "Rock Bottom", quality: 3, type: "Passive", description: "It's only up from there", pool: "Secret Room" },
+        563: { name: "Nancy Bombs", quality: 2, type: "Passive", description: "Random blast +5 bombs", pool: "Item Room" },
+        564: { name: "A Bar of Soap", quality: 3, type: "Passive", description: "Tears + shot speed up", pool: "Boss Room" },
+        565: { name: "Blood Puppy", quality: 1, type: "Passive", description: "What a cute little thing!", pool: "Item Room, Red Chest, Curse Room" },
+        566: { name: "Dream Catcher", quality: 2, type: "Passive", description: "Sweet dreams", pool: "Shop" },
+        567: { name: "Paschal Candle", quality: 3, type: "Passive", description: "Keep the flame burning", pool: "Angel Room" },
+        568: { name: "Divine Intervention", quality: 2, type: "Passive", description: "Double tap shield", pool: "Angel Room" },
+        569: { name: "Blood Oath", quality: 2, type: "Passive", description: "Blood for blood", pool: "Devil Room" },
+        570: { name: "Playdough Cookie", quality: 1, type: "Passive", description: "Rainbow tears", pool: "Item Room" },
+        571: { name: "Soul of Isaac", quality: 3, type: "Active", description: "Soul of Isaac", pool: "Special" },
+        572: { name: "Soul of Magdalene", quality: 3, type: "Active", description: "Soul of Magdalene", pool: "Special" },
+        573: { name: "Soul of Cain", quality: 3, type: "Active", description: "Soul of Cain", pool: "Special" },
+        574: { name: "Soul of Judas", quality: 3, type: "Active", description: "Soul of Judas", pool: "Special" },
+        575: { name: "Soul of ???", quality: 3, type: "Active", description: "Soul of ???", pool: "Special" },
+        576: { name: "Soul of Eve", quality: 3, type: "Active", description: "Soul of Eve", pool: "Special" },
+        577: { name: "Soul of Samson", quality: 3, type: "Active", description: "Soul of Samson", pool: "Special" },
+        578: { name: "Soul of Azazel", quality: 3, type: "Active", description: "Soul of Azazel", pool: "Special" },
+        579: { name: "Soul of Lazarus", quality: 3, type: "Active", description: "Soul of Lazarus", pool: "Special" },
+        580: { name: "Soul of Eden", quality: 3, type: "Active", description: "Soul of Eden", pool: "Special" },
+        581: { name: "Soul of the Lost", quality: 3, type: "Active", description: "Soul of the Lost", pool: "Special" },
+        582: { name: "Soul of Lilith", quality: 3, type: "Active", description: "Soul of Lilith", pool: "Special" },
+        583: { name: "Soul of the Keeper", quality: 3, type: "Active", description: "Soul of the Keeper", pool: "Special" },
+        584: { name: "Soul of Apollyon", quality: 3, type: "Active", description: "Soul of Apollyon", pool: "Special" },
+        585: { name: "Soul of the Forgotten", quality: 3, type: "Active", description: "Soul of the Forgotten", pool: "Special" },
+        586: { name: "Soul of Bethany", quality: 3, type: "Active", description: "Soul of Bethany", pool: "Special" },
+        587: { name: "Soul of Jacob and Esau", quality: 3, type: "Active", description: "Soul of Jacob and Esau", pool: "Special" }
+    },
+    
+    // Item categories
+    categories: {
+        active: { name: "Активные предметы", color: "#f38ba8", icon: "⚡" },
+        passive: { name: "Пассивные предметы", color: "#a6e3a1", icon: "💎" },
+        trinket: { name: "Брелки", color: "#fab387", icon: "🔑" },
+        special: { name: "Специальные предметы", color: "#cba6f7", icon: "⭐" }
+    },
+    
+    // Quality levels
+    qualities: {
+        0: { name: "Quality 0", color: "#6c7086", description: "Плохое качество" },
+        1: { name: "Quality 1", color: "#a6adc8", description: "Низкое качество" },
+        2: { name: "Quality 2", color: "#a6e3a1", description: "Хорошее качество" },
+        3: { name: "Quality 3", color: "#74c7ec", description: "Отличное качество" },
+        4: { name: "Quality 4", color: "#cba6f7", description: "Легендарное качество" }
+    },
+    
+    // Item pools
+    pools: {
+        "Item Room": { name: "Комната предметов", color: "#a6e3a1" },
+        "Devil Room": { name: "Комната дьявола", color: "#f38ba8" },
+        "Angel Room": { name: "Ангельская комната", color: "#74c7ec" },
+        "Secret Room": { name: "Секретная комната", color: "#fab387" },
+        "Shop": { name: "Магазин", color: "#cba6f7" },
+        "Boss Room": { name: "Комната босса", color: "#e78284" },
+        "Special": { name: "Специальный", color: "#f5c2e7" },
+        "Greed Mode Item Room": { name: "Комната предметов (Жадность)", color: "#a6e3a1" },
+        "Red Chest": { name: "Красный сундук", color: "#f38ba8" },
+        "Curse Room": { name: "Проклятая комната", color: "#e78284" }
     }
 };
 
-// Экспорт для использования в других файлах
+// Helper functions
+function getItemData(itemId) {
+    // Check Repentance items first
+    if (ISAAC_ITEMS_DATA.repentance[itemId]) {
+        return ISAAC_ITEMS_DATA.repentance[itemId];
+    }
+    
+    // Fallback for unknown items
+    return {
+        name: `Item ${itemId}`,
+        quality: 1,
+        type: getItemType(itemId),
+        description: "Unknown item",
+        pool: "Unknown"
+    };
+}
+
+function getItemType(itemId) {
+    if (itemId >= 571 && itemId <= 587) return "Active"; // Soul items
+    if (itemId >= 263 && itemId <= 570) return "Passive"; // Repentance items
+    if (itemId <= 100) return "Active";
+    if (itemId <= 300) return "Passive";
+    if (itemId <= 400) return "Trinket";
+    return "Special";
+}
+
+function getItemQuality(quality) {
+    return ISAAC_ITEMS_DATA.qualities[quality] || ISAAC_ITEMS_DATA.qualities[1];
+}
+
+function getItemPool(pool) {
+    return ISAAC_ITEMS_DATA.pools[pool] || { name: pool, color: "#a6adc8" };
+}
+
+function getItemCategory(type) {
+    return ISAAC_ITEMS_DATA.categories[type] || { name: type, color: "#a6adc8", icon: "❓" };
+}
+
+// Export for use in other files
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = ISAAC_ITEMS_DATA;
 }
