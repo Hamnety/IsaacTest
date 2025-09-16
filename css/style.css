@@ -154,8 +154,6 @@ h1 {
 
 .description-note a:hover {
     color: #ffd700;
-    background: rgba(212, 175, 55, 0.1);
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
     transform: translateY(-1px);
 }
 
