@@ -438,20 +438,9 @@ class IsaacAchievementParser {
     }
 
     getBossName(achievementId) {
-        // Проверяем обычных боссов
-        for (const [bossName, ids] of Object.entries(ISAAC_GAME_DATA.bossData.normal)) {
-            if (ids.includes(achievementId)) {
-                return bossName;
-            }
+        if (ISAAC_GAME_DATA.bossNames[achievementId]) {
+            return ISAAC_GAME_DATA.bossNames[achievementId];
         }
-        
-        // Проверяем порченных боссов
-        for (const [bossName, ids] of Object.entries(ISAAC_GAME_DATA.bossData.tainted)) {
-            if (ids.includes(achievementId)) {
-                return bossName;
-            }
-        }
-        
         return `#${achievementId} Boss`;
     }
 
