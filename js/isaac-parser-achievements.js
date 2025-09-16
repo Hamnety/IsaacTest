@@ -161,6 +161,9 @@ class IsaacAchievementParser {
             return;
         }
 
+        // Очищаем все вкладки при загрузке нового файла
+        this.clearAllTabs();
+
         try {
             this.showFileInfo(file);
             this.showLoading(true);
@@ -950,6 +953,9 @@ class IsaacAchievementParser {
     }
 
     updateTabs() {
+        // Очищаем кэш загруженных вкладок при обновлении данных
+        this.loadedTabs.clear();
+        
         // Загружаем только активную вкладку
         const activeTab = document.querySelector('.tab-button.active');
         if (activeTab) {
@@ -1125,8 +1131,8 @@ class IsaacAchievementParser {
 
 
     switchTab(tabName) {
-        // Очищаем контент всех вкладок перед переключением
-        this.clearAllTabs();
+        // Сначала очищаем все неактивные вкладки
+        this.clearInactiveTabs(tabName);
         
         document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
@@ -1138,11 +1144,9 @@ class IsaacAchievementParser {
         this.loadTabContent(tabName);
     }
 
-    clearAllTabs() {
+    clearInactiveTabs(activeTabName) {
         // Очищаем контент только неактивных вкладок для экономии памяти
         const tabs = ['achievements', 'characters', 'challenges', 'items'];
-        const activeTab = document.querySelector('.tab-button.active');
-        const activeTabName = activeTab ? activeTab.dataset.tab : null;
         
         tabs.forEach(tabName => {
             // Не очищаем активную вкладку
@@ -1167,6 +1171,9 @@ class IsaacAchievementParser {
         if (this.loadedTabs.has(tabName)) {
             return;
         }
+        
+        // Принудительно очищаем контент перед загрузкой
+        this.clearTabContent(tabName);
         
         // Показываем индикатор загрузки
         this.showLoadingIndicator(tabName);
@@ -1194,6 +1201,17 @@ class IsaacAchievementParser {
             // Инициализируем фильтры для активной вкладки
             this.initializeFilters();
         }, 50);
+    }
+
+    clearTabContent(tabName) {
+        const tab = document.getElementById(`${tabName}Tab`);
+        if (!tab) return;
+        
+        // Находим контейнеры с контентом (исключаем фильтры)
+        const contentContainers = tab.querySelectorAll('.item-grid, #achievementsList');
+        contentContainers.forEach(container => {
+            container.innerHTML = '';
+        });
     }
 
     showLoadingIndicator(tabName) {
@@ -1289,6 +1307,16 @@ class IsaacAchievementParser {
     reloadTab(tabName) {
         this.loadedTabs.delete(tabName);
         this.loadTabContent(tabName);
+    }
+
+    // Функция для принудительной очистки всех вкладок
+    clearAllTabs() {
+        const tabs = ['achievements', 'characters', 'challenges', 'items'];
+        
+        tabs.forEach(tabName => {
+            this.clearTabContent(tabName);
+            this.loadedTabs.delete(tabName);
+        });
     }
 
     showFileInfo(file) {
