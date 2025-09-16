@@ -1,0 +1,68 @@
+{
+  "NEW": {
+    "name": "Unknown Item",
+    "shown": true,
+    "text": "Tracker doesn't know this item yet",
+    "achievement": null
+  },
+  "1": {
+    "name": "Sad Onion",
+    "shown": true,
+    "text": "Tears up",
+    "achievement": 1
+  },
+  "2": {
+    "name": "The Inner Eye",
+    "shown": true,
+    "text": "Triple shot",
+    "achievement": 2
+  },
+  "3": {
+    "name": "Spoon Bender",
+    "shown": true,
+    "text": "Homing tears",
+    "achievement": 3
+  },
+  "4": {
+    "name": "Cricket's Head",
+    "shown": true,
+    "text": "DMG up",
+    "achievement": 4
+  },
+  "5": {
+    "name": "My Reflection",
+    "shown": true,
+    "text": "Boomerang tears",
+    "achievement": 5
+  },
+  "6": {
+    "name": "Number One",
+    "shown": true,
+    "text": "Tears up, range down",
+    "achievement": 6
+  },
+  "7": {
+    "name": "Blood of the Martyr",
+    "shown": true,
+    "text": "DMG up",
+    "achievement": 7
+  },
+  "8": {
+    "name": "Brother Bobby",
+    "shown": true,
+    "text": "Familiar tears",
+    "achievement": 8
+  },
+  "9": {
+    "name": "Skatole",
+    "shown": true,
+    "text": "Flies avoid you",
+    "achievement": 9
+  },
+  "10": {
+    "name": "Halo of Flies",
+    "shown": true,
+    "text": "Orbital protection",
+    "achievement": 10
+  }
+}

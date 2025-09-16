@@ -1,0 +1,22 @@
+{
+  "qualityColors": {
+    "0": "#8b0000",
+    "1": "#a6adc8", 
+    "2": "#a6e3a1",
+    "3": "#f9e2af",
+    "4": "#cba6f7"
+  },
+  "qualityNames": {
+    "0": "Quality 0",
+    "1": "Quality 1", 
+    "2": "Quality 2",
+    "3": "Quality 3",
+    "4": "Quality 4"
+  },
+  "itemTypes": {
+    "0": "Passive",
+    "1": "Active",
+    "2": "Familiar",
+    "3": "Trinket"
+  }
+}
