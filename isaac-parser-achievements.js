@@ -437,6 +437,13 @@ class IsaacAchievementParser {
         return `#${id} Achievement`;
     }
 
+    getBossName(achievementId) {
+        if (ISAAC_GAME_DATA.bossNames[achievementId]) {
+            return ISAAC_GAME_DATA.bossNames[achievementId];
+        }
+        return `#${achievementId} Boss`;
+    }
+
     getAchievementType(id) {
         if (this.gameData && this.gameData.characters[id]) return 'character';
         if (this.gameData && this.gameData.challenges[id]) return 'challenge';
@@ -662,7 +669,7 @@ class IsaacAchievementParser {
         
         for (const bossId of bossIds) {
             const isDefeated = this.analysisResults.achievements[bossId - 1]?.unlocked || false;
-            const bossName = this.getAchievementName(bossId);
+            const bossName = this.getBossName(bossId);
             
             // Для порченных персонажей показываем объединенные достижения
             if (characterId >= 474) {
