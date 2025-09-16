@@ -31,11 +31,6 @@ class IsaacSaveParser {
         
         this.initializeUI();
         this.loadGameData();
-        
-        // Показываем персонажей сразу при загрузке страницы
-        setTimeout(() => {
-            this.displayResults();
-        }, 100);
     }
 
     initializeUI() {
@@ -143,9 +138,6 @@ class IsaacSaveParser {
             "Mom's Heart", "Mom", "Isaac", "Satan", "Boss Rush", "Hush",
             "Ultra Greed", "Delirium", "Mega Satan", "Mother", "The Beast", "Greedier"
         ];
-
-        // Данные о боссах для каждого персонажа из Kal.txt
-        const characterBossData = this.parseCharacterBossData();
         
         return characterNames.map((name, i) => ({
             id: i,
@@ -157,77 +149,8 @@ class IsaacSaveParser {
                 id: j
             })),
             completedMarks: 0,
-            totalMarks: this.COMPLETION_MARKS_PER_CHARACTER,
-            defeatedBosses: characterBossData[name] || []
+            totalMarks: this.COMPLETION_MARKS_PER_CHARACTER
         }));
-    }
-
-    parseCharacterBossData() {
-        // Данные о боссах для каждого персонажа из Kal.txt
-        // Пока доступны данные только для первых 4 персонажей
-        return {
-            "Isaac": [
-                { id: 43, name: "Сатана" },
-                { id: 49, name: "???" },
-                { id: 70, name: "Комната вызова" },
-                { id: 106, name: "Айзек" },
-                { id: 149, name: "Агнец" },
-                { id: 169, name: "Сердце мамы в сложном режиме" },
-                { id: 179, name: "Hush" },
-                { id: 205, name: "Мега сатана" },
-                { id: 282, name: "Делириум" },
-                { id: 192, name: "Грид мод" },
-                { id: 296, name: "Ультра грид" },
-                { id: 440, name: "Матерь" },
-                { id: 441, name: "Бист" }
-            ],
-            "Magdalene": [
-                { id: 45, name: "Сатана" },
-                { id: 50, name: "???" },
-                { id: 109, name: "Комната вызова" },
-                { id: 20, name: "Айзек" },
-                { id: 71, name: "Агнец" },
-                { id: 168, name: "Сердце мамы в сложном режиме" },
-                { id: 180, name: "Hush" },
-                { id: 206, name: "Мега сатана" },
-                { id: 283, name: "Делириум" },
-                { id: 193, name: "Грид мод" },
-                { id: 297, name: "Ультра грид" },
-                { id: 442, name: "Матерь" },
-                { id: 443, name: "Бист" }
-            ],
-            "Cain": [
-                { id: 46, name: "Сатана" },
-                { id: 75, name: "???" },
-                { id: 110, name: "Комната вызова" },
-                { id: 21, name: "Айзек" },
-                { id: 51, name: "Агнец" },
-                { id: 171, name: "Сердце мамы в сложном режиме" },
-                { id: 181, name: "Hush" },
-                { id: 207, name: "Мега сатана" },
-                { id: 284, name: "Делириум" },
-                { id: 194, name: "Грид мод" },
-                { id: 298, name: "Ультра грид" },
-                { id: 444, name: "Матерь" },
-                { id: 445, name: "Бист" }
-            ],
-            "Judas": [
-                { id: 72, name: "Сатана" },
-                { id: 75, name: "???" },
-                { id: 108, name: "Комната вызова" },
-                { id: 107, name: "Айзек" },
-                { id: 52, name: "Агнец" },
-                { id: 170, name: "Сердце мамы в сложном режиме" },
-                { id: 182, name: "Hush" },
-                { id: 208, name: "Мега сатана" },
-                { id: 285, name: "Делириум" },
-                { id: 195, name: "Грид мод" },
-                { id: 299, name: "Ультра грид" },
-                { id: 446, name: "Матерь" },
-                { id: 447, name: "Бист" }
-            ]
-            // Для остальных персонажей данные пока не доступны в Kal.txt
-        };
     }
 
     generateChallengesList() {
@@ -315,9 +238,6 @@ class IsaacSaveParser {
         console.log('Заголовок файла:', header);
         this.analysisResults.debugInfo.push(`Заголовок: ${header}`);
         this.analysisResults.debugInfo.push(`Размер файла: ${this.fileData.length} байт`);
-        
-        // Инициализируем персонажей данными из gameData
-        this.analysisResults.characters = this.gameData.characters.map(char => ({ ...char }));
         
         // Поиск конкретных статистических данных из скриншота
         await this.searchForKnownStatistics();
@@ -576,8 +496,7 @@ class IsaacSaveParser {
                             ...this.gameData.characters[charIndex],
                             unlocked: isUnlocked,
                             completionMarks: completionMarks,
-                            completedMarks: completedMarks,
-                            defeatedBosses: this.gameData.characters[charIndex].defeatedBosses || []
+                            completedMarks: completedMarks
                         };
                     }
                 }
@@ -839,8 +758,6 @@ class IsaacSaveParser {
         const container = document.getElementById('charactersList');
         container.innerHTML = '';
         
-        console.log('Обновляем вкладку персонажей:', this.analysisResults.characters);
-        
         this.analysisResults.characters.forEach(character => {
             const div = document.createElement('div');
             div.className = `item-card ${character.unlocked ? 'unlocked' : 'locked'}`;
@@ -863,36 +780,6 @@ class IsaacSaveParser {
                 });
                 completionMarksHtml += '</div>';
             }
-
-            // HTML для отображения убитых боссов
-            let defeatedBossesHtml = '';
-            console.log(`Персонаж ${character.name}, defeatedBosses:`, character.defeatedBosses);
-            if (character.defeatedBosses && character.defeatedBosses.length > 0) {
-                defeatedBossesHtml = `
-                    <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(205, 214, 244, 0.2);">
-                        <div style="font-size: 0.9rem; color: #74c7ec; margin-bottom: 8px; font-weight: 600;">
-                            <i class="fas fa-skull"></i> Убитые боссы:
-                        </div>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 4px; font-size: 0.8rem;">
-                `;
-                
-                character.defeatedBosses.forEach(boss => {
-                    defeatedBossesHtml += `
-                        <div style="
-                            background: rgba(116, 199, 236, 0.1);
-                            border: 1px solid #74c7ec;
-                            padding: 4px 6px;
-                            border-radius: 4px;
-                            text-align: center;
-                            color: #74c7ec;
-                            font-size: 0.75rem;
-                        ">
-                            ${boss.name}
-                        </div>`;
-                });
-                
-                defeatedBossesHtml += '</div></div>';
-            }
             
             div.innerHTML = `
                 <strong>${character.name}</strong><br>
@@ -905,7 +792,6 @@ class IsaacSaveParser {
                     </div>
                 ` : ''}
                 ${completionMarksHtml}
-                ${defeatedBossesHtml}
             `;
             container.appendChild(div);
         });
