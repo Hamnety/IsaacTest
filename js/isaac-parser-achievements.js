@@ -1412,6 +1412,129 @@ class IsaacAchievementParser {
     showAnalysis(show) {
         document.getElementById('analysisSection').style.display = show ? 'block' : 'none';
     }
+
+    // Функция для генерации изображения с не найденными предметами
+    async generateMissingItemsImage() {
+        if (!this.analysisResults || !this.analysisResults.items) {
+            alert('Сначала загрузите файл сохранения!');
+            return;
+        }
+
+        const missingItems = [];
+        
+        // Находим все не найденные предметы
+        for (const item of this.analysisResults.items) {
+            if (!item.found) {
+                missingItems.push(item);
+            }
+        }
+
+        if (missingItems.length === 0) {
+            alert('Все предметы найдены! Нечего генерировать.');
+            return;
+        }
+
+        // Создаем canvas
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Размеры иконки предмета (32x32)
+        const itemSize = 32;
+        const padding = 4;
+        const itemsPerRow = 20; // 20 предметов в ряду
+        
+        // Вычисляем размеры canvas
+        const rows = Math.ceil(missingItems.length / itemsPerRow);
+        const canvasWidth = itemsPerRow * (itemSize + padding) + padding;
+        const canvasHeight = rows * (itemSize + padding) + padding + 50; // +50 для заголовка
+        
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+        
+        // Заливаем фон
+        ctx.fillStyle = '#1a202c';
+        ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+        
+        // Добавляем заголовок
+        ctx.fillStyle = '#ffd700';
+        ctx.font = 'bold 24px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(`Не найденные предметы (${missingItems.length})`, canvasWidth / 2, 30);
+        
+        // Загружаем и отрисовываем иконки предметов
+        let loadedCount = 0;
+        const totalItems = missingItems.length;
+        
+        for (let i = 0; i < missingItems.length; i++) {
+            const item = missingItems[i];
+            const row = Math.floor(i / itemsPerRow);
+            const col = i % itemsPerRow;
+            
+            const x = col * (itemSize + padding) + padding;
+            const y = row * (itemSize + padding) + padding + 50; // +50 для заголовка
+            
+            try {
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                
+                await new Promise((resolve, reject) => {
+                    img.onload = () => {
+                        // Рисуем иконку предмета
+                        ctx.drawImage(img, x, y, itemSize, itemSize);
+                        
+                        // Добавляем рамку для не найденных предметов
+                        ctx.strokeStyle = '#ff6b6b';
+                        ctx.lineWidth = 2;
+                        ctx.strokeRect(x, y, itemSize, itemSize);
+                        
+                        loadedCount++;
+                        resolve();
+                    };
+                    img.onerror = () => {
+                        // Если изображение не загрузилось, рисуем заглушку
+                        ctx.fillStyle = '#4a5568';
+                        ctx.fillRect(x, y, itemSize, itemSize);
+                        ctx.fillStyle = '#ff6b6b';
+                        ctx.font = '12px Arial';
+                        ctx.textAlign = 'center';
+                        ctx.fillText('?', x + itemSize/2, y + itemSize/2 + 4);
+                        
+                        loadedCount++;
+                        resolve();
+                    };
+                    img.src = `img/items/${item.id}.png`;
+                });
+            } catch (error) {
+                console.error(`Ошибка загрузки изображения для предмета ${item.id}:`, error);
+                // Рисуем заглушку
+                ctx.fillStyle = '#4a5568';
+                ctx.fillRect(x, y, itemSize, itemSize);
+                ctx.fillStyle = '#ff6b6b';
+                ctx.font = '12px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText('?', x + itemSize/2, y + itemSize/2 + 4);
+                
+                loadedCount++;
+            }
+        }
+        
+        // Ждем загрузки всех изображений
+        while (loadedCount < totalItems) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        
+        // Конвертируем canvas в blob и скачиваем
+        canvas.toBlob((blob) => {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `missing_items_${new Date().toISOString().slice(0, 10)}.png`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }, 'image/png');
+    }
 }
 
 // Export functions
@@ -1452,7 +1575,16 @@ function exportResults() {
     URL.revokeObjectURL(url);
 }
 
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     window.achievementParser = new IsaacAchievementParser();
+    
+    // Добавляем обработчик для кнопки генерации изображения
+    const generateButton = document.getElementById('generateMissingItemsImage');
+    if (generateButton) {
+        generateButton.addEventListener('click', () => {
+            window.achievementParser.generateMissingItemsImage();
+        });
+    }
 });
