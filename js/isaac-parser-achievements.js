@@ -1461,12 +1461,21 @@ function exportResults() {
 // Функция для анализа отсутствующих картинок предметов
 async function analyzeMissingItemImages() {
     const missingImages = [];
-    const allItemIds = Object.keys(ISAAC_GAME_DATA.items || {});
+    
+    // Получаем все ID предметов из JSON файла
+    let allItemIds = [];
+    try {
+        const response = await fetch('data/isaac-items-full.json');
+        const itemsData = await response.json();
+        allItemIds = Object.keys(itemsData).filter(id => id !== 'NEW' && id !== '-1');
+        console.log(`Загружено ${allItemIds.length} ID предметов для проверки`);
+    } catch (error) {
+        console.error('Ошибка загрузки данных предметов:', error);
+        return [];
+    }
     
     // Проверяем каждый ID предмета
     const checkPromises = allItemIds.map(async (itemId) => {
-        if (itemId === 'NEW' || itemId === '-1') return null; // Пропускаем специальные ID
-        
         const imagePath = `img/items/${itemId}.png`;
         try {
             const response = await fetch(imagePath);
@@ -1480,79 +1489,107 @@ async function analyzeMissingItemImages() {
     });
     
     const results = await Promise.all(checkPromises);
-    return results.filter(id => id !== null);
+    const missingImages = results.filter(id => id !== null);
+    console.log(`Проверка завершена. Найдено ${missingImages.length} отсутствующих картинок из ${allItemIds.length} предметов`);
+    return missingImages;
 }
 
 // Функция для создания коллажа отсутствующих предметов
 async function createMissingItemsCollage() {
-    const missingImages = await analyzeMissingItemImages();
-    
-    if (missingImages.length === 0) {
-        alert('Все картинки предметов найдены!');
-        return;
+    const downloadBtn = document.getElementById('downloadMissingBtn');
+    if (downloadBtn) {
+        downloadBtn.disabled = true;
+        downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Анализ...';
     }
     
-    // Создаем canvas для коллажа
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    
-    // Размеры сетки (примерно 20 предметов в ряду)
-    const itemsPerRow = 20;
-    const itemSize = 64; // Размер каждого предмета
-    const padding = 4;
-    
-    const rows = Math.ceil(missingImages.length / itemsPerRow);
-    const cols = Math.min(missingImages.length, itemsPerRow);
-    
-    canvas.width = cols * (itemSize + padding) - padding;
-    canvas.height = rows * (itemSize + padding) - padding + 40; // +40 для заголовка
-    
-    // Заливаем фон
-    ctx.fillStyle = '#1a202c';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    // Загружаем и рисуем отсутствующие предметы
-    let loadedCount = 0;
-    const totalItems = missingImages.length;
-    
-    for (let i = 0; i < missingImages.length; i++) {
-        const itemId = missingImages[i];
-        const row = Math.floor(i / itemsPerRow);
-        const col = i % itemsPerRow;
+    try {
+        const missingImages = await analyzeMissingItemImages();
         
-        const x = col * (itemSize + padding);
-        const y = row * (itemSize + padding) + 40; // +40 для заголовка
+        if (missingImages.length === 0) {
+            alert('Все картинки предметов найдены!');
+            return;
+        }
         
-        // Рисуем рамку для отсутствующего предмета
-        ctx.fillStyle = '#ff6b6b';
-        ctx.fillRect(x, y, itemSize, itemSize);
+        console.log(`Найдено ${missingImages.length} отсутствующих картинок:`, missingImages);
         
-        // Рисуем ID предмета
-        ctx.fillStyle = '#ffffff';
-        ctx.font = '12px Arial';
+        // Создаем canvas для коллажа
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+    
+        // Размеры сетки (примерно 20 предметов в ряду)
+        const itemsPerRow = 20;
+        const itemSize = 64; // Размер каждого предмета
+        const padding = 4;
+        
+        const rows = Math.ceil(missingImages.length / itemsPerRow);
+        const cols = Math.min(missingImages.length, itemsPerRow);
+        
+        canvas.width = cols * (itemSize + padding) - padding;
+        canvas.height = rows * (itemSize + padding) - padding + 40; // +40 для заголовка
+        
+        // Заливаем фон
+        ctx.fillStyle = '#1a202c';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Загружаем и рисуем отсутствующие предметы
+        let loadedCount = 0;
+        const totalItems = missingImages.length;
+        
+        for (let i = 0; i < missingImages.length; i++) {
+            const itemId = missingImages[i];
+            const row = Math.floor(i / itemsPerRow);
+            const col = i % itemsPerRow;
+            
+            const x = col * (itemSize + padding);
+            const y = row * (itemSize + padding) + 40; // +40 для заголовка
+            
+            // Рисуем рамку для отсутствующего предмета
+            ctx.fillStyle = '#ff6b6b';
+            ctx.fillRect(x, y, itemSize, itemSize);
+            
+            // Рисуем ID предмета
+            ctx.fillStyle = '#ffffff';
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(itemId.toString(), x + itemSize/2, y + itemSize/2);
+            
+            loadedCount++;
+        }
+        
+        // Добавляем заголовок
+        ctx.fillStyle = '#ffd700';
+        ctx.font = 'bold 16px Arial';
         ctx.textAlign = 'center';
-        ctx.fillText(itemId.toString(), x + itemSize/2, y + itemSize/2);
+        ctx.fillText(`Отсутствующие предметы (${totalItems})`, canvas.width/2, 20);
+    
+        // Конвертируем в blob и скачиваем
+        canvas.toBlob(blob => {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `missing_items_${new Date().toISOString().split('T')[0]}.png`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Восстанавливаем кнопку
+            if (downloadBtn) {
+                downloadBtn.disabled = false;
+                downloadBtn.innerHTML = '<i class="fas fa-download"></i> Скачать отсутствующие предметы';
+            }
+        });
         
-        loadedCount++;
+    } catch (error) {
+        console.error('Ошибка при создании коллажа:', error);
+        alert('Ошибка при создании коллажа: ' + error.message);
+        
+        // Восстанавливаем кнопку при ошибке
+        if (downloadBtn) {
+            downloadBtn.disabled = false;
+            downloadBtn.innerHTML = '<i class="fas fa-download"></i> Скачать отсутствующие предметы';
+        }
     }
-    
-    // Добавляем заголовок
-    ctx.fillStyle = '#ffd700';
-    ctx.font = 'bold 16px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText(`Отсутствующие предметы (${totalItems})`, canvas.width/2, 20);
-    
-    // Конвертируем в blob и скачиваем
-    canvas.toBlob(blob => {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `missing_items_${new Date().toISOString().split('T')[0]}.png`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-    });
 }
 
 // Initialize
