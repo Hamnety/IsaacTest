@@ -385,12 +385,14 @@ input[type="file"] {
     letter-spacing: 0.5px;
     text-shadow: 1px 1px 0px #1a202c;
     font-weight: bold;
+    transform: translateY(0);
 }
 
 .tab-button:hover {
     background: #374151;
     border-color: #d4af37;
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
 }
 
 .tab-button.active {
@@ -415,10 +417,15 @@ input[type="file"] {
         inset 0 0 15px rgba(76, 86, 106, 0.1);
     max-height: 700px;
     overflow-y: auto;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
 }
 
 .tab-content.active {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .filter-controls {

@@ -1131,17 +1131,23 @@ class IsaacAchievementParser {
 
 
     switchTab(tabName) {
+        // Показываем индикатор загрузки сразу при переключении
+        this.showTabLoadingIndicator(tabName);
+        
         // Сначала очищаем все неактивные вкладки
         this.clearInactiveTabs(tabName);
         
+        // Переключаем вкладки с анимацией
         document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
         
         document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
         document.getElementById(`${tabName}Tab`).classList.add('active');
         
-        // Загружаем контент только для активной вкладки
-        this.loadTabContent(tabName);
+        // Загружаем контент только для активной вкладки с задержкой для плавности
+        setTimeout(() => {
+            this.loadTabContent(tabName);
+        }, 100);
     }
 
     clearInactiveTabs(activeTabName) {
@@ -1212,6 +1218,26 @@ class IsaacAchievementParser {
         contentContainers.forEach(container => {
             container.innerHTML = '';
         });
+    }
+
+    showTabLoadingIndicator(tabName) {
+        const tab = document.getElementById(`${tabName}Tab`);
+        if (!tab) return;
+        
+        const container = tab.querySelector('.item-grid, #achievementsList');
+        if (!container) return;
+        
+        container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: #a0aec0;">
+                <div class="spinner" style="margin-bottom: 20px; font-size: 2rem;"></div>
+                <div style="font-size: 1.1rem; font-weight: bold; margin-bottom: 10px;">
+                    Переключение на вкладку
+                </div>
+                <div style="font-size: 0.9rem; color: #6b7280;">
+                    Загрузка ${this.getTabDisplayName(tabName)}...
+                </div>
+            </div>
+        `;
     }
 
     showLoadingIndicator(tabName) {
