@@ -1460,8 +1460,6 @@ function exportResults() {
 
 // Функция для анализа отсутствующих картинок предметов
 async function analyzeMissingItemImages() {
-    const missingImages = [];
-    
     // Получаем все ID предметов из JSON файла
     let allItemIds = [];
     try {
