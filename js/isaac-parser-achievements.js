@@ -1459,7 +1459,7 @@ function exportResults() {
 }
 
 // Функция для анализа не найденных предметов (которые есть в игре, но не получены игроком)
-function getMissingItems() {
+async function getMissingItems() {
     if (!window.achievementParser || !window.achievementParser.analysisResults) {
         console.error('Данные анализа не загружены');
         return [];
@@ -1468,10 +1468,22 @@ function getMissingItems() {
     const foundItems = window.achievementParser.analysisResults.items || [];
     const foundItemIds = new Set(foundItems.map(item => item.id));
     
-    // Получаем все ID предметов из JSON файла
-    const allItemIds = Object.keys(ISAAC_GAME_DATA.items || {}).filter(id => 
-        id !== 'NEW' && id !== '-1' && !isNaN(parseInt(id))
-    );
+    console.log(`Найдено предметов в сохранении: ${foundItems.length}`);
+    console.log('ID найденных предметов:', Array.from(foundItemIds).slice(0, 10), '...');
+    
+    // Загружаем все ID предметов из JSON файла
+    let allItemIds = [];
+    try {
+        const response = await fetch('data/isaac-items-full.json');
+        const itemsData = await response.json();
+        allItemIds = Object.keys(itemsData).filter(id => 
+            id !== 'NEW' && id !== '-1' && !isNaN(parseInt(id))
+        );
+        console.log(`Загружено ${allItemIds.length} предметов из JSON файла`);
+    } catch (error) {
+        console.error('Ошибка загрузки данных предметов:', error);
+        return [];
+    }
     
     // Находим предметы, которые есть в игре, но не найдены игроком
     const missingItems = allItemIds
@@ -1480,6 +1492,7 @@ function getMissingItems() {
         .sort((a, b) => a - b);
     
     console.log(`Найдено ${missingItems.length} не полученных предметов из ${allItemIds.length} общих предметов`);
+    console.log('Первые 10 не найденных предметов:', missingItems.slice(0, 10));
     return missingItems;
 }
 
@@ -1492,7 +1505,7 @@ async function createMissingItemsCollage() {
     }
     
     try {
-        const missingItems = getMissingItems();
+        const missingItems = await getMissingItems();
         
         if (missingItems.length === 0) {
             alert('Все предметы найдены!');
