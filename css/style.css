@@ -329,6 +329,7 @@ input[type="file"] {
 }
 
 .stat-title {
+    letter-spacing: 1px;
     font-size: 0.9rem;
     margin-bottom: 15px;
     color: #ffd700;
@@ -347,6 +348,7 @@ input[type="file"] {
     text-shadow: 2px 2px 0px #1a202c;
     font-weight: bold;
     font-family: var(--font-upheaval);
+    letter-spacing: 2px;
 }
 
 .stat-subtitle {
@@ -521,7 +523,9 @@ input[type="file"] {
     width: 100% !important;
     grid-auto-rows: min-content !important;
 }
-
+.item-title{
+    letter-spacing: 1px;
+}
 .item-card {
     background: #1a202c;
     border-radius: 0;

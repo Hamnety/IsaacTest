@@ -1094,7 +1094,7 @@ class IsaacAchievementParser {
             }
             
             div.innerHTML = `
-                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3;">
+                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3">
                     ${character.name}
                 </div>
                 <div class="character-status" style="color: ${character.unlocked ? '#ffd700' : '#4c566a'};">
@@ -1117,7 +1117,7 @@ class IsaacAchievementParser {
             const div = document.createElement('div');
             div.className = `item-card ${challenge.completed ? 'unlocked' : 'locked'}`;
             div.innerHTML = `
-                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
+                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${challenge.name}
                 </div>
                 <div style="color: #a0aec0; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
@@ -1151,7 +1151,7 @@ class IsaacAchievementParser {
             const poolColor = this.getPoolColor(item.pool);
             
             div.innerHTML = `
-                <div style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
+                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${item.name}
                 </div>
                 <div style="color: ${qualityColor}; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
