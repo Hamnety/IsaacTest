@@ -105,7 +105,7 @@ h1 {
     font-weight: normal;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
     font-family: var(--font-upheaval);
     text-shadow: 2px 2px 0px #1a202c;
 }
@@ -115,7 +115,7 @@ h1 {
     font-size: 0.9rem;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 2px;
 }
 
 .nav-menu {
@@ -182,7 +182,7 @@ h1 {
     font-size: 2rem;
     margin: 20px 0;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     position: relative;
     font-family: var(--font-upheaval);
     text-shadow: 3px 3px 0px #1a202c;
@@ -285,6 +285,7 @@ h1 {
     margin-bottom: 10px;
     font-family: var(--font-upheaval);
     text-shadow: 2px 2px 0px #1a202c;
+    letter-spacing: 2px;
 }
 
 .upload-hint {
@@ -338,6 +339,7 @@ input[type="file"] {
     text-shadow: 1px 1px 0px #1a202c;
     font-weight: bold;
     font-family: var(--font-upheaval);
+    letter-spacing: 2px;
 }
 
 .stat-value {
@@ -347,6 +349,7 @@ input[type="file"] {
     text-shadow: 2px 2px 0px #1a202c;
     font-weight: bold;
     font-family: var(--font-upheaval);
+    letter-spacing: 3px;
 }
 
 .stat-subtitle {
@@ -397,7 +400,7 @@ input[type="file"] {
     font-family: var(--font-upheaval);
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 2px;
     text-shadow: 1px 1px 0px #1a202c;
     font-weight: bold;
     transform: translateY(0);
@@ -469,7 +472,7 @@ input[type="file"] {
     font-family: var(--font-upheaval);
     font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
     text-shadow: 1px 1px 0px #1a202c;
     font-weight: bold;
 }
@@ -563,6 +566,7 @@ input[type="file"] {
     font-weight: bold;
     font-family: var(--font-upheaval);
     text-shadow: 1px 1px 0px #1a202c;
+    letter-spacing: 1.5px;
 }
 
 .item-card .status-bottom.unlocked {
@@ -583,7 +587,7 @@ input[type="file"] {
     font-weight: bold;
     margin-bottom: 8px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 2px;
     font-family: var(--font-upheaval);
     text-shadow: 1px 1px 0px #1a202c;
 }
@@ -608,6 +612,7 @@ input[type="file"] {
     margin-bottom: 6px;
     font-family: var(--font-upheaval);
     text-shadow: 1px 1px 0px #1a202c;
+    letter-spacing: 1.5px;
 }
 
 .bosses-list {
@@ -625,6 +630,7 @@ input[type="file"] {
     border: 1px solid rgba(166, 227, 161, 0.3);
     font-family: var(--font-upheaval);
     text-shadow: 1px 1px 0px #1a202c;
+    letter-spacing: 1px;
 }
 
 .boss-tag.tainted-boss {
