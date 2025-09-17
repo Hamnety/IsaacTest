@@ -377,36 +377,6 @@ input[type="file"] {
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
 }
 
-.download-missing-btn {
-    margin-top: 12px;
-    padding: 8px 16px;
-    background: #2d3748;
-    border: 1px solid #d4af37;
-    border-radius: 6px;
-    color: #ffd700;
-    font-family: var(--font-upheaval);
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-shadow: 1px 1px 0px #1a202c;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.download-missing-btn:hover {
-    background: #374151;
-    border-color: #ffd700;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-    transform: translateY(-1px);
-}
-
-.download-missing-btn:active {
-    transform: translateY(0);
-}
-
 .details-section {
     margin-top: 40px;
 }
