@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Silom&display=swap');
-@import url('https://fonts.cdnfonts.com/css/upheaval');
+@import url('https://fonts.cdnfonts.com/css/upheaval-pro');
 
 :root {
-    --font-upheaval: 'Upheaval', sans-serif;
+    --font-upheaval: 'Upheaval Pro', sans-serif;
     --font-silom: 'Silom', sans-serif;
     --font-press-start: 'Press Start 2P', cursive;
 }
