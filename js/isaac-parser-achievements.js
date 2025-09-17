@@ -697,7 +697,43 @@ class IsaacAchievementParser {
             }
         }
         
+        // Для порченных персонажей добавляем "Сердце мамы" если выполнены условия
+        if (characterId >= 474) {
+            const heartDefeated = this.checkTaintedHeartConditions(characterId);
+            if (heartDefeated) {
+                defeatedBosses.push({
+                    id: 169, // ID достижения "Сердце мамы"
+                    name: "Сердце мамы",
+                    defeated: true,
+                    isTainted: true,
+                    isConditional: true
+                });
+            }
+        }
+        
         return defeatedBosses;
+    }
+
+    checkTaintedHeartConditions(characterId) {
+        // Проверяем условия для засчитывания "Сердце мамы" у порченных персонажей
+        const conditions = ISAAC_GAME_DATA.taintedHeartConditions;
+        
+        // Проверяем условие 1: Комната вызова + Hush
+        const bossIds = ISAAC_GAME_DATA.characterBosses[characterId];
+        if (!bossIds) return false;
+        
+        // Находим индекс персонажа в массиве порченных персонажей (474-490)
+        const taintedIndex = characterId - 474;
+        
+        // Проверяем достижения для этого персонажа
+        const bossCallAchievement = conditions["Комната вызова + Hush"][taintedIndex];
+        const satanAchievement = conditions["Сатана + ??? + Айзек + Агнец"][taintedIndex];
+        
+        const bossCallDefeated = this.analysisResults.achievements[bossCallAchievement - 1]?.unlocked || false;
+        const satanDefeated = this.analysisResults.achievements[satanAchievement - 1]?.unlocked || false;
+        
+        // "Сердце мамы" засчитывается если выполнено ЛЮБОЕ из условий
+        return bossCallDefeated || satanDefeated;
     }
     
     getCharacterIndex(achievementId) {
@@ -1035,7 +1071,7 @@ class IsaacAchievementParser {
                         </div>
                         <div class="bosses-list">
                             ${defeatedBosses.map(boss => 
-                                `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''}">✓${boss.name}</span>`
+                                `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''} ${boss.isConditional ? 'conditional-boss' : ''}">✓${boss.name}</span>`
                             ).join('')}
                         </div>
                         ${defeatedBosses.length === 0 ? 

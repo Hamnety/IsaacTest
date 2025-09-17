@@ -650,6 +650,14 @@ input[type="file"] {
     border: 1px solid rgba(203, 166, 247, 0.5);
 }
 
+.boss-tag.conditional-boss {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    font-weight: bold;
+    text-shadow: 1px 1px 0px #1a202c;
+}
+
 .no-bosses {
     color: #4c566a;
     font-size: 0.65rem;
