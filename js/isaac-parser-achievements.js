@@ -957,6 +957,12 @@ class IsaacAchievementParser {
         this.updateStats();
         this.updateTabs();
         this.showAnalysis(true);
+        
+        // Показываем кнопку для скачивания отсутствующих предметов
+        const downloadBtn = document.getElementById('downloadMissingBtn');
+        if (downloadBtn) {
+            downloadBtn.style.display = 'flex';
+        }
     }
 
     updateStats() {
@@ -1452,7 +1458,110 @@ function exportResults() {
     URL.revokeObjectURL(url);
 }
 
+// Функция для анализа отсутствующих картинок предметов
+async function analyzeMissingItemImages() {
+    const missingImages = [];
+    const allItemIds = Object.keys(ISAAC_GAME_DATA.items || {});
+    
+    // Проверяем каждый ID предмета
+    const checkPromises = allItemIds.map(async (itemId) => {
+        if (itemId === 'NEW' || itemId === '-1') return null; // Пропускаем специальные ID
+        
+        const imagePath = `img/items/${itemId}.png`;
+        try {
+            const response = await fetch(imagePath);
+            if (!response.ok) {
+                return parseInt(itemId);
+            }
+        } catch (error) {
+            return parseInt(itemId);
+        }
+        return null;
+    });
+    
+    const results = await Promise.all(checkPromises);
+    return results.filter(id => id !== null);
+}
+
+// Функция для создания коллажа отсутствующих предметов
+async function createMissingItemsCollage() {
+    const missingImages = await analyzeMissingItemImages();
+    
+    if (missingImages.length === 0) {
+        alert('Все картинки предметов найдены!');
+        return;
+    }
+    
+    // Создаем canvas для коллажа
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Размеры сетки (примерно 20 предметов в ряду)
+    const itemsPerRow = 20;
+    const itemSize = 64; // Размер каждого предмета
+    const padding = 4;
+    
+    const rows = Math.ceil(missingImages.length / itemsPerRow);
+    const cols = Math.min(missingImages.length, itemsPerRow);
+    
+    canvas.width = cols * (itemSize + padding) - padding;
+    canvas.height = rows * (itemSize + padding) - padding + 40; // +40 для заголовка
+    
+    // Заливаем фон
+    ctx.fillStyle = '#1a202c';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    // Загружаем и рисуем отсутствующие предметы
+    let loadedCount = 0;
+    const totalItems = missingImages.length;
+    
+    for (let i = 0; i < missingImages.length; i++) {
+        const itemId = missingImages[i];
+        const row = Math.floor(i / itemsPerRow);
+        const col = i % itemsPerRow;
+        
+        const x = col * (itemSize + padding);
+        const y = row * (itemSize + padding) + 40; // +40 для заголовка
+        
+        // Рисуем рамку для отсутствующего предмета
+        ctx.fillStyle = '#ff6b6b';
+        ctx.fillRect(x, y, itemSize, itemSize);
+        
+        // Рисуем ID предмета
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '12px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(itemId.toString(), x + itemSize/2, y + itemSize/2);
+        
+        loadedCount++;
+    }
+    
+    // Добавляем заголовок
+    ctx.fillStyle = '#ffd700';
+    ctx.font = 'bold 16px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText(`Отсутствующие предметы (${totalItems})`, canvas.width/2, 20);
+    
+    // Конвертируем в blob и скачиваем
+    canvas.toBlob(blob => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `missing_items_${new Date().toISOString().split('T')[0]}.png`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     window.achievementParser = new IsaacAchievementParser();
+    
+    // Добавляем обработчик для кнопки скачивания
+    const downloadBtn = document.getElementById('downloadMissingBtn');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', createMissingItemsCollage);
+    }
 });
