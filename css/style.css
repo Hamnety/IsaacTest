@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Silom&display=swap');
+@import url('https://fonts.cdnfonts.com/css/upheaval');
+
+:root {
+    --font-upheaval: 'Upheaval', sans-serif;
+    --font-silom: 'Silom', sans-serif;
+    --font-press-start: 'Press Start 2P', cursive;
+}
 
 * {
     margin: 0;
@@ -8,7 +15,7 @@
 }
 
 html {
-    font-family: 'Silom', sans-serif;
+    font-family: var(--font-upheaval);
     font-size: 16px;
     font-smooth: never;
     overflow-x: hidden;
@@ -18,7 +25,7 @@ html {
 }
 
 body {
-    font-family: 'Silom', sans-serif;
+    font-family: var(--font-upheaval);
     background: #2d3748;
     background-image: 
         radial-gradient(circle at 20% 50%, #1a202c 0%, transparent 50%),
@@ -99,6 +106,8 @@ h1 {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: var(--font-upheaval);
+    text-shadow: 2px 2px 0px #1a202c;
 }
 
 .subtitle {
@@ -175,6 +184,8 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
+    font-family: var(--font-upheaval);
+    text-shadow: 3px 3px 0px #1a202c;
 }
 
 .content-title::before,
@@ -272,6 +283,8 @@ h1 {
 .upload-text {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    font-family: var(--font-upheaval);
+    text-shadow: 2px 2px 0px #1a202c;
 }
 
 .upload-hint {
@@ -324,6 +337,7 @@ input[type="file"] {
     gap: 10px;
     text-shadow: 1px 1px 0px #1a202c;
     font-weight: bold;
+    font-family: var(--font-upheaval);
 }
 
 .stat-value {
@@ -332,6 +346,7 @@ input[type="file"] {
     margin-bottom: 8px;
     text-shadow: 2px 2px 0px #1a202c;
     font-weight: bold;
+    font-family: var(--font-upheaval);
 }
 
 .stat-subtitle {
@@ -379,7 +394,7 @@ input[type="file"] {
     border-radius: 0;
     cursor: pointer;
     transition: all 0.2s ease-out;
-    font-family: inherit;
+    font-family: var(--font-upheaval);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -451,7 +466,7 @@ input[type="file"] {
     border-radius: 0;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-family: inherit;
+    font-family: var(--font-upheaval);
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -518,7 +533,7 @@ input[type="file"] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-family: 'Silom', sans-serif;
+    font-family: var(--font-upheaval);
 }
 
 .item-card:hover {
@@ -546,6 +561,8 @@ input[type="file"] {
     padding-top: 8px;
     font-size: 0.7rem;
     font-weight: bold;
+    font-family: var(--font-upheaval);
+    text-shadow: 1px 1px 0px #1a202c;
 }
 
 .item-card .status-bottom.unlocked {
@@ -567,6 +584,8 @@ input[type="file"] {
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-family: var(--font-upheaval);
+    text-shadow: 1px 1px 0px #1a202c;
 }
 
 .character-unlock-condition {
@@ -587,6 +606,8 @@ input[type="file"] {
     font-size: 0.7rem;
     font-weight: bold;
     margin-bottom: 6px;
+    font-family: var(--font-upheaval);
+    text-shadow: 1px 1px 0px #1a202c;
 }
 
 .bosses-list {
@@ -602,6 +623,8 @@ input[type="file"] {
     padding: 2px 6px;
     border-radius: 3px;
     border: 1px solid rgba(166, 227, 161, 0.3);
+    font-family: var(--font-upheaval);
+    text-shadow: 1px 1px 0px #1a202c;
 }
 
 .boss-tag.tainted-boss {
@@ -658,6 +681,7 @@ input[type="file"] {
     margin-bottom: 15px;
     color: #ffd700;
     text-shadow: 2px 2px 0px #8b0000;
+    font-family: var(--font-upheaval);
 }
 
 @keyframes spin {
@@ -675,6 +699,7 @@ input[type="file"] {
     display: none;
     text-shadow: 1px 1px 0px #000000;
     box-shadow: 0 0 15px rgba(139, 0, 0, 0.3);
+    font-family: var(--font-upheaval);
 }
 
 .hex-viewer {
