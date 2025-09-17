@@ -1131,23 +1131,18 @@ class IsaacAchievementParser {
 
 
     switchTab(tabName) {
-        // Показываем индикатор загрузки сразу при переключении
-        this.showTabLoadingIndicator(tabName);
-        
         // Сначала очищаем все неактивные вкладки
         this.clearInactiveTabs(tabName);
         
-        // Переключаем вкладки с анимацией
+        // Переключаем вкладки
         document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
         document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
         
         document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
         document.getElementById(`${tabName}Tab`).classList.add('active');
         
-        // Загружаем контент только для активной вкладки с задержкой для плавности
-        setTimeout(() => {
-            this.loadTabContent(tabName);
-        }, 100);
+        // Загружаем контент сразу без задержек
+        this.loadTabContent(tabName);
     }
 
     clearInactiveTabs(activeTabName) {
@@ -1181,32 +1176,40 @@ class IsaacAchievementParser {
         // Принудительно очищаем контент перед загрузкой
         this.clearTabContent(tabName);
         
-        // Показываем индикатор загрузки
-        this.showLoadingIndicator(tabName);
+        // Показываем краткий индикатор загрузки только для больших вкладок
+        if (tabName === 'items' || tabName === 'achievements') {
+            this.showLoadingIndicator(tabName);
+            // Используем requestAnimationFrame для плавности
+            requestAnimationFrame(() => {
+                this.loadTabData(tabName);
+            });
+        } else {
+            // Для маленьких вкладок загружаем сразу
+            this.loadTabData(tabName);
+        }
+    }
+
+    loadTabData(tabName) {
+        switch(tabName) {
+            case 'achievements':
+                this.updateAchievementsTab();
+                break;
+            case 'characters':
+                this.updateCharactersTab();
+                break;
+            case 'challenges':
+                this.updateChallengesTab();
+                break;
+            case 'items':
+                this.updateItemsTab();
+                break;
+        }
         
-        // Загружаем контент с небольшой задержкой для плавности
-        setTimeout(() => {
-            switch(tabName) {
-                case 'achievements':
-                    this.updateAchievementsTab();
-                    break;
-                case 'characters':
-                    this.updateCharactersTab();
-                    break;
-                case 'challenges':
-                    this.updateChallengesTab();
-                    break;
-                case 'items':
-                    this.updateItemsTab();
-                    break;
-            }
-            
-            // Отмечаем вкладку как загруженную
-            this.loadedTabs.add(tabName);
-            
-            // Инициализируем фильтры для активной вкладки
-            this.initializeFilters();
-        }, 50);
+        // Отмечаем вкладку как загруженную
+        this.loadedTabs.add(tabName);
+        
+        // Инициализируем фильтры для активной вкладки
+        this.initializeFilters();
     }
 
     clearTabContent(tabName) {

@@ -378,7 +378,7 @@ input[type="file"] {
     padding: 12px 20px;
     border-radius: 0;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease-out;
     font-family: inherit;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -386,6 +386,8 @@ input[type="file"] {
     text-shadow: 1px 1px 0px #1a202c;
     font-weight: bold;
     transform: translateY(0);
+    position: relative;
+    overflow: hidden;
 }
 
 .tab-button:hover {
@@ -404,6 +406,12 @@ input[type="file"] {
         inset 0 0 10px rgba(255, 215, 0, 0.1);
     text-shadow: 1px 1px 0px #1a202c;
     font-weight: bold;
+    transform: translateY(0);
+}
+
+.tab-button:active {
+    transform: translateY(1px);
+    transition: transform 0.1s ease-out;
 }
 
 .tab-content {
@@ -418,8 +426,8 @@ input[type="file"] {
     max-height: 700px;
     overflow-y: auto;
     opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
+    transform: translateY(5px);
+    transition: all 0.2s ease-out;
 }
 
 .tab-content.active {
@@ -472,6 +480,22 @@ input[type="file"] {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#achievementsList {
+    animation: fadeInUp 0.3s ease-out;
 }
 
 /* Специальный стиль только для достижений */
