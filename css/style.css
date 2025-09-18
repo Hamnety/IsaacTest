@@ -602,13 +602,6 @@ input[type="file"] {
     margin-right: 12px;
     flex-shrink: 0;
     border-radius: 4px;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -o-crisp-edges;
-    image-rendering: crisp-edges;
-    image-rendering: pixelated;
-    image-rendering: -webkit-crisp-edges;
-    filter: contrast(1.1) brightness(1.05);
 }
 
 /* Стили для названий предметов */
@@ -618,32 +611,6 @@ input[type="file"] {
     hyphens: auto;
     white-space: normal;
     max-width: 100%;
-}
-
-/* Дополнительные стили для улучшения качества иконок */
-.item-icon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    background-size: inherit;
-    background-position: inherit;
-    background-repeat: inherit;
-    image-rendering: pixelated;
-    image-rendering: -webkit-crisp-edges;
-    image-rendering: crisp-edges;
-    transform: scale(1);
-    transform-origin: center;
-}
-
-/* Улучшенное отображение для разных размеров иконок */
-.item-icon {
-    position: relative;
-    overflow: hidden;
-    background-color: transparent;
 }
 
 /* Специальные стили для карточек персонажей */
