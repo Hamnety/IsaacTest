@@ -1163,14 +1163,8 @@ class IsaacAchievementParser {
                 overflow: hidden;
             `;
             
-            // Определяем размер шрифта в зависимости от длины названия
-            let fontSize = '1rem';
-            if (item.name.length > 15) {
-                fontSize = '0.95rem'; // Уменьшаем на 0.05rem для длинных слов
-            }
-            
             textContainer.innerHTML = `
-                <div class="item-title" style="font-size: ${fontSize}; font-weight: bold; color: #e2e8f0; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;">
+                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;">
                     ${item.name}
                 </div>
             `;
