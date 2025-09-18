@@ -1438,15 +1438,77 @@ class IsaacAchievementParser {
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         
-        // Размеры иконки предмета (32x32)
-        const itemSize = 32;
-        const padding = 4;
-        const itemsPerRow = 20; // 20 предметов в ряду
+        // Максимальный размер для иконки предмета
+        const maxItemSize = 64;
+        const padding = 8;
+        const itemsPerRow = 15; // 15 предметов в ряду для оригинальных размеров
+        
+        // Сначала загружаем все изображения, чтобы узнать их размеры
+        const itemImages = [];
+        let maxHeight = 0;
+        let totalWidth = 0;
+        
+        // Загружаем все изображения
+        for (let i = 0; i < missingItems.length; i++) {
+            const item = missingItems[i];
+            try {
+                const img = new Image();
+                img.crossOrigin = 'anonymous';
+                
+                await new Promise((resolve, reject) => {
+                    img.onload = () => {
+                        // Масштабируем изображение, если оно больше максимального размера
+                        let width = img.width;
+                        let height = img.height;
+                        
+                        if (width > maxItemSize || height > maxItemSize) {
+                            const scale = Math.min(maxItemSize / width, maxItemSize / height);
+                            width = Math.floor(width * scale);
+                            height = Math.floor(height * scale);
+                        }
+                        
+                        itemImages.push({
+                            img: img,
+                            width: width,
+                            height: height,
+                            originalWidth: img.width,
+                            originalHeight: img.height
+                        });
+                        
+                        maxHeight = Math.max(maxHeight, height);
+                        resolve();
+                    };
+                    img.onerror = () => {
+                        // Заглушка для отсутствующих изображений
+                        itemImages.push({
+                            img: null,
+                            width: 32,
+                            height: 32,
+                            originalWidth: 32,
+                            originalHeight: 32
+                        });
+                        maxHeight = Math.max(maxHeight, 32);
+                        resolve();
+                    };
+                    img.src = `img/items/${item.id}.png`;
+                });
+            } catch (error) {
+                console.error(`Ошибка загрузки изображения для предмета ${item.id}:`, error);
+                itemImages.push({
+                    img: null,
+                    width: 32,
+                    height: 32,
+                    originalWidth: 32,
+                    originalHeight: 32
+                });
+                maxHeight = Math.max(maxHeight, 32);
+            }
+        }
         
         // Вычисляем размеры canvas
         const rows = Math.ceil(missingItems.length / itemsPerRow);
-        const canvasWidth = itemsPerRow * (itemSize + padding) + padding;
-        const canvasHeight = rows * (itemSize + padding) + padding + 50; // +50 для заголовка
+        const canvasWidth = itemsPerRow * (maxItemSize + padding) + padding;
+        const canvasHeight = rows * (maxHeight + padding) + padding + 60; // +60 для заголовка
         
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
@@ -1461,66 +1523,41 @@ class IsaacAchievementParser {
         ctx.textAlign = 'center';
         ctx.fillText(`Не найденные предметы (${missingItems.length})`, canvasWidth / 2, 30);
         
-        // Загружаем и отрисовываем иконки предметов
-        let loadedCount = 0;
-        const totalItems = missingItems.length;
-        
+        // Отрисовываем иконки предметов с оригинальными размерами
         for (let i = 0; i < missingItems.length; i++) {
-            const item = missingItems[i];
+            const itemData = itemImages[i];
             const row = Math.floor(i / itemsPerRow);
             const col = i % itemsPerRow;
             
-            const x = col * (itemSize + padding) + padding;
-            const y = row * (itemSize + padding) + padding + 50; // +50 для заголовка
+            // Центрируем изображение в ячейке
+            const cellX = col * (maxItemSize + padding) + padding;
+            const cellY = row * (maxHeight + padding) + padding + 60; // +60 для заголовка
             
-            try {
-                const img = new Image();
-                img.crossOrigin = 'anonymous';
+            const x = cellX + Math.floor((maxItemSize - itemData.width) / 2);
+            const y = cellY + Math.floor((maxHeight - itemData.height) / 2);
+            
+            if (itemData.img) {
+                // Рисуем иконку предмета с оригинальным размером
+                ctx.drawImage(itemData.img, x, y, itemData.width, itemData.height);
                 
-                await new Promise((resolve, reject) => {
-                    img.onload = () => {
-                        // Рисуем иконку предмета
-                        ctx.drawImage(img, x, y, itemSize, itemSize);
-                        
-                        // Добавляем рамку для не найденных предметов
-                        ctx.strokeStyle = '#ff6b6b';
-                        ctx.lineWidth = 2;
-                        ctx.strokeRect(x, y, itemSize, itemSize);
-                        
-                        loadedCount++;
-                        resolve();
-                    };
-                    img.onerror = () => {
-                        // Если изображение не загрузилось, рисуем заглушку
-                        ctx.fillStyle = '#4a5568';
-                        ctx.fillRect(x, y, itemSize, itemSize);
-                        ctx.fillStyle = '#ff6b6b';
-                        ctx.font = '12px Arial';
-                        ctx.textAlign = 'center';
-                        ctx.fillText('?', x + itemSize/2, y + itemSize/2 + 4);
-                        
-                        loadedCount++;
-                        resolve();
-                    };
-                    img.src = `img/items/${item.id}.png`;
-                });
-            } catch (error) {
-                console.error(`Ошибка загрузки изображения для предмета ${item.id}:`, error);
-                // Рисуем заглушку
+                // Добавляем рамку для не найденных предметов
+                ctx.strokeStyle = '#ff6b6b';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x, y, itemData.width, itemData.height);
+            } else {
+                // Рисуем заглушку для отсутствующих изображений
                 ctx.fillStyle = '#4a5568';
-                ctx.fillRect(x, y, itemSize, itemSize);
+                ctx.fillRect(x, y, itemData.width, itemData.height);
                 ctx.fillStyle = '#ff6b6b';
                 ctx.font = '12px Arial';
                 ctx.textAlign = 'center';
-                ctx.fillText('?', x + itemSize/2, y + itemSize/2 + 4);
+                ctx.fillText('?', x + itemData.width/2, y + itemData.height/2 + 4);
                 
-                loadedCount++;
+                // Добавляем рамку для заглушки
+                ctx.strokeStyle = '#ff6b6b';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x, y, itemData.width, itemData.height);
             }
-        }
-        
-        // Ждем загрузки всех изображений
-        while (loadedCount < totalItems) {
-            await new Promise(resolve => setTimeout(resolve, 100));
         }
         
         // Конвертируем canvas в blob и скачиваем
