@@ -14,6 +14,7 @@ class IsaacAchievementParser {
             debugInfo: []
         };
         this.loadedTabs = new Set(); // Кэш загруженных вкладок
+        this.isGeneratingImage = false; // Флаг генерации изображения
         
         // Инициализируем данные игры
         this.gameData = null;
@@ -1415,6 +1416,12 @@ class IsaacAchievementParser {
 
     // Функция для генерации изображения с не найденными предметами
     async generateMissingItemsImage() {
+        // Предотвращаем множественные вызовы
+        if (this.isGeneratingImage) {
+            console.log('Генерация изображения уже в процессе...');
+            return;
+        }
+
         if (!this.analysisResults || !this.analysisResults.items) {
             alert('Сначала загрузите файл сохранения!');
             return;
@@ -1434,7 +1441,18 @@ class IsaacAchievementParser {
             return;
         }
 
-        // Создаем canvas
+        // Устанавливаем флаг генерации
+        this.isGeneratingImage = true;
+        
+        // Блокируем кнопку
+        const generateButton = document.getElementById('generateMissingItemsImage');
+        if (generateButton) {
+            generateButton.disabled = true;
+            generateButton.textContent = 'Генерация...';
+        }
+
+        try {
+            // Создаем canvas
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
         
@@ -1570,7 +1588,26 @@ class IsaacAchievementParser {
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
+            
+            // Восстанавливаем кнопку
+            this.isGeneratingImage = false;
+            if (generateButton) {
+                generateButton.disabled = false;
+                generateButton.innerHTML = '<i class="fas fa-image"></i> Сгенерировать изображение не найденных предметов';
+            }
         }, 'image/png');
+        
+        } catch (error) {
+            console.error('Ошибка при генерации изображения:', error);
+            alert('Ошибка при генерации изображения: ' + error.message);
+            
+            // Восстанавливаем кнопку в случае ошибки
+            this.isGeneratingImage = false;
+            if (generateButton) {
+                generateButton.disabled = false;
+                generateButton.innerHTML = '<i class="fas fa-image"></i> Сгенерировать изображение не найденных предметов';
+            }
+        }
     }
 }
 
