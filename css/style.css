@@ -2,18 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Silom&display=swap');
 @import url('https://fonts.cdnfonts.com/css/upheaval-pro');
 
-/* Дополнительная загрузка шрифта для лучшей совместимости */
-@font-face {
-    font-family: 'Upheaval Pro';
-    src: url('https://fonts.cdnfonts.com/s/14783/UpheavalPro.woff2') format('woff2'),
-         url('https://fonts.cdnfonts.com/s/14783/UpheavalPro.woff') format('woff'),
-         url('https://fonts.cdnfonts.com/s/14783/UpheavalPro.ttf') format('truetype');
-    font-display: swap;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-}
-
 :root {
     --font-upheaval: 'Upheaval Pro', sans-serif;
     --font-silom: 'Silom', sans-serif;
@@ -26,6 +14,22 @@
     box-sizing: border-box;
 }
 
+/* Улучшение рендеринга пиксельных шрифтов */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Специальные настройки для маленьких размеров шрифта */
+*[style*="font-size: 0.8rem"],
+*[style*="font-size:0.8rem"],
+.font-small {
+    -webkit-font-smoothing: none !important;
+    -moz-osx-font-smoothing: unset !important;
+    font-smooth: never !important;
+    text-rendering: optimizeSpeed !important;
+}
+
 html {
     font-family: var(--font-upheaval);
     font-size: 16px;
@@ -34,15 +38,6 @@ html {
     height: 100vh;
     color: #6f6358;
     -webkit-font-smoothing: none;
-    text-rendering: optimizeSpeed;
-    font-variant-ligatures: none;
-    font-feature-settings: "kern" 0;
-    font-kerning: none;
-    font-stretch: normal;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
 }
 
 body {
@@ -61,132 +56,6 @@ body {
     image-rendering: crisp-edges;
     font-smooth: never;
     -webkit-font-smoothing: none;
-    text-rendering: optimizeSpeed;
-    font-variant-ligatures: none;
-    font-feature-settings: "kern" 0;
-    font-kerning: none;
-    font-stretch: normal;
-    font-weight: normal;
-    font-style: normal;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-}
-
-/* Улучшение отображения шрифта Upheaval Pro */
-h1, .subtitle, .item-card, .status-bottom, .character-status, 
-.bosses-title, .boss-tag, .spinner, .error, .upload-text, 
-.content-title, .stat-title, .stat-value, .tab-button, .filter-button {
-    font-family: var(--font-upheaval) !important;
-    text-rendering: optimizeSpeed;
-    font-variant-ligatures: none;
-    font-feature-settings: "kern" 0;
-    font-kerning: none;
-    font-stretch: normal;
-    font-weight: normal;
-    font-style: normal;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: none;
-    font-smooth: never;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-
-/* Дополнительные правила для стабильного отображения шрифта */
-@supports (font-display: swap) {
-    h1, .subtitle, .item-card, .status-bottom, .character-status, 
-    .bosses-title, .boss-tag, .spinner, .error, .upload-text, 
-    .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
-        font-display: swap;
-    }
-}
-
-/* Фиксация для высоких DPI мониторов */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    h1, .subtitle, .item-card, .status-bottom, .character-status, 
-    .bosses-title, .boss-tag, .spinner, .error, .upload-text, 
-    .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
-        -webkit-font-smoothing: subpixel-antialiased;
-        -moz-osx-font-smoothing: auto;
-        text-rendering: geometricPrecision;
-    }
-}
-
-/* Фиксация для Windows */
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    h1, .subtitle, .item-card, .status-bottom, .character-status, 
-    .bosses-title, .boss-tag, .spinner, .error, .upload-text, 
-    .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
-        font-family: var(--font-upheaval), monospace !important;
-        font-weight: 400;
-        font-style: normal;
-    }
-}
-
-/* Исправление проблемы с разными размерами букв */
-.description-note, .upload-text, .upload-hint, .stat-subtitle {
-    font-family: var(--font-upheaval) !important;
-    font-size: 14px;
-    line-height: 1.4;
-    letter-spacing: 0.3px;
-    text-rendering: optimizeSpeed;
-    font-variant-ligatures: none;
-    font-feature-settings: "kern" 0;
-    font-kerning: none;
-    font-stretch: normal;
-    font-weight: normal;
-    font-style: normal;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: none;
-    font-smooth: never;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    word-spacing: 0.1em;
-}
-
-/* Специальные правила для заголовков */
-h1 {
-    font-size: 2.5rem;
-    line-height: 1.1;
-    letter-spacing: 1px;
-    text-rendering: optimizeSpeed;
-    font-variant-ligatures: none;
-    font-feature-settings: "kern" 0;
-    font-kerning: none;
-    font-stretch: normal;
-    font-weight: normal;
-    font-style: normal;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: none;
-    font-smooth: never;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    word-spacing: 0.2em;
-}
-
-/* Специальные правила для кнопок */
-.tab-button, .filter-button, .export-button {
-    font-family: var(--font-upheaval) !important;
-    font-size: 1rem;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-    text-rendering: optimizeSpeed;
-    font-variant-ligatures: none;
-    font-feature-settings: "kern" 0;
-    font-kerning: none;
-    font-stretch: normal;
-    font-weight: normal;
-    font-style: normal;
-    -webkit-font-smoothing: none;
-    -moz-osx-font-smoothing: none;
-    font-smooth: never;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    word-spacing: 0.1em;
 }
 
 .container {
@@ -293,9 +162,16 @@ h1 {
 
 .description-note p {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #a0aec0;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-smooth: never;
+    text-rendering: optimizeSpeed;
     line-height: 1.4;
+    transform: scale(0.8);
+    transform-origin: left top;
+    width: 125%; /* Компенсируем уменьшение */
 }
 
 .description-note a {
@@ -501,8 +377,15 @@ input[type="file"] {
 .stat-subtitle {
     color: #a0aec0;
     opacity: 0.9;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-shadow: 1px 1px 0px #1a202c;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-smooth: never;
+    text-rendering: optimizeSpeed;
+    transform: scale(0.8);
+    transform-origin: left center;
+    width: 125%; /* Компенсируем уменьшение */
 }
 
 .progress-bar {
@@ -544,12 +427,17 @@ input[type="file"] {
     cursor: pointer;
     transition: all 0.2s ease-out;
     font-family: var(--font-upheaval);
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-transform: uppercase;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-smooth: never;
+    text-rendering: optimizeSpeed;
+    transform: scale(0.8) translateY(0);
+    transform-origin: center;
     letter-spacing: 0.5px;
     text-shadow: 1px 1px 0px #1a202c;
     font-weight: bold;
-    transform: translateY(0);
     position: relative;
     overflow: hidden;
 }
@@ -558,7 +446,7 @@ input[type="file"] {
     background: #374151;
     border-color: #d4af37;
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-    transform: translateY(-2px);
+    transform: scale(0.8) translateY(-2px);
 }
 
 .tab-button.active {
@@ -574,7 +462,7 @@ input[type="file"] {
 }
 
 .tab-button:active {
-    transform: translateY(1px);
+    transform: scale(0.8) translateY(1px);
     transition: transform 0.1s ease-out;
 }
 
@@ -732,8 +620,14 @@ input[type="file"] {
 }
 
 .character-status {
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: bold;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-smooth: never;
+    text-rendering: optimizeSpeed;
+    transform: scale(0.8);
+    transform-origin: left center;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -870,8 +764,15 @@ input[type="file"] {
     padding: 20px;
     border-radius: 8px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 1.3;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-smooth: never;
+    text-rendering: optimizeSpeed;
+    transform: scale(0.8);
+    transform-origin: left top;
+    width: 125%; /* Компенсируем уменьшение */
     white-space: pre;
     overflow-x: auto;
     overflow-y: auto;
