@@ -546,6 +546,7 @@ input[type="file"] {
     flex-direction: row;
     align-items: center;
     min-height: 80px;
+    overflow: hidden;
 }
 
 .item-card:hover {
@@ -601,6 +602,15 @@ input[type="file"] {
     margin-right: 12px;
     flex-shrink: 0;
     border-radius: 4px;
+}
+
+/* Стили для названий предметов */
+.item-card.items-card .item-title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    white-space: normal;
+    max-width: 100%;
 }
 
 /* Специальные стили для карточек персонажей */

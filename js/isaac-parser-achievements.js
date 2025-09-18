@@ -1152,11 +1152,6 @@ class IsaacAchievementParser {
             itemIcon.className = 'item-icon';
             itemIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
             
-            // Если предмет не найден, добавляем красную рамку
-            if (!item.found) {
-                itemIcon.style.border = '2px solid #ff6b6b';
-            }
-            
             // Создаем контейнер для текста
             const textContainer = document.createElement('div');
             textContainer.style.cssText = `
@@ -1164,10 +1159,12 @@ class IsaacAchievementParser {
                 flex-direction: column;
                 flex: 1;
                 margin-right: 12px;
+                min-width: 0;
+                overflow: hidden;
             `;
             
             textContainer.innerHTML = `
-                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; line-height: 1.3;">
+                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;">
                     ${item.name}
                 </div>
             `;
