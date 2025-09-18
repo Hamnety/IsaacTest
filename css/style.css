@@ -535,11 +535,17 @@ input[type="file"] {
     position: relative;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--font-upheaval);
+    letter-spacing: 0.5px;
+}
+
+/* Специальные стили для карточек предметов */
+.item-card.items-card {
     flex-direction: row;
     align-items: center;
     min-height: 80px;
-    font-family: var(--font-upheaval);
-    letter-spacing: 0.5px;
 }
 
 .item-card:hover {
@@ -560,15 +566,21 @@ input[type="file"] {
     opacity: 0.7;
 }
 
-/* Стили для статуса в карточках предметов */
+/* Стили для статуса в карточках */
 .item-card .status-bottom {
-    margin-left: auto;
+    margin-top: auto;
     text-align: center;
     font-size: 0.75rem;
     font-weight: bold;
     font-family: var(--font-upheaval);
     text-shadow: 1px 1px 0px #1a202c;
     letter-spacing: 0.8px;
+}
+
+/* Специальные стили для статуса в карточках предметов */
+.item-card.items-card .status-bottom {
+    margin-top: 0;
+    margin-left: auto;
 }
 
 .item-card .status-bottom.unlocked {

@@ -1145,7 +1145,7 @@ class IsaacAchievementParser {
         // Показываем ВСЕ предметы в упрощенном виде
         sortedItems.forEach(item => {
             const div = document.createElement('div');
-            div.className = `item-card ${item.found ? 'unlocked' : 'locked'}`;
+            div.className = `item-card items-card ${item.found ? 'unlocked' : 'locked'}`;
             
             // Создаем иконку предмета
             const itemIcon = document.createElement('div');
