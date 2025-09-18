@@ -1142,26 +1142,45 @@ class IsaacAchievementParser {
             return 0;
         });
         
-        // Показываем ВСЕ предметы без описаний
+        // Показываем ВСЕ предметы в упрощенном виде
         sortedItems.forEach(item => {
             const div = document.createElement('div');
             div.className = `item-card ${item.found ? 'unlocked' : 'locked'}`;
             
-            const qualityColor = this.getQualityColor(item.quality);
-            const typeIcon = this.getTypeIcon(item.type);
-            const poolColor = this.getPoolColor(item.pool);
+            // Создаем иконку предмета
+            const itemIcon = document.createElement('div');
+            itemIcon.className = 'item-icon';
+            itemIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
             
-            div.innerHTML = `
-                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
+            // Если предмет не найден, добавляем красную рамку
+            if (!item.found) {
+                itemIcon.style.border = '2px solid #ff6b6b';
+            }
+            
+            // Создаем контейнер для текста
+            const textContainer = document.createElement('div');
+            textContainer.style.cssText = `
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                margin-right: 12px;
+            `;
+            
+            textContainer.innerHTML = `
+                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; line-height: 1.3;">
                     ${item.name}
                 </div>
-                <div style="color: ${qualityColor}; font-size: 0.85rem; margin: 8px 0; line-height: 1.4;">
-                    Quality ${item.quality} • <span style="color: ${poolColor}">${item.pool}</span>
-                </div>
-                <div class="status-bottom ${item.found ? 'unlocked' : 'locked'}">
-                    ${item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН'}
-                </div>
             `;
+            
+            // Создаем статус
+            const statusDiv = document.createElement('div');
+            statusDiv.className = `status-bottom ${item.found ? 'unlocked' : 'locked'}`;
+            statusDiv.textContent = item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН';
+            
+            // Добавляем все элементы в карточку
+            div.appendChild(itemIcon);
+            div.appendChild(textContainer);
+            div.appendChild(statusDiv);
             container.appendChild(div);
         });
     }
