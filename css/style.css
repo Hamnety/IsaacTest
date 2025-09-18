@@ -14,22 +14,6 @@
     box-sizing: border-box;
 }
 
-/* Улучшение рендеринга пиксельных шрифтов */
-* {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Специальные настройки для маленьких размеров шрифта */
-*[style*="font-size: 0.8rem"],
-*[style*="font-size:0.8rem"],
-.font-small {
-    -webkit-font-smoothing: none !important;
-    -moz-osx-font-smoothing: unset !important;
-    font-smooth: never !important;
-    text-rendering: optimizeSpeed !important;
-}
-
 html {
     font-family: var(--font-upheaval);
     font-size: 16px;
@@ -37,7 +21,6 @@ html {
     overflow-x: hidden;
     height: 100vh;
     color: #6f6358;
-    -webkit-font-smoothing: none;
 }
 
 body {
@@ -51,11 +34,6 @@ body {
     min-height: 100vh;
     padding: 0;
     margin: 0;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-    font-smooth: never;
-    -webkit-font-smoothing: none;
 }
 
 .container {
