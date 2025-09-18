@@ -1120,7 +1120,7 @@ class IsaacAchievementParser {
                 <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${challenge.name}
                 </div>
-                <div style="color: #a0aec0; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
+                <div style="color: #a0aec0; font-size: 0.85rem; margin: 8px 0; line-height: 1.4;">
                     ${challenge.unlockCondition}
                 </div>
                 <div class="status-bottom ${challenge.completed ? 'unlocked' : 'locked'}">
@@ -1154,7 +1154,7 @@ class IsaacAchievementParser {
                 <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
                     ${item.name}
                 </div>
-                <div style="color: ${qualityColor}; font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">
+                <div style="color: ${qualityColor}; font-size: 0.85rem; margin: 8px 0; line-height: 1.4;">
                     Quality ${item.quality} • <span style="color: ${poolColor}">${item.pool}</span>
                 </div>
                 <div class="status-bottom ${item.found ? 'unlocked' : 'locked'}">
