@@ -3,9 +3,15 @@
 @import url('https://fonts.cdnfonts.com/css/upheaval-pro');
 
 :root {
-    --font-upheaval: 'Upheaval Pro', sans-serif;
-    --font-silom: 'Silom', sans-serif;
-    --font-press-start: 'Press Start 2P', cursive;
+    --font-upheaval: 'Upheaval Pro', 'Courier New', 'Courier', monospace;
+    --font-silom: 'Silom', 'Courier New', 'Courier', monospace;
+    --font-press-start: 'Press Start 2P', 'Courier New', 'Courier', monospace;
+    
+    /* Переменные для стабильного размера шрифта */
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 18px;
+    --font-size-xl: 24px;
 }
 
 * {
@@ -14,14 +20,82 @@
     box-sizing: border-box;
 }
 
+/* Универсальные настройки шрифта для стабильного отображения */
+h1, .subtitle, .item-card, .status-bottom, .character-status, .bosses-title, .boss-tag, .spinner, .error, .upload-text, .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
+    font-family: var(--font-upheaval) !important;
+    -webkit-font-smoothing: none !important;
+    -moz-osx-font-smoothing: unset !important;
+    text-rendering: optimizeSpeed !important;
+    font-variant-ligatures: none !important;
+    font-feature-settings: "kern" 0 !important;
+    font-kerning: none !important;
+    font-smooth: never !important;
+    font-size-adjust: none !important;
+    font-stretch: normal !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+}
+
+/* Дополнительные настройки для стабильного отображения на разных мониторах */
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+    h1, .subtitle, .item-card, .status-bottom, .character-status, .bosses-title, .boss-tag, .spinner, .error, .upload-text, .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
+        font-size: 0.95em !important;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    h1, .subtitle, .item-card, .status-bottom, .character-status, .bosses-title, .boss-tag, .spinner, .error, .upload-text, .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
+        font-size: 0.9em !important;
+    }
+}
+
+/* Настройки для высоких DPI дисплеев */
+@media screen and (min-resolution: 144dpi) {
+    h1, .subtitle, .item-card, .status-bottom, .character-status, .bosses-title, .boss-tag, .spinner, .error, .upload-text, .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
+        font-size: 0.9em !important;
+        transform: scale(0.95) !important;
+        transform-origin: top left !important;
+    }
+}
+
+/* Дополнительные настройки для стабилизации шрифта */
+@supports (font-display: block) {
+    h1, .subtitle, .item-card, .status-bottom, .character-status, .bosses-title, .boss-tag, .spinner, .error, .upload-text, .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
+        font-display: block !important;
+    }
+}
+
+/* Исправление проблем с рендерингом на Windows */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    h1, .subtitle, .item-card, .status-bottom, .character-status, .bosses-title, .boss-tag, .spinner, .error, .upload-text, .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
+        font-family: 'Courier New', monospace !important;
+        font-size: 0.95em !important;
+    }
+}
+
+/* Исправление для Firefox */
+@-moz-document url-prefix() {
+    h1, .subtitle, .item-card, .status-bottom, .character-status, .bosses-title, .boss-tag, .spinner, .error, .upload-text, .content-title, .stat-title, .stat-value, .tab-button, .filter-button {
+        font-size: 0.98em !important;
+    }
+}
+
 html {
     font-family: var(--font-upheaval);
-    font-size: 16px;
+    font-size: var(--font-size-base);
     font-smooth: never;
     overflow-x: hidden;
     height: 100vh;
     color: #6f6358;
     -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    text-rendering: optimizeSpeed;
+    font-variant-ligatures: none;
+    font-feature-settings: "kern" 0;
+    font-kerning: none;
 }
 
 body {
@@ -40,6 +114,11 @@ body {
     image-rendering: crisp-edges;
     font-smooth: never;
     -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    text-rendering: optimizeSpeed;
+    font-variant-ligatures: none;
+    font-feature-settings: "kern" 0;
+    font-kerning: none;
 }
 
 .container {
