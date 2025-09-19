@@ -1152,15 +1152,20 @@ class IsaacAchievementParser {
             itemIcon.className = 'item-icon';
             itemIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
             
-            // Добавляем обработчик ошибки загрузки изображения
+            // Загружаем изображение для получения оригинальных размеров
             const img = new Image();
             img.onload = () => {
-                // Изображение загружено успешно
+                // Устанавливаем размеры контейнера с учетом масштабирования 0.6
+                const scaledWidth = Math.round(img.width * 0.6);
+                const scaledHeight = Math.round(img.height * 0.6);
+                itemIcon.style.width = `${scaledWidth}px`;
+                itemIcon.style.height = `${scaledHeight}px`;
                 itemIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
             };
             img.onerror = () => {
-                // Если изображение не загрузилось, показываем заглушку
-                itemIcon.style.backgroundImage = 'none';
+                // Если изображение не загрузилось, используем стандартный размер с масштабированием
+                itemIcon.style.width = '19px'; // 32 * 0.6
+                itemIcon.style.height = '19px'; // 32 * 0.6
                 itemIcon.style.backgroundColor = '#4a5568';
                 itemIcon.style.display = 'flex';
                 itemIcon.style.alignItems = 'center';
