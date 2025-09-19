@@ -700,7 +700,7 @@ input[type="file"] {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
-    transform: scale(0.6);
+    transform: scale(1.7);
     transform-origin: center;
 }
 
