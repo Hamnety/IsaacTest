@@ -1105,7 +1105,7 @@ class IsaacAchievementParser {
                                           onload="this.style.width=this.naturalWidth+'px'; this.style.height=this.naturalHeight+'px';" 
                                           onerror="this.style.display='none'">` : '';
                                 return `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''} ${boss.isConditional ? 'conditional-boss' : ''}">
-                                    ${iconHtml}✓${boss.name}
+                                    ${iconHtml}${boss.name}
                                 </span>`;
                             }).join('')}
                         </div>
@@ -1126,7 +1126,7 @@ class IsaacAchievementParser {
                                               onload="this.style.width=this.naturalWidth+'px'; this.style.height=this.naturalHeight+'px';" 
                                               onerror="this.style.display='none'">` : '';
                                     return `<span class="boss-tag undefeated-boss ${isTainted ? 'tainted-boss' : ''}">
-                                        ${iconHtml}✗${boss.name}
+                                        ${iconHtml}${boss.name}
                                     </span>`;
                                 }).join('')}
                             </div>
