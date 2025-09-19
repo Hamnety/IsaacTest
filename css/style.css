@@ -594,17 +594,14 @@ input[type="file"] {
 
 /* Стили для иконок предметов */
 .item-icon {
-    background-size: contain;
+    width: 32px;
+    height: 32px;
+    background-size: 60% 60%;
     background-repeat: no-repeat;
     background-position: center;
     margin-right: 12px;
     flex-shrink: 0;
     border-radius: 4px;
-    transform: scale(0.6);
-    transform-origin: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Стили для названий предметов */
