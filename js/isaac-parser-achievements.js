@@ -1182,7 +1182,7 @@ class IsaacAchievementParser {
                 display: flex;
                 flex-direction: column;
                 flex: 1;
-                margin-right: 12px;
+                margin-right: 6px;
                 min-width: 0;
                 overflow: hidden;
             `;
