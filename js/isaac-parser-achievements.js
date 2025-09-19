@@ -1607,7 +1607,7 @@ class IsaacAchievementParser {
         // Вычисляем размеры canvas
         const rows = Math.ceil(missingItems.length / itemsPerRow);
         const canvasWidth = itemsPerRow * (maxItemSize + padding) + padding;
-        const canvasHeight = rows * (maxHeight + padding) + padding + 60; // +60 для заголовка
+        const canvasHeight = rows * (maxHeight + padding) + padding;
         
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
@@ -1615,12 +1615,6 @@ class IsaacAchievementParser {
         // Заливаем фон
         ctx.fillStyle = '#1a202c';
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
-        
-        // Добавляем заголовок
-        ctx.fillStyle = '#ffd700';
-        ctx.font = 'bold 24px Arial';
-        ctx.textAlign = 'center';
-        ctx.fillText(`Не найденные предметы (${missingItems.length})`, canvasWidth / 2, 30);
         
         // Отрисовываем иконки предметов с оригинальными размерами
         for (let i = 0; i < missingItems.length; i++) {
@@ -1630,7 +1624,7 @@ class IsaacAchievementParser {
             
             // Центрируем изображение в ячейке
             const cellX = col * (maxItemSize + padding) + padding;
-            const cellY = row * (maxHeight + padding) + padding + 60; // +60 для заголовка
+            const cellY = row * (maxHeight + padding) + padding;
             
             const x = cellX + Math.floor((maxItemSize - itemData.width) / 2);
             const y = cellY + Math.floor((maxHeight - itemData.height) / 2);
@@ -1638,24 +1632,14 @@ class IsaacAchievementParser {
             if (itemData.img) {
                 // Рисуем иконку предмета с оригинальным размером
                 ctx.drawImage(itemData.img, x, y, itemData.width, itemData.height);
-                
-                // Добавляем рамку для не найденных предметов
-                ctx.strokeStyle = '#ff6b6b';
-                ctx.lineWidth = 2;
-                ctx.strokeRect(x, y, itemData.width, itemData.height);
             } else {
                 // Рисуем заглушку для отсутствующих изображений
                 ctx.fillStyle = '#4a5568';
                 ctx.fillRect(x, y, itemData.width, itemData.height);
-                ctx.fillStyle = '#ff6b6b';
+                ctx.fillStyle = '#a0aec0';
                 ctx.font = '12px Arial';
                 ctx.textAlign = 'center';
                 ctx.fillText('?', x + itemData.width/2, y + itemData.height/2 + 4);
-                
-                // Добавляем рамку для заглушки
-                ctx.strokeStyle = '#ff6b6b';
-                ctx.lineWidth = 2;
-                ctx.strokeRect(x, y, itemData.width, itemData.height);
             }
         }
         
