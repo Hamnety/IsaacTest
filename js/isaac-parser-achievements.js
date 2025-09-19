@@ -1613,7 +1613,7 @@ class IsaacAchievementParser {
         canvas.height = canvasHeight;
         
         // Заливаем фон
-        ctx.fillStyle = '#1a202c';
+        ctx.fillStyle = '#ffffff';
         ctx.fillRect(0, 0, canvasWidth, canvasHeight);
         
         // Отрисовываем иконки предметов с оригинальными размерами
