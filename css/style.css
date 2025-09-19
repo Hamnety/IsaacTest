@@ -602,6 +602,8 @@ input[type="file"] {
     margin-right: 12px;
     flex-shrink: 0;
     border-radius: 4px;
+    transform: scale(0.6);
+    transform-origin: center;
 }
 
 /* Стили для названий предметов */
