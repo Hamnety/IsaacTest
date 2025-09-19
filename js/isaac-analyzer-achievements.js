@@ -60,32 +60,7 @@ class IsaacAchievementParser {
             }
         } catch (error) {
             this.analysisResults.debugInfo.push('Ошибка загрузки данных игры: ' + error.message);
-            this.analysisResults.debugInfo.push('Используем fallback данные');
-            
-            // Fallback данные с базовыми персонажами и челленджами
-            this.gameData = {
-                characters: {
-                    "1": { "name": "Магдалена", "unlock": "Имейте 7 или больше контейнеров красных сердец одновременно" },
-                    "2": { "name": "Каин", "unlock": "Держите 55 или больше монет одновременно" },
-                    "3": { "name": "Иуда", "unlock": "Победите Сатану/Satan" },
-                    "32": { "name": "???", "unlock": "Победите Сердце Мамы/Mom's Heart 10 раз" },
-                    "42": { "name": "Ева", "unlock": "Не поднимайте никаких сердец 2 этажа подряд" },
-                    "67": { "name": "Самсон", "unlock": "Пройдите 2 этажа подряд без получения урона" },
-                    "80": { "name": "Лазарь", "unlock": "Имейте 4 или больше сердец души одновременно" },
-                    "79": { "name": "Азазель", "unlock": "Совершите 3 сделки с Дьяволом в одном забеге" },
-                    "81": { "name": "Эдем", "unlock": "Завершите 4 главу" },
-                    "82": { "name": "Лост (Потерянный)", "unlock": "Специальные условия смерти" }
-                },
-                challenges: {
-                    "89": { "name": "Кромешная тьма", "unlock": "Завершите 'Кромешная тьма/Pitch Black' испытание #1" },
-                    "90": { "name": "Сноб", "unlock": "Завершите 'Сноб/High Brow' испытание #2" },
-                    "91": { "name": "Травма головы", "unlock": "Завершите 'Травма головы/Head Trauma' испытание #3" },
-                    "92": { "name": "Тьма наступает", "unlock": "Завершите 'Тьма наступает/Darkness Falls' испытание #4" },
-                    "93": { "name": "Танк", "unlock": "Завершите 'Танк/The Tank' испытание #5" }
-                },
-                completionMarks: {},
-                totals: { characters: 34, challenges: 45, items: 720, achievements: 640 }
-            };
+            this.analysisResults.debugInfo.push('Используем базовые данные из isaac-data.js');
         }
     }
 
@@ -200,18 +175,7 @@ class IsaacAchievementParser {
         this.analysisResults.debugInfo.push(`Первые 13 символов: ${header.substring(0, 13)}`);
         
         // Поддерживаемые форматы Isaac (проверяем начало заголовка)
-        const supportedHeaders = [
-            "ISAACNGSAVE09R", // Repentance
-            "ISAACNGSAVE08R", // Afterbirth+
-            "ISAACNGSAVE07R", // Afterbirth
-            "ISAACNGSAVE06R", // Rebirth
-            "ISAACNGSAVE05R", // Rebirth (старый)
-            "ISAACNGSAVE04R", // Rebirth (очень старый)
-            "ISAACNGSAVE03R", // Rebirth (древний)
-            "ISAACNGSAVE02R", // Rebirth (архаичный)
-            "ISAACNGSAVE01R", // Rebirth (первобытный)
-            "ISAACNGSAVE00R"  // Rebirth (изначальный)
-        ];
+        const supportedHeaders = ISAAC_GAME_DATA.supportedHeaders;
         
         // Проверяем, начинается ли заголовок с поддерживаемого формата
         let detectedVersion = null;
@@ -458,29 +422,12 @@ class IsaacAchievementParser {
     }
 
     getBossIcon(bossName) {
-        // Маппинг названий боссов на номера иконок
-        const bossIconMap = {
-            "Сатана": 3,
-            "???": 4,
-            "Комната вызова": 1,
-            "Айзек": 2,
-            "Агнец": 5,
-            "Сердце мамы": 6,
-            "Hush": 8,
-            "Мега сатана": 7,
-            "Делириум": 13,
-            "Грид мод": 10,
-            "Ультра грид": 9,
-            "Матерь": 11,
-            "Бист": 12
-        };
-        
         // Для объединенных достижений порченных персонажей не показываем иконки
         if (bossName === "Сатана + ??? + Айзек + Агнец" || bossName === "Комната вызова + Hush") {
             return null;
         }
         
-        const iconNumber = bossIconMap[bossName] || 1; // По умолчанию иконка Сатаны
+        const iconNumber = ISAAC_GAME_DATA.bossIconMap[bossName] || 1; // По умолчанию иконка Сатаны
         return `img/bossMarks/${iconNumber}.png`;
     }
 
@@ -679,7 +626,7 @@ class IsaacAchievementParser {
         const marks = [];
         
         // Проверяем основные боссы
-        const requiredBosses = ['Сатана', '???', 'Комната вызова', 'Айзек', 'Агнец', 'Сердце мамы', 'Hush', 'Мега сатана', 'Делириум'];
+        const requiredBosses = ISAAC_GAME_DATA.requiredBosses;
         
         for (const boss of bossData) {
             if (boss.defeated && requiredBosses.includes(boss.name)) {
@@ -913,60 +860,6 @@ class IsaacAchievementParser {
         return "Special";
     }
 
-    getQualityColor(quality) {
-        if (this.itemConstants && this.itemConstants.qualityColors) {
-            return this.itemConstants.qualityColors[quality] || this.itemConstants.qualityColors[1];
-        }
-        // Fallback цвета
-        const colors = {
-            0: "#8b0000", // Quality 0
-            1: "#a6adc8", // Quality 1
-            2: "#a6e3a1", // Quality 2
-            3: "#f9e2af", // Quality 3
-            4: "#cba6f7"  // Quality 4
-        };
-        return colors[quality] || colors[1];
-    }
-
-    getTypeIcon(type) {
-        if (this.itemConstants && this.itemConstants.typeIcons) {
-            return this.itemConstants.typeIcons[type.toLowerCase()] || this.itemConstants.typeIcons.other;
-        }
-        // Fallback иконки
-        const icons = {
-            "active": "⚡",
-            "passive": "🔮",
-            "familiar": "👻",
-            "trinket": "💍",
-            "card": "🃏",
-            "pill": "💊",
-            "rune": "🔮"
-        };
-        return icons[type.toLowerCase()] || "❓";
-    }
-
-    getPoolColor(pool) {
-        if (this.itemConstants && this.itemConstants.poolColors) {
-            return this.itemConstants.poolColors[pool.toLowerCase()] || this.itemConstants.poolColors.other;
-        }
-        // Fallback цвета
-        const colors = {
-            "treasure": "#f9e2af",
-            "shop": "#a6e3a1", 
-            "boss": "#f38ba8",
-            "devil": "#8b0000",
-            "angel": "#a6e3a1",
-            "secret": "#cba6f7",
-            "library": "#89b4fa",
-            "curse": "#f38ba8",
-            "challenge": "#fab387",
-            "golden": "#f9e2af",
-            "red": "#f38ba8",
-            "beggar": "#a6adc8",
-            "demon": "#8b0000"
-        };
-        return colors[pool.toLowerCase()] || "#a6adc8";
-    }
 
     getString(offset, length) {
         let result = '';
@@ -1066,15 +959,6 @@ class IsaacAchievementParser {
         container.appendChild(mainGrid);
     }
 
-    getCategoryName(category) {
-        const names = {
-            characters: 'Персонажи',
-            challenges: 'Челленджи', 
-            items: 'Предметы',
-            other: 'Другие достижения'
-        };
-        return names[category] || category;
-    }
 
     updateCharactersTab() {
         const container = document.getElementById('charactersList');
@@ -1355,7 +1239,7 @@ class IsaacAchievementParser {
                     Переключение на вкладку
                 </div>
                 <div style="font-size: 0.9rem; color: #6b7280;">
-                    Загрузка ${this.getTabDisplayName(tabName)}...
+                    Загрузка данных...
                 </div>
             </div>
         `;
@@ -1371,20 +1255,11 @@ class IsaacAchievementParser {
         container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #a0aec0;">
                 <div class="spinner" style="margin-bottom: 15px;"></div>
-                <div>Загрузка ${this.getTabDisplayName(tabName)}...</div>
+                <div>Загрузка данных...</div>
             </div>
         `;
     }
 
-    getTabDisplayName(tabName) {
-        const names = {
-            'achievements': 'достижений',
-            'characters': 'персонажей',
-            'challenges': 'челленджей',
-            'items': 'предметов'
-        };
-        return names[tabName] || 'данных';
-    }
 
     initializeFilters() {
         // Инициализируем фильтры для каждой вкладки
