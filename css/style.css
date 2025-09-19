@@ -594,8 +594,6 @@ input[type="file"] {
 
 /* Стили для иконок предметов */
 .item-icon {
-    width: 32px;
-    height: 32px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

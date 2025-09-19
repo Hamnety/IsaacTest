@@ -1152,10 +1152,12 @@ class IsaacAchievementParser {
             itemIcon.className = 'item-icon';
             itemIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
             
-            // Проверяем загрузку изображения
+            // Загружаем изображение для получения оригинальных размеров
             const img = new Image();
             img.onload = () => {
-                // Изображение загружено успешно, оставляем стандартный размер 32x32
+                // Устанавливаем оригинальные размеры изображения
+                itemIcon.style.width = `${img.width}px`;
+                itemIcon.style.height = `${img.height}px`;
                 itemIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
             };
             img.onerror = () => {
