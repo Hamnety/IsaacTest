@@ -472,10 +472,13 @@ class IsaacAchievementParser {
             "Грид мод": 10,
             "Ультра грид": 11,
             "Матерь": 12,
-            "Бист": 13,
-            "Сатана + ??? + Айзек + Агнец": 1, // Используем иконку Сатаны для объединенного достижения
-            "Комната вызова + Hush": 3 // Используем иконку Комнаты вызова для объединенного достижения
+            "Бист": 13
         };
+        
+        // Для объединенных достижений порченных персонажей не показываем иконки
+        if (bossName === "Сатана + ??? + Айзек + Агнец" || bossName === "Комната вызова + Hush") {
+            return null;
+        }
         
         const iconNumber = bossIconMap[bossName] || 1; // По умолчанию иконка Сатаны
         return `img/bossMarks/${iconNumber}.png`;
@@ -1095,12 +1098,16 @@ class IsaacAchievementParser {
                             ${isTainted ? 'Убитые боссы (объединенные достижения)' : 'Убитые боссы'} (${defeatedBosses.length}/${totalBosses})
                         </div>
                         <div class="bosses-list">
-                            ${defeatedBosses.map(boss => 
-                                `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''} ${boss.isConditional ? 'conditional-boss' : ''}">
-                                    <img src="${this.getBossIcon(boss.name)}" alt="${boss.name}" class="boss-icon" onerror="this.style.display='none'">
-                                    ✓${boss.name}
-                                </span>`
-                            ).join('')}
+                            ${defeatedBosses.map(boss => {
+                                const bossIconPath = this.getBossIcon(boss.name);
+                                const iconHtml = bossIconPath ? 
+                                    `<img src="${bossIconPath}" alt="${boss.name}" class="boss-icon" 
+                                          onload="this.style.width=this.naturalWidth+'px'; this.style.height=this.naturalHeight+'px';" 
+                                          onerror="this.style.display='none'">` : '';
+                                return `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''} ${boss.isConditional ? 'conditional-boss' : ''}">
+                                    ${iconHtml}✓${boss.name}
+                                </span>`;
+                            }).join('')}
                         </div>
                         ${defeatedBosses.length === 0 ? 
                             '<div class="no-bosses">Нет убитых боссов</div>' : 
@@ -1112,12 +1119,16 @@ class IsaacAchievementParser {
                                 Не убитые боссы (${undefeatedBosses.length}/${totalBosses})
                             </div>
                             <div class="bosses-list">
-                                ${undefeatedBosses.map(boss => 
-                                    `<span class="boss-tag undefeated-boss ${isTainted ? 'tainted-boss' : ''}">
-                                        <img src="${this.getBossIcon(boss.name)}" alt="${boss.name}" class="boss-icon" onerror="this.style.display='none'">
-                                        ✗${boss.name}
-                                    </span>`
-                                ).join('')}
+                                ${undefeatedBosses.map(boss => {
+                                    const bossIconPath = this.getBossIcon(boss.name);
+                                    const iconHtml = bossIconPath ? 
+                                        `<img src="${bossIconPath}" alt="${boss.name}" class="boss-icon" 
+                                              onload="this.style.width=this.naturalWidth+'px'; this.style.height=this.naturalHeight+'px';" 
+                                              onerror="this.style.display='none'">` : '';
+                                    return `<span class="boss-tag undefeated-boss ${isTainted ? 'tainted-boss' : ''}">
+                                        ${iconHtml}✗${boss.name}
+                                    </span>`;
+                                }).join('')}
                             </div>
                         ` : ''}
                     </div>

@@ -695,13 +695,13 @@ input[type="file"] {
 }
 
 .boss-icon {
-    width: 16px;
-    height: 16px;
     margin-right: 4px;
     vertical-align: middle;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+    transform: scale(0.6);
+    transform-origin: center;
 }
 
 .no-bosses {
