@@ -694,6 +694,16 @@ input[type="file"] {
     text-shadow: 1px 1px 0px #1a202c;
 }
 
+.boss-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    vertical-align: middle;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
 .no-bosses {
     color: #4c566a;
     font-size: 0.65rem;

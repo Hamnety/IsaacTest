@@ -457,6 +457,30 @@ class IsaacAchievementParser {
         return `#${achievementId} Boss`;
     }
 
+    getBossIcon(bossName) {
+        // Маппинг названий боссов на номера иконок
+        const bossIconMap = {
+            "Сатана": 1,
+            "???": 2,
+            "Комната вызова": 3,
+            "Айзек": 4,
+            "Агнец": 5,
+            "Сердце мамы": 6,
+            "Hush": 7,
+            "Мега сатана": 8,
+            "Делириум": 9,
+            "Грид мод": 10,
+            "Ультра грид": 11,
+            "Матерь": 12,
+            "Бист": 13,
+            "Сатана + ??? + Айзек + Агнец": 1, // Используем иконку Сатаны для объединенного достижения
+            "Комната вызова + Hush": 3 // Используем иконку Комнаты вызова для объединенного достижения
+        };
+        
+        const iconNumber = bossIconMap[bossName] || 1; // По умолчанию иконка Сатаны
+        return `img/bossMarks/${iconNumber}.png`;
+    }
+
     getCharacterName(characterId) {
         if (ISAAC_GAME_DATA.characterNames[characterId]) {
             return ISAAC_GAME_DATA.characterNames[characterId];
@@ -1072,7 +1096,10 @@ class IsaacAchievementParser {
                         </div>
                         <div class="bosses-list">
                             ${defeatedBosses.map(boss => 
-                                `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''} ${boss.isConditional ? 'conditional-boss' : ''}">✓${boss.name}</span>`
+                                `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''} ${boss.isConditional ? 'conditional-boss' : ''}">
+                                    <img src="${this.getBossIcon(boss.name)}" alt="${boss.name}" class="boss-icon" onerror="this.style.display='none'">
+                                    ✓${boss.name}
+                                </span>`
                             ).join('')}
                         </div>
                         ${defeatedBosses.length === 0 ? 
@@ -1086,7 +1113,10 @@ class IsaacAchievementParser {
                             </div>
                             <div class="bosses-list">
                                 ${undefeatedBosses.map(boss => 
-                                    `<span class="boss-tag undefeated-boss ${isTainted ? 'tainted-boss' : ''}">✗${boss.name}</span>`
+                                    `<span class="boss-tag undefeated-boss ${isTainted ? 'tainted-boss' : ''}">
+                                        <img src="${this.getBossIcon(boss.name)}" alt="${boss.name}" class="boss-icon" onerror="this.style.display='none'">
+                                        ✗${boss.name}
+                                    </span>`
                                 ).join('')}
                             </div>
                         ` : ''}
