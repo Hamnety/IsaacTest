@@ -648,45 +648,44 @@ class IsaacAchievementParser {
         if (!characterData) {
             return [];
         }
-        const bossIds = characterData.bossAchievements;
         
-        // Проверяем, какие боссы убиты (на основе достижений)
         const defeatedBosses = [];
+        const isTainted = characterId >= 474;
         
-        for (const bossId of bossIds) {
-            const isDefeated = this.analysisResults.achievements[bossId - 1]?.unlocked || false;
-            const bossName = this.getBossName(bossId);
+        // Для каждого босса проверяем, убит ли он
+        for (const [bossKey, bossData] of Object.entries(ISAAC_GAME_DATA.bosses)) {
+            // Пропускаем объединенные достижения для обычных персонажей
+            if (!isTainted && bossData.isTainted) continue;
+            // Пропускаем обычные боссы для порченных персонажей (кроме объединенных)
+            if (isTainted && !bossData.isTainted && bossData.name !== "Сатана + ??? + Айзек + Агнец" && bossData.name !== "Комната вызова + Hush") continue;
             
-            // Для порченных персонажей показываем объединенные достижения
-            if (characterId >= 474) {
-                // Порченные персонажи имеют объединенные достижения
-                defeatedBosses.push({
-                    id: bossId,
-                    name: bossName,
-                    defeated: isDefeated,
-                    isTainted: true
-                });
-            } else {
-                // Обычные персонажи имеют отдельные достижения для каждого босса
-                defeatedBosses.push({
-                    id: bossId,
-                    name: bossName,
-                    defeated: isDefeated,
-                    isTainted: false
-                });
+            // Проверяем, убит ли босс (есть ли хотя бы одно разблокированное достижение)
+            let isDefeated = false;
+            for (const achievementId of bossData.achievementIds) {
+                if (this.analysisResults.achievements[achievementId - 1]?.unlocked) {
+                    isDefeated = true;
+                    break;
+                }
             }
-        }
-        
-        // Для порченных персонажей добавляем "Сердце мамы" если выполнены условия
-        if (characterId >= 474) {
-            const heartDefeated = this.checkTaintedHeartConditions(characterId);
-            if (heartDefeated) {
+            
+            // Для порченных персонажей добавляем "Сердце мамы" если выполнены условия
+            if (isTainted && bossData.name === "Сердце мамы") {
+                const heartDefeated = this.checkTaintedHeartConditions(characterId);
+                if (heartDefeated) {
+                    defeatedBosses.push({
+                        id: bossData.achievementIds[0],
+                        name: bossData.name,
+                        defeated: true,
+                        isTainted: true,
+                        isConditional: true
+                    });
+                }
+            } else {
                 defeatedBosses.push({
-                    id: 169, // ID достижения "Сердце мамы"
-                    name: "Сердце мамы",
-                    defeated: true,
-                    isTainted: true,
-                    isConditional: true
+                    id: bossData.achievementIds[0],
+                    name: bossData.name,
+                    defeated: isDefeated,
+                    isTainted: bossData.isTainted
                 });
             }
         }
