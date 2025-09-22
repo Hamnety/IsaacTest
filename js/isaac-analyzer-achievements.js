@@ -427,6 +427,14 @@ class IsaacAchievementParser {
         return `img/bossMarks/1.png`; // По умолчанию иконка Сатаны
     }
 
+    getCharacterIcon(characterId) {
+        const characterData = ISAAC_GAME_DATA.characters[characterId];
+        if (characterData && characterData.iconId !== undefined) {
+            return `img/characters/${characterData.iconId}.png`;
+        }
+        return `img/characters/0.png`; // По умолчанию иконка Исаака
+    }
+
     getCharacterName(characterId) {
         if (ISAAC_GAME_DATA.characters[characterId]) {
             return ISAAC_GAME_DATA.characters[characterId].name;
@@ -985,17 +993,37 @@ class IsaacAchievementParser {
                 `;
             }
             
+            // Создаем иконку персонажа
+            const characterIconPath = this.getCharacterIcon(character.id);
+            const characterIconHtml = `
+                <div class="character-icon" style="
+                    background-image: url('${characterIconPath}');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 8px;
+                    border: 2px solid #4a5568;
+                    flex-shrink: 0;
+                    margin-left: 12px;
+                "></div>
+            `;
+            
             div.innerHTML = `
-                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3">
-                    ${character.name}
+                <div style="flex: 1; display: flex; flex-direction: column;">
+                    <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3">
+                        ${character.name}
+                    </div>
+                    <div class="character-status" style="color: ${character.unlocked ? '#ffd700' : '#4c566a'};">
+                        ${character.unlocked ? '✓ РАЗБЛОКИРОВАН' : '✗ ЗАБЛОКИРОВАН'}
+                    </div>
+                    <div class="character-unlock-condition">
+                        ${character.unlockCondition}
+                    </div>
+                    ${bossesList}
                 </div>
-                <div class="character-status" style="color: ${character.unlocked ? '#ffd700' : '#4c566a'};">
-                    ${character.unlocked ? '✓ РАЗБЛОКИРОВАН' : '✗ ЗАБЛОКИРОВАН'}
-                </div>
-                <div class="character-unlock-condition">
-                    ${character.unlockCondition}
-                </div>
-                ${bossesList}
+                ${characterIconHtml}
             `;
             container.appendChild(div);
         });

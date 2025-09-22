@@ -9,42 +9,42 @@ const ISAAC_GAME_DATA = {
     // Единая структура персонажей
     characters: {
         // Обычные персонажи
-        0: { name: "Исаак", unlockAchievement: null, bossAchievements: [43, 49, 70, 106, 149, 169, 179, 205, 282, 192, 296, 440, 441] },
-        1: { name: "Магдалена", unlockAchievement: 1, bossAchievements: [45, 50, 109, 20, 71, 168, 180, 206, 283, 193, 297, 442, 443] },
-        2: { name: "Каин", unlockAchievement: 2, bossAchievements: [46, 75, 110, 21, 51, 171, 181, 207, 284, 194, 298, 444, 445] },
-        3: { name: "Иуда", unlockAchievement: 3, bossAchievements: [72, 75, 108, 107, 52, 170, 182, 208, 285, 195, 299, 446, 447] },
-        32: { name: "???", unlockAchievement: 32, bossAchievements: [48, 113, 114, 29, 73, 174, 183, 209, 286, 196, 300, 448, 449] },
-        42: { name: "Ева", unlockAchievement: 42, bossAchievements: [44, 53, 112, 76, 111, 169, 184, 210, 288, 197, 302, 450, 451] },
-        67: { name: "Самсон", unlockAchievement: 67, bossAchievements: [56, 55, 115, 54, 74, 177, 185, 211, 287, 198, 301, 452, 453] },
-        80: { name: "Лазарь", unlockAchievement: 80, bossAchievements: [117, 118, 105, 116, 119, 172, 187, 213, 291, 200, 305, 456, 457] },
-        79: { name: "Азазель", unlockAchievement: 79, bossAchievements: [127, 128, 9, 126, 47, 173, 186, 212, 290, 199, 304, 454, 455] },
-        81: { name: "Эдем", unlockAchievement: 81, bossAchievements: [122, 123, 125, 121, 124, 176, 188, 214, 289, 201, 303, 458, 459] },
-        82: { name: "Лост", unlockAchievement: 82, bossAchievements: [130, 131, 133, 129, 132, 175, 189, 215, 292, 202, 307, 460, 461] },
-        199: { name: "Лилит", unlockAchievement: 199, bossAchievements: [220, 219, 222, 218, 221, 223, 190, 216, 292, 203, 306, 462, 463] },
-        251: { name: "Хранитель", unlockAchievement: 251, bossAchievements: [237, 238, 240, 236, 239, 241, 191, 217, 294, 204, 308, 464, 465] },
-        340: { name: "Аполион", unlockAchievement: 340, bossAchievements: [311, 312, 314, 310, 313, 318, 315, 317, 295, 316, 309, 466, 467] },
-        390: { name: "Забытый", unlockAchievement: 390, bossAchievements: [394, 395, 397, 393, 396, 392, 398, 403, 401, 399, 400, 468, 469] },
-        404: { name: "Бетани", unlockAchievement: 404, bossAchievements: [418, 419, 421, 417, 420, 416, 423, 427, 425, 422, 424, 470, 471] },
-        405: { name: "Иаков и Исав", unlockAchievement: 405, bossAchievements: [430, 431, 433, 429, 432, 428, 435, 439, 437, 434, 436, 472, 473] },
+        0: { name: "Исаак", unlockAchievement: null, bossAchievements: [43, 49, 70, 106, 149, 169, 179, 205, 282, 192, 296, 440, 441], iconId: 0 },
+        1: { name: "Магдалена", unlockAchievement: 1, bossAchievements: [45, 50, 109, 20, 71, 168, 180, 206, 283, 193, 297, 442, 443], iconId: 1 },
+        2: { name: "Каин", unlockAchievement: 2, bossAchievements: [46, 75, 110, 21, 51, 171, 181, 207, 284, 194, 298, 444, 445], iconId: 2 },
+        3: { name: "Иуда", unlockAchievement: 3, bossAchievements: [72, 75, 108, 107, 52, 170, 182, 208, 285, 195, 299, 446, 447], iconId: 3 },
+        32: { name: "???", unlockAchievement: 32, bossAchievements: [48, 113, 114, 29, 73, 174, 183, 209, 286, 196, 300, 448, 449], iconId: 4 },
+        42: { name: "Ева", unlockAchievement: 42, bossAchievements: [44, 53, 112, 76, 111, 169, 184, 210, 288, 197, 302, 450, 451], iconId: 5 },
+        67: { name: "Самсон", unlockAchievement: 67, bossAchievements: [56, 55, 115, 54, 74, 177, 185, 211, 287, 198, 301, 452, 453], iconId: 6 },
+        80: { name: "Лазарь", unlockAchievement: 80, bossAchievements: [117, 118, 105, 116, 119, 172, 187, 213, 291, 200, 305, 456, 457], iconId: 7 },
+        79: { name: "Азазель", unlockAchievement: 79, bossAchievements: [127, 128, 9, 126, 47, 173, 186, 212, 290, 199, 304, 454, 455], iconId: 8 },
+        81: { name: "Эдем", unlockAchievement: 81, bossAchievements: [122, 123, 125, 121, 124, 176, 188, 214, 289, 201, 303, 458, 459], iconId: 9 },
+        82: { name: "Лост", unlockAchievement: 82, bossAchievements: [130, 131, 133, 129, 132, 175, 189, 215, 292, 202, 307, 460, 461], iconId: 10 },
+        199: { name: "Лилит", unlockAchievement: 199, bossAchievements: [220, 219, 222, 218, 221, 223, 190, 216, 292, 203, 306, 462, 463], iconId: 11 },
+        251: { name: "Хранитель", unlockAchievement: 251, bossAchievements: [237, 238, 240, 236, 239, 241, 191, 217, 294, 204, 308, 464, 465], iconId: 12 },
+        340: { name: "Аполион", unlockAchievement: 340, bossAchievements: [311, 312, 314, 310, 313, 318, 315, 317, 295, 316, 309, 466, 467], iconId: 13 },
+        390: { name: "Забытый", unlockAchievement: 390, bossAchievements: [394, 395, 397, 393, 396, 392, 398, 403, 401, 399, 400, 468, 469], iconId: 14 },
+        404: { name: "Бетани", unlockAchievement: 404, bossAchievements: [418, 419, 421, 417, 420, 416, 423, 427, 425, 422, 424, 470, 471], iconId: 15 },
+        405: { name: "Иаков и Исав", unlockAchievement: 405, bossAchievements: [430, 431, 433, 429, 432, 428, 435, 439, 437, 434, 436, 472, 473], iconId: 16 },
         
         // Порченные (Tainted) персонажи
-        474: { name: "Порченный Айзек", unlockAchievement: 474, bossAchievements: [548, 618, 601, 584, 541, 549, 491] },
-        475: { name: "Порченная Магдалена", unlockAchievement: 475, bossAchievements: [550, 619, 602, 585, 530, 551, 492] },
-        476: { name: "Порченный Каин", unlockAchievement: 476, bossAchievements: [552, 620, 603, 586, 543, 553, 493] },
-        477: { name: "Порченный Иуда", unlockAchievement: 477, bossAchievements: [554, 621, 604, 587, 545, 555, 494] },
-        478: { name: "Порченный ???", unlockAchievement: 478, bossAchievements: [556, 622, 605, 588, 528, 557, 495] },
-        479: { name: "Порченный Еву", unlockAchievement: 479, bossAchievements: [558, 623, 606, 589, 527, 559, 496] },
-        480: { name: "Порченный Самсон", unlockAchievement: 480, bossAchievements: [560, 624, 607, 590, 535, 561, 497] },
-        481: { name: "Порченный Азазель", unlockAchievement: 481, bossAchievements: [548, 618, 601, 584, 541, 549, 498] },
-        482: { name: "Порченный Лазарь", unlockAchievement: 482, bossAchievements: [562, 625, 608, 591, 539, 563, 491] },
-        483: { name: "Порченный Иден", unlockAchievement: 483, bossAchievements: [566, 627, 610, 583, 544, 567, 500] },
-        484: { name: "Порченный Лост", unlockAchievement: 484, bossAchievements: [568, 628, 611, 594, 524, 569, 501] },
-        485: { name: "Порченный Лилит", unlockAchievement: 485, bossAchievements: [570, 629, 612, 595, 526, 571, 502] },
-        486: { name: "Порченный Хранитель", unlockAchievement: 486, bossAchievements: [572, 630, 613, 596, 536, 573, 503] },
-        487: { name: "Порченный Аполлион", unlockAchievement: 487, bossAchievements: [574, 631, 614, 597, 540, 575, 504] },
-        488: { name: "Порченный Забытый", unlockAchievement: 488, bossAchievements: [576, 632, 615, 598, 537, 577, 505] },
-        489: { name: "Порченный Беттани", unlockAchievement: 489, bossAchievements: [578, 633, 616, 599, 529, 579, 506] },
-        490: { name: "Порченный Иаков и Исав", unlockAchievement: 490, bossAchievements: [580, 634, 617, 600, 542, 581, 507] }
+        474: { name: "Порченный Айзек", unlockAchievement: 474, bossAchievements: [548, 618, 601, 584, 541, 549, 491], iconId: 17 },
+        475: { name: "Порченная Магдалена", unlockAchievement: 475, bossAchievements: [550, 619, 602, 585, 530, 551, 492], iconId: 18 },
+        476: { name: "Порченный Каин", unlockAchievement: 476, bossAchievements: [552, 620, 603, 586, 543, 553, 493], iconId: 19 },
+        477: { name: "Порченный Иуда", unlockAchievement: 477, bossAchievements: [554, 621, 604, 587, 545, 555, 494], iconId: 20 },
+        478: { name: "Порченный ???", unlockAchievement: 478, bossAchievements: [556, 622, 605, 588, 528, 557, 495], iconId: 21 },
+        479: { name: "Порченный Еву", unlockAchievement: 479, bossAchievements: [558, 623, 606, 589, 527, 559, 496], iconId: 22 },
+        480: { name: "Порченный Самсон", unlockAchievement: 480, bossAchievements: [560, 624, 607, 590, 535, 561, 497], iconId: 23 },
+        481: { name: "Порченный Азазель", unlockAchievement: 481, bossAchievements: [548, 618, 601, 584, 541, 549, 498], iconId: 24 },
+        482: { name: "Порченный Лазарь", unlockAchievement: 482, bossAchievements: [562, 625, 608, 591, 539, 563, 491], iconId: 25 },
+        483: { name: "Порченный Иден", unlockAchievement: 483, bossAchievements: [566, 627, 610, 583, 544, 567, 500], iconId: 26 },
+        484: { name: "Порченный Лост", unlockAchievement: 484, bossAchievements: [568, 628, 611, 594, 524, 569, 501], iconId: 27 },
+        485: { name: "Порченный Лилит", unlockAchievement: 485, bossAchievements: [570, 629, 612, 595, 526, 571, 502], iconId: 28 },
+        486: { name: "Порченный Хранитель", unlockAchievement: 486, bossAchievements: [572, 630, 613, 596, 536, 573, 503], iconId: 29 },
+        487: { name: "Порченный Аполлион", unlockAchievement: 487, bossAchievements: [574, 631, 614, 597, 540, 575, 504], iconId: 30 },
+        488: { name: "Порченный Забытый", unlockAchievement: 488, bossAchievements: [576, 632, 615, 598, 537, 577, 505], iconId: 31 },
+        489: { name: "Порченный Беттани", unlockAchievement: 489, bossAchievements: [578, 633, 616, 599, 529, 579, 506], iconId: 32 },
+        490: { name: "Порченный Иаков и Исав", unlockAchievement: 490, bossAchievements: [580, 634, 617, 600, 542, 581, 507], iconId: 33 }
     },
 
     // ID челленджей (45 челленджей для Repentance)
@@ -172,31 +172,31 @@ const ISAAC_GAME_DATA = {
             achievementIds: [618, 619, 620, 621, 622, 623, 624, 625, 627, 628, 629, 630, 631, 632, 633, 634],
             isTainted: true
         },
-        "Мега сатана (порч.)": { 
+        "Мега сатана": { 
             name: "Мега сатана", 
             iconId: 7, 
             achievementIds: [601, 602, 603, 604, 605, 606, 607, 608, 610, 611, 612, 613, 614, 615, 616, 617],
             isTainted: true
         },
-        "Делириум (порч.)": { 
+        "Делириум": { 
             name: "Делириум", 
             iconId: 13, 
             achievementIds: [584, 585, 586, 587, 588, 589, 590, 591, 583, 594, 595, 596, 597, 598, 599, 600],
             isTainted: true
         },
-        "Ультра грид (порч.)": { 
+        "Ультра грид": { 
             name: "Ультра грид", 
             iconId: 9, 
             achievementIds: [541, 530, 543, 545, 528, 527, 535, 539, 544, 524, 526, 536, 540, 537, 529, 542],
             isTainted: true
         },
-        "Матерь (порч.)": { 
+        "Матерь": { 
             name: "Матерь", 
             iconId: 11, 
             achievementIds: [549, 551, 553, 555, 557, 559, 561, 563, 567, 569, 571, 573, 575, 577, 579, 581],
             isTainted: true
         },
-        "Бист (порч.)": { 
+        "Бист": { 
             name: "Бист", 
             iconId: 12, 
             achievementIds: [491, 492, 493, 494, 495, 496, 497, 498, 500, 501, 502, 503, 504, 505, 506, 507],

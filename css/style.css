@@ -614,6 +614,9 @@ input[type="file"] {
 /* Специальные стили для карточек персонажей */
 .item-card.character-card {
     min-height: 250px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
 }
 
 .character-status {
@@ -624,6 +627,20 @@ input[type="file"] {
     letter-spacing: 0.8px;
     font-family: var(--font-upheaval);
     text-shadow: 1px 1px 0px #1a202c;
+}
+
+.character-icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    border: 2px solid #4a5568;
+    flex-shrink: 0;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .character-unlock-condition {
