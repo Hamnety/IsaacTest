@@ -1010,7 +1010,6 @@ class IsaacAchievementParser {
                     width: 80px;
                     height: 80px;
                     border-radius: 8px;
-                    border: 2px solid #4a5568;
                     flex-shrink: 0;
                 "></div>
             `;
