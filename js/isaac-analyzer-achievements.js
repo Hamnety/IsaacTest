@@ -658,6 +658,8 @@ class IsaacAchievementParser {
             if (!isTainted && bossData.isTainted) continue;
             // Пропускаем объединенные достижения для порченных персонажей (кроме специальных)
             if (isTainted && bossData.isTainted && bossKey !== "Сатана + ??? + Айзек + Агнец" && bossKey !== "Комната вызова + Хаш") continue;
+            // Пропускаем "Режим жадности" для порченных персонажей
+            if (isTainted && bossKey === "Режим жадности") continue;
             
             // Проверяем, убит ли босс (есть ли хотя бы одно разблокированное достижение)
             let isDefeated = false;
