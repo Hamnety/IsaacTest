@@ -617,6 +617,7 @@ input[type="file"] {
     display: flex;
     align-items: flex-start;
     gap: 12px;
+    position: relative;
 }
 
 .character-status {
@@ -637,10 +638,12 @@ input[type="file"] {
     height: 80px;
     border-radius: 8px;
     border: 2px solid #4a5568;
-    flex-shrink: 0;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
+    position: absolute;
+    top: 16px;
+    right: 16px;
 }
 
 .character-unlock-condition {

@@ -1006,12 +1006,14 @@ class IsaacAchievementParser {
                     border-radius: 8px;
                     border: 2px solid #4a5568;
                     flex-shrink: 0;
-                    margin-left: 12px;
+                    position: absolute;
+                    top: 16px;
+                    right: 16px;
                 "></div>
             `;
             
             div.innerHTML = `
-                <div style="flex: 1; display: flex; flex-direction: column;">
+                <div class="character-content" style="flex: 1; display: flex; flex-direction: column; padding-right: 100px;">
                     <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3">
                         ${character.name}
                     </div>
