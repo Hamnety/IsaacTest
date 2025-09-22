@@ -743,6 +743,11 @@ class IsaacAchievementParser {
             return false;
         }
         
+        // Исключаем предметы, которые не считаются за "потроганные"
+        if (id === 714 || id === 715) {
+            return false;
+        }
+        
         // Проверяем, что предмет есть в JSON данных (как в официальном viewer'е)
         // Если предмет есть в полных данных предметов, то он валидный
         if (this.fullItemsData && this.fullItemsData[id]) {
