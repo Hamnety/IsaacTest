@@ -403,17 +403,10 @@ class IsaacAchievementParser {
     }
 
     getBossName(achievementId) {
-        // Проверяем обычных боссов
-        for (const [bossName, ids] of Object.entries(ISAAC_GAME_DATA.bossData.normal)) {
-            if (ids.includes(achievementId)) {
-                return bossName;
-            }
-        }
-        
-        // Проверяем порченных боссов
-        for (const [bossName, ids] of Object.entries(ISAAC_GAME_DATA.bossData.tainted)) {
-            if (ids.includes(achievementId)) {
-                return bossName;
+        // Ищем босса по ID достижения
+        for (const [bossKey, bossData] of Object.entries(ISAAC_GAME_DATA.bosses)) {
+            if (bossData.achievementIds.includes(achievementId)) {
+                return bossData.name;
             }
         }
         
@@ -421,18 +414,22 @@ class IsaacAchievementParser {
     }
 
     getBossIcon(bossName) {
-        // Для объединенных достижений порченных персонажей не показываем иконки
-        if (bossName === "Сатана + ??? + Айзек + Агнец" || bossName === "Комната вызова + Hush") {
-            return null;
+        // Ищем босса по имени
+        for (const [bossKey, bossData] of Object.entries(ISAAC_GAME_DATA.bosses)) {
+            if (bossData.name === bossName) {
+                if (bossData.iconId === null) {
+                    return null; // Для объединенных достижений порченных персонажей не показываем иконки
+                }
+                return `img/bossMarks/${bossData.iconId}.png`;
+            }
         }
         
-        const iconNumber = ISAAC_GAME_DATA.bossIconMap[bossName] || 1; // По умолчанию иконка Сатаны
-        return `img/bossMarks/${iconNumber}.png`;
+        return `img/bossMarks/1.png`; // По умолчанию иконка Сатаны
     }
 
     getCharacterName(characterId) {
-        if (ISAAC_GAME_DATA.characterNames[characterId]) {
-            return ISAAC_GAME_DATA.characterNames[characterId];
+        if (ISAAC_GAME_DATA.characters[characterId]) {
+            return ISAAC_GAME_DATA.characters[characterId].name;
         }
         return `#${characterId} Character`;
     }
@@ -468,26 +465,27 @@ class IsaacAchievementParser {
         this.analysisResults.characters = [];
         let unlockedCharacters = 0;
         
-        for (const characterId of ISAAC_GAME_DATA.characters) {
+        for (const [characterId, characterData] of Object.entries(ISAAC_GAME_DATA.characters)) {
+            const id = parseInt(characterId);
             let isUnlocked = false;
             
             // Исаак (ID 0) доступен с самого начала
-            if (characterId === 0) {
+            if (id === 0) {
                 isUnlocked = true;
             } else {
                 // Остальные персонажи разблокируются через достижения
-                isUnlocked = this.analysisResults.achievements[characterId-1]?.unlocked || false;
+                isUnlocked = this.analysisResults.achievements[characterData.unlockAchievement-1]?.unlocked || false;
             }
             
             if (isUnlocked) unlockedCharacters++;
             
             this.analysisResults.characters.push({
-                id: characterId,
-                name: this.getCharacterName(characterId),
+                id: id,
+                name: characterData.name,
                 unlocked: isUnlocked,
-                unlockCondition: this.getAchievementUnlockCondition(characterId),
-                completionMarks: this.getCharacterCompletionMarks(characterId, isUnlocked),
-                defeatedBosses: this.getCharacterDefeatedBosses(characterId)
+                unlockCondition: this.getAchievementUnlockCondition(characterData.unlockAchievement),
+                completionMarks: this.getCharacterCompletionMarks(id, isUnlocked),
+                defeatedBosses: this.getCharacterDefeatedBosses(id)
             });
         }
         
@@ -638,11 +636,11 @@ class IsaacAchievementParser {
 
     getCharacterDefeatedBosses(characterId) {
         // Получаем ID боссов для персонажа
-        const bossIds = ISAAC_GAME_DATA.characterBosses[characterId];
-        
-        if (!bossIds) {
+        const characterData = ISAAC_GAME_DATA.characters[characterId];
+        if (!characterData) {
             return [];
         }
+        const bossIds = characterData.bossAchievements;
         
         // Проверяем, какие боссы убиты (на основе достижений)
         const defeatedBosses = [];
@@ -693,8 +691,8 @@ class IsaacAchievementParser {
         const conditions = ISAAC_GAME_DATA.taintedHeartConditions;
         
         // Проверяем условие 1: Комната вызова + Hush
-        const bossIds = ISAAC_GAME_DATA.characterBosses[characterId];
-        if (!bossIds) return false;
+        const characterData = ISAAC_GAME_DATA.characters[characterId];
+        if (!characterData) return false;
         
         // Находим индекс персонажа в массиве порченных персонажей (474-490)
         const taintedIndex = characterId - 474;
@@ -711,44 +709,13 @@ class IsaacAchievementParser {
     }
     
     getCharacterIndex(achievementId) {
-        // Маппинг ID достижений на индексы персонажей
-        const characterMap = {
-            1: 1,   // Магдалена
-            2: 2,   // Каин
-            3: 3,   // Иуда
-            32: 4,  // ???
-            42: 5,  // Ева
-            67: 6,  // Самсон
-            80: 7,  // Лазарь
-            79: 8,  // Азазель
-            81: 9,  // Эдем
-            82: 10, // Лост
-            199: 11, // Лилит
-            251: 12, // Хранитель
-            340: 13, // Аполион
-            390: 14, // Забытый
-            404: 15, // Бетани
-            405: 16, // Иаков и Исав
-            474: 17, // Порченный Айзек
-            475: 18, // Порченная Магдалена
-            476: 19, // Порченный Каин
-            477: 20, // Порченный Иуда
-            478: 21, // Порченный ???
-            479: 22, // Порченный Еву
-            480: 23, // Порченный Самсон
-            481: 24, // Порченный Азазель
-            482: 25, // Порченный Лазарь
-            483: 26, // Порченный Иден
-            484: 27, // Порченный Лост
-            485: 28, // Порченный Лилит
-            486: 29, // Порченный Хранитель
-            487: 30, // Порченный Аполлион
-            488: 31, // Порченный Забытый
-            489: 32, // Порченный Беттани
-            490: 33  // Порченный Иаков и Исав
-        };
-        
-        return characterMap[achievementId];
+        // Ищем персонажа по ID достижения разблокировки
+        for (const [characterId, characterData] of Object.entries(ISAAC_GAME_DATA.characters)) {
+            if (characterData.unlockAchievement === achievementId) {
+                return parseInt(characterId);
+            }
+        }
+        return null;
     }
     
     checkCompletionMark(characterId, markName) {
