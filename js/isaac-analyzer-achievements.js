@@ -20,7 +20,6 @@ class IsaacAchievementParser {
         this.gameData = null;
         this.fullItemsData = null;
         this.achievementsData = null;
-        this.itemConstants = null;
         
         this.initializeUI();
     }
@@ -50,14 +49,6 @@ class IsaacAchievementParser {
                 this.analysisResults.debugInfo.push('Не удалось загрузить финальные данные достижений');
             }
             
-            // Загружаем константы предметов
-            const constantsResponse = await fetch('data/isaac-item-constants.json');
-            if (constantsResponse.ok) {
-                this.itemConstants = await constantsResponse.json();
-                this.analysisResults.debugInfo.push('Константы предметов загружены');
-            } else {
-                this.analysisResults.debugInfo.push('Не удалось загрузить константы предметов');
-            }
         } catch (error) {
             this.analysisResults.debugInfo.push('Ошибка загрузки данных игры: ' + error.message);
             this.analysisResults.debugInfo.push('Используем базовые данные из isaac-data.js');
@@ -400,11 +391,15 @@ class IsaacAchievementParser {
         if (this.achievementsData && this.achievementsData.achievements[id]) {
             return this.achievementsData.achievements[id].name;
         }
-        // Проверяем, является ли это челленджем
+        return `#${id} Achievement`;
+    }
+
+    getChallengeName(id) {
+        // Проверяем, есть ли название челленджа в наших данных
         if (ISAAC_GAME_DATA.challengeNames[id]) {
             return ISAAC_GAME_DATA.challengeNames[id];
         }
-        return `#${id} Achievement`;
+        return `Challenge #${id}`;
     }
 
     getBossName(achievementId) {
@@ -507,7 +502,7 @@ class IsaacAchievementParser {
             
             this.analysisResults.challenges.push({
                 id: challengeId,
-                name: this.getAchievementName(challengeId),
+                name: this.getChallengeName(challengeId),
                 completed: isCompleted,
                 unlockCondition: this.getAchievementUnlockCondition(challengeId)
             });
