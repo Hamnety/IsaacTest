@@ -656,8 +656,8 @@ class IsaacAchievementParser {
         for (const [bossKey, bossData] of Object.entries(ISAAC_GAME_DATA.bosses)) {
             // Пропускаем объединенные достижения для обычных персонажей
             if (!isTainted && bossData.isTainted) continue;
-            // Пропускаем обычные боссы для порченных персонажей (кроме объединенных)
-            if (isTainted && !bossData.isTainted && bossKey !== "Сатана + ??? + Айзек + Агнец" && bossKey !== "Комната вызова + Hush") continue;
+            // Пропускаем объединенные достижения для порченных персонажей (кроме специальных)
+            if (isTainted && bossData.isTainted && bossKey !== "Сатана + ??? + Айзек + Агнец" && bossKey !== "Комната вызова + Хаш") continue;
             
             // Проверяем, убит ли босс (есть ли хотя бы одно разблокированное достижение)
             let isDefeated = false;
@@ -669,7 +669,7 @@ class IsaacAchievementParser {
             }
             
             // Для порченных персонажей добавляем "Сердце мамы" если выполнены условия
-            if (isTainted && bossData.name === "Сердце мамы") {
+            if (isTainted && bossData.name === "Сердце мамы (сложн. режим)") {
                 const heartDefeated = this.checkTaintedHeartConditions(characterId);
                 if (heartDefeated) {
                     defeatedBosses.push({
@@ -697,7 +697,7 @@ class IsaacAchievementParser {
         // Проверяем условия для засчитывания "Сердце мамы" у порченных персонажей
         const conditions = ISAAC_GAME_DATA.taintedHeartConditions;
         
-        // Проверяем условие 1: Комната вызова + Hush
+        // Проверяем условие 1: Комната вызова + Хаш
         const characterData = ISAAC_GAME_DATA.characters[characterId];
         if (!characterData) return false;
         
@@ -705,7 +705,7 @@ class IsaacAchievementParser {
         const taintedIndex = characterId - 474;
         
         // Проверяем достижения для этого персонажа
-        const bossCallAchievement = conditions["Комната вызова + Hush"][taintedIndex];
+        const bossCallAchievement = conditions["Комната вызова + Хаш"][taintedIndex];
         const satanAchievement = conditions["Сатана + ??? + Айзек + Агнец"][taintedIndex];
         
         const bossCallDefeated = this.analysisResults.achievements[bossCallAchievement - 1]?.unlocked || false;
