@@ -9,16 +9,16 @@ const ISAAC_GAME_DATA = {
     // Единая структура персонажей
     characters: {
         // Обычные персонажи
-        0: { name: "Исаак", unlockAchievement: null, bossAchievements: [43, 49, 70, 106, 149, 169, 179, 205, 282, 192, 296, 440, 441], iconId: 0 },
+        0: { name: "Айзек", unlockAchievement: null, bossAchievements: [43, 49, 70, 106, 149, 169, 179, 205, 282, 192, 296, 440, 441], iconId: 0 },
         1: { name: "Магдалена", unlockAchievement: 1, bossAchievements: [45, 50, 109, 20, 71, 168, 180, 206, 283, 193, 297, 442, 443], iconId: 1 },
-        2: { name: "Каин", unlockAchievement: 2, bossAchievements: [46, 75, 110, 21, 51, 171, 181, 207, 284, 194, 298, 444, 445], iconId: 2 },
+        2: { name: "Кайн", unlockAchievement: 2, bossAchievements: [46, 75, 110, 21, 51, 171, 181, 207, 284, 194, 298, 444, 445], iconId: 2 },
         3: { name: "Иуда", unlockAchievement: 3, bossAchievements: [72, 75, 108, 107, 52, 170, 182, 208, 285, 195, 299, 446, 447], iconId: 3 },
         32: { name: "???", unlockAchievement: 32, bossAchievements: [48, 113, 114, 29, 73, 174, 183, 209, 286, 196, 300, 448, 449], iconId: 4 },
         42: { name: "Ева", unlockAchievement: 42, bossAchievements: [44, 53, 112, 76, 111, 169, 184, 210, 288, 197, 302, 450, 451], iconId: 5 },
         67: { name: "Самсон", unlockAchievement: 67, bossAchievements: [56, 55, 115, 54, 74, 177, 185, 211, 287, 198, 301, 452, 453], iconId: 6 },
         80: { name: "Лазарь", unlockAchievement: 80, bossAchievements: [117, 118, 105, 116, 119, 172, 187, 213, 291, 200, 305, 456, 457], iconId: 7 },
         79: { name: "Азазель", unlockAchievement: 79, bossAchievements: [127, 128, 9, 126, 47, 173, 186, 212, 290, 199, 304, 454, 455], iconId: 8 },
-        81: { name: "Эдем", unlockAchievement: 81, bossAchievements: [122, 123, 125, 121, 124, 176, 188, 214, 289, 201, 303, 458, 459], iconId: 9 },
+        81: { name: "Иден", unlockAchievement: 81, bossAchievements: [122, 123, 125, 121, 124, 176, 188, 214, 289, 201, 303, 458, 459], iconId: 9 },
         82: { name: "Лост", unlockAchievement: 82, bossAchievements: [130, 131, 133, 129, 132, 175, 189, 215, 292, 202, 307, 460, 461], iconId: 10 },
         199: { name: "Лилит", unlockAchievement: 199, bossAchievements: [220, 219, 222, 218, 221, 223, 190, 216, 292, 203, 306, 462, 463], iconId: 11 },
         251: { name: "Хранитель", unlockAchievement: 251, bossAchievements: [237, 238, 240, 236, 239, 241, 191, 217, 294, 204, 308, 464, 465], iconId: 12 },
@@ -30,10 +30,10 @@ const ISAAC_GAME_DATA = {
         // Порченные (Tainted) персонажи
         474: { name: "Порченный Айзек", unlockAchievement: 474, bossAchievements: [548, 618, 601, 584, 541, 549, 491], iconId: 17 },
         475: { name: "Порченная Магдалена", unlockAchievement: 475, bossAchievements: [550, 619, 602, 585, 530, 551, 492], iconId: 18 },
-        476: { name: "Порченный Каин", unlockAchievement: 476, bossAchievements: [552, 620, 603, 586, 543, 553, 493], iconId: 19 },
+        476: { name: "Порченный Кайн", unlockAchievement: 476, bossAchievements: [552, 620, 603, 586, 543, 553, 493], iconId: 19 },
         477: { name: "Порченный Иуда", unlockAchievement: 477, bossAchievements: [554, 621, 604, 587, 545, 555, 494], iconId: 20 },
         478: { name: "Порченный ???", unlockAchievement: 478, bossAchievements: [556, 622, 605, 588, 528, 557, 495], iconId: 21 },
-        479: { name: "Порченный Еву", unlockAchievement: 479, bossAchievements: [558, 623, 606, 589, 527, 559, 496], iconId: 22 },
+        479: { name: "Порченная Ева", unlockAchievement: 479, bossAchievements: [558, 623, 606, 589, 527, 559, 496], iconId: 22 },
         480: { name: "Порченный Самсон", unlockAchievement: 480, bossAchievements: [560, 624, 607, 590, 535, 561, 497], iconId: 23 },
         481: { name: "Порченный Азазель", unlockAchievement: 481, bossAchievements: [548, 618, 601, 584, 541, 549, 498], iconId: 24 },
         482: { name: "Порченный Лазарь", unlockAchievement: 482, bossAchievements: [562, 625, 608, 591, 539, 563, 491], iconId: 25 },
@@ -43,7 +43,7 @@ const ISAAC_GAME_DATA = {
         486: { name: "Порченный Хранитель", unlockAchievement: 486, bossAchievements: [572, 630, 613, 596, 536, 573, 503], iconId: 29 },
         487: { name: "Порченный Аполлион", unlockAchievement: 487, bossAchievements: [574, 631, 614, 597, 540, 575, 504], iconId: 30 },
         488: { name: "Порченный Забытый", unlockAchievement: 488, bossAchievements: [576, 632, 615, 598, 537, 577, 505], iconId: 31 },
-        489: { name: "Порченный Беттани", unlockAchievement: 489, bossAchievements: [578, 633, 616, 599, 529, 579, 506], iconId: 32 },
+        489: { name: "Порченная Бетани", unlockAchievement: 489, bossAchievements: [578, 633, 616, 599, 529, 579, 506], iconId: 32 },
         490: { name: "Порченный Иаков и Исав", unlockAchievement: 490, bossAchievements: [580, 634, 617, 600, 542, 581, 507], iconId: 33 }
     },
 
@@ -110,14 +110,14 @@ const ISAAC_GAME_DATA = {
             achievementIds: [149, 71, 51, 52, 73, 111, 74, 119, 47, 124, 132, 221, 239, 313, 396, 420, 432],
             isTainted: false
         },
-        "Сердце мамы": { 
-            name: "Сердце мамы", 
+        "Сердце мамы (сложн. режим)": { 
+            name: "Сердце мамы (сложн. режим)", 
             iconId: 6, 
             achievementIds: [169, 168, 171, 170, 174, 177, 172, 173, 176, 175, 223, 241, 318, 392, 416, 428],
             isTainted: false
         },
-        "Hush": { 
-            name: "Hush", 
+        "Хаш": { 
+            name: "Хаш", 
             iconId: 8, 
             achievementIds: [179, 180, 181, 182, 183, 184, 185, 187, 186, 188, 189, 190, 191, 315, 398, 423, 435],
             isTainted: false
@@ -134,14 +134,14 @@ const ISAAC_GAME_DATA = {
             achievementIds: [282, 283, 284, 285, 286, 288, 287, 291, 290, 289, 292, 294, 295, 401, 425, 437, 584, 585, 586, 587, 588, 589, 590, 591, 583, 594, 595, 596, 597, 598, 599, 600],
             isTainted: false
         },
-        "Грид мод": { 
-            name: "Грид мод", 
+        "Режим жадности": { 
+            name: "Режим жадности", 
             iconId: 10, 
             achievementIds: [192, 193, 194, 195, 196, 197, 198, 200, 199, 201, 202, 203, 204, 316, 399, 422, 434],
             isTainted: false
         },
-        "Ультра грид": { 
-            name: "Ультра грид", 
+        "Ультра режим жадности": { 
+            name: "Ультра режим жадности", 
             iconId: 9, 
             achievementIds: [296, 297, 298, 299, 300, 302, 301, 305, 304, 303, 307, 306, 308, 309, 400, 424, 436, 541, 530, 543, 545, 528, 527, 535, 539, 544, 524, 526, 536, 540, 537, 529, 542],
             isTainted: false
@@ -166,8 +166,8 @@ const ISAAC_GAME_DATA = {
             achievementIds: [548, 550, 552, 554, 556, 558, 560, 562, 566, 568, 570, 572, 574, 576, 578, 580],
             isTainted: true
         },
-        "Комната вызова + Hush": { 
-            name: "Комната вызова + Hush", 
+        "Комната вызова + Хаш": { 
+            name: "Комната вызова + Хаш", 
             iconId: null, 
             achievementIds: [618, 619, 620, 621, 622, 623, 624, 625, 627, 628, 629, 630, 631, 632, 633, 634],
             isTainted: true
@@ -176,15 +176,15 @@ const ISAAC_GAME_DATA = {
 
     // Условия для засчитывания "Сердце мамы" у порченных персонажей
     taintedHeartConditions: {
-        // Условие 1: Комната вызова + Hush
-        "Комната вызова + Hush": [618, 619, 620, 621, 622, 623, 624, 625, 627, 628, 629, 630, 631, 632, 633, 634],
+        // Условие 1: Комната вызова + Хаш
+        "Комната вызова + Хаш": [618, 619, 620, 621, 622, 623, 624, 625, 627, 628, 629, 630, 631, 632, 633, 634],
         // Условие 2: Сатана + ??? + Айзек + Агнец
         "Сатана + ??? + Айзек + Агнец": [548, 550, 552, 554, 556, 558, 560, 562, 566, 568, 570, 572, 574, 576, 578, 580]
     },
 
 
     // Основные боссы для проверки завершенных отметок
-    requiredBosses: ['Сатана', '???', 'Комната вызова', 'Айзек', 'Агнец', 'Сердце мамы', 'Hush', 'Мега сатана', 'Делириум', 'Грид мод', 'Ультра грид', 'Матерь', 'Бист'],
+    requiredBosses: ['Сатана', '???', 'Комната вызова', 'Айзек', 'Агнец', 'Сердце мамы (сложн. режим)', 'Хаш', 'Мега сатана', 'Делириум', 'Режим жадности', 'Ультра режим жадности', 'Матерь', 'Бист'],
 
     // Названия челленджей
     challengeNames: {
