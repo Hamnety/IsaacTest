@@ -145,7 +145,56 @@ const ISAAC_GAME_DATA = {
     },
 
     // Основные боссы для проверки завершенных отметок
-    requiredBosses: ['Сатана', '???', 'Комната вызова', 'Айзек', 'Агнец', 'Сердце мамы (сложн. режим)', 'Хаш', 'Мега сатана', 'Делириум', 'Режим жадности', 'Сложный режим жадности', 'Матерь', 'Бист']
+    requiredBosses: ['Сатана', '???', 'Комната вызова', 'Айзек', 'Агнец', 'Сердце мамы (сложн. режим)', 'Хаш', 'Мега сатана', 'Делириум', 'Режим жадности', 'Сложный режим жадности', 'Матерь', 'Бист'],
+
+    // Названия челленджей
+    challengeNames: {
+        89: "Pitch Black",
+        90: "High Brow", 
+        91: "Head Trauma",
+        92: "Darkness Falls",
+        93: "The Tank",
+        94: "Solar System",
+        95: "Purist",
+        96: "Cat Got Your Tongue",
+        97: "Demo Man",
+        98: "Cursed!",
+        99: "Glass Cannon",
+        100: "When Life Gives You Lemons",
+        101: "It's in the Cards",
+        102: "Slow Roll",
+        103: "Computer Savvy",
+        104: "Waka Waka",
+        120: "Suicide King",
+        60: "Beans!",
+        62: "The Host",
+        63: "The Family Man",
+        224: "XXXXXXXXL",
+        225: "SPEED!",
+        226: "Blue Bomber",
+        227: "PAY TO PLAY",
+        228: "Have a Heart",
+        229: "I RULE!",
+        230: "BRAINS!",
+        231: "PRIDE DAY!",
+        233: "Onan's Streak",
+        234: "The Guardian",
+        331: "Backasswards",
+        332: "Aprils Fool",
+        333: "Pokey Mans",
+        334: "Ultra Hard",
+        335: "Pong",
+        517: "Scat Man",
+        518: "Bloody Mary",
+        519: "Baptism by Fire",
+        520: "Isaac's Awakening",
+        521: "Seeing Double",
+        522: "Pica Run",
+        531: "Hot Potato",
+        532: "Cantripped!",
+        533: "Red Redemption",
+        538: "DELETE THIS"
+    }
 };
 
 // Экспорт для использования в других файлах

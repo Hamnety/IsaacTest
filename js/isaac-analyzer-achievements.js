@@ -400,6 +400,10 @@ class IsaacAchievementParser {
         if (this.achievementsData && this.achievementsData.achievements[id]) {
             return this.achievementsData.achievements[id].name;
         }
+        // Проверяем, является ли это челленджем
+        if (ISAAC_GAME_DATA.challengeNames[id]) {
+            return ISAAC_GAME_DATA.challengeNames[id];
+        }
         return `#${id} Achievement`;
     }
 
