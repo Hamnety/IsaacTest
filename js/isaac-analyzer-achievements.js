@@ -945,50 +945,30 @@ class IsaacAchievementParser {
             // Создаем список убитых и не убитых боссов
             let bossesList = '';
             if (character.defeatedBosses && character.defeatedBosses.length > 0) {
-                const defeatedBosses = character.defeatedBosses.filter(boss => boss.defeated);
-                const undefeatedBosses = character.defeatedBosses.filter(boss => !boss.defeated);
-                const totalBosses = character.defeatedBosses.length;
                 const isTainted = character.id >= 474;
+                const totalBosses = character.defeatedBosses.length;
                 
                 bossesList = `
                     <div class="bosses-section">
                         <div class="bosses-title">
-                            ${isTainted ? 'Убитые боссы (объединенные достижения)' : 'Убитые боссы'} (${defeatedBosses.length}/${totalBosses})
+                            ${isTainted ? 'Убитые боссы (объединенные достижения)' : 'Убитые боссы'} (${character.defeatedBosses.length}/${totalBosses})
                         </div>
                         <div class="bosses-list">
-                            ${defeatedBosses.map(boss => {
-                                const bossIconPath = this.getBossIcon(boss.name);
+                            ${character.defeatedBosses.map(bossName => {
+                                const bossIconPath = this.getBossIcon(bossName);
                                 const iconHtml = bossIconPath ? 
-                                    `<img src="${bossIconPath}" alt="${boss.name}" class="boss-icon" 
+                                    `<img src="${bossIconPath}" alt="${bossName}" class="boss-icon" 
                                           onload="this.style.width=this.naturalWidth+'px'; this.style.height=this.naturalHeight+'px';" 
                                           onerror="this.style.display='none'">` : '';
-                                return `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''} ${boss.isConditional ? 'conditional-boss' : ''}">
-                                    ${iconHtml}${boss.name}
+                                return `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''}">
+                                    ${iconHtml}${bossName}
                                 </span>`;
                             }).join('')}
                         </div>
-                        ${defeatedBosses.length === 0 ? 
+                        ${character.defeatedBosses.length === 0 ? 
                             '<div class="no-bosses">Нет убитых боссов</div>' : 
                             ''
                         }
-                        
-                        ${undefeatedBosses.length > 0 ? `
-                            <div class="bosses-title" style="margin-top: 12px; color: #a0aec0;">
-                                Не убитые боссы (${undefeatedBosses.length}/${totalBosses})
-                            </div>
-                            <div class="bosses-list">
-                                ${undefeatedBosses.map(boss => {
-                                    const bossIconPath = this.getBossIcon(boss.name);
-                                    const iconHtml = bossIconPath ? 
-                                        `<img src="${bossIconPath}" alt="${boss.name}" class="boss-icon" 
-                                              onload="this.style.width=this.naturalWidth+'px'; this.style.height=this.naturalHeight+'px';" 
-                                              onerror="this.style.display='none'">` : '';
-                                    return `<span class="boss-tag undefeated-boss ${isTainted ? 'tainted-boss' : ''}">
-                                        ${iconHtml}${boss.name}
-                                    </span>`;
-                                }).join('')}
-                            </div>
-                        ` : ''}
                     </div>
                 `;
             }
@@ -1006,26 +986,25 @@ class IsaacAchievementParser {
                     border-radius: 8px;
                     border: 2px solid #4a5568;
                     flex-shrink: 0;
-                    position: absolute;
-                    top: 16px;
-                    right: 16px;
                 "></div>
             `;
             
             div.innerHTML = `
-                <div class="character-content" style="flex: 1; display: flex; flex-direction: column; padding-right: 100px;">
-                    <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3">
-                        ${character.name}
+                <div class="character-main-info" style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px;">
+                    <div class="character-text-info" style="flex: 1;">
+                        <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3">
+                            ${character.name}
+                        </div>
+                        <div class="character-status" style="color: ${character.unlocked ? '#ffd700' : '#4c566a'};">
+                            ${character.unlocked ? '✓ РАЗБЛОКИРОВАН' : '✗ ЗАБЛОКИРОВАН'}
+                        </div>
+                        <div class="character-unlock-condition">
+                            ${character.unlockCondition}
+                        </div>
                     </div>
-                    <div class="character-status" style="color: ${character.unlocked ? '#ffd700' : '#4c566a'};">
-                        ${character.unlocked ? '✓ РАЗБЛОКИРОВАН' : '✗ ЗАБЛОКИРОВАН'}
-                    </div>
-                    <div class="character-unlock-condition">
-                        ${character.unlockCondition}
-                    </div>
-                    ${bossesList}
+                    ${characterIconHtml}
                 </div>
-                ${characterIconHtml}
+                ${bossesList}
             `;
             container.appendChild(div);
         });

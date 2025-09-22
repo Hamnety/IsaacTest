@@ -615,9 +615,7 @@ input[type="file"] {
 .item-card.character-card {
     min-height: 250px;
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    position: relative;
+    flex-direction: column;
 }
 
 .character-status {
@@ -641,9 +639,18 @@ input[type="file"] {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
-    position: absolute;
-    top: 16px;
-    right: 16px;
+    flex-shrink: 0;
+}
+
+.character-main-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.character-text-info {
+    flex: 1;
 }
 
 .character-unlock-condition {
