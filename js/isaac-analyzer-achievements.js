@@ -945,30 +945,50 @@ class IsaacAchievementParser {
             // Создаем список убитых и не убитых боссов
             let bossesList = '';
             if (character.defeatedBosses && character.defeatedBosses.length > 0) {
-                const isTainted = character.id >= 474;
+                const defeatedBosses = character.defeatedBosses.filter(boss => boss.defeated);
+                const undefeatedBosses = character.defeatedBosses.filter(boss => !boss.defeated);
                 const totalBosses = character.defeatedBosses.length;
+                const isTainted = character.id >= 474;
                 
                 bossesList = `
                     <div class="bosses-section">
                         <div class="bosses-title">
-                            ${isTainted ? 'Убитые боссы (объединенные достижения)' : 'Убитые боссы'} (${character.defeatedBosses.length}/${totalBosses})
+                            ${isTainted ? 'Убитые боссы (объединенные достижения)' : 'Убитые боссы'} (${defeatedBosses.length}/${totalBosses})
                         </div>
                         <div class="bosses-list">
-                            ${character.defeatedBosses.map(bossName => {
-                                const bossIconPath = this.getBossIcon(bossName);
+                            ${defeatedBosses.map(boss => {
+                                const bossIconPath = this.getBossIcon(boss.name);
                                 const iconHtml = bossIconPath ? 
-                                    `<img src="${bossIconPath}" alt="${bossName}" class="boss-icon" 
+                                    `<img src="${bossIconPath}" alt="${boss.name}" class="boss-icon" 
                                           onload="this.style.width=this.naturalWidth+'px'; this.style.height=this.naturalHeight+'px';" 
                                           onerror="this.style.display='none'">` : '';
-                                return `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''}">
-                                    ${iconHtml}${bossName}
+                                return `<span class="boss-tag ${isTainted ? 'tainted-boss' : ''} ${boss.isConditional ? 'conditional-boss' : ''}">
+                                    ${iconHtml}${boss.name}
                                 </span>`;
                             }).join('')}
                         </div>
-                        ${character.defeatedBosses.length === 0 ? 
+                        ${defeatedBosses.length === 0 ? 
                             '<div class="no-bosses">Нет убитых боссов</div>' : 
                             ''
                         }
+                        
+                        ${undefeatedBosses.length > 0 ? `
+                            <div class="bosses-title" style="margin-top: 12px; color: #a0aec0;">
+                                Не убитые боссы (${undefeatedBosses.length}/${totalBosses})
+                            </div>
+                            <div class="bosses-list">
+                                ${undefeatedBosses.map(boss => {
+                                    const bossIconPath = this.getBossIcon(boss.name);
+                                    const iconHtml = bossIconPath ? 
+                                        `<img src="${bossIconPath}" alt="${boss.name}" class="boss-icon" 
+                                              onload="this.style.width=this.naturalWidth+'px'; this.style.height=this.naturalHeight+'px';" 
+                                              onerror="this.style.display='none'">` : '';
+                                    return `<span class="boss-tag undefeated-boss ${isTainted ? 'tainted-boss' : ''}">
+                                        ${iconHtml}${boss.name}
+                                    </span>`;
+                                }).join('')}
+                            </div>
+                        ` : ''}
                     </div>
                 `;
             }
