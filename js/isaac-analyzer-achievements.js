@@ -428,7 +428,7 @@ class IsaacAchievementParser {
     }
 
     getCharacterIcon(characterId) {
-        const characterData = ISAAC_GAME_DATA.characters[characterId];
+        const characterData = ISAAC_GAME_DATA.characterData[characterId];
         if (characterData && characterData.iconId !== undefined) {
             return `img/characters/${characterData.iconId}.png`;
         }
@@ -436,8 +436,8 @@ class IsaacAchievementParser {
     }
 
     getCharacterName(characterId) {
-        if (ISAAC_GAME_DATA.characters[characterId]) {
-            return ISAAC_GAME_DATA.characters[characterId].name;
+        if (ISAAC_GAME_DATA.characterData[characterId]) {
+            return ISAAC_GAME_DATA.characterData[characterId].name;
         }
         return `#${characterId} Character`;
     }
@@ -473,12 +473,14 @@ class IsaacAchievementParser {
         this.analysisResults.characters = [];
         let unlockedCharacters = 0;
         
-        for (const [characterId, characterData] of Object.entries(ISAAC_GAME_DATA.characters)) {
-            const id = parseInt(characterId);
+        for (const characterId of ISAAC_GAME_DATA.characters) {
+            const characterData = ISAAC_GAME_DATA.characterData[characterId];
+            if (!characterData) continue;
+            
             let isUnlocked = false;
             
             // Исаак (ID 0) доступен с самого начала
-            if (id === 0) {
+            if (characterId === 0) {
                 isUnlocked = true;
             } else {
                 // Остальные персонажи разблокируются через достижения
@@ -488,12 +490,12 @@ class IsaacAchievementParser {
             if (isUnlocked) unlockedCharacters++;
             
             this.analysisResults.characters.push({
-                id: id,
+                id: characterId,
                 name: characterData.name,
                 unlocked: isUnlocked,
                 unlockCondition: this.getAchievementUnlockCondition(characterData.unlockAchievement),
-                completionMarks: this.getCharacterCompletionMarks(id, isUnlocked),
-                defeatedBosses: this.getCharacterDefeatedBosses(id)
+                completionMarks: this.getCharacterCompletionMarks(characterId, isUnlocked),
+                defeatedBosses: this.getCharacterDefeatedBosses(characterId)
             });
         }
         
@@ -644,7 +646,7 @@ class IsaacAchievementParser {
 
     getCharacterDefeatedBosses(characterId) {
         // Получаем ID боссов для персонажа
-        const characterData = ISAAC_GAME_DATA.characters[characterId];
+        const characterData = ISAAC_GAME_DATA.characterData[characterId];
         if (!characterData) {
             return [];
         }
@@ -698,7 +700,7 @@ class IsaacAchievementParser {
         const conditions = ISAAC_GAME_DATA.taintedHeartConditions;
         
         // Проверяем условие 1: Комната вызова + Hush
-        const characterData = ISAAC_GAME_DATA.characters[characterId];
+        const characterData = ISAAC_GAME_DATA.characterData[characterId];
         if (!characterData) return false;
         
         // Находим индекс персонажа в массиве порченных персонажей (474-490)
@@ -717,9 +719,10 @@ class IsaacAchievementParser {
     
     getCharacterIndex(achievementId) {
         // Ищем персонажа по ID достижения разблокировки
-        for (const [characterId, characterData] of Object.entries(ISAAC_GAME_DATA.characters)) {
-            if (characterData.unlockAchievement === achievementId) {
-                return parseInt(characterId);
+        for (const characterId of ISAAC_GAME_DATA.characters) {
+            const characterData = ISAAC_GAME_DATA.characterData[characterId];
+            if (characterData && characterData.unlockAchievement === achievementId) {
+                return characterId;
             }
         }
         return null;
