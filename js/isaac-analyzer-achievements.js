@@ -657,7 +657,6 @@ class IsaacAchievementParser {
         }
         
         // Для обычных боссов нужно найти достижение конкретно для этого персонажа
-        // Ищем достижение в bossAchievements персонажа, которое соответствует этому боссу
         const characterBossAchievements = characterData.bossAchievements;
         
         // Фильтруем достижения босса, оставляя только те, которые есть у персонажа
@@ -665,6 +664,8 @@ class IsaacAchievementParser {
             characterBossAchievements.includes(achievementId)
         );
         
+        // Если не найдено ни одного релевантного достижения, возвращаем пустой массив
+        // Это означает, что у этого персонажа нет достижений для данного босса
         return relevantAchievements;
     }
 
@@ -694,6 +695,11 @@ class IsaacAchievementParser {
             
             // Получаем достижения для этого персонажа и босса
             const characterAchievements = this.getCharacterBossAchievements(characterId, bossKey);
+            
+            // Если у персонажа нет достижений для этого босса, пропускаем его
+            if (characterAchievements.length === 0) {
+                continue;
+            }
             
             // Проверяем, убит ли босс (есть ли хотя бы одно разблокированное достижение для этого персонажа)
             let isDefeated = false;
