@@ -493,7 +493,7 @@ class IsaacAchievementParser {
                 unlocked: isUnlocked,
                 unlockCondition: this.getAchievementUnlockCondition(characterData.unlockAchievement),
                 completionMarks: this.getCharacterCompletionMarks(id, isUnlocked),
-                defeatedBosses: this.getCharacterDefeatedBosses(id)
+                defeatedBosses: this.getCharacterDefeatedBosses(id, isUnlocked)
             });
         }
         
@@ -627,7 +627,7 @@ class IsaacAchievementParser {
         if (!isUnlocked) return [];
         
         // Получаем данные о боссах для персонажа
-        const bossData = this.getCharacterDefeatedBosses(characterId);
+        const bossData = this.getCharacterDefeatedBosses(characterId, isUnlocked);
         const marks = [];
         
         // Проверяем основные боссы
@@ -642,10 +642,15 @@ class IsaacAchievementParser {
         return marks;
     }
 
-    getCharacterDefeatedBosses(characterId) {
+    getCharacterDefeatedBosses(characterId, isUnlocked = true) {
         // Получаем ID боссов для персонажа
         const characterData = ISAAC_GAME_DATA.characters[characterId];
         if (!characterData) {
+            return [];
+        }
+        
+        // Если персонаж не разблокирован, не показываем убитых боссов
+        if (!isUnlocked) {
             return [];
         }
         
