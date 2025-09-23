@@ -642,6 +642,32 @@ class IsaacAchievementParser {
         return marks;
     }
 
+    getCharacterBossAchievements(characterId, bossKey) {
+        const characterData = ISAAC_GAME_DATA.characters[characterId];
+        if (!characterData) return [];
+        
+        const bossData = ISAAC_GAME_DATA.bosses[bossKey];
+        if (!bossData) return [];
+        
+        const isTainted = characterId >= 474;
+        
+        // Для объединенных достижений порченных персонажей возвращаем все достижения
+        if (bossData.isTainted && (bossKey === "Сатана + ??? + Айзек + Агнец" || bossKey === "Комната вызова + Хаш")) {
+            return bossData.achievementIds;
+        }
+        
+        // Для обычных боссов нужно найти достижение конкретно для этого персонажа
+        // Ищем достижение в bossAchievements персонажа, которое соответствует этому боссу
+        const characterBossAchievements = characterData.bossAchievements;
+        
+        // Фильтруем достижения босса, оставляя только те, которые есть у персонажа
+        const relevantAchievements = bossData.achievementIds.filter(achievementId => 
+            characterBossAchievements.includes(achievementId)
+        );
+        
+        return relevantAchievements;
+    }
+
     getCharacterDefeatedBosses(characterId, isUnlocked = true) {
         // Получаем ID боссов для персонажа
         const characterData = ISAAC_GAME_DATA.characters[characterId];
@@ -666,9 +692,12 @@ class IsaacAchievementParser {
             // Пропускаем "Режим жадности" для порченных персонажей
             if (isTainted && bossKey === "Режим жадности") continue;
             
-            // Проверяем, убит ли босс (есть ли хотя бы одно разблокированное достижение)
+            // Получаем достижения для этого персонажа и босса
+            const characterAchievements = this.getCharacterBossAchievements(characterId, bossKey);
+            
+            // Проверяем, убит ли босс (есть ли хотя бы одно разблокированное достижение для этого персонажа)
             let isDefeated = false;
-            for (const achievementId of bossData.achievementIds) {
+            for (const achievementId of characterAchievements) {
                 if (this.analysisResults.achievements[achievementId - 1]?.unlocked) {
                     isDefeated = true;
                     break;
