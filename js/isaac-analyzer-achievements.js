@@ -959,22 +959,43 @@ class IsaacAchievementParser {
         
         // Показываем ВСЕ достижения одним списком
         allAchievements.forEach(achievement => {
-                    const div = document.createElement('div');
-                    div.className = `item-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
+            const div = document.createElement('div');
+            div.className = `item-card achievement-card ${achievement.unlocked ? 'unlocked' : 'locked'}`;
             
-                    div.innerHTML = `
-                <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 12px; line-height: 1.3;">
-                    #${achievement.id} ${achievement.name}
+            // Создаем иконку достижения
+            const achievementIconPath = `img/achievements/${achievement.id}.png`;
+            const achievementIconHtml = `
+                <div class="achievement-icon" style="
+                    background-image: url('${achievementIconPath}');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 8px;
+                    flex-shrink: 0;
+                "></div>
+            `;
+            
+            div.innerHTML = `
+                <div class="achievement-main-info">
+                    <div class="achievement-text-info">
+                        <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
+                            #${achievement.id} ${achievement.name}
+                        </div>
+                        <div style="color: #a0aec0; font-size: 0.75rem; margin: 4px 0; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">
+                            ${achievement.unlockCondition}
+                        </div>
+                        <div class="status-bottom ${achievement.unlocked ? 'unlocked' : 'locked'}">
+                            ${achievement.unlocked ? '✓ ПОЛУЧЕНО' : '✗ ЗАБЛОКИРОВАНО'}
+                        </div>
+                    </div>
                 </div>
-                <div style="color: #a0aec0; font-size: 0.75rem; margin: 8px 0; line-height: 1.4;">
-                    ${achievement.unlockCondition}
-                </div>
-                <div class="status-bottom ${achievement.unlocked ? 'unlocked' : 'locked'}">
-                    ${achievement.unlocked ? '✓ ПОЛУЧЕНО' : '✗ ЗАБЛОКИРОВАНО'}
-                </div>
-                    `;
+                ${achievementIconHtml}
+            `;
+            
             mainGrid.appendChild(div);
-                });
+        });
         
         container.appendChild(mainGrid);
     }

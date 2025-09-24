@@ -518,10 +518,53 @@ input[type="file"] {
 /* Специальный стиль только для достижений */
 .achievements-grid {
     display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
     gap: 15px !important;
     width: 100% !important;
     grid-auto-rows: min-content !important;
+}
+
+/* Специальные стили для карточек достижений */
+.item-card.achievement-card {
+    flex-direction: row;
+    align-items: center;
+    min-height: 100px;
+    padding: 16px;
+}
+
+.achievement-main-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.achievement-text-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.achievement-icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+.achievement-card .status-bottom {
+    margin-top: 8px;
+    margin-left: 0;
 }
 .item-title{
     letter-spacing: 1px;
