@@ -527,7 +527,7 @@ input[type="file"] {
 /* Специальные стили для карточек достижений */
 .item-card.achievement-card {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100px;
     padding: 16px;
 }
@@ -538,6 +538,7 @@ input[type="file"] {
     flex: 1;
     min-width: 0;
     overflow: hidden;
+    align-items: flex-start;
 }
 
 .achievement-text-info {
@@ -546,6 +547,7 @@ input[type="file"] {
     flex: 1;
     min-width: 0;
     overflow: hidden;
+    align-items: flex-start;
 }
 
 .achievement-icon {
@@ -560,11 +562,14 @@ input[type="file"] {
     image-rendering: crisp-edges;
     flex-shrink: 0;
     margin-left: 16px;
+    align-self: flex-start;
 }
 
 .achievement-card .status-bottom {
     margin-top: 8px;
     margin-left: 0;
+    text-align: left;
+    align-self: flex-start;
 }
 .item-title{
     letter-spacing: 1px;
