@@ -531,7 +531,7 @@ input[type="file"] {
 }
 
 /* Специальный стиль для челленджей */
-#challengesList .challenges-grid {
+.challenges-grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
     gap: 15px !important;

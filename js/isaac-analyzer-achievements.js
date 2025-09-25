@@ -1100,9 +1100,8 @@ class IsaacAchievementParser {
         const container = document.getElementById('challengesList');
         container.innerHTML = '';
         
-        // Создаем один общий контейнер для ВСЕХ челленджей
-        const mainGrid = document.createElement('div');
-        mainGrid.className = 'challenges-grid'; // Используем специальный стиль для челленджей
+        // Убираем класс item-grid и добавляем challenges-grid прямо к контейнеру
+        container.className = 'challenges-grid';
         
         // Собираем ВСЕ челленджи и сортируем по ID
         const allChallenges = [...this.analysisResults.challenges].sort((a, b) => a.id - b.id);
@@ -1153,10 +1152,8 @@ class IsaacAchievementParser {
                 ${challengeIconHtml}
             `;
             
-            mainGrid.appendChild(div);
+            container.appendChild(div);
         });
-        
-        container.appendChild(mainGrid);
     }
 
     updateItemsTab() {
