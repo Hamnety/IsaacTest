@@ -1115,12 +1115,12 @@ class IsaacAchievementParser {
         // Показываем ВСЕ челленджи одним списком
         allChallenges.forEach(challenge => {
             const div = document.createElement('div');
-            div.className = `item-card achievement-card ${challenge.completed ? 'unlocked' : 'locked'}`;
+            div.className = `item-card challenge-card ${challenge.completed ? 'unlocked' : 'locked'}`;
             
             // Создаем иконку челленджа (используем иконку достижения с тем же ID)
             const challengeIconPath = `img/achievements/${challenge.id}.png`;
             const challengeIconHtml = `
-                <div class="achievement-icon" style="
+                <div class="challenge-icon" style="
                     background-image: url('${challengeIconPath}');
                     background-size: contain;
                     background-repeat: no-repeat;
@@ -1133,8 +1133,8 @@ class IsaacAchievementParser {
             `;
             
             div.innerHTML = `
-                <div class="achievement-main-info">
-                    <div class="achievement-text-info">
+                <div class="challenge-main-info">
+                    <div class="challenge-text-info">
                         <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
                             #${challenge.id} ${challenge.name}
                         </div>
