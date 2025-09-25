@@ -396,8 +396,8 @@ class IsaacAchievementParser {
 
     getChallengeName(id) {
         // Проверяем, есть ли название челленджа в наших данных
-        if (ISAAC_GAME_DATA.challengeNames[id]) {
-            return ISAAC_GAME_DATA.challengeNames[id];
+        if (ISAAC_GAME_DATA.challenges[id]) {
+            return ISAAC_GAME_DATA.challenges[id].name;
         }
         return `Challenge #${id}`;
     }
@@ -1115,7 +1115,10 @@ class IsaacAchievementParser {
             const challengeData = ISAAC_GAME_DATA.challenges[challenge.id];
             const challengeName = challengeData ? challengeData.name : challenge.name;
             const unlockCondition = challengeData ? challengeData.unlockCondition : challenge.unlockCondition;
-            const achievementName = challengeData ? challengeData.achievementName : challenge.name;
+            
+            // Получаем название достижения из базы достижений по achievementId
+            const achievementId = challengeData ? challengeData.achievementId : challenge.id;
+            const achievementName = this.analysisResults.achievements[achievementId - 1]?.name || challenge.name;
             
             // Создаем иконку достижения
             const achievementIconPath = `img/achievements/${challenge.id}.png`;
