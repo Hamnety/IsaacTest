@@ -524,6 +524,15 @@ input[type="file"] {
     grid-auto-rows: min-content !important;
 }
 
+/* Специальный стиль для челленджей */
+.challenges-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 15px !important;
+    width: 100% !important;
+    grid-auto-rows: min-content !important;
+}
+
 /* Специальные стили для карточек достижений */
 .item-card.achievement-card {
     flex-direction: row;

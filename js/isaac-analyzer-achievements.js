@@ -1102,12 +1102,7 @@ class IsaacAchievementParser {
         
         // Создаем один общий контейнер для ВСЕХ челленджей
         const mainGrid = document.createElement('div');
-        mainGrid.className = 'achievements-grid'; // Используем тот же стиль что и для достижений
-        mainGrid.style.display = 'grid';
-        mainGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
-        mainGrid.style.gap = '15px';
-        mainGrid.style.width = '100%';
-        mainGrid.style.gridAutoRows = 'min-content';
+        mainGrid.className = 'challenges-grid'; // Используем специальный стиль для челленджей
         
         // Собираем ВСЕ челленджи и сортируем по ID
         const allChallenges = [...this.analysisResults.challenges].sort((a, b) => a.id - b.id);
