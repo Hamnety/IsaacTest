@@ -502,16 +502,15 @@ class IsaacAchievementParser {
         let completedChallenges = 0;
         
         for (const challengeId of ISAAC_GAME_DATA.challengeIds) {
-            const challengeData = ISAAC_GAME_DATA.challenges[challengeId];
-            const isCompleted = this.analysisResults.achievements[challengeData.achievementId-1]?.unlocked || false;
+            const isCompleted = this.analysisResults.achievements[challengeId-1]?.unlocked || false;
             
             if (isCompleted) completedChallenges++;
             
             this.analysisResults.challenges.push({
                 id: challengeId,
-                name: challengeData.name,
+                name: this.getChallengeName(challengeId),
                 completed: isCompleted,
-                unlockCondition: challengeData.unlockCondition
+                unlockCondition: this.getAchievementUnlockCondition(challengeId)
             });
         }
         
@@ -1103,7 +1102,12 @@ class IsaacAchievementParser {
         
         // Создаем один общий контейнер для ВСЕХ челленджей
         const mainGrid = document.createElement('div');
-        mainGrid.className = 'challenges-grid'; // Используем специальный класс для челленджей
+        mainGrid.className = 'achievements-grid'; // Используем тот же стиль что и для достижений
+        mainGrid.style.display = 'grid';
+        mainGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+        mainGrid.style.gap = '15px';
+        mainGrid.style.width = '100%';
+        mainGrid.style.gridAutoRows = 'min-content';
         
         // Собираем ВСЕ челленджи и сортируем по ID
         const allChallenges = [...this.analysisResults.challenges].sort((a, b) => a.id - b.id);
@@ -1113,13 +1117,15 @@ class IsaacAchievementParser {
             const div = document.createElement('div');
             div.className = `item-card challenge-card ${challenge.completed ? 'unlocked' : 'locked'}`;
             
-            // Получаем данные челленджа из новой структуры
+            // Получаем данные о челлендже из новой структуры
             const challengeData = ISAAC_GAME_DATA.challenges[challenge.id];
-            const achievementData = this.analysisResults.achievements.find(a => a.id === challengeData?.achievementId);
+            const challengeName = challengeData ? challengeData.name : challenge.name;
+            const unlockCondition = challengeData ? challengeData.unlockCondition : challenge.unlockCondition;
+            const achievementName = challengeData ? challengeData.achievementName : challenge.name;
             
             // Создаем иконку достижения
-            const achievementIconPath = `img/achievements/${challengeData?.achievementId || challenge.id}.png`;
-            const achievementIconHtml = `
+            const achievementIconPath = `img/achievements/${challenge.id}.png`;
+            const challengeIconHtml = `
                 <div class="challenge-icon" style="
                     background-image: url('${achievementIconPath}');
                     background-size: contain;
@@ -1136,20 +1142,20 @@ class IsaacAchievementParser {
                 <div class="challenge-main-info">
                     <div class="challenge-text-info">
                         <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
-                            ${challengeData?.name || challenge.name}
+                            ${challengeName}
                         </div>
-                        <div class="challenge-unlock-condition">
-                            Как открыть: ${challengeData?.unlockCondition || challenge.unlockCondition}
+                        <div class="challenge-unlock-condition" style="word-wrap: break-word; overflow-wrap: break-word;">
+                            Как открыть: ${unlockCondition}
                         </div>
-                        <div class="challenge-reward">
-                            Открывает: ${achievementData?.name || 'Неизвестная награда'}
+                        <div class="challenge-reward" style="word-wrap: break-word; overflow-wrap: break-word;">
+                            Открывает: ${achievementName}
                         </div>
                         <div class="status-bottom ${challenge.completed ? 'unlocked' : 'locked'}">
                             ${challenge.completed ? '✓ ЗАВЕРШЕН' : '✗ НЕ ЗАВЕРШЕН'}
                         </div>
                     </div>
                 </div>
-                ${achievementIconHtml}
+                ${challengeIconHtml}
             `;
             
             mainGrid.appendChild(div);

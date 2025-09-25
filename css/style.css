@@ -524,15 +524,6 @@ input[type="file"] {
     grid-auto-rows: min-content !important;
 }
 
-/* Специальный стиль для челленджей - одна колонка */
-.challenges-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
-    width: 100% !important;
-    grid-auto-rows: min-content !important;
-}
-
 /* Специальные стили для карточек достижений */
 .item-card.achievement-card {
     flex-direction: row;
@@ -585,7 +576,7 @@ input[type="file"] {
 .item-card.challenge-card {
     flex-direction: row;
     align-items: flex-start;
-    min-height: 100px;
+    min-height: 120px;
     padding: 16px;
 }
 
