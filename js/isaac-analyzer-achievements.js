@@ -1393,7 +1393,16 @@ class IsaacAchievementParser {
         const tab = document.getElementById(tabId);
         if (!tab) return;
 
-        const container = tab.querySelector('.item-grid, #achievementsList');
+        // Ищем контейнер в зависимости от типа данных
+        let container;
+        if (dataType === 'achievements') {
+            container = tab.querySelector('#achievementsList');
+        } else if (dataType === 'challenges') {
+            container = tab.querySelector('.challenges-grid');
+        } else {
+            container = tab.querySelector('.item-grid');
+        }
+        
         if (!container) return;
 
         const items = container.querySelectorAll('.item-card, .achievement-category');
