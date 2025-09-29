@@ -37,7 +37,7 @@ const ISAAC_GAME_DATA = {
         480: { name: "Порченный Самсон", unlockAchievement: 480, bossAchievements: [560, 624, 607, 590, 535, 561, 497], iconId: 23 },
         481: { name: "Порченный Азазель", unlockAchievement: 481, bossAchievements: [548, 618, 601, 584, 541, 549, 498], iconId: 24 },
         482: { name: "Порченный Лазарь", unlockAchievement: 482, bossAchievements: [562, 625, 608, 591, 539, 563, 491], iconId: 25 },
-        483: { name: "Порченный Иден", unlockAchievement: 483, bossAchievements: [566, 627, 610, 583, 544, 567, 500], iconId: 26 },
+        483: { name: "Порченный Иден", unlockAchievement: 483, bossAchievements: [566, 627, 610, 593, 544, 567, 500], iconId: 26 },
         484: { name: "Порченный Лост", unlockAchievement: 484, bossAchievements: [568, 628, 611, 594, 524, 569, 501], iconId: 27 },
         485: { name: "Порченный Лилит", unlockAchievement: 485, bossAchievements: [570, 629, 612, 595, 526, 571, 502], iconId: 28 },
         486: { name: "Порченный Хранитель", unlockAchievement: 486, bossAchievements: [572, 630, 613, 596, 536, 573, 503], iconId: 29 },
@@ -131,7 +131,7 @@ const ISAAC_GAME_DATA = {
         "Делириум": { 
             name: "Делириум", 
             iconId: 13, 
-            achievementIds: [282, 283, 284, 285, 286, 288, 287, 291, 290, 289, 292, 294, 295, 401, 425, 437, 584, 585, 586, 587, 588, 589, 590, 591, 583, 594, 595, 596, 597, 598, 599, 600],
+            achievementIds: [282, 283, 284, 285, 286, 288, 287, 291, 290, 289, 292, 294, 295, 401, 425, 437, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600],
             isTainted: false
         },
         "Режим жадности": { 
