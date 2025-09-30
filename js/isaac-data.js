@@ -9,6 +9,7 @@ const ISAAC_GAME_DATA = {
     // Единая структура персонажей
     characters: {
         // Обычные персонажи
+        // Сатана, ???, Босс раш, Айзек, Агнец, Сердце мамы (сложн. режим), Хаш, Мега сатана, Делириум, Режим жадности, Ультра режим жадности, Матерь, Бист
         0: { name: "Айзек", unlockAchievement: null, bossAchievements: [43, 49, 70, 106, 149, 169, 179, 205, 282, 192, 296, 440, 441], iconId: 0 },
         1: { name: "Магдалена", unlockAchievement: 1, bossAchievements: [45, 50, 109, 20, 71, 168, 180, 206, 283, 193, 297, 442, 443], iconId: 1 },
         2: { name: "Кайн", unlockAchievement: 2, bossAchievements: [46, 75, 110, 21, 51, 171, 181, 207, 284, 194, 298, 444, 445], iconId: 2 },
@@ -28,15 +29,22 @@ const ISAAC_GAME_DATA = {
         405: { name: "Иаков и Исав", unlockAchievement: 405, bossAchievements: [430, 431, 433, 429, 432, 428, 435, 439, 437, 434, 436, 472, 473], iconId: 16 },
         
         // Порченные (Tainted) персонажи
+        // Сатана + ??? + Айзек + Агнец,
+        // Босс раш + Хаш
+        // Мега сатана,
+        // Делириум
+        // Ультра режим жадности,
+        // Матерь,
+        // Бист
         474: { name: "Порченный Айзек", unlockAchievement: 474, bossAchievements: [548, 618, 601, 584, 541, 549, 491], iconId: 17 },
         475: { name: "Порченная Магдалена", unlockAchievement: 475, bossAchievements: [550, 619, 602, 585, 530, 551, 492], iconId: 18 },
-        476: { name: "Порченный Кайн", unlockAchievement: 476, bossAchievements: [552, 620, 603, 586, 543, 553, 493], iconId: 19 },
-        477: { name: "Порченный Иуда", unlockAchievement: 477, bossAchievements: [554, 621, 604, 587, 545, 555, 494], iconId: 20 },
+        476: { name: "Порченный Кайн", unlockAchievement: 476, bossAchievements: [552, 620, 603, 586, 534, 553, 493], iconId: 19 },
+        477: { name: "Порченный Иуда", unlockAchievement: 477, bossAchievements: [554, 621, 604, 587, 525, 555, 494], iconId: 20 },
         478: { name: "Порченный ???", unlockAchievement: 478, bossAchievements: [556, 622, 605, 588, 528, 557, 495], iconId: 21 },
         479: { name: "Порченная Ева", unlockAchievement: 479, bossAchievements: [558, 623, 606, 589, 527, 559, 496], iconId: 22 },
         480: { name: "Порченный Самсон", unlockAchievement: 480, bossAchievements: [560, 624, 607, 590, 535, 561, 497], iconId: 23 },
-        481: { name: "Порченный Азазель", unlockAchievement: 481, bossAchievements: [548, 618, 601, 584, 541, 549, 498], iconId: 24 },
-        482: { name: "Порченный Лазарь", unlockAchievement: 482, bossAchievements: [562, 625, 608, 591, 539, 563, 491], iconId: 25 },
+        481: { name: "Порченный Азазель", unlockAchievement: 481, bossAchievements: [562, 625, 608, 591, 539, 563, 498], iconId: 25 },
+        482: { name: "Порченный Лазарь", unlockAchievement: 482, bossAchievements: [564, 626, 609, 592, 543, 565, 499], iconId: 24 },
         483: { name: "Порченный Иден", unlockAchievement: 483, bossAchievements: [566, 627, 610, 593, 544, 567, 500], iconId: 26 },
         484: { name: "Порченный Лост", unlockAchievement: 484, bossAchievements: [568, 628, 611, 594, 524, 569, 501], iconId: 27 },
         485: { name: "Порченный Лилит", unlockAchievement: 485, bossAchievements: [570, 629, 612, 595, 526, 571, 502], iconId: 28 },
