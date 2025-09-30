@@ -69,34 +69,13 @@ body {
     gap: 15px;
 }
 
-.skull-icon {
+.logo-icon {
     width: 40px;
     height: 40px;
-    background: #4c566a;
-    border: 2px solid #e2e8f0;
-    position: relative;
-}
-
-.skull-icon::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    width: 8px;
-    height: 8px;
-    background: #e2e8f0;
-    border-radius: 50%;
-}
-
-.skull-icon::after {
-    content: '';
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 8px;
-    height: 8px;
-    background: #e2e8f0;
-    border-radius: 50%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 h1 {
