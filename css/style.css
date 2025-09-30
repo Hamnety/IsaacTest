@@ -309,9 +309,8 @@ h1 {
 }
 
 .file-location-simple span {
-    font-family: 'Courier New', monospace;
-    word-break: break-all;
-    text-align: center;
+    color: #a6adc8;
+    opacity: 0.7;
 }
 
 input[type="file"] {
