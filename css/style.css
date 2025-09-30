@@ -455,8 +455,16 @@ input[type="file"] {
 
 .filter-controls {
     display: flex;
-    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 8px;
     flex-wrap: wrap;
 }
 
@@ -1014,6 +1022,21 @@ input[type="file"] {
 
     .file-location-simple span {
         font-size: 0.75rem;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .export-button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 
     .stats-grid {

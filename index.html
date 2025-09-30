@@ -103,12 +103,6 @@
                 </div>
             </div>
 
-            <div class="export-section">
-                <button class="export-button" id="generateMissingItemsImage">
-                    <i class="fas fa-image"></i>
-                    Сгенерировать изображение не найденных предметов
-                </button>
-            </div>
 
             <div class="details-section">
                 <div class="details-tabs">
@@ -142,9 +136,15 @@
 
                 <div class="tab-content" id="itemsTab">
                     <div class="filter-controls">
-                        <button class="filter-button active" data-filter="all">Все</button>
-                        <button class="filter-button" data-filter="found">Найденные</button>
-                        <button class="filter-button" data-filter="missing">Не найденные</button>
+                        <div class="filter-buttons">
+                            <button class="filter-button active" data-filter="all">Все</button>
+                            <button class="filter-button" data-filter="found">Найденные</button>
+                            <button class="filter-button" data-filter="missing">Не найденные</button>
+                        </div>
+                        <button class="export-button" id="generateMissingItemsImage">
+                            <i class="fas fa-image"></i>
+                            Сгенерировать изображение не найденных предметов
+                        </button>
                     </div>
                     <div class="item-grid" id="itemsList"></div>
                 </div>
