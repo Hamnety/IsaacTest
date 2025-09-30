@@ -15,6 +15,7 @@ class IsaacAchievementParser {
         };
         this.loadedTabs = new Set(); // Кэш загруженных вкладок
         this.isGeneratingImage = false; // Флаг генерации изображения
+        this.activeFilters = {}; // Сохраняем активные фильтры для каждой вкладки
         
         // Инициализируем данные игры
         this.gameData = null;
@@ -130,6 +131,9 @@ class IsaacAchievementParser {
 
         // Очищаем все вкладки при загрузке нового файла
         this.clearAllTabs();
+        
+        // Сбрасываем сохраненные фильтры
+        this.activeFilters = {};
 
         try {
             this.showFileInfo(file);
@@ -1314,6 +1318,30 @@ class IsaacAchievementParser {
         
         // Инициализируем фильтры для активной вкладки
         this.initializeFilters();
+        
+        // Применяем сохраненный фильтр для этой вкладки
+        const tabId = `${tabName}Tab`;
+        const savedFilter = this.activeFilters[tabId];
+        if (savedFilter && savedFilter !== 'all') {
+            // Определяем тип данных для вкладки
+            let dataType;
+            switch(tabName) {
+                case 'achievements':
+                    dataType = 'achievements';
+                    break;
+                case 'challenges':
+                    dataType = 'challenges';
+                    break;
+                case 'items':
+                    dataType = 'items';
+                    break;
+                default:
+                    return; // Для персонажей фильтров нет
+            }
+            
+            // Применяем сохраненный фильтр
+            this.applyFilter(tabId, dataType, savedFilter);
+        }
     }
 
     clearTabContent(tabName) {
@@ -1375,6 +1403,17 @@ class IsaacAchievementParser {
         if (!tab) return;
 
         const filterButtons = tab.querySelectorAll('.filter-button');
+        
+        // Восстанавливаем активный фильтр для этой вкладки
+        const savedFilter = this.activeFilters[tabId] || 'all';
+        filterButtons.forEach(btn => {
+            if (btn.dataset.filter === savedFilter) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 // Убираем активный класс со всех кнопок в этой вкладке
@@ -1382,8 +1421,11 @@ class IsaacAchievementParser {
                 // Добавляем активный класс к нажатой кнопке
                 button.classList.add('active');
                 
-                // Применяем фильтр
+                // Сохраняем активный фильтр
                 const filter = button.dataset.filter;
+                this.activeFilters[tabId] = filter;
+                
+                // Применяем фильтр
                 this.applyFilter(tabId, dataType, filter);
             });
         });
