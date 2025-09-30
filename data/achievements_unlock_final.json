@@ -10,23 +10,23 @@
         },
         "3": {
             "name": "Judas",
-            "unlock": "Победите Сатану/Satan"
+            "unlock": "Победите Сатану"
         },
         "4": {
             "name": "The Womb",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "5": {
             "name": "The Harbingers",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "6": {
             "name": "A Cube of Meat",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "7": {
             "name": "The Book of Revelations",
-            "unlock": "Победите Предвестника/Harbinger"
+            "unlock": "Победите Предвестника"
         },
         "8": {
             "name": "A Noose",
@@ -34,15 +34,15 @@
         },
         "9": {
             "name": "The Nail",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Азазеля/Azazel"
+            "unlock": "Завершите Босс раш за Азазеля"
         },
         "10": {
             "name": "A Quater",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 8 раз"
+            "unlock": "Победите Сердце Мамы 8 раз"
         },
         "11": {
             "name": "A Fetus in a Jar",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 9 раз"
+            "unlock": "Победите Сердце Мамы 9 раз"
         },
         "12": {
             "name": "A Small Rock",
@@ -58,7 +58,7 @@
         },
         "15": {
             "name": "Loki's Horns",
-            "unlock": "Победите Локии/Lokii"
+            "unlock": "Победите Локии"
         },
         "16": {
             "name": "Something from the future",
@@ -74,31 +74,31 @@
         },
         "19": {
             "name": "A Bandage",
-            "unlock": "Соберите Super Bandage Girl путём сбора 4 Шаров из Пластырей/Ball of Bangage"
+            "unlock": "Соберите Super Bandage Girl путём сбора 4 Шаров из Пластырей"
         },
         "20": {
             "name": "A Cross",
-            "unlock": "Победите Исаака/Isaac за Магдалину/Magdalene"
+            "unlock": "Победите Айзека за Магдалену"
         },
         "21": {
             "name": "A Bag of Pennies",
-            "unlock": "Победите Исаака/Isaac за Каина/Cain"
+            "unlock": "Победите Айзека за Кайна"
         },
         "22": {
             "name": "The Book of Sin",
-            "unlock": "Победите 7 Смертных Грехов/7 Deadly Sins"
+            "unlock": "Победите 7 Смертных Грехов"
         },
         "23": {
             "name": "Little Gish",
-            "unlock": "Победите Гиша/Gish"
+            "unlock": "Победите Гиша"
         },
         "24": {
             "name": "Little Steven",
-            "unlock": "Победите Стивена/Steven"
+            "unlock": "Победите Стивена"
         },
         "25": {
             "name": "Little C.H.A.D.",
-            "unlock": "Победите Ч.А.Д.а/C.H.A.D."
+            "unlock": "Победите Ч.А.Д.а"
         },
         "26": {
             "name": "A Gamekid",
@@ -106,7 +106,7 @@
         },
         "27": {
             "name": "A Halo",
-            "unlock": "Победите Маму/Mom, Сердце Мамы/Mom's Heart или Оно Живое!/It lives! с помощью использования Библии/The Bible"
+            "unlock": "Победите Маму, Сердце Мамы или Оно Живое! с помощью использования Библии"
         },
         "28": {
             "name": "Mr. Mega",
@@ -114,7 +114,7 @@
         },
         "29": {
             "name": "The D6",
-            "unlock": "Победите Исаака/Isaac за ???"
+            "unlock": "Победите Айзека за ???"
         },
         "30": {
             "name": "The Scissors",
@@ -122,27 +122,27 @@
         },
         "31": {
             "name": "The Parasite",
-            "unlock": "Поднимите любые 2 предмета, с меткой \"мертвый/dead\", в одном забеге"
+            "unlock": "Поднимите любые 2 предмета, с меткой \"мертвый\", в одном забеге"
         },
         "32": {
             "name": "???",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 10 раз"
+            "unlock": "Победите Сердце Мамы 10 раз"
         },
         "33": {
             "name": "Everything Is Terrible!!!",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 5 раз"
+            "unlock": "Победите Сердце Мамы 5 раз"
         },
         "34": {
             "name": "It Lives!",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 11 раз"
+            "unlock": "Победите Сердце Мамы 11 раз"
         },
         "35": {
             "name": "Mom's Contact",
-            "unlock": "Поднимите любые 3 предмета, с меткой \"мама/mom\", в одном забеге"
+            "unlock": "Поднимите любые 3 предмета, с меткой \"мама\", в одном забеге"
         },
         "36": {
             "name": "The Necronomicon",
-            "unlock": "Используйте карту XIII - Смерть/Death 4 раза"
+            "unlock": "Используйте карту XIII - Смерть 4 раза"
         },
         "37": {
             "name": "Basement Boy",
@@ -162,7 +162,7 @@
         },
         "41": {
             "name": "Golden God!",
-            "unlock": "Победите ??? и Агнца/The Lamb"
+            "unlock": "Победите ??? и Агнца"
         },
         "42": {
             "name": "Eve",
@@ -170,67 +170,67 @@
         },
         "43": {
             "name": "Mom's Knife",
-            "unlock": "Победите Сатану/Satan за Исаака/Isaac"
+            "unlock": "Победите Сатану за Айзека"
         },
         "44": {
             "name": "The Razor",
-            "unlock": "Победите Сатану/Satan за Еву/Eve"
+            "unlock": "Победите Сатану за Еву"
         },
         "45": {
             "name": "Guardian Angel",
-            "unlock": "Победите Сатану/Satan за Магдалину/Magdalene"
+            "unlock": "Победите Сатану за Магдалену"
         },
         "46": {
             "name": "A Bag of Bombs",
-            "unlock": "Победите Сатану/Satan за Каина/Cain"
+            "unlock": "Победите Сатану за Кайна"
         },
         "47": {
             "name": "Demon Baby",
-            "unlock": "Победите Агнца/The Lamb за Азазеля/Azazel"
+            "unlock": "Победите Агнца за Азазеля"
         },
         "48": {
             "name": "Forget Me Now",
-            "unlock": "Победите Сатану/Satan за ???"
+            "unlock": "Победите Сатану за ???"
         },
         "49": {
             "name": "The D20",
-            "unlock": "Победите ??? за Исаака/Isaac"
+            "unlock": "Победите ??? за Айзека"
         },
         "50": {
             "name": "Celtic Cross",
-            "unlock": "Победите ??? за Магдалину/Magdalene"
+            "unlock": "Победите ??? за Магдалену"
         },
         "51": {
             "name": "Abel",
-            "unlock": "Победите Агнца/The Lamb за Каина/Cain"
+            "unlock": "Победите Агнца за Кайна"
         },
         "52": {
             "name": "Curved Horn",
-            "unlock": "Победите Агнца/The Lamb за Иуду/Judas"
+            "unlock": "Победите Агнца за Иуду"
         },
         "53": {
             "name": "Sacrificial Dagger",
-            "unlock": "Победите ??? за Еву/Eve"
+            "unlock": "Победите ??? за Еву"
         },
         "54": {
             "name": "Bloody Lust",
-            "unlock": "Победите Исаака/Isaac за Самсона/Samson"
+            "unlock": "Победите Айзека за Самсона"
         },
         "55": {
             "name": "Blood Penny",
-            "unlock": "Победите ??? за Самсона/Samson"
+            "unlock": "Победите ??? за Самсона"
         },
         "56": {
             "name": "Blood Rights",
-            "unlock": "Победите Сатану/Satan за Самсона/Samson"
+            "unlock": "Победите Сатану за Самсона"
         },
         "57": {
             "name": "The Polaroid",
-            "unlock": "Победите Исаака/Isaac 5 раз"
+            "unlock": "Победите Айзека 5 раз"
         },
         "58": {
             "name": "Dad's Key",
-            "unlock": "Поднимите 2 части ключа Ангела в одном забеге"
+            "unlock": "Поднимите 2 части ключа ангела в одном забеге"
         },
         "59": {
             "name": "Blue Candle",
@@ -238,7 +238,7 @@
         },
         "60": {
             "name": "Burnt Penny",
-            "unlock": "Завершите \"Бобы!/Beans!\" испытание #13"
+            "unlock": "Завершите \"Бобы!\" испытание #13"
         },
         "61": {
             "name": "Lucky Toe",
@@ -246,11 +246,11 @@
         },
         "62": {
             "name": "Epic Fetus",
-            "unlock": "Завершите \"Семьянин/The Family Man\" испытание #19"
+            "unlock": "Завершите \"Семьянин\" испытание #19"
         },
         "63": {
             "name": "SMB Super Fan",
-            "unlock": "Завершите \"Дело в картах/It's in the Cards\" испытание #14"
+            "unlock": "Завершите \"Дело в картах\" испытание #14"
         },
         "64": {
             "name": "Counterfeit Coin",
@@ -258,7 +258,7 @@
         },
         "65": {
             "name": "Guppy's Hairball",
-            "unlock": "Поднимите любые 3 предмета, с меткой \"гаппи/guppy\", в одном забеге"
+            "unlock": "Поднимите любые 3 предмета, с меткой \"Гаппи\", в одном забеге"
         },
         "66": {
             "name": "A Forgotten Horseman",
@@ -270,47 +270,47 @@
         },
         "68": {
             "name": "Something Icky",
-            "unlock": "Победите Исаака/Isaac 10 раз"
+            "unlock": "Победите Айзека 10 раз"
         },
         "69": {
             "name": "!Platinum God!",
-            "unlock": "Добавьте в коллекцию все предметы, и разблокируйте все секреты и концовки из Rebirth (Не учитывая Потерянного/The Lost и 6 разблокируемых им предметов)"
+            "unlock": "Добавьте в коллекцию все предметы, и разблокируйте все секреты и концовки из Rebirth (Не учитывая Лоста и 6 разблокируемых им предметов)"
         },
         "70": {
             "name": "Isaac's Head",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Исаака/Isaac"
+            "unlock": "Завершите Босс раш за Айзека"
         },
         "71": {
             "name": "Maggy's Faith",
-            "unlock": "Победите Агнца/The Lamb за Магдалину/Magdalene"
+            "unlock": "Победите Агнца за Магдалену"
         },
         "72": {
             "name": "Judas' Tongue",
-            "unlock": "Победите Сатану/Satan за Иуду/Judas"
+            "unlock": "Победите Сатану за Иуду"
         },
         "73": {
             "name": "???'s Soul",
-            "unlock": "Победите Агнца/The Lamb за ???"
+            "unlock": "Победите Агнца за ???"
         },
         "74": {
             "name": "Samson's Lock",
-            "unlock": "Победите Агнца/The Lamb за Самсона/Samson"
+            "unlock": "Победите Агнца за Самсона"
         },
         "75": {
             "name": "Cain's Eye",
-            "unlock": "Победите ??? за Каина/Cain"
+            "unlock": "Победите ??? за Кайна"
         },
         "76": {
             "name": "Eve's Bird Foot",
-            "unlock": "Победите Исаака/Isaac за Еву/Eve"
+            "unlock": "Победите Айзека за Еву"
         },
         "77": {
             "name": "The Left Hand",
-            "unlock": "Победите Ультра гордыню/Ultra Pride за любого персонажа, или убить ?????? за Иуду/Judas"
+            "unlock": "Завершите Режим жадности за любого персонажа, или убить ??? за Иуду"
         },
         "78": {
             "name": "The Negative",
-            "unlock": "Победите Сатану/Satan 5 раз"
+            "unlock": "Победите Сатану 5 раз"
         },
         "79": {
             "name": "Azazel",
@@ -330,7 +330,7 @@
         },
         "83": {
             "name": "Dead Boy",
-            "unlock": "Завершите 6 главу Без получения урона"
+            "unlock": "Завершите 6 главу без получения урона"
         },
         "84": {
             "name": "The Real Platinum God",
@@ -354,99 +354,99 @@
         },
         "89": {
             "name": "Rune of Hagalaz",
-            "unlock": "Завершите \"Кромешная тьма/Pitch Black\" испытание #1"
+            "unlock": "Завершите \"Кромешная тьма\" испытание #1"
         },
         "90": {
             "name": "Rune of Jera",
-            "unlock": "Завершите \"Сноб/High Brow\" испытание #2"
+            "unlock": "Завершите \"Сноб\" испытание #2"
         },
         "91": {
             "name": "Rune of Ehwaz",
-            "unlock": "Завершите \"Травма головы/Head Trauma\" испытание #3"
+            "unlock": "Завершите \"Травма головы\" испытание #3"
         },
         "92": {
             "name": "Rune of Dagaz",
-            "unlock": "Завершите \"Тьма наступает/Darkness Falls\" испытание #4"
+            "unlock": "Завершите \"Тьма наступает\" испытание #4"
         },
         "93": {
             "name": "Rune of Ansuz",
-            "unlock": "Завершите \"Танк/The Tank\" испытание #5"
+            "unlock": "Завершите \"Танк\" испытание #5"
         },
         "94": {
             "name": "Rune of Perthro",
-            "unlock": "Завершите \"Солнечная система/Solar System\" испытание #6"
+            "unlock": "Завершите \"Солнечная система\" испытание #6"
         },
         "95": {
             "name": "Rune of Berkano",
-            "unlock": "Завершите \"Чистейший/Purist\" испытание #20"
+            "unlock": "Завершите \"Чистейший\" испытание #20"
         },
         "96": {
             "name": "Rune of Algiz",
-            "unlock": "Завершите \"Язык проглотил/Cat Got Your Tongue\" испытание #8"
+            "unlock": "Завершите \"Язык проглотил\" испытание #8"
         },
         "97": {
             "name": "Chaos Card",
-            "unlock": "Завершите \"Подрывник/Demo Man\" испытание #9"
+            "unlock": "Завершите \"Подрывник\" испытание #9"
         },
         "98": {
             "name": "Credit Card",
-            "unlock": "Завершите \"Проклят!/Cursed!\" испытание #10"
+            "unlock": "Завершите \"Проклят!\" испытание #10"
         },
         "99": {
             "name": "Rules Card",
-            "unlock": "Завершите \"Стеклянная пушка/Glass Cannon\" испытание #11"
+            "unlock": "Завершите \"Стеклянная пушка\" испытание #11"
         },
         "100": {
             "name": "Card Against Humanity",
-            "unlock": "Завершите \"Когда жизнь даёт тебе лимоны/When Life Gives You Lemons\" испытание #12"
+            "unlock": "Завершите \"Когда жизнь даёт тебе лимоны\" испытание #12"
         },
         "101": {
             "name": "Swallowed Penny",
-            "unlock": "Завершите \"Медленный бросок/Slow Roll\" испытание #15"
+            "unlock": "Завершите \"Медленный бросок\" испытание #15"
         },
         "102": {
             "name": "Robo-Baby 2.0",
-            "unlock": "Завершите \"Компьютерная смекалка/Computer Savvy\" испытание #16"
+            "unlock": "Завершите \"Компьютерная смекалка\" испытание #16"
         },
         "103": {
             "name": "Death's Touch",
-            "unlock": "Завершите \"Вака вака/Waka Waka\" испытание #17"
+            "unlock": "Завершите \"Вака вака\" испытание #17"
         },
         "104": {
             "name": "Technology .5",
-            "unlock": "Завершите \"Хозяин/The Host\" испытание #18"
+            "unlock": "Завершите \"Хозяин\" испытание #18"
         },
         "105": {
             "name": "Missing No.",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Лазаря/Lazarus"
+            "unlock": "Завершите Босс раш за Лазаря"
         },
         "106": {
             "name": "Isaac's Tears",
-            "unlock": "Победите Исаака/Isaac за Исаака/Isaac"
+            "unlock": "Победите Айзека за Айзека"
         },
         "107": {
             "name": "Guillotine",
-            "unlock": "Победите Исаака/Isaac за Иуду/Judas"
+            "unlock": "Победите Айзека за Иуду"
         },
         "108": {
             "name": "Judas' Shadow",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Иуду/Judas"
+            "unlock": "Завершите Босс раш за Иуду"
         },
         "109": {
             "name": "Maggy's Bow",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Магдалину/Magdalene"
+            "unlock": "Завершите Босс раш за Магдалену"
         },
         "110": {
             "name": "Cain's Other Eye",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Каина/Cain"
+            "unlock": "Завершите Босс раш за Кайна"
         },
         "111": {
             "name": "Black Lipstick",
-            "unlock": "Победите Агнца/The Lamb за Еву/Eve"
+            "unlock": "Победите Агнца за Еву"
         },
         "112": {
             "name": "Eve's Mascara",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Еву/Eve"
+            "unlock": "Завершите Босс раш за Еву"
         },
         "113": {
             "name": "Fate",
@@ -454,83 +454,83 @@
         },
         "114": {
             "name": "???'s Only Friend",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за ???"
+            "unlock": "Завершите Босс раш за ???"
         },
         "115": {
             "name": "Samson's Chains",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Самсона/Samson"
+            "unlock": "Завершите Босс раш за Самсона"
         },
         "116": {
             "name": "Lazarus' Rags",
-            "unlock": "Победите Исаака/Isaac за Лазаря/Lazarus"
+            "unlock": "Победите Айзека за Лазаря"
         },
         "117": {
             "name": "Broken Ankh",
-            "unlock": "Победите Сатану/Satan за Лазаря/Lazarus"
+            "unlock": "Победите Сатану за Лазаря"
         },
         "118": {
             "name": "Store Credit",
-            "unlock": "Победите ??? за Лазаря/Lazarus"
+            "unlock": "Победите ??? за Лазаря"
         },
         "119": {
             "name": "Pandora's Box",
-            "unlock": "Победите Агнца/The Lamb за Лазаря/Lazarus"
+            "unlock": "Победите Агнца за Лазаря"
         },
         "120": {
             "name": "Suicide King",
-            "unlock": "Завершите \"Король самоубийца/Suicide King\" испытание #7"
+            "unlock": "Завершите \"Король самоубийца\" испытание #7"
         },
         "121": {
             "name": "Blank Card",
-            "unlock": "Победите Исаака/Isaac за Эдема/Eden"
+            "unlock": "Победите Айзека за Идена"
         },
         "122": {
             "name": "Book of Secrets",
-            "unlock": "Победите Сатану/Satan за Эдема/Eden"
+            "unlock": "Победите Сатану за Идена"
         },
         "123": {
             "name": "Mysterious Paper",
-            "unlock": "Победите ??? за Эдема/Eden"
+            "unlock": "Победите ??? за Идена"
         },
         "124": {
             "name": "Mystery Sack",
-            "unlock": "Победите Агнца/The Lamb за Эдема/Eden"
+            "unlock": "Победите Агнца за Идена"
         },
         "125": {
             "name": "Undefined",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Эдема/Eden"
+            "unlock": "Завершите Босс раш за Идена"
         },
         "126": {
             "name": "Satanic Bible",
-            "unlock": "Победите Исаака/Isaac за Азазеля/Azazel"
+            "unlock": "Победите Айзека за Азазеля"
         },
         "127": {
             "name": "Daemon's Tail",
-            "unlock": "Победите Сатану/Satan за Азазеля/Azazel"
+            "unlock": "Победите Сатану за Азазеля"
         },
         "128": {
             "name": "Abaddon",
-            "unlock": "Победите ??? за Азазеля/Azazel"
+            "unlock": "Победите ??? за Азазеля"
         },
         "129": {
             "name": "Isaac's Heart",
-            "unlock": "Победите Исаака/Isaac за Потерянного/The Lost"
+            "unlock": "Победите Айзека за Лоста"
         },
         "130": {
             "name": "The Mind",
-            "unlock": "Победите Сатану/Satan за Потерянного/The Lost"
+            "unlock": "Победите Сатану за Лоста"
         },
         "131": {
             "name": "The Body",
-            "unlock": "Победите ??? за Потерянного/The Lost"
+            "unlock": "Победите ??? за Лоста"
         },
         "132": {
             "name": "The Soul",
-            "unlock": "Победите Агнца/The Lamb за Потерянного/The Lost"
+            "unlock": "Победите Агнца за Лоста"
         },
         "133": {
             "name": "The D100",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Потерянного/The Lost"
+            "unlock": "Завершите Босс раш за Лоста"
         },
         "134": {
             "name": "Blue Map",
@@ -554,15 +554,15 @@
         },
         "139": {
             "name": "Wire Coat Hanger",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 4 раза"
+            "unlock": "Победите Сердце Мамы 4 раза"
         },
         "140": {
             "name": "Ipecac",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 6 раз"
+            "unlock": "Победите Сердце Мамы 6 раз"
         },
         "141": {
             "name": "Experimental Treatment",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 7 раз"
+            "unlock": "Победите Сердце Мамы 7 раз"
         },
         "142": {
             "name": "Krampus",
@@ -570,11 +570,11 @@
         },
         "143": {
             "name": "Head of Krampus",
-            "unlock": "Победите Крампуса/Krampus"
+            "unlock": "Победите Крампуса"
         },
         "144": {
             "name": "Super Meat Boy",
-            "unlock": "Собери Super Meat Boy путём сбора 4 Кубиков Мяса/Cube of Meat"
+            "unlock": "Собери Super Meat Boy путём сбора 4 Кубиков Мяса"
         },
         "145": {
             "name": "Butter Bean",
@@ -582,7 +582,7 @@
         },
         "146": {
             "name": "Little Baggy",
-            "unlock": "Поднимите любые 2 предмета, с меткой \"шприц/syringe\", в одном забеге"
+            "unlock": "Поднимите любые 2 предмета, с меткой \"шприц\", в одном забеге"
         },
         "147": {
             "name": "Blood Bag",
@@ -594,11 +594,11 @@
         },
         "149": {
             "name": "Missing Poster",
-            "unlock": "Победите Агнца/The Lamb за Исаака/Isaac"
+            "unlock": "Победите Агнца за Айзека"
         },
         "150": {
             "name": "Rubber Cement",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 2 раза"
+            "unlock": "Победите Сердце Мамы 2 раза"
         },
         "151": {
             "name": "Store Upgrade lv.1",
@@ -622,39 +622,39 @@
         },
         "156": {
             "name": "Godhead",
-            "unlock": "Получите все отметки за прохождение за Потерянного/The Lost"
+            "unlock": "Получите все отметки за прохождение за Лоста"
         },
         "157": {
             "name": "Darkness Falls",
-            "unlock": "Repentance: Победите Сердце Мамы/Mom's Heart 11 раз и разблокируйте Еву/Eve"
+            "unlock": "Repentance: Победите Сердце Мамы 11 раз и разблокируйте Еву"
         },
         "158": {
             "name": "The Tank",
-            "unlock": "Разблокировать Магдалину"
+            "unlock": "Разблокировать Магдалену"
         },
         "159": {
             "name": "Solar System",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 3 раза"
+            "unlock": "Победите Сердце Мамы 3 раза"
         },
         "160": {
             "name": "Suicide King",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 11 раз и разблокируйте Лазаря/Lazarus"
+            "unlock": "Победите Сердце Мамы 11 раз и разблокируйте Лазаря"
         },
         "161": {
             "name": "Cat Got Your Tongue",
-            "unlock": "Поднимите любые 3 предмета, с меткой \"гаппи/guppy\", в одном забеге"
+            "unlock": "Поднимите любые 3 предмета, с меткой \"Гаппи\", в одном забеге"
         },
         "162": {
             "name": "Demo Man",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 9 раз"
+            "unlock": "Победите Сердце Мамы 9 раз"
         },
         "163": {
             "name": "Cursed!",
-            "unlock": "Разблокировать Магдалину"
+            "unlock": "Разблокировать Магдалену"
         },
         "164": {
             "name": "Glass Cannon",
-            "unlock": "Завершите \"Семьянин/The Family Man\" испытание #19, победите Локии/Lokii и разблокируйте Иуду/Judas"
+            "unlock": "Завершите \"Семьянин\" испытание #19, победите Локии и разблокируйте Иуду"
         },
         "165": {
             "name": "The Family Man",
@@ -662,235 +662,235 @@
         },
         "166": {
             "name": "Purist",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "167": {
             "name": "Lost Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Исаака/Isaac"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Айзека"
         },
         "168": {
             "name": "Cute Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Магдалину/Magdalene"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Магдалену"
         },
         "169": {
             "name": "Crow Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Еву/Eve"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Еву"
         },
         "170": {
             "name": "Shadow Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Иуду/Judas"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Иуду"
         },
         "171": {
             "name": "Glass Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Каина/Cain"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Кайна"
         },
         "172": {
             "name": "Wrapped Baby",
-            "unlock": "Afterbirth+: Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Азазеля/Azazel"
+            "unlock": "Afterbirth+: Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Азазеля"
         },
         "173": {
             "name": "Begotten Baby",
-            "unlock": "Afterbirth+: Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Лазаря/Lazarus"
+            "unlock": "Afterbirth+: Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Лазаря"
         },
         "174": {
             "name": "Dead Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за ???"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за ???"
         },
         "175": {
             "name": "-0- Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Потерянного/The Lost"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Лоста"
         },
         "176": {
             "name": "Glitch Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Эдема/Eden"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Идена"
         },
         "177": {
             "name": "Fighting Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Самсона/Samson"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Самсона"
         },
         "178": {
             "name": "Lord of the Flies",
-            "unlock": "Поднимите любые 3 предмета, с меткой \"муха/fly\", в одном забеге"
+            "unlock": "Поднимите любые 3 предмета, с меткой \"Муха\", в одном забеге"
         },
         "179": {
             "name": "Fart Baby",
-            "unlock": "Победите Молчание/Hush за Исаака/Isaac"
+            "unlock": "Победите Хаша за Айзека"
         },
         "180": {
             "name": "Purity",
-            "unlock": "Победите Молчание/Hush за Магдалину/Magdalene"
+            "unlock": "Победите Хаша за Магдалену"
         },
         "181": {
             "name": "D12",
-            "unlock": "Победите Молчание/Hush за Каина/Cain"
+            "unlock": "Победите Хаша за Кайна"
         },
         "182": {
             "name": "Betrayal",
-            "unlock": "Победите Молчание/Hush за Иуду/Judas"
+            "unlock": "Победите Хаша за Иуду"
         },
         "183": {
             "name": "Fate's Reward",
-            "unlock": "Победите Молчание/Hush за ???"
+            "unlock": "Победите Хаша за ???"
         },
         "184": {
             "name": "Athame",
-            "unlock": "Победите Молчание/Hush за Еву/Eve"
+            "unlock": "Победите Молчание за Еву"
         },
         "185": {
             "name": "Blind Rage",
-            "unlock": "Победите Молчание/Hush за Самсона/Samson"
+            "unlock": "Победите Хаша за Самсона"
         },
         "186": {
             "name": "Maw of the Void",
-            "unlock": "Победите Молчание/Hush за Азазеля/Azazel"
+            "unlock": "Победите Хаша за Азазеля"
         },
         "187": {
             "name": "Empty Vessel",
-            "unlock": "Победите Молчание/Hush за Лазаря/Lazarus"
+            "unlock": "Победите Хаша за Лазаря"
         },
         "188": {
             "name": "Eden's Blessing",
-            "unlock": "Победите Молчание/Hush за Эдема/Eden"
+            "unlock": "Победите Хаша за Идена"
         },
         "189": {
             "name": "Sworn Protector",
-            "unlock": "Победите Молчание/Hush за Потерянного/The Lost"
+            "unlock": "Победите Хаша за Лоста"
         },
         "190": {
             "name": "Incubus",
-            "unlock": "Победите Молчание/Hush за Лилит/Lilith"
+            "unlock": "Победите Хаша за Лилит"
         },
         "191": {
             "name": "Keeper now holds... A Penny!",
-            "unlock": "Победите Молчание/Hush за Хранителя/Keeper"
+            "unlock": "Победите Хаша за Хранителя"
         },
         "192": {
             "name": "Lil' Chest",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Исаака/Isaac"
+            "unlock": "Завершите Режим Жадности за Айзека"
         },
         "193": {
             "name": "Censer",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Магдалину/Magdalene"
+            "unlock": "Завершите Режим Жадности за Магдалену"
         },
         "194": {
             "name": "Evil Eye",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Каина/Cain"
+            "unlock": "Завершите Режим Жадности за Кайна"
         },
         "195": {
             "name": "My Shadow",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Иуду/Judas"
+            "unlock": "Завершите Режим Жадности за Иуду"
         },
         "196": {
             "name": "Cracked Dice",
-            "unlock": "Завершите Алчный Режим/Greed Mode за ???"
+            "unlock": "Завершите Режим Жадности за ???"
         },
         "197": {
             "name": "Black Feather",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Еву/Eve"
+            "unlock": "Завершите Режим Жадности за Еву"
         },
         "198": {
             "name": "Lusty Blood",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Самсона/Samson"
+            "unlock": "Завершите Режим Жадности за Самсона"
         },
         "199": {
             "name": "Lilith",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Азазеля/Azazel"
+            "unlock": "Завершите Режим Жадности за Азазеля"
         },
         "200": {
             "name": "Key Bum",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Лазаря/Lazarus"
+            "unlock": "Завершите Режим Жадности за Лазаря"
         },
         "201": {
             "name": "GB Bug",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Эдема/Eden"
+            "unlock": "Завершите Режим Жадности за Идена"
         },
         "202": {
             "name": "Zodiac",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Потерянного/The Lost"
+            "unlock": "Завершите Режим Жадности за Лоста"
         },
         "203": {
             "name": "Box of Friends",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Лилит/Lilith"
+            "unlock": "Завершите Режим Жадности за Лилит"
         },
         "204": {
             "name": "Rib of Greed",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Хранителя/Keeper"
+            "unlock": "Завершите Режим Жадности за Хранителя"
         },
         "205": {
             "name": "Cry Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Исаака/Isaac"
+            "unlock": "Победите Мега Сатану за Айзека"
         },
         "206": {
             "name": "Red Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Магдалину/Magdalene"
+            "unlock": "Победите Мега Сатану за Магдалену"
         },
         "207": {
             "name": "Green Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Каина/Cain"
+            "unlock": "Победите Мега Сатану за Кайна"
         },
         "208": {
             "name": "Brown Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Иуду/Judas"
+            "unlock": "Победите Мега Сатану за Иуду"
         },
         "209": {
             "name": "Blue Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за ???"
+            "unlock": "Победите Мега Сатану за ???"
         },
         "210": {
             "name": "Lil' Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Еву/Eve"
+            "unlock": "Победите Мега Сатану за Еву"
         },
         "211": {
             "name": "Rage Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Самсона/Samson"
+            "unlock": "Победите Мега Сатану за Самсона"
         },
         "212": {
             "name": "Black Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Азазеля/Azazel"
+            "unlock": "Победите Мега Сатану за Азазеля"
         },
         "213": {
             "name": "Long Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Лазаря/Lazarus"
+            "unlock": "Победите Мега Сатану за Лазаря"
         },
         "214": {
             "name": "Yellow Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Эдема/Eden"
+            "unlock": "Победите Мега Сатану за Идена"
         },
         "215": {
             "name": "White Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Потерянного/The Lost"
+            "unlock": "Победите Мега Сатану за Лоста"
         },
         "216": {
             "name": "Big Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Лилит/Lilith"
+            "unlock": "Победите Мега Сатану за Лилит"
         },
         "217": {
             "name": "Noose Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Хранителя/Keeper"
+            "unlock": "Победите Мега Сатану за Хранителя"
         },
         "218": {
             "name": "Rune Bag",
-            "unlock": "Победите Исаака/Isaac за Лилит/Lilith"
+            "unlock": "Победите Айзека за Лилит"
         },
         "219": {
             "name": "Cambion Conception",
-            "unlock": "Победите ??? за Лилит/Lilith"
+            "unlock": "Победите ??? за Лилит"
         },
         "220": {
             "name": "Serpent's Kiss",
-            "unlock": "Победите Сатану/Satan за Лилит/Lilith"
+            "unlock": "Победите Сатану за Лилит"
         },
         "221": {
             "name": "Succubus",
-            "unlock": "Победите Агнца/The Lamb за Лилит/Lilith"
+            "unlock": "Победите Агнца за Лилит"
         },
         "222": {
             "name": "Immaculate Conception",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Лилит/Lilith"
+            "unlock": "Завершите Марафон Боссов за Лилит"
         },
         "223": {
             "name": "Goat Head Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Лилит/Lilith"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Лилит"
         },
         "224": {
             "name": "Gold Heart",
@@ -898,43 +898,43 @@
         },
         "225": {
             "name": "Get out of Jail Free Card",
-            "unlock": "Завершите \"СКОРОСТЬ!/SPEED!\" испытание #22"
+            "unlock": "Завершите \"СКОРОСТЬ!\" испытание #22"
         },
         "226": {
             "name": "Gold Bomb",
-            "unlock": "Завершите \"Синий Бомбер/Blue Bomber\" испытание #23"
+            "unlock": "Завершите \"Синий Бомбер\" испытание #23"
         },
         "227": {
             "name": "2 new pills",
-            "unlock": "Завершите \"Заплати и Играй/PAY TO PLAY\" испытание #24"
+            "unlock": "Завершите \"Заплати и Играй\" испытание #24"
         },
         "228": {
             "name": "2 new pills",
-            "unlock": "Завершите \"Имей Сердце/Have a Heart\" испытание #25"
+            "unlock": "Завершите \"Имей Сердце\" испытание #25"
         },
         "229": {
             "name": "Poker Chip",
-            "unlock": "Завершите \"Легенда об Исааке!/I RULE!\" испытание #26"
+            "unlock": "Завершите \"Легенда об Исааке!\" испытание #26"
         },
         "230": {
             "name": "Stud Finder",
-            "unlock": "Завершите \"МОЗГИ!/BRAINS!\" испытание #27"
+            "unlock": "Завершите \"МОЗГИ!\" испытание #27"
         },
         "231": {
             "name": "D8",
-            "unlock": "Завершите \"День Гордости!/PRIDE DAY!\" испытание #28"
+            "unlock": "Завершите \"День Гордости!\" испытание #28"
         },
         "232": {
             "name": "Kidney Stone",
-            "unlock": "Afterbirth+: Завершите \"Защитник/The Guardian\" испытание #30"
+            "unlock": "Afterbirth+: Завершите \"Защитник\" испытание #30"
         },
         "233": {
             "name": "Blank Rune",
-            "unlock": "Afterbirth+: Завершите \"Струя Онана/Onan's Streak\" испытание #29"
+            "unlock": "Afterbirth+: Завершите \"Струя Онана\" испытание #29"
         },
         "234": {
             "name": "Blue Womb",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 10 раз"
+            "unlock": "Победите Сердце Мамы 10 раз"
         },
         "235": {
             "name": "1001%",
@@ -942,27 +942,27 @@
         },
         "236": {
             "name": "Keeper holds Wooden Nickel",
-            "unlock": "Победите Исаака/Isaac за Хранителя/Keeper"
+            "unlock": "Победите Айзека за Хранителя"
         },
         "237": {
             "name": "Keeper holds Store Key",
-            "unlock": "Победите Сатану/Satan за Хранителя/Keeper"
+            "unlock": "Победите Сатану за Хранителя"
         },
         "238": {
             "name": "Deep Pockets",
-            "unlock": "Победите ??? за Хранителя/Keeper"
+            "unlock": "Победите ??? за Хранителя"
         },
         "239": {
             "name": "Karma",
-            "unlock": "Победите Агнца/The Lamb за Хранителя/Keeper"
+            "unlock": "Победите Агнца за Хранителя"
         },
         "240": {
             "name": "Sticky Nickels",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Хранителя/Keeper"
+            "unlock": "Завершите Босс раш за Хранителя"
         },
         "241": {
             "name": "Super Greed Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Хранителя/Keeper"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Хранителя"
         },
         "242": {
             "name": "Lucky Pennies",
@@ -1010,91 +1010,91 @@
         },
         "253": {
             "name": "Buddy Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Исаака/Isaac"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Айзека"
         },
         "254": {
             "name": "Colorful Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Магдалину/Magdalene"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Магдалену"
         },
         "255": {
             "name": "Whоre Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Еву/Eve"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Еву"
         },
         "256": {
             "name": "Cracked Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Эдема/Eden"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Идена"
         },
         "257": {
             "name": "Dripping Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Лазаря/Lazarus"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Лазаря"
         },
         "258": {
             "name": "Blinding Baby",
-            "unlock": "Используйте Пустую Карту/Blank Card пока держите карту XIX - Солнце/The Sun"
+            "unlock": "Используйте Пустую Карту пока держите карту XIX - Солнце"
         },
         "259": {
             "name": "Sucky Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Азазеля/Azazel"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Азазеля"
         },
         "260": {
             "name": "Dark Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Лилит/Lilith"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Лилит"
         },
         "261": {
             "name": "Picky Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Каина/Cain"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Кайна"
         },
         "262": {
             "name": "Revenge Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Самсона/Samson"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Самсона"
         },
         "263": {
             "name": "Belial Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Иуду/Judas"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Иуду"
         },
         "264": {
             "name": "Sale Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Хранителя/Keeper"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Хранителя"
         },
         "265": {
             "name": "XXXXXXXXL",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "266": {
             "name": "SPEED!",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "267": {
             "name": "Blue Bomber",
-            "unlock": "Разрушьте 10 меченых камней и победите Сердце Мамы/Mom's Heart 11 раз"
+            "unlock": "Разрушьте 10 меченых камней и победите Сердце Мамы 11 раз"
         },
         "268": {
             "name": "PAY TO PLAY",
-            "unlock": "Победите Исаака/Isaac за Каина/Cain"
+            "unlock": "Победите Айзека за Кайна"
         },
         "269": {
             "name": "Have a Heart",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "270": {
             "name": "I RULE!",
-            "unlock": "Repentance: Победите ??? или Агнца/The Lamb, и победите Сатану/Satan за Исаака/Isaac"
+            "unlock": "Repentance: Победите ??? или Агнца, и победите Сатану за Айзека"
         },
         "271": {
             "name": "BRAINS!",
-            "unlock": "Победите Исаака/Isaac 5 раз"
+            "unlock": "Победите Айзека 5 раз"
         },
         "272": {
             "name": "PRIDE DAY!",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "273": {
             "name": "Onan's Streak",
-            "unlock": "Repentance: Победите Маму/Mom"
+            "unlock": "Repentance: Победите Маму"
         },
         "274": {
             "name": "The Guardian",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "275": {
             "name": "Generosity",
@@ -1102,187 +1102,187 @@
         },
         "276": {
             "name": "Mega",
-            "unlock": "Победите Мега Сатану/Mega Satan за всех не порченых/non-tainted персонажей"
+            "unlock": "Победите Мега Сатану за всех не порченых персонажей"
         },
         "277": {
             "name": "Backasswards",
-            "unlock": "Repentance: Победите ??? или Агнца/The Lamb"
+            "unlock": "Repentance: Победите ??? или Агнца"
         },
         "278": {
             "name": "Aprils fool",
-            "unlock": "Победите Маму/Mom"
+            "unlock": "Победите Маму"
         },
         "279": {
             "name": "Pokey Mans",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 11 раз"
+            "unlock": "Победите Сердце Мамы 11 раз"
         },
         "280": {
             "name": "Ultra Hard",
-            "unlock": "Repentance: Победите ??? или Агнца/The Lamb"
+            "unlock": "Repentance: Победите ??? или Агнца"
         },
         "281": {
             "name": "PONG",
-            "unlock": "Победите Исаака/Isaac 5 раз"
+            "unlock": "Победите Айзека 5 раз"
         },
         "282": {
             "name": "D Infinity",
-            "unlock": "Победите Cумасшествие/Delirium за Исаака/Isaac"
+            "unlock": "Победите Делириума за Исаака"
         },
         "283": {
             "name": "Eucharist",
-            "unlock": "Победите Cумасшествие/Delirium за Магдалину/Magdalene"
+            "unlock": "Победите Делириума за Магдалену"
         },
         "284": {
             "name": "Silver Dollar",
-            "unlock": "Победите Cумасшествие/Delirium за Каина/Cain"
+            "unlock": "Победите Делириума за Кайна"
         },
         "285": {
             "name": "Shade",
-            "unlock": "Победите Cумасшествие/Delirium за Иуду/Judas"
+            "unlock": "Победите Делириума за Иуду"
         },
         "286": {
             "name": "King Baby",
-            "unlock": "Победите Cумасшествие/Delirium за ???"
+            "unlock": "Победите Делириума за ???"
         },
         "287": {
             "name": "Bloody Crown",
-            "unlock": "Победите Cумасшествие/Delirium за Самсона/Samson"
+            "unlock": "Победите Делириума за Самсона"
         },
         "288": {
             "name": "Dull Razor",
-            "unlock": "Победите Cумасшествие/Delirium за Еву/Eve"
+            "unlock": "Победите Делириума за Еву"
         },
         "289": {
             "name": "Eden's Soul",
-            "unlock": "Победите Cумасшествие/Delirium за Эдема/Eden"
+            "unlock": "Победите Делириума за Идена"
         },
         "290": {
             "name": "Dark Prince's Crown",
-            "unlock": "Победите Cумасшествие/Delirium за Азазеля/Azazel"
+            "unlock": "Победите Делириума за Азазеля"
         },
         "291": {
             "name": "Compound Fracture",
-            "unlock": "Победите Cумасшествие/Delirium за Лазаря/Lazarus"
+            "unlock": "Победите Делириума за Лазаря"
         },
         "292": {
             "name": "Euthanasia",
-            "unlock": "Победите Cумасшествие/Delirium за Лилит/Lilith"
+            "unlock": "Победите Делириума за Лилит"
         },
         "293": {
             "name": "Holy Card",
-            "unlock": "Победите Cумасшествие/Delirium за Потерянного/The Lost"
+            "unlock": "Победите Делириума за Лоста"
         },
         "294": {
             "name": "Crooked Penny",
-            "unlock": "Победите Cумасшествие/Delirium за Хранителя/Keeper"
+            "unlock": "Победите Делириума за Хранителя"
         },
         "295": {
             "name": "Void",
-            "unlock": "Победите Cумасшествие/Delirium за Аполлиона/Apollyon"
+            "unlock": "Победите Делириума за Аполлиона"
         },
         "296": {
             "name": "D1",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Исаака/Isaac"
+            "unlock": "Завершите Ультра режим жадности за Айзека"
         },
         "297": {
             "name": "Glyph of Balance",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Магдалину/Magdalene"
+            "unlock": "Завершите Ультра режим жадности за Магдалену"
         },
         "298": {
             "name": "Sack of Sacks",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Каина/Cain"
+            "unlock": "Завершите Ультра режим жадности за Кайна"
         },
         "299": {
             "name": "Eye of Belial",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Иуду/Judas"
+            "unlock": "Завершите Ультра режим жадности за Иуду"
         },
         "300": {
             "name": "Meconium",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за ???"
+            "unlock": "Завершите Ультра режим жадности за ???"
         },
         "301": {
             "name": "Stem Cell",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Самсона/Samson"
+            "unlock": "Завершите Ультра режим жадности за Самсона"
         },
         "302": {
             "name": "Crow Heart",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Еву/Eve"
+            "unlock": "Завершите Ультра режим жадности за Еву"
         },
         "303": {
             "name": "Metronome",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Эдема/Eden"
+            "unlock": "Завершите Ультра режим жадности за Идена"
         },
         "304": {
             "name": "Bat Wing",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Азазеля/Azazel"
+            "unlock": "Завершите Ультра режим жадности за Азазеля"
         },
         "305": {
             "name": "Plan C",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Лазаря/Lazarus"
+            "unlock": "Завершите Ультра режим жадности за Лазаря"
         },
         "306": {
             "name": "Duality",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Лилит/Lilith"
+            "unlock": "Завершите Ультра режим жадности за Лилит"
         },
         "307": {
             "name": "Dad's Lost Coin",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Потерянного/The Lost"
+            "unlock": "Завершите Ультра режим жадности за Лоста"
         },
         "308": {
             "name": "Eye of Greed",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Хранителя/Keeper"
+            "unlock": "Завершите Ультра режим жадности за Хранителя"
         },
         "309": {
             "name": "Black Rune",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Аполлиона/Apollyon"
+            "unlock": "Завершите Ультра режим жадности за Аполлиона"
         },
         "310": {
             "name": "Locust of Wrath",
-            "unlock": "Победите Исаака/Isaac за Аполлиона/Apollyon"
+            "unlock": "Победите Айзека за Аполлиона"
         },
         "311": {
             "name": "Locust of Pestilence",
-            "unlock": "Победите Сатану/Satan за Аполлиона/Apollyon"
+            "unlock": "Победите Сатану за Аполлиона"
         },
         "312": {
             "name": "Locust of Famine",
-            "unlock": "Победите ??? за Аполлиона/Apollyon"
+            "unlock": "Победите ??? за Аполлиона"
         },
         "313": {
             "name": "Locust of Death",
-            "unlock": "Победите Агнца/The Lamb за Аполлиона/Apollyon"
+            "unlock": "Победите Агнца за Аполлиона"
         },
         "314": {
             "name": "Locust of Conquest",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Аполлиона/Apollyon"
+            "unlock": "Завершите Босс раш за Аполлиона"
         },
         "315": {
             "name": "Hushy",
-            "unlock": "Победите Молчание/Hush за Аполлиона/Apollyon"
+            "unlock": "Победите Хаша за Аполлиона"
         },
         "316": {
             "name": "Brown Nugget",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Аполлиона/Apollyon"
+            "unlock": "Завершите Ультра режим жадности за Аполлиона"
         },
         "317": {
             "name": "Mort Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Аполлиона/Apollyon"
+            "unlock": "Победите Мега Сатану за Аполлиона"
         },
         "318": {
             "name": "Smelter",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Аполлиона/Apollyon"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Аполлиона"
         },
         "319": {
             "name": "Apollyon Baby",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за Аполлиона/Apollyon"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за Аполлиона"
         },
         "320": {
             "name": "New Area",
-            "unlock": "Победите Молчание/Hush"
+            "unlock": "Победите Хаша"
         },
         "321": {
             "name": "Once More with Feeling!",
-            "unlock": "Завершите Круг Почёта/Victory Lap"
+            "unlock": "Завершите Круг Почёта"
         },
         "322": {
             "name": "Hat trick!",
@@ -1298,15 +1298,15 @@
         },
         "325": {
             "name": "Dedication",
-            "unlock": "Примите участие в 31 Ежедневном Забеге/Daily Runs"
+            "unlock": "Примите участие в 31 Ежедневном Забеге"
         },
         "326": {
             "name": "ZIP!",
-            "unlock": "Победите Агнца/The Lamb за 20 минут"
+            "unlock": "Победите Агнца за 20 минут"
         },
         "327": {
             "name": "It's the Key",
-            "unlock": "Победите Агнца/The Lamb не подбирая в забеге сердца, монеты и бомбы"
+            "unlock": "Победите Агнца не подбирая в забеге сердца, монеты и бомбы"
         },
         "328": {
             "name": "Mr. Resetter!",
@@ -1342,15 +1342,15 @@
         },
         "336": {
             "name": "The Marathon",
-            "unlock": "Успешно завершить подряд 5 Ежедневных испытания/Daily Runs"
+            "unlock": "Успешно завершить подряд 5 Ежедневных испытания"
         },
         "337": {
             "name": "RERUN",
-            "unlock": "Завершите 3 Круга Почёта/Victory Lap и начните 4"
+            "unlock": "Завершите 3 Круга Почёта и начните 4"
         },
         "338": {
             "name": "Delirious",
-            "unlock": "Победите Cумасшествие/Delirium"
+            "unlock": "Победите Делириума"
         },
         "339": {
             "name": "1000000%",
@@ -1358,7 +1358,7 @@
         },
         "340": {
             "name": "Apollyon",
-            "unlock": "Победите Мега Сатану/Mega Satan"
+            "unlock": "Победите Мега Сатану"
         },
         "341": {
             "name": "Greedier!",
@@ -1366,19 +1366,19 @@
         },
         "342": {
             "name": "Burning Basement",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 11 раз"
+            "unlock": "Победите Сердце Мамы 11 раз"
         },
         "343": {
             "name": "Flooded Caves",
-            "unlock": "Победите Оно Живое!/It lives! 16 раз"
+            "unlock": "Победите Оно Живое! 16 раз"
         },
         "344": {
             "name": "Dank Depths",
-            "unlock": "Победите Оно Живое!/It lives! 21 раз"
+            "unlock": "Победите Оно Живое! 21 раз"
         },
         "345": {
             "name": "Scarred Womb",
-            "unlock": "Победите Оно Живое!/It lives! 30 раз"
+            "unlock": "Победите Оно Живое! 30 раз"
         },
         "346": {
             "name": "Something wicked this way comes!",
@@ -1390,11 +1390,11 @@
         },
         "348": {
             "name": "The gate is open!",
-            "unlock": "Победите Агнца/The Lamb"
+            "unlock": "Победите Агнца"
         },
         "349": {
             "name": "Black Hole",
-            "unlock": "Уничтожьте 20 Порталов/Portals"
+            "unlock": "Уничтожьте 20 Порталов"
         },
         "350": {
             "name": "Mystery Gift",
@@ -1406,7 +1406,7 @@
         },
         "352": {
             "name": "Angry Fly",
-            "unlock": "Поднимите любые 3 предмета, с меткой \"муха/fly\", в одном забеге"
+            "unlock": "Поднимите любые 3 предмета, с меткой \"Муха\", в одном забеге"
         },
         "353": {
             "name": "Bozo",
@@ -1414,7 +1414,7 @@
         },
         "354": {
             "name": "Broken Modem",
-            "unlock": "Завершите 7 Ежедневных Забегов/Daily Runs"
+            "unlock": "Завершите 7 Ежедневных Забегов"
         },
         "355": {
             "name": "Buddy in a Box",
@@ -1422,11 +1422,11 @@
         },
         "356": {
             "name": "Fast Bombs",
-            "unlock": "Победите Маленький Рог/Little Horn 20 раз"
+            "unlock": "Победите Маленький Рог 20 раз"
         },
         "357": {
             "name": "Lil Delirium",
-            "unlock": "Победите Cумасшествие/Delirium"
+            "unlock": "Победите Делириума"
         },
         "358": {
             "name": "Hairpin",
@@ -1438,7 +1438,7 @@
         },
         "360": {
             "name": "Butter!",
-            "unlock": "Завершите 2 Круга Почёта/Victory Lap и начните 3"
+            "unlock": "Завершите 2 Круга Почёта и начните 3"
         },
         "361": {
             "name": "Huge Growth",
@@ -1450,7 +1450,7 @@
         },
         "363": {
             "name": "Era Walk",
-            "unlock": "Добавьте в коллекцию предметов Секундомер/Stop Watch и Сломанные часы/Broken Watch"
+            "unlock": "Добавьте в коллекцию предметов Секундомер и Сломанные часы"
         },
         "364": {
             "name": "Coupon",
@@ -1462,11 +1462,11 @@
         },
         "366": {
             "name": "Moving Box",
-            "unlock": "Используйте Ящик Пандоры/Pandora's Box в Тёмной Комнате/Dark Room"
+            "unlock": "Используйте Ящик Пандоры в Тёмной Комнате"
         },
         "367": {
             "name": "Jumper Cables",
-            "unlock": "Поднимите любые 2 предмета, с меткой \"батарейка/battery\", в одном забеге"
+            "unlock": "Поднимите любые 2 предмета, с меткой \"Батарейка\", в одном забеге"
         },
         "368": {
             "name": "Leprosy",
@@ -1474,7 +1474,7 @@
         },
         "369": {
             "name": "Technology Zero",
-            "unlock": "Поднимите любые 2 предмета, с меткой \"технология/tech\", в одном забеге"
+            "unlock": "Поднимите любые 2 предмета, с меткой \"Технология\", в одном забеге"
         },
         "370": {
             "name": "Filigree Feather",
@@ -1486,7 +1486,7 @@
         },
         "372": {
             "name": "7 Seals",
-            "unlock": "Победите всех 5 Предвестников/Harbingers"
+            "unlock": "Победите всех 5 Предвестников"
         },
         "373": {
             "name": "Angelic Prism",
@@ -1506,11 +1506,11 @@
         },
         "377": {
             "name": "Haemolacria",
-            "unlock": "Поднимите предмет Сгусток Крови/Blood Clot 10 раз"
+            "unlock": "Поднимите предмет Сгусток Крови 10 раз"
         },
         "378": {
             "name": "Lachryphagy",
-            "unlock": "Соберите 10 предметов или пилюль повышающих скорострельность/tears в одном забеге"
+            "unlock": "Соберите 10 предметов или пилюль повышающих скорострельность в одном забеге"
         },
         "379": {
             "name": "Schoolbag",
@@ -1522,11 +1522,11 @@
         },
         "381": {
             "name": "Extension Cord",
-            "unlock": "Добавьте в коллекцию предметов 9 Вольт/9 Volt, Батарейку/The Battery и Аккумулятор/Car Battery"
+            "unlock": "Добавьте в коллекцию предметов 9 Вольт, Батарейку и Аккумулятор"
         },
         "382": {
             "name": "Flat Stone",
-            "unlock": "Поднимите предмет Резиновый Клей/Rubber Cement 5 раз"
+            "unlock": "Поднимите предмет Резиновый Клей 5 раз"
         },
         "383": {
             "name": "Sacrificial Altar",
@@ -1534,7 +1534,7 @@
         },
         "384": {
             "name": "Lil Spewer",
-            "unlock": "Умрите от своего собственного взрыва, вызванного Рвотным Корнем/Ipecac, Гнилой Головой Боба/Bob's Rotten Head или пилюлей Хорф!/Horf!"
+            "unlock": "Умрите от своего собственного взрыва, вызванного Рвотным Корнем, Гнилой Головой Боба или пилюлей Хорф!"
         },
         "385": {
             "name": "Blanket",
@@ -1542,7 +1542,7 @@
         },
         "386": {
             "name": "Marbles",
-            "unlock": "Используйте 5 пилюль Глотай!/Gulp! в одном забеге"
+            "unlock": "Используйте 5 пилюль Глотай! в одном забеге"
         },
         "387": {
             "name": "Mystery Egg",
@@ -1566,503 +1566,503 @@
         },
         "392": {
             "name": "Marrow",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в сложном режиме за Забытого/The Forgotten"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в сложном режиме за Забытого"
         },
         "393": {
             "name": "Slipped Rib",
-            "unlock": "Победите Исаака/Isaac за Забытого/The Forgotten"
+            "unlock": "Победите Айзека за Забытого"
         },
         "394": {
             "name": "Pointy Rib",
-            "unlock": "Победите Сатану/Satan за Забытого/The Forgotten"
+            "unlock": "Победите Сатану за Забытого"
         },
         "395": {
             "name": "Jaw Bone",
-            "unlock": "Победите ??? за Забытого/The Forgotten"
+            "unlock": "Победите ??? за Забытого"
         },
         "396": {
             "name": "Brittle Bones",
-            "unlock": "Победите Агнца/The Lamb за Забытого/The Forgotten"
+            "unlock": "Победите Агнца за Забытого"
         },
         "397": {
             "name": "Divorce Papers",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Забытого/The Forgotten"
+            "unlock": "Завершите Босс раш за Забытого"
         },
         "398": {
             "name": "Hallowed Ground",
-            "unlock": "Победите Молчание/Hush за Забытого/The Forgotten"
+            "unlock": "Победите Молчание за Забытого"
         },
         "399": {
             "name": "Finger Bone",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Забытого/The Forgotten"
+            "unlock": "Завершите Режим жадности за Забытого"
         },
         "400": {
             "name": "Dad's Ring",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Забытого/The Forgotten"
+            "unlock": "Завершите Ультра режим жадности за Забытого"
         },
         "401": {
             "name": "Book of the Dead",
-            "unlock": "Победите Cумасшествие/Delirium за Забытого/The Forgotten"
+            "unlock": "Победите Делириума за Забытого"
         },
         "402": {
             "name": "Bone Baby",
-            "unlock": "Получите все отметки за прохождение сложного режима за Забытого/The Forgotten"
+            "unlock": "Получите все отметки за прохождение сложного режима за Забытого"
         },
         "403": {
             "name": "Bound Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Забытого/The Forgotten"
+            "unlock": "Победите Мега Сатану за Забытого"
         },
         "404": {
             "name": "Bethany",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! за Лазаря/Lazarus в усложнённом режиме не умирая"
+            "unlock": "Победите Сердце Мамы или Оно Живое! за Лазаря в усложнённом режиме не умирая"
         },
         "405": {
             "name": "Jacob and Esau",
-            "unlock": "Победите Матерь/Mother"
+            "unlock": "Победите Матерь"
         },
         "406": {
             "name": "The Planetarium",
-            "unlock": "Поднимите любые 3 предмета, с меткой \"звёзды/stars\", в одном забеге"
+            "unlock": "Поднимите любые 3 предмета, с меткой \"Звёзды\", в одном забеге"
         },
         "407": {
             "name": "A Secret Exit",
-            "unlock": "Победите Молчание/Hush 3 раза"
+            "unlock": "Победите Молчание 3 раза"
         },
         "408": {
             "name": "Forgotten Lullaby",
-            "unlock": "Взорвите череп Сирены/The Siren после победы над ней"
+            "unlock": "Взорвите череп Сирены после победы над ней"
         },
         "409": {
             "name": "Fruity Plum",
-            "unlock": "Победите Сливку/Baby Plum 10 раз"
+            "unlock": "Победите Сливку 10 раз"
         },
         "410": {
             "name": "Plum Flute",
-            "unlock": "Позвольте Сливке/Baby Plum уйти, вместо того, чтобы убивать её"
+            "unlock": "Позвольте Сливке уйти, вместо того, чтобы убивать её"
         },
         "411": {
             "name": "Rotten Heart",
-            "unlock": "Впервые посетите Труп/Corpse"
+            "unlock": "Впервые посетите Труп"
         },
         "412": {
             "name": "Dross",
-            "unlock": "Победите всех боссов в Водостоке/Downpour"
+            "unlock": "Победите всех боссов в Водостоке"
         },
         "413": {
             "name": "Ashpit",
-            "unlock": "Победите всех боссов в Шахтах/Mines"
+            "unlock": "Победите всех боссов в Шахтах"
         },
         "414": {
             "name": "Gehenna",
-            "unlock": "Победите всех боссов в Мавзолее/Mausoleum"
+            "unlock": "Победите всех боссов в Мавзолее"
         },
         "415": {
             "name": "Red Key",
-            "unlock": "Откройте мамин сундук в Доме/Home"
+            "unlock": "Откройте мамин сундук в Доме"
         },
         "416": {
             "name": "Wisp Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Вифанию/Bethany"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Бетани"
         },
         "417": {
             "name": "Book of Virtues",
-            "unlock": "Победите Исаака/Isaac за Вифанию/Bethany"
+            "unlock": "Победите Исаака за Бетани"
         },
         "418": {
             "name": "Urn of Souls",
-            "unlock": "Победите Сатану/Satan за Вифанию/Bethany"
+            "unlock": "Победите Сатану за Бетани"
         },
         "419": {
             "name": "Blessed Penny",
-            "unlock": "Победите ??? за Вифанию/Bethany"
+            "unlock": "Победите ??? за Бетани"
         },
         "420": {
             "name": "Alabaster Box",
-            "unlock": "Победите Агнца/The Lamb за Вифанию/Bethany"
+            "unlock": "Победите Агнца за Бетани"
         },
         "421": {
             "name": "Beth's Faith",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Вифанию/Bethany"
+            "unlock": "Завершите Босс раш за Бетани"
         },
         "422": {
             "name": "Soul Locket",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Вифанию/Bethany"
+            "unlock": "Завершите Режим жадности за Бетани"
         },
         "423": {
-            "name": "Divine Intervention",
-            "unlock": "Победите Молчание/Hush за Вифанию/Bethany"
+            "name": "Divine Intervention",  
+            "unlock": "Победите Хаша за Бетани"
         },
         "424": {
             "name": "Vade Retro",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Вифанию/Bethany"
+            "unlock": "Завершите Ультра режим жадности за Бетани"
         },
         "425": {
             "name": "Star of Bethlehem",
-            "unlock": "Победите Cумасшествие/Delirium за Вифанию/Bethany"
+            "unlock": "Победите Делириума за Бетани"
         },
         "426": {
             "name": "Hope Baby",
-            "unlock": "Получите все отметки за прохождение сложного режима за Вифанию/Bethany"
+            "unlock": "Получите все отметки за прохождение сложного режима за Бетани"
         },
         "427": {
             "name": "Glowing Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Вифанию/Bethany"
+            "unlock": "Победите Мега Сатану за Бетани"
         },
         "428": {
             "name": "Double Baby",
-            "unlock": "Победите Сердце Мамы/Mom's Heart или Оно Живое!/It lives! в усложнённом режиме за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите Сердце Мамы или Оно Живое! в усложнённом режиме за Иакова и Исава"
         },
         "429": {
             "name": "The Stairway",
-            "unlock": "Победите Исаака/Isaac за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите Айзека за Иакова и Исава"
         },
         "430": {
             "name": "Red Stew",
-            "unlock": "Победите Сатану/Satan за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите Сатану за Иакова и Исава"
         },
         "431": {
             "name": "Birthright",
-            "unlock": "Победите ??? за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите ??? за Иакова и Исава"
         },
         "432": {
             "name": "Birthright",
-            "unlock": "Победите Агнца/The Lamb за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите Агнца за Иакова и Исава"
         },
         "433": {
             "name": "Rock Bottom",
-            "unlock": "Завершите Марафон Боссов/Boss Rush за Иакова и Исава/Jacob & Esau"
+            "unlock": "Завершите Босс раш за Иакова и Исава"
         },
         "434": {
             "name": "Inner Child",
-            "unlock": "Завершите Алчный Режим/Greed Mode за Иакова и Исава/Jacob & Esau"
+            "unlock": "Завершите Режим жадности за Иакова и Исава"
         },
         "435": {
             "name": "Vanishing Twin",
-            "unlock": "Победите Молчание/Hush за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите Хаша за Иакова и Исава"
         },
         "436": {
             "name": "Genesis",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Иакова и Исава/Jacob & Esau"
+            "unlock": "Завершите Ультра режим жадности за Иакова и Исава"
         },
         "437": {
             "name": "Suplex!",
-            "unlock": "Победите Cумасшествие/Delirium за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите Делириума за Иакова и Исава"
         },
         "438": {
             "name": "Solomon's Baby",
-            "unlock": "Получите все отметки за прохождение сложного режима за Иакова и Исава/Jacob & Esau"
+            "unlock": "Получите все отметки за прохождение сложного режима за Иакова и Исава"
         },
         "439": {
             "name": "Illusion Baby",
-            "unlock": "Победите Мега Сатану/Mega Satan за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите Мега Сатану за Иакова и Исава"
         },
         "440": {
             "name": "Meat Cleaver",
-            "unlock": "Победите Матерь/Mother за Исаака/Isaac"
+            "unlock": "Победите Матерь за Айзека"
         },
         "441": {
             "name": "Options?",
-            "unlock": "Победите Зверя/The Beast за Исаака/Isaac"
+            "unlock": "Победите Зверя за Айзека"
         },
         "442": {
             "name": "Yuck Heart",
-            "unlock": "Победите Матерь/Mother за Магдалину/Magdalene"
+            "unlock": "Победите Матерь за Магдалену"
         },
         "443": {
             "name": "Candy Heart",
-            "unlock": "Победите Зверя/The Beast за Магдалину/Magdalene"
+            "unlock": "Победите Биста за Магдалену"
         },
         "444": {
             "name": "Guppy's Eye",
-            "unlock": "Победите Матерь/Mother за Каина/Cain"
+            "unlock": "Победите Матерь за Кайна"
         },
         "445": {
             "name": "A Pound of Flesh",
-            "unlock": "Победите Зверя/The Beast за Каина/Cain"
+            "unlock": "Победите Биста за Кайна"
         },
         "446": {
             "name": "Akeldama",
-            "unlock": "Победите Матерь/Mother за Иуду/Judas"
+            "unlock": "Победите Матерь за Иуду"
         },
         "447": {
             "name": "Redemption",
-            "unlock": "Победите Зверя/The Beast за Иуду/Judas"
+            "unlock": "Победите Биста за Иуду"
         },
         "448": {
             "name": "Eternal D6",
-            "unlock": "Победите Матерь/Mother за ???"
+            "unlock": "Победите Матерь за ???"
         },
         "449": {
             "name": "Montezuma's Revenge",
-            "unlock": "Победите Зверя/The Beast за ???"
+            "unlock": "Победите Биста за ???"
         },
         "450": {
             "name": "Bird Cage",
-            "unlock": "Победите Матерь/Mother за Еву/Eve"
+            "unlock": "Победите Матерь за Еву"
         },
         "451": {
             "name": "Cracked Orb",
-            "unlock": "Победите Зверя/The Beast за Еву/Eve"
+            "unlock": "Победите Биста за Еву"
         },
         "452": {
             "name": "Bloody Gust",
-            "unlock": "Победите Матерь/Mother за Самсона/Samson"
+            "unlock": "Победите Матерь за Самсона"
         },
         "453": {
             "name": "Empty Heart",
-            "unlock": "Победите Зверя/The Beast за Самсона/Samson"
+            "unlock": "Победите Биста за Самсона"
         },
         "454": {
             "name": "Devil's Crown",
-            "unlock": "Победите Матерь/Mother за Азазеля/Azazel"
+            "unlock": "Победите Матерь за Азазеля"
         },
         "455": {
             "name": "Lil Abaddon",
-            "unlock": "Победите Зверя/The Beast за Азазеля/Azazel"
+            "unlock": "Победите Биста за Азазеля"
         },
         "456": {
             "name": "Tinytoma",
-            "unlock": "Победите Матерь/Mother за Лазаря/Lazarus"
+            "unlock": "Победите Матерь за Лазаря"
         },
         "457": {
             "name": "Astral Projection",
-            "unlock": "Победите Зверя/The Beast за Лазаря/Lazarus"
+            "unlock": "Победите Биста за Лазаря"
         },
         "458": {
             "name": "'M",
-            "unlock": "Победите Матерь/Mother за Эдема/Eden"
+            "unlock": "Победите Матерь за Идена"
         },
         "459": {
             "name": "Everything Jar",
-            "unlock": "Победите Зверя/The Beast за Эдема/Eden"
+            "unlock": "Победите Биста за Идена"
         },
         "460": {
             "name": "Lost Soul",
-            "unlock": "Победите Матерь/Mother за Потерянного/The Lost"
+            "unlock": "Победите Матерь за Лоста"
         },
         "461": {
             "name": "Hungry Soul",
-            "unlock": "Победите Зверя/The Beast за Потерянного/The Lost"
+            "unlock": "Победите Биста за Лоста"
         },
         "462": {
             "name": "Blood Puppy",
-            "unlock": "Победите Матерь/Mother за Лилит/Lilith"
+            "unlock": "Победите Матерь за Лилит"
         },
         "463": {
             "name": "C Section",
-            "unlock": "Победите Зверя/The Beast за Лилит/Lilith"
+            "unlock": "Победите Биста за Лилит"
         },
         "464": {
             "name": "Keeper's Sack",
-            "unlock": "Победите Матерь/Mother за Хранителя/Keeper"
+            "unlock": "Победите Матерь за Хранителя"
         },
         "465": {
             "name": "Keeper's Box",
-            "unlock": "Победите Зверя/The Beast за Хранителя/Keeper"
+            "unlock": "Победите Биста за Хранителя"
         },
         "466": {
             "name": "Lil Portal",
-            "unlock": "Победите Матерь/Mother за Аполлиона/Apollyon"
+            "unlock": "Победите Матерь за Аполлиона"
         },
         "467": {
             "name": "Worm Friend",
-            "unlock": "Победите Зверя/The Beast за Аполлиона/Apollyon"
+            "unlock": "Победите Биста за Аполлиона"
         },
         "468": {
             "name": "Bone Spurs",
-            "unlock": "Победите Матерь/Mother за Забытого/The Forgotten"
+            "unlock": "Победите Матерь за Забытого"
         },
         "469": {
             "name": "Spirit Shackles",
-            "unlock": "Победите Зверя/The Beast за Забытого/The Forgotten"
+            "unlock": "Победите Биста за Забытого"
         },
         "470": {
             "name": "Revelation",
-            "unlock": "Победите Матерь/Mother за Вифанию/Bethany"
+            "unlock": "Победите Матерь за Бетани"
         },
         "471": {
             "name": "Jar of Wisps",
-            "unlock": "Победите Зверя/The Beast за Вифанию/Bethany"
+            "unlock": "Победите Биста за Бетани"
         },
         "472": {
             "name": "Magic Skin",
-            "unlock": "Победите Матерь/Mother за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите Матерь за Иакова и Исава"
         },
         "473": {
             "name": "Friend Finder",
-            "unlock": "Победите Зверя/The Beast за Иакова и Исава/Jacob & Esau"
+            "unlock": "Победите Биста за Иакова и Исава"
         },
         "474": {
             "name": "The Broken",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Исаака/Isaac"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Айзека"
         },
         "475": {
             "name": "The Dauntless",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Магдалину/Magdalene"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Магдалену"
         },
         "476": {
             "name": "The Hoarder",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Каина/Cain"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Кайна"
         },
         "477": {
             "name": "The Deceiver",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Иуду/Judas"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Иуду"
         },
         "478": {
             "name": "The Soiled",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за ???"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за ???"
         },
         "479": {
             "name": "The Curdled",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Еву/Eve"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Еву"
         },
         "480": {
             "name": "The Savage",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Самсона/Samson"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Самсона"
         },
         "481": {
             "name": "The Benighted",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Азазеля/Azazel"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Азазеля"
         },
         "482": {
             "name": "The Enigma",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Лазаря/Lazarus"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Лазаря"
         },
         "483": {
             "name": "The Capricious",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Эдема/Eden"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Идена"
         },
         "484": {
             "name": "The Baleful",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Потерянного/The Lost"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Лоста"
         },
         "485": {
             "name": "The Harlot",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Лилит/Lilith"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Лилит"
         },
         "486": {
             "name": "The Miser",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Хранителя/Keeper"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Хранителя"
         },
         "487": {
             "name": "The Empty",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Аполлиона/Apollyon"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Аполлиона"
         },
         "488": {
             "name": "The Fettered",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Забытого/The Forgotten"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Забытого"
         },
         "489": {
             "name": "The Zealot",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Вифанию/Bethany"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Бетани"
         },
         "490": {
             "name": "The Deserter",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Иакова и Исава/Jacob & Esau"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Иакова и Исава"
         },
         "491": {
             "name": "Glitched Crown",
-            "unlock": "Победите Зверя/The Beast за Порченого Исаака/Tainted Isaac"
+            "unlock": "Победите Биста за Порченого Айзека"
         },
         "492": {
             "name": "Belly Jelly",
-            "unlock": "Победите Зверя/The Beast за Порченую Магдалину/Tainted Magdalene"
+            "unlock": "Победите Биста за Порченую Магдалену"
         },
         "493": {
             "name": "Blue Key",
-            "unlock": "Победите Зверя/The Beast за Порченого Каина/Tainted Cain"
+            "unlock": "Победите Биста за Порченого Кайна"
         },
         "494": {
             "name": "Sanguine Bond",
-            "unlock": "Победите Зверя/The Beast за Порченого Иуду/Tainted Judas"
+            "unlock": "Победите Биста за Порченого Иуду"
         },
         "495": {
             "name": "The Swarm",
-            "unlock": "Победите Зверя/The Beast за Порченого ???/Tainted ???"
+            "unlock": "Победите Биста за Порченого ???"
         },
         "496": {
             "name": "Heartbreak",
-            "unlock": "Победите Зверя/The Beast за Порченую Еву/Tainted Eve"
+            "unlock": "Победите Биста за Порченую Еву"
         },
         "497": {
             "name": "Larynx",
-            "unlock": "Победите Зверя/The Beast за Порченого Самсона/Tainted Samson"
+            "unlock": "Победите Биста за Порченого Самсона"
         },
         "498": {
             "name": "Azazel's Rage",
-            "unlock": "Победите Зверя/The Beast за Порченого Азазеля/Tainted Azazel"
+            "unlock": "Победите Биста за Порченого Азазеля"
         },
         "499": {
             "name": "Salvation",
-            "unlock": "Победите Зверя/The Beast за Порченого Лазаря/Tainted Lazarus"
+            "unlock": "Победите Биста за Порченого Лазаря"
         },
         "500": {
             "name": "TMTRAINER",
-            "unlock": "Победите Зверя/The Beast за Порченого Эдема/Tainted Eden"
+            "unlock": "Победите Биста за Порченого Идена"
         },
         "501": {
             "name": "Sacred Orb",
-            "unlock": "Победите Зверя/The Beast за Порченого Потерянного/Tainted Lost"
+            "unlock": "Победите Биста за Порченого Лоста"
         },
         "502": {
             "name": "Twisted Pair",
-            "unlock": "Победите Зверя/The Beast за Порченую Лилит/Tainted Lilith"
+            "unlock": "Победите Биста за Порченую Лилит"
         },
         "503": {
             "name": "Strawman",
-            "unlock": "Победите Зверя/The Beast за Порченого Хранителя/Tainted Keeper"
+            "unlock": "Победите Биста за Порченого Хранителя"
         },
         "504": {
             "name": "Echo Chamber",
-            "unlock": "Победите Зверя/The Beast за Порченого Аполлиона/Tainted Apollyon"
+            "unlock": "Победите Биста за Порченого Аполлиона"
         },
         "505": {
             "name": "Isaac's Tomb",
-            "unlock": "Победите Зверя/The Beast за Порченого Забытого/Tainted Forgotten"
+            "unlock": "Победите Биста за Порченого Забытого"
         },
         "506": {
             "name": "Vengeful Spirit",
-            "unlock": "Победите Зверя/The Beast за Порченую Вифанию/Tainted Bethany"
+            "unlock": "Победите Биста за Порченую Бетани"
         },
         "507": {
             "name": "Esau Jr.",
-            "unlock": "Победите Зверя/The Beast за Порченого Иакова/Tainted Jacob"
+            "unlock": "Победите Биста за Порченого Иакова"
         },
         "508": {
             "name": "Bloody Mary",
-            "unlock": "Разблокировать Вифанию, убить Сердце Мамы 11 раз, и открыть Пакет с кровью"
+            "unlock": "Разблокировать Бетани, убить Сердце Мамы 11 раз, и открыть Пакет с кровью"
         },
         "509": {
             "name": "Baptism by Fire",
-            "unlock": "Убить Сатану за Вифанию, убить Сердце Мамы 11 раз, и открыть Веру Мэгги"
+            "unlock": "Убить Сатану за Бетани, убить Сердце Мамы 11 раз, и открыть Веру Мэгги"
         },
         "510": {
             "name": "Isaac's Awakening",
-            "unlock": "Победите Матерь/Mother"
+            "unlock": "Победите Матерь за Иакова и Исава"
         },
         "511": {
             "name": "Seeing Double",
-            "unlock": "Победите Матерь/Mother"
+            "unlock": "Победите Матерь за Иакова и Исава"
         },
         "512": {
             "name": "Pica Run",
-            "unlock": "Победите Сердце Мамы/Mom's Heart 11 раз и открыть Шарики (Marbles)"
+            "unlock": "Победите Сердце Мамы 11 раз и открыть Шарики "
         },
         "513": {
             "name": "Hot Potato",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Забытого/The Forgotten"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Забытого"
         },
         "514": {
             "name": "Cantripped!",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Каина/Cain"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Кайна"
         },
         "515": {
             "name": "Red Redemption",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Иакова и Исава/Jacob & Esau"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Иакова и Исава"
         },
         "516": {
             "name": "DELETE THIS",
-            "unlock": "Используйте Красный Ключ/Red Key или Треснувший Ключ/Cracked Key, чтобы открыть спрятанный чулан в Доме/Home за Эдема/Eden"
+            "unlock": "Используйте Красный Ключ или Треснувший Ключ, чтобы открыть спрятанный чулан в Доме за Идена"
         },
         "517": {
             "name": "Dirty Mind",
@@ -2070,23 +2070,23 @@
         },
         "518": {
             "name": "Sigil of Baphomet",
-            "unlock": "Завершите \"Кровавая Мэри/Bloody Mary\" испытание #37"
+            "unlock": "Завершите \"Кровавая Мэри\" испытание #37"
         },
         "519": {
             "name": "Purgatory",
-            "unlock": "Завершите \"Крещение Огнём/Baptism by Fire\" испытание #38"
+            "unlock": "Завершите \"Крещение Огнём\" испытание #38"
         },
         "520": {
             "name": "Spirit Sword",
-            "unlock": "Завершите \"Пробуждение Исаака/Isaac's Awakening\" испытание #39"
+            "unlock": "Завершите \"Пробуждение Айзека\" испытание #39"
         },
         "521": {
             "name": "Broken Glasses",
-            "unlock": "Завершите \"Двоится в Глазах/Seeing Double\" испытание #40"
+            "unlock": "Завершите \"Двоится в Глазах\" испытание #40"
         },
         "522": {
             "name": "Ice Cube",
-            "unlock": "Завершите \"Извращение Вкуса/Pica Run\" испытание #41"
+            "unlock": "Завершите \"Извращение Вкуса\" испытание #41"
         },
         "523": {
             "name": "Charged Penny",
@@ -2094,235 +2094,235 @@
         },
         "524": {
             "name": "The Fool",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Потерянного/Tainted Lost"
+            "unlock": "Завершите Ультра режим жадности за Порченого Лоста"
         },
         "525": {
             "name": "The Magician",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Иуду/Tainted Judas"
+            "unlock": "Завершите Ультра режим жадности за Порченого Иуду"
         },
         "526": {
             "name": "The High Priestess",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченую Лилит/Tainted Lilith"
+            "unlock": "Завершите Ультра режим жадности за Порченую Лилит"
         },
         "527": {
             "name": "The Empress",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченую Еву/Tainted Eve"
+            "unlock": "Завершите Ультра режим жадности за Порченую Еву"
         },
         "528": {
             "name": "The Emperor",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого ???/Tainted ???"
+            "unlock": "Завершите Ультра режим жадности за Порченого ???"
         },
         "529": {
             "name": "The Hierophant",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченую Вифанию/Tainted Bethany"
+            "unlock": "Завершите Ультра режим жадности за Порченую Бетани"
         },
         "530": {
             "name": "The Lovers",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченую Магдалину/Tainted Magdalene"
+            "unlock": "Завершите Ультра режим жадности за Порченую Магдалену"
         },
         "531": {
             "name": "The Chariot",
-            "unlock": "Завершите \"Горячая Картошка/Hot Potato\" испытание #42"
+            "unlock": "Завершите \"Горячая Картошка\" испытание #42"
         },
         "532": {
             "name": "Justice",
-            "unlock": "Завершите \"Заколдованный!/Cantripped\" испытание #43"
+            "unlock": "Завершите \"Заколдованный!\" испытание #43"
         },
         "533": {
             "name": "The Hermit",
-            "unlock": "Завершите \"Красное Искупление/Red Redemption\" испытание #44"
+            "unlock": "Завершите \"Красное Искупление\" испытание #44"
         },
         "534": {
             "name": "Wheel of Fortune",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Каина/Tainted Cain"
+            "unlock": "Завершите Ультра режим жадности за Порченого Кайна"
         },
         "535": {
             "name": "Strength",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Самсона/Tainted Samson"
+            "unlock": "Завершите Ультра режим жадности за Порченого Самсона"
         },
         "536": {
             "name": "The Hanged Man",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Хранителя/Tainted Keeper"
+            "unlock": "Завершите Ультра режим жадности за Порченого Хранителя"
         },
         "537": {
             "name": "Death",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Забытого/Tainted Forgotten"
+            "unlock": "Завершите Ультра режим жадности за Порченого Забытого"
         },
         "538": {
             "name": "Temperance",
-            "unlock": "Завершите \"УДАЛИТЬ ЭТО/DELETE THIS\" испытание #45"
+            "unlock": "Завершите \"УДАЛИТЬ ЭТО\" испытание #45"
         },
         "539": {
             "name": "The Devil",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Азазеля/Tainted Azazel"
+            "unlock": "Завершите Ультра режим жадности за Порченого Азазеля"
         },
         "540": {
             "name": "The Tower",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Аполлиона/Tainted Apollyon"
+            "unlock": "Завершите Ультра режим жадности за Порченого Аполлиона"
         },
         "541": {
             "name": "The Stars",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Исаака/Tainted Isaac"
+            "unlock": "Завершите Ультра режим жадности за Порченого Айзека"
         },
         "542": {
             "name": "The Sun and the Moon",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Иакова/Tainted Jacob"
+            "unlock": "Завершите Ультра режим жадности за Порченого Иакова"
         },
         "543": {
             "name": "Judgement",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Лазаря/Tainted Lazarus"
+            "unlock": "Завершите Ультра режим жадности за Порченого Лазаря"
         },
         "544": {
             "name": "The World",
-            "unlock": "Завершите Усложнённый Алчный Режим/Greedier Mode за Порченого Эдема/Tainted Eden"
+            "unlock": "Завершите Ультра режим жадности за Порченого Идена"
         },
         "545": {
             "name": "Old Capacitor",
-            "unlock": "Убейте 10 батарейных попрошаек/battery bum"
+            "unlock": "Убейте 10 батарейных попрошаек"
         },
         "546": {
             "name": "Brimstone Bombs",
-            "unlock": "Убейте Роговика/Hornfel после того как сломаете его вагонетку, прежде чем он сбежит"
+            "unlock": "Убейте Роговика после того как сломаете его вагонетку, прежде чем он сбежит"
         },
         "547": {
             "name": "Mega Mush",
-            "unlock": "Получите все отметки за прохождение усложнённого режима за всех не порченых/non-tainted персонажей"
+            "unlock": "Получите все отметки за прохождение усложнённого режима за всех не порченых персонажей"
         },
         "548": {
             "name": "Mom's Lock",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Исаака/Tainted Isaac"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Айзека"
         },
         "549": {
             "name": "Dice Bag",
-            "unlock": "Победите Матерь/Mother за Порченого Исаака/Tainted Isaac"
+            "unlock": "Победите Матерь за Порченого Айзека"
         },
         "550": {
             "name": "Holy Crown",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченую Магдалину/Tainted Magdalene"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченую Магдалену"
         },
         "551": {
             "name": "Mother's Kiss",
-            "unlock": "Победите Матерь/Mother за Порченую Магдалину/Tainted Magdalene"
+            "unlock": "Победите Матерь за Порченую Магдалену"
         },
         "552": {
             "name": "Gilded Key",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Каина/Tainted Cain"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Кайна"
         },
         "553": {
             "name": "Lucky Sack",
-            "unlock": "Победите Матерь/Mother за Порченого Каина/Tainted Cain"
+            "unlock": "Победите Матерь за Порченого Кайна"
         },
         "554": {
             "name": "Your Soul",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Иуду/Tainted Judas"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Иуду"
         },
         "555": {
             "name": "Number Magnet",
-            "unlock": "Победите Матерь/Mother за Порченого Иуду/Tainted Judas"
+            "unlock": "Победите Матерь за Порченого Иуду"
         },
         "556": {
             "name": "Dingle Berry",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого ???/Tainted ???"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого ???"
         },
         "557": {
             "name": "Ring Cap",
-            "unlock": "Победите Матерь/Mother за Порченого ???/Tainted ???"
+            "unlock": "Победите Матерь за Порченого ???"
         },
         "558": {
             "name": "Strange Key",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченую Еву/Tainted Eve"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченую Еву"
         },
         "559": {
             "name": "Lil Clot",
-            "unlock": "Победите Матерь/Mother за Порченую Еву/Tainted Eve"
+            "unlock": "Победите Матерь за Порченую Еву"
         },
         "560": {
             "name": "Temporary Tattoo",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Самсона/Tainted Samson"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Самсона"
         },
         "561": {
             "name": "Swallowed M80",
-            "unlock": "Победите Матерь/Mother за Порченого Самсона/Tainted Samson"
+            "unlock": "Победите Матерь за Порченого Самсона"
         },
         "562": {
             "name": "Wicked Crown",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Азазеля/Tainted Azazel"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Азазеля"
         },
         "563": {
             "name": "Azazel's Stump",
-            "unlock": "Победите Матерь/Mother за Порченого Азазеля/Tainted Azazel"
+            "unlock": "Победите Матерь за Порченого Азазеля"
         },
         "564": {
             "name": "Torn Pocket",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Лазаря/Tainted Lazarus"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Лазаря"
         },
         "565": {
             "name": "Torn Card",
-            "unlock": "Победите Матерь/Mother за Порченого Лазаря/Tainted Lazarus"
+            "unlock": "Победите Матерь за Порченого Лазаря"
         },
         "566": {
             "name": "Nuh Uh!",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Эдема/Tainted Eden"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Идена"
         },
         "567": {
             "name": "Modeling Clay",
-            "unlock": "Победите Матерь/Mother за Порченого Эдема/Tainted Eden"
+            "unlock": "Победите Матерь за Порченого Идена"
         },
         "568": {
             "name": "Kid's Drawing",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Потерянного/Tainted Lost"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Лоста"
         },
         "569": {
             "name": "Crystal Key",
-            "unlock": "Победите Матерь/Mother за Порченого Потерянного/Tainted Lost"
+            "unlock": "Победите Матерь за Порченого Лоста"
         },
         "570": {
             "name": "The Twins",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченую Лилит/Tainted Lilith"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченую Лилит"
         },
         "571": {
             "name": "Adoption Papers",
-            "unlock": "Победите Матерь/Mother за Порченую Лилит/Tainted Lilith"
+            "unlock": "Победите Матерь за Порченую Лилит"
         },
         "572": {
             "name": "Keeper's Bargain",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Хранителя/Tainted Keeper"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Хранителя"
         },
         "573": {
             "name": "Cursed Penny",
-            "unlock": "Победите Матерь/Mother за Порченого Хранителя/Tainted Keeper"
+            "unlock": "Победите Матерь за Порченого Хранителя"
         },
         "574": {
             "name": "Cricket Leg",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Аполлиона/Tainted Apollyon"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Аполлиона"
         },
         "575": {
             "name": "Apollyon's Best Friend",
-            "unlock": "Победите Матерь/Mother за Порченого Аполлиона/Tainted Apollyon"
+            "unlock": "Победите Матерь за Порченого Аполлиона"
         },
         "576": {
             "name": "Polished Bone",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Забытого/Tainted Forgotten"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Забытого"
         },
         "577": {
             "name": "Hollow Heart",
-            "unlock": "Победите Матерь/Mother за Порченого Забытого/Tainted Forgotten"
+            "unlock": "Победите Матерь за Порченого Забытого"
         },
         "578": {
             "name": "Expansion Pack",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченую Вифанию/Tainted Bethany"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченую Бетани"
         },
         "579": {
             "name": "Beth's Essence",
-            "unlock": "Победите Матерь/Mother за Порченую Вифанию/Tainted Bethany"
+            "unlock": "Победите Матерь за Порченую Бетани"
         },
         "580": {
             "name": "RC Remote",
-            "unlock": "Победите Исаака/Isaac, ???, Сатану/Satan и Агнца/The Lamb за Порченого Иакова/Tainted Jacob"
+            "unlock": "Победите Айзека, ???, Сатану и Агнца за Порченого Иакова"
         },
         "581": {
             "name": "Found Soul",
-            "unlock": "Победите Матерь/Mother за Порченого Иакова/Tainted Jacob"
+            "unlock": "Победите Матерь за Порченого Иакова"
         },
         "582": {
             "name": "Member Card",
@@ -2334,211 +2334,211 @@
         },
         "584": {
             "name": "Spindown Dice",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Исаака/Tainted Isaac"
+            "unlock": "Победите Делириума за Порченого Айзека"
         },
         "585": {
             "name": "Hypercoagulation",
-            "unlock": "Победите Cумасшествие/Delirium за Порченую Магдалину/Tainted Magdalene"
+            "unlock": "Победите Делириума за Порченую Магдалену"
         },
         "586": {
             "name": "Bag of Crafting",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Каина/Tainted Cain"
+            "unlock": "Победите Делириума за Порченого Кайна"
         },
         "587": {
             "name": "Dark Arts",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Иуду/Tainted Judas"
+            "unlock": "Победите Делириума за Порченого Иуду"
         },
         "588": {
             "name": "IBS",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого ???/Tainted ???"
+            "unlock": "Победите Делириума за Порченого ???"
         },
         "589": {
             "name": "Sumptorium",
-            "unlock": "Победите Cумасшествие/Delirium за Порченую Еву/Tainted Eve"
+            "unlock": "Победите Делириума за Порченую Еву"
         },
         "590": {
             "name": "Berserk!",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Самсона/Tainted Samson"
+            "unlock": "Победите Делириума за Порченого Самсона"
         },
         "591": {
             "name": "Hemoptysis",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Азазеля/Tainted Azazel"
+            "unlock": "Победите Делириума за Порченого Азазеля"
         },
         "592": {
             "name": "Flip",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Лазаря/Tainted Lazarus"
+            "unlock": "Победите Делириума за Порченого Лазаря"
         },
         "593": {
             "name": "Corrupted Data",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Эдема/Tainted Eden"
+            "unlock": "Победите Делириума за Порченого Идена"
         },
         "594": {
             "name": "Ghost Bombs",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Потерянного/Tainted Lost"
+            "unlock": "Победите Делириума за Порченого Лоста"
         },
         "595": {
             "name": "Gello",
-            "unlock": "Победите Cумасшествие/Delirium за Порченую Лилит/Tainted Lilith"
+            "unlock": "Победите Делириума за Порченую Лилит"
         },
         "596": {
             "name": "Keeper's Kin",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Хранителя/Tainted Keeper"
+            "unlock": "Победите Делириума за Порченого Хранителя"
         },
         "597": {
             "name": "Abyss",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Аполлиона/Tainted Apollyon"
+            "unlock": "Победите Делириума за Порченого Аполлиона"
         },
         "598": {
             "name": "Decap Attack",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Забытого/Tainted Forgotten"
+            "unlock": "Победите Делириума за Порченого Забытого"
         },
         "599": {
             "name": "Lemegeton",
-            "unlock": "Победите Cумасшествие/Delirium за Порченую Вифанию/Tainted Bethany"
+            "unlock": "Победите Делириума за Порченую Бетани"
         },
         "600": {
             "name": "Anima Sola",
-            "unlock": "Победите Cумасшествие/Delirium за Порченого Иакова/Tainted Jacob"
+            "unlock": "Победите Делириума за Порченого Иакова"
         },
         "601": {
             "name": "Mega Chest",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Исаака/Tainted Isaac"
+            "unlock": "Победите Мега Сатану за Порченого Айзека"
         },
         "602": {
             "name": "Queen of Hearts",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченую Магдалину/Tainted Magdalene"
+            "unlock": "Победите Мега Сатану за Порченую Магдалену"
         },
         "603": {
             "name": "Gold Pill",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Каина/Tainted Cain"
+            "unlock": "Победите Мега Сатану за Порченого Кайна"
         },
         "604": {
             "name": "Black Sack",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Иуду/Tainted Judas"
+            "unlock": "Победите Мега Сатану за Порченого Иуду"
         },
         "605": {
             "name": "Charming Poop",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого ???/Tainted ???"
+            "unlock": "Победите Мега Сатану за Порченого ???"
         },
         "606": {
             "name": "Horse Pill",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченую Еву/Tainted Eve"
+            "unlock": "Победите Мега Сатану за Порченую Еву"
         },
         "607": {
             "name": "Crane Game",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Самсона/Tainted Samson"
+            "unlock": "Победите Мега Сатану за Порченого Самсона"
         },
         "608": {
             "name": "Hell Game",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Азазеля/Tainted Azazel"
+            "unlock": "Победите Мега Сатану за Порченого Азазеля"
         },
         "609": {
             "name": "Wooden Chest",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Лазаря/Tainted Lazarus"
+            "unlock": "Победите Мега Сатану за Порченого Лазаря"
         },
         "610": {
             "name": "Wild Card",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Эдема/Tainted Eden"
+            "unlock": "Победите Мега Сатану за Порченого Идена"
         },
         "611": {
             "name": "Haunted Chest",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Потерянного/Tainted Lost"
+            "unlock": "Победите Мега Сатану за Порченого Лоста"
         },
         "612": {
             "name": "Fool's Gold",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченую Лилит/Tainted Lilith"
+            "unlock": "Победите Мега Сатану за Порченую Лилит"
         },
         "613": {
             "name": "Golden Penny",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Хранителя/Tainted Keeper"
+            "unlock": "Победите Мега Сатану за Порченого Хранителя"
         },
         "614": {
             "name": "Rotten Beggar",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Аполлиона/Tainted Apollyon"
+            "unlock": "Победите Мега Сатану за Порченого Аполлиона"
         },
         "615": {
             "name": "Golden Battery",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Забытого/Tainted Forgotten"
+            "unlock": "Победите Мега Сатану за Порченого Забытого"
         },
         "616": {
             "name": "Confessional",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченую Вифанию/Tainted Bethany"
+            "unlock": "Победите Мега Сатану за Порченую Бетани"
         },
         "617": {
             "name": "Golden Trinket",
-            "unlock": "Победите Мега Сатану/Mega Satan за Порченого Иакова/Tainted Jacob"
+            "unlock": "Победите Мега Сатану за Порченого Иакова"
         },
         "618": {
             "name": "Soul of Isaac",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Исаака/Tainted Isaac"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Айзека"
         },
         "619": {
             "name": "Soul of Magdalene",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченую Магдалину/Tainted Magdalene"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченую Магдалену"
         },
         "620": {
             "name": "Soul of Cain",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Каина/Tainted Cain"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Кайна"
         },
         "621": {
             "name": "Soul of Judas",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Иуду/Tainted Judas"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Иуду"
         },
         "622": {
             "name": "Soul of ???",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого ???/Tainted ???"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого ???"
         },
         "623": {
             "name": "Soul of Eve",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченую Еву/Tainted Eve"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченую Еву"
         },
         "624": {
             "name": "Soul of Samson",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Самсона/Tainted Samson"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Самсона"
         },
         "625": {
             "name": "Soul of Azazel",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Азазеля/Tainted Azazel"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Азазеля"
         },
         "626": {
             "name": "Soul of Lazarus",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Лазаря/Tainted Lazarus"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Лазаря"
         },
         "627": {
             "name": "Soul of Eden",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Эдема/Tainted Eden"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Идена"
         },
         "628": {
             "name": "Soul of the Lost",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Потерянного/Tainted Lost"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Лоста"
         },
         "629": {
             "name": "Soul of Lilith",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченую Лилит/Tainted Lilith"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченую Лилит"
         },
         "630": {
             "name": "Soul of the Keeper",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Хранителя/Tainted Keeper"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Хранителя"
         },
         "631": {
             "name": "Soul of Apollyon",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Аполлиона/Tainted Apollyon"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Аполлиона"
         },
         "632": {
             "name": "Soul of the Forgotten",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Забытого/Tainted Forgotten"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Забытого"
         },
         "633": {
             "name": "Soul of Bethany",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченую Вифанию/Tainted Bethany"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченую Бетани"
         },
         "634": {
             "name": "Soul of Jacob and Esau",
-            "unlock": "Завершите Марафон Боссов/Boss Rush и победите Молчание/Hush за Порченого Иакова/Tainted Jacob"
+            "unlock": "Завершите Босс раш и победите Хаша за Порченого Иакова"
         },
         "635": {
             "name": "A Strange Door",
-            "unlock": "Победите Матерь/Mother"
+            "unlock": "Победите Матерь"
         },
         "636": {
             "name": "Death Certificate",
@@ -2558,11 +2558,11 @@
         },
         "640": {
             "name": "Win Online Daily",
-            "unlock": "Завершите Ежедневный Забег/Daily Run в онлайн режиме"
+            "unlock": "Завершите Ежедневный Забег в онлайн режиме"
         },
         "641": {
             "name": "Item Descriptions",
-            "unlock": "Убить Маму/Mom"
+            "unlock": "Убить Маму"
         }
     }
 }
