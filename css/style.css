@@ -455,10 +455,14 @@ input[type="file"] {
 
 .filter-controls {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 8px;
     margin-bottom: 20px;
     flex-wrap: wrap;
+}
+
+#itemsTab .filter-controls {
+    justify-content: space-between;
+    align-items: center;
     gap: 15px;
 }
 
@@ -1024,13 +1028,13 @@ input[type="file"] {
         font-size: 0.75rem;
     }
 
-    .filter-controls {
+    #itemsTab .filter-controls {
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
     }
 
-    .filter-buttons {
+    #itemsTab .filter-buttons {
         justify-content: center;
     }
 
