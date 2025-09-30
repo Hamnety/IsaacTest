@@ -92,8 +92,8 @@ const ISAAC_GAME_DATA = {
             achievementIds: [49, 50, 75, 113, 53, 55, 118, 128, 123, 131, 219, 238, 312, 395, 419, 431],
             isTainted: false
         },
-        "Комната вызова": { 
-            name: "Комната вызова", 
+        "Босс раш": { 
+            name: "Босс раш", 
             iconId: 1, 
             achievementIds: [70, 109, 110, 108, 114, 112, 115, 105, 9, 125, 133, 222, 240, 314, 397, 421, 433],
             isTainted: false
@@ -166,8 +166,8 @@ const ISAAC_GAME_DATA = {
             achievementIds: [548, 550, 552, 554, 556, 558, 560, 562, 566, 568, 570, 572, 574, 576, 578, 580],
             isTainted: true
         },
-        "Комната вызова + Хаш": { 
-            name: "Комната вызова + Хаш", 
+        "Босс раш + Хаш": { 
+            name: "Босс раш + Хаш", 
             iconId: null, 
             achievementIds: [618, 619, 620, 621, 622, 623, 624, 625, 627, 628, 629, 630, 631, 632, 633, 634],
             isTainted: true
@@ -184,13 +184,13 @@ const ISAAC_GAME_DATA = {
 
 
     // Основные боссы для проверки завершенных отметок
-    requiredBosses: ['Сатана', '???', 'Комната вызова', 'Айзек', 'Агнец', 'Сердце мамы (сложн. режим)', 'Хаш', 'Мега сатана', 'Делириум', 'Режим жадности', 'Ультра режим жадности', 'Матерь', 'Бист'],
+    requiredBosses: ['Сатана', '???', 'Босс раш', 'Айзек', 'Агнец', 'Сердце мамы (сложн. режим)', 'Хаш', 'Мега сатана', 'Делириум', 'Режим жадности', 'Ультра режим жадности', 'Матерь', 'Бист'],
 
     // Данные о челленджах
     challenges: {
         60: { name: "Beans!", unlockCondition: "Изначально открыто", achievementId: 60 },
         62: { name: "The Host", unlockCondition: "Изначально открыто", achievementId: 62 },
-        63: { name: "The Family Man", unlockCondition: "Разблокировать Оно живое, и собрать первую и вторую часть ключа", achievementId: 63 },
+        63: { name: "The Family Man", unlockCondition: "Разблокировать Оно живое, собрать первую и вторую часть ключа", achievementId: 63 },
         89: { name: "Pitch Black", unlockCondition: "Изначально открыто", achievementId: 89 },
         90: { name: "High Brow", unlockCondition: "Изначально открыто", achievementId: 90 },
         91: { name: "Head Trauma", unlockCondition: "Изначально открыто", achievementId: 91 },
