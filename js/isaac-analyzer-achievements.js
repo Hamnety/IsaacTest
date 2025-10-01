@@ -656,7 +656,7 @@ class IsaacAchievementParser {
         const isTainted = characterId >= 474;
         
         // Для объединенных достижений порченных персонажей возвращаем все достижения
-        if (bossData.isTainted && (bossKey === "Сатана + ??? + Айзек + Агнец" || bossKey === "Комната вызова + Хаш")) {
+        if (bossData.isTainted && (bossKey === "Сатана + ??? + Айзек + Агнец" || bossKey === "Босс раш + Хаш")) {
             return bossData.achievementIds;
         }
         
@@ -693,7 +693,7 @@ class IsaacAchievementParser {
             // Пропускаем объединенные достижения для обычных персонажей
             if (!isTainted && bossData.isTainted) continue;
             // Пропускаем объединенные достижения для порченных персонажей (кроме специальных)
-            if (isTainted && bossData.isTainted && bossKey !== "Сатана + ??? + Айзек + Агнец" && bossKey !== "Комната вызова + Хаш") continue;
+            if (isTainted && bossData.isTainted && bossKey !== "Сатана + ??? + Айзек + Агнец" && bossKey !== "Босс раш + Хаш") continue;
             // Пропускаем "Режим жадности" для порченных персонажей
             if (isTainted && bossKey === "Режим жадности") continue;
             
@@ -751,7 +751,7 @@ class IsaacAchievementParser {
         const taintedIndex = characterId - 474;
         
         // Проверяем достижения для этого персонажа
-        const bossCallAchievement = conditions["Комната вызова + Хаш"][taintedIndex];
+        const bossCallAchievement = conditions["Босс раш + Хаш"][taintedIndex];
         const satanAchievement = conditions["Сатана + ??? + Айзек + Агнец"][taintedIndex];
         
         const bossCallDefeated = this.analysisResults.achievements[bossCallAchievement - 1]?.unlocked || false;
