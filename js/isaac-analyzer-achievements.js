@@ -984,10 +984,10 @@ class IsaacAchievementParser {
             div.innerHTML = `
                 <div class="achievement-main-info">
                     <div class="achievement-text-info">
-                        <div style="font-size: 0.9rem; font-weight: bold; color: #1e1008; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
+                        <div style="font-size: 0.9rem; font-weight: bold; color: #1a1a1a; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
                             #${achievement.id} ${achievement.name}
                         </div>
-                        <div style="color: #6b5038; font-size: 0.75rem; margin: 4px 0; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">
+                        <div style="color: #4a4540; font-size: 0.75rem; margin: 4px 0; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">
                             ${achievement.unlockCondition}
                         </div>
                         <div class="status-bottom ${achievement.unlocked ? 'unlocked' : 'locked'}">
@@ -1044,7 +1044,7 @@ class IsaacAchievementParser {
                         }
                         
                         ${undefeatedBosses.length > 0 ? `
-                            <div class="bosses-title" style="margin-top: 12px; color: #6b5038;">
+                            <div class="bosses-title" style="margin-top: 12px; color: #4a4540;">
                                 Не убитые боссы (${undefeatedBosses.length}/${totalBosses})
                             </div>
                             <div class="bosses-list">
@@ -1082,10 +1082,10 @@ class IsaacAchievementParser {
             div.innerHTML = `
                 <div class="character-main-info" style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px;">
                     <div class="character-text-info" style="flex: 1;">
-                        <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #1e1008; margin-bottom: 8px; line-height: 1.3">
+                        <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #1a1a1a; margin-bottom: 8px; line-height: 1.3">
                             ${character.name}
                         </div>
-                        <div class="character-status" style="color: ${character.unlocked ? '#5a7a28' : '#8a7060'};">
+                        <div class="character-status" style="color: ${character.unlocked ? '#8b1a1a' : '#7a746c'};">
                             ${character.unlocked ? '✓ РАЗБЛОКИРОВАН' : '✗ ЗАБЛОКИРОВАН'}
                         </div>
                         <div class="character-unlock-condition">
@@ -1142,7 +1142,7 @@ class IsaacAchievementParser {
             div.innerHTML = `
                 <div class="challenge-main-info">
                     <div class="challenge-text-info">
-                        <div style="font-size: 0.9rem; font-weight: bold; color: #1e1008; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
+                        <div style="font-size: 0.9rem; font-weight: bold; color: #1a1a1a; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
                             ${challengeName}
                         </div>
                         <div class="challenge-unlock-condition" style="word-wrap: break-word; overflow-wrap: break-word;">
@@ -1197,12 +1197,12 @@ class IsaacAchievementParser {
                 // Если изображение не загрузилось, используем стандартный размер с масштабированием
                 itemIcon.style.width = '19px'; // 32 * 0.6
                 itemIcon.style.height = '19px'; // 32 * 0.6
-                itemIcon.style.backgroundColor = '#c4ad88';
+                itemIcon.style.backgroundColor = '#ddd6c8';
                 itemIcon.style.display = 'flex';
                 itemIcon.style.alignItems = 'center';
                 itemIcon.style.justifyContent = 'center';
                 itemIcon.style.fontSize = '12px';
-                itemIcon.style.color = '#6b5038';
+                itemIcon.style.color = '#7a746c';
                 itemIcon.textContent = '?';
             };
             img.src = `img/items/${item.id}.png`;
@@ -1219,7 +1219,7 @@ class IsaacAchievementParser {
             `;
             
             textContainer.innerHTML = `
-                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #1e1008; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;">
+                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #1a1a1a; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;">
                     ${item.name}
                 </div>
             `;
@@ -1363,12 +1363,12 @@ class IsaacAchievementParser {
         if (!container) return;
         
         container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: #6b5038;">
+            <div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: #4a4540;">
                 <div class="spinner" style="margin-bottom: 20px; font-size: 2rem;"></div>
                 <div style="font-size: 1.1rem; font-weight: bold; margin-bottom: 10px;">
                     Переключение на вкладку
                 </div>
-                <div style="font-size: 0.9rem; color: #6b5038;">
+                <div style="font-size: 0.9rem; color: #7a746c;">
                     Загрузка данных...
                 </div>
             </div>
@@ -1383,7 +1383,7 @@ class IsaacAchievementParser {
         if (!container) return;
         
         container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #6b5038;">
+            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #4a4540;">
                 <div class="spinner" style="margin-bottom: 15px;"></div>
                 <div>Загрузка данных...</div>
             </div>
@@ -1662,9 +1662,9 @@ class IsaacAchievementParser {
                 ctx.drawImage(itemData.img, x, y, itemData.width, itemData.height);
             } else {
                 // Рисуем заглушку для отсутствующих изображений
-                ctx.fillStyle = '#4a5568';
+                ctx.fillStyle = '#ddd6c8';
                 ctx.fillRect(x, y, itemData.width, itemData.height);
-                ctx.fillStyle = '#a0aec0';
+                ctx.fillStyle = '#7a746c';
                 ctx.font = '12px Arial';
                 ctx.textAlign = 'center';
                 ctx.fillText('?', x + itemData.width/2, y + itemData.height/2 + 4);

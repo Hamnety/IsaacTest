@@ -5,127 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isaac Save Analyzer</title>
     <meta name="description" content="Isaac Save Analyzer for your save file">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/upheaval-pro" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="isaac-room">
-        <header class="title-bar">
-            <img src="img/icon1.png" alt="Isaac" class="title-icon">
-            <div class="title-group">
-                <h1>Save Analyzer</h1>
-                <p class="subtitle">Achievement Based</p>
-            </div>
-        </header>
+    <div class="isaac-wall">
+        <div class="wall-doodle wall-doodle-left" aria-hidden="true">:(</div>
+        <div class="wall-doodle wall-doodle-right" aria-hidden="true">$</div>
 
-        <main class="menu-wrap">
-            <div class="paper-panel">
-                <h2 class="panel-heading">Достижения</h2>
-
-                <div class="description-note">
-                    <p>Сайт находится в разработке, информация на сайте</p>
-                    <p>Сайт не хранит ваши данные, все данные обрабатываются локально на вашем устройстве</p>
-                    <p>Исходный код основан на <a href="https://zamiell.github.io/isaac-save-viewer/">Isaac Save Viewer</a> от Zamiell</p>
-                    <p>Если есть предложения, пишите на почту: cuddleguinc.9098483@gmail.com</p>
-                </div>
-
-                <div class="upload-zone" id="uploadZone">
-                    <i class="fas fa-file-upload upload-icon"></i>
-                    <div class="upload-text">Загрузи .dat файл для анализа</div>
-                    <div class="upload-hint">Repentance(+), Afterbirth(+), Rebirth</div>
-                    <div class="file-location-simple">
-                        <i class="fas fa-folder-open"></i>
-                        <span>C:\Users\"UserName"\Documents\My Games\Binding of Isaac (...)</span>
+        <div class="container">
+            <header class="paper-sheet paper-header">
+                <div class="logo">
+                    <img src="img/icon1.png" alt="Isaac Save Analyzer" class="logo-icon">
+                    <div>
+                        <h1>Isaac Save Analyzer</h1>
+                        <p class="subtitle">Achievement Based</p>
                     </div>
-                    <input type="file" id="fileInput" accept=".dat" />
                 </div>
+            </header>
 
-                <div class="error" id="errorMessage"></div>
+            <main class="main-content">
+                <section class="paper-sheet paper-main">
+                    <h2 class="content-title">ДОСТИЖЕНИЯ</h2>
 
-                <div class="loading" id="loading">
-                    <div class="spinner"><i class="fas fa-trophy"></i></div>
-                    <div>Анализ на основе достижений...</div>
-                    <div class="loading-subtitle">Определяем персонажей, челленджи и предметы</div>
-                </div>
+                    <aside class="paper-scrap description-note">
+                        <p>Сайт находится в разработке, информация на сайте</p>
+                        <p>Сайт не хранит ваши данные, все данные обрабатываются локально на вашем устройстве</p>
+                        <p>Исходный код основан на <a href="https://zamiell.github.io/isaac-save-viewer/">Isaac Save Viewer</a> от Zamiell</p>
+                        <p>Если есть предложения, пишите на почту: cuddleguinc.9098483@gmail.com</p>
+                    </aside>
 
-                <div class="analysis-section" id="analysisSection">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-title"><i class="fas fa-trophy"></i> Достижения</div>
-                            <div class="stat-value" id="achievementsCount">0</div>
-                            <div class="stat-subtitle" id="achievementsTotal">из 0 получено</div>
-                            <div class="progress-bar"><div class="progress-fill" id="achievementsProgress"></div></div>
+                    <div class="upload-zone" id="uploadZone">
+                        <div class="upload-icon-wrap">
+                            <i class="fas fa-file-upload upload-icon"></i>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-title"><i class="fas fa-user"></i> Персонажи</div>
-                            <div class="stat-value" id="charactersCount">0</div>
-                            <div class="stat-subtitle" id="charactersTotal">из 34 разблокировано</div>
-                            <div class="progress-bar"><div class="progress-fill" id="charactersProgress"></div></div>
+                        <div class="upload-text">Загрузи .dat файл для анализа</div>
+                        <div class="upload-hint">Repentance(+), Afterbirth(+), Rebirth</div>
+                        <div class="file-location-simple">
+                            <i class="fas fa-folder-open"></i>
+                            <span>C:\Users\"UserName"\Documents\My Games\Binding of Isaac (...)</span>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-title"><i class="fas fa-tasks"></i> Челленджи</div>
-                            <div class="stat-value" id="challengesCount">0</div>
-                            <div class="stat-subtitle" id="challengesTotal">из 45 завершено</div>
-                            <div class="progress-bar"><div class="progress-fill" id="challengesProgress"></div></div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-title"><i class="fas fa-gem"></i> Предметы</div>
-                            <div class="stat-value" id="itemsCount">0</div>
-                            <div class="stat-subtitle" id="itemsTotal">из 732 найдено</div>
-                            <div class="progress-bar"><div class="progress-fill" id="itemsProgress"></div></div>
+                        <input type="file" id="fileInput" accept=".dat" />
+                    </div>
+
+                    <div class="error" id="errorMessage"></div>
+
+                    <div class="loading" id="loading">
+                        <div class="spinner"><i class="fas fa-trophy"></i></div>
+                        <div>Анализ на основе достижений...</div>
+                        <div class="loading-subtitle">
+                            Определяем персонажей, челленджи и предметы
                         </div>
                     </div>
 
-                    <nav class="details-tabs">
-                        <button class="tab-button active" data-tab="achievements">Достижения</button>
-                        <button class="tab-button" data-tab="characters">Персонажи</button>
-                        <button class="tab-button" data-tab="challenges">Челленджи</button>
-                        <button class="tab-button" data-tab="items">Предметы</button>
-                    </nav>
-
-                    <div class="details-section">
-                        <div class="tab-content active" id="achievementsTab">
-                            <div class="filter-controls">
-                                <button class="filter-button active" data-filter="all">Все</button>
-                                <button class="filter-button" data-filter="unlocked">Полученные</button>
-                                <button class="filter-button" data-filter="locked">Не полученные</button>
+                    <div class="analysis-section" id="analysisSection">
+                        <div class="stats-grid">
+                            <div class="paper-scrap stat-card">
+                                <div class="stat-title"><i class="fas fa-trophy"></i> Достижения</div>
+                                <div class="stat-value" id="achievementsCount">0</div>
+                                <div class="stat-subtitle" id="achievementsTotal">из 0 получено</div>
+                                <div class="progress-bar"><div class="progress-fill" id="achievementsProgress"></div></div>
                             </div>
-                            <div id="achievementsList"></div>
-                        </div>
-
-                        <div class="tab-content" id="charactersTab">
-                            <div class="item-grid" id="charactersList"></div>
-                        </div>
-
-                        <div class="tab-content" id="challengesTab">
-                            <div class="filter-controls">
-                                <button class="filter-button active" data-filter="all">Все</button>
-                                <button class="filter-button" data-filter="completed">Завершенные</button>
-                                <button class="filter-button" data-filter="incomplete">Не завершенные</button>
+                            <div class="paper-scrap stat-card">
+                                <div class="stat-title"><i class="fas fa-user"></i> Персонажи</div>
+                                <div class="stat-value" id="charactersCount">0</div>
+                                <div class="stat-subtitle" id="charactersTotal">из 34 разблокировано</div>
+                                <div class="progress-bar"><div class="progress-fill" id="charactersProgress"></div></div>
                             </div>
-                            <div class="item-grid" id="challengesList"></div>
+                            <div class="paper-scrap stat-card">
+                                <div class="stat-title"><i class="fas fa-tasks"></i> Челленджи</div>
+                                <div class="stat-value" id="challengesCount">0</div>
+                                <div class="stat-subtitle" id="challengesTotal">из 45 завершено</div>
+                                <div class="progress-bar"><div class="progress-fill" id="challengesProgress"></div></div>
+                            </div>
+                            <div class="paper-scrap stat-card">
+                                <div class="stat-title"><i class="fas fa-gem"></i> Предметы</div>
+                                <div class="stat-value" id="itemsCount">0</div>
+                                <div class="stat-subtitle" id="itemsTotal">из 732 найдено</div>
+                                <div class="progress-bar"><div class="progress-fill" id="itemsProgress"></div></div>
+                            </div>
                         </div>
 
-                        <div class="tab-content" id="itemsTab">
-                            <div class="filter-controls">
-                                <div class="filter-buttons">
-                                    <button class="filter-button active" data-filter="all">Все</button>
-                                    <button class="filter-button" data-filter="found">Найденные</button>
-                                    <button class="filter-button" data-filter="missing">Не найденные</button>
+                        <div class="details-section">
+                            <nav class="details-tabs" aria-label="Разделы">
+                                <button class="tab-button active" data-tab="achievements">Достижения</button>
+                                <button class="tab-button" data-tab="characters">Персонажи</button>
+                                <button class="tab-button" data-tab="challenges">Челленджи</button>
+                                <button class="tab-button" data-tab="items">Предметы</button>
+                            </nav>
+
+                            <div class="paper-sheet paper-panel">
+                                <div class="tab-content active" id="achievementsTab">
+                                    <div class="filter-controls">
+                                        <button class="filter-button active" data-filter="all">Все</button>
+                                        <button class="filter-button" data-filter="unlocked">Полученные</button>
+                                        <button class="filter-button" data-filter="locked">Не полученные</button>
+                                    </div>
+                                    <div id="achievementsList"></div>
                                 </div>
-                                <button class="export-button" id="generateMissingItemsImage">
-                                    <i class="fas fa-image"></i>
-                                    Сгенерировать изображение не найденных предметов
-                                </button>
+
+                                <div class="tab-content" id="charactersTab">
+                                    <div class="item-grid" id="charactersList"></div>
+                                </div>
+
+                                <div class="tab-content" id="challengesTab">
+                                    <div class="filter-controls">
+                                        <button class="filter-button active" data-filter="all">Все</button>
+                                        <button class="filter-button" data-filter="completed">Завершенные</button>
+                                        <button class="filter-button" data-filter="incomplete">Не завершенные</button>
+                                    </div>
+                                    <div class="item-grid" id="challengesList"></div>
+                                </div>
+
+                                <div class="tab-content" id="itemsTab">
+                                    <div class="filter-controls">
+                                        <div class="filter-buttons">
+                                            <button class="filter-button active" data-filter="all">Все</button>
+                                            <button class="filter-button" data-filter="found">Найденные</button>
+                                            <button class="filter-button" data-filter="missing">Не найденные</button>
+                                        </div>
+                                        <button class="export-button" id="generateMissingItemsImage">
+                                            <i class="fas fa-image"></i>
+                                            Сгенерировать изображение не найденных предметов
+                                        </button>
+                                    </div>
+                                    <div class="item-grid" id="itemsList"></div>
+                                </div>
                             </div>
-                            <div class="item-grid" id="itemsList"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </main>
+                </section>
+            </main>
+        </div>
     </div>
 
     <script src="js/isaac-data.js"></script>
