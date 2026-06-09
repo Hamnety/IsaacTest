@@ -984,10 +984,10 @@ class IsaacAchievementParser {
             div.innerHTML = `
                 <div class="achievement-main-info">
                     <div class="achievement-text-info">
-                        <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
+                        <div style="font-size: 0.9rem; font-weight: bold; color: #d4c4a8; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
                             #${achievement.id} ${achievement.name}
                         </div>
-                        <div style="color: #a0aec0; font-size: 0.75rem; margin: 4px 0; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">
+                        <div style="color: #a89070; font-size: 0.75rem; margin: 4px 0; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">
                             ${achievement.unlockCondition}
                         </div>
                         <div class="status-bottom ${achievement.unlocked ? 'unlocked' : 'locked'}">
@@ -1044,7 +1044,7 @@ class IsaacAchievementParser {
                         }
                         
                         ${undefeatedBosses.length > 0 ? `
-                            <div class="bosses-title" style="margin-top: 12px; color: #a0aec0;">
+                            <div class="bosses-title" style="margin-top: 12px; color: #a89070;">
                                 Не убитые боссы (${undefeatedBosses.length}/${totalBosses})
                             </div>
                             <div class="bosses-list">
@@ -1082,10 +1082,10 @@ class IsaacAchievementParser {
             div.innerHTML = `
                 <div class="character-main-info" style="display: flex; align-items: flex-start; gap: 16px; margin-bottom: 16px;">
                     <div class="character-text-info" style="flex: 1;">
-                        <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3">
+                        <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #d4c4a8; margin-bottom: 8px; line-height: 1.3">
                             ${character.name}
                         </div>
-                        <div class="character-status" style="color: ${character.unlocked ? '#ffd700' : '#4c566a'};">
+                        <div class="character-status" style="color: ${character.unlocked ? '#e8c547' : '#6b5344'};">
                             ${character.unlocked ? '✓ РАЗБЛОКИРОВАН' : '✗ ЗАБЛОКИРОВАН'}
                         </div>
                         <div class="character-unlock-condition">
@@ -1142,7 +1142,7 @@ class IsaacAchievementParser {
             div.innerHTML = `
                 <div class="challenge-main-info">
                     <div class="challenge-text-info">
-                        <div style="font-size: 0.9rem; font-weight: bold; color: #e2e8f0; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
+                        <div style="font-size: 0.9rem; font-weight: bold; color: #d4c4a8; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
                             ${challengeName}
                         </div>
                         <div class="challenge-unlock-condition" style="word-wrap: break-word; overflow-wrap: break-word;">
@@ -1197,12 +1197,12 @@ class IsaacAchievementParser {
                 // Если изображение не загрузилось, используем стандартный размер с масштабированием
                 itemIcon.style.width = '19px'; // 32 * 0.6
                 itemIcon.style.height = '19px'; // 32 * 0.6
-                itemIcon.style.backgroundColor = '#4a5568';
+                itemIcon.style.backgroundColor = '#3d2b1f';
                 itemIcon.style.display = 'flex';
                 itemIcon.style.alignItems = 'center';
                 itemIcon.style.justifyContent = 'center';
                 itemIcon.style.fontSize = '12px';
-                itemIcon.style.color = '#a0aec0';
+                itemIcon.style.color = '#a89070';
                 itemIcon.textContent = '?';
             };
             img.src = `img/items/${item.id}.png`;
@@ -1219,7 +1219,7 @@ class IsaacAchievementParser {
             `;
             
             textContainer.innerHTML = `
-                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #e2e8f0; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;">
+                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #d4c4a8; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;">
                     ${item.name}
                 </div>
             `;
@@ -1363,12 +1363,12 @@ class IsaacAchievementParser {
         if (!container) return;
         
         container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: #a0aec0;">
+            <div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: #a89070;">
                 <div class="spinner" style="margin-bottom: 20px; font-size: 2rem;"></div>
                 <div style="font-size: 1.1rem; font-weight: bold; margin-bottom: 10px;">
                     Переключение на вкладку
                 </div>
-                <div style="font-size: 0.9rem; color: #6b7280;">
+                <div style="font-size: 0.9rem; color: #8b7355;">
                     Загрузка данных...
                 </div>
             </div>
@@ -1383,7 +1383,7 @@ class IsaacAchievementParser {
         if (!container) return;
         
         container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #a0aec0;">
+            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #a89070;">
                 <div class="spinner" style="margin-bottom: 15px;"></div>
                 <div>Загрузка данных...</div>
             </div>
