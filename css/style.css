@@ -440,6 +440,8 @@ input[type="file"] {
     display: none;
     max-height: 620px;
     overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 6px;
     opacity: 0;
     transform: translateY(4px);
     transition: opacity 0.2s, transform 0.2s;
@@ -456,8 +458,10 @@ input[type="file"] {
     display: flex;
     gap: 8px;
     margin-bottom: 16px;
+    padding: 8px 4px 4px;
     flex-wrap: wrap;
     align-items: center;
+    overflow: visible;
 }
 
 #itemsTab .filter-controls {
@@ -472,29 +476,31 @@ input[type="file"] {
 }
 
 .filter-button {
-    background: var(--isaac-btn) center / 100% 100% no-repeat;
+    background: var(--isaac-btn) center center / 100% 100% no-repeat;
     border: none;
     color: var(--ink);
-    padding: 8px 16px;
-    min-height: 36px;
+    padding: 10px 18px 8px;
+    min-height: 48px;
     min-width: 80px;
     cursor: pointer;
     font-family: var(--font-upheaval);
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.4px;
-    transition: filter 0.15s, transform 0.1s;
+    transition: filter 0.15s;
     filter: brightness(1.05);
+    flex-shrink: 0;
+    box-sizing: border-box;
+    line-height: 1.2;
 }
 
 .filter-button:hover {
-    filter: brightness(1.15);
-    transform: translateY(-1px);
+    filter: brightness(1.12);
 }
 
 .filter-button.active {
-    filter: brightness(0.92) saturate(1.1);
-    transform: scale(1.03);
+    filter: brightness(0.88) saturate(1.1);
+    color: var(--blood);
 }
 
 /* ===== Item grids ===== */
