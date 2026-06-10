@@ -364,7 +364,8 @@ class IsaacAchievementParser {
                     type: itemData.type,
                     quality: itemData.quality,
                     description: itemData.description,
-                    pool: itemData.pool
+                    pool: itemData.pool,
+                    unlock: itemData.unlock
                 });
             }
         }
@@ -601,7 +602,8 @@ class IsaacAchievementParser {
                     type: itemData.type,
                     quality: itemData.quality,
                     description: itemData.description,
-                    pool: itemData.pool
+                    pool: itemData.pool,
+                    unlock: itemData.unlock
                     });
                 }
             }
@@ -816,7 +818,8 @@ class IsaacAchievementParser {
                 quality: this.getItemQuality(itemId),
                 type: this.getItemType(itemId),
                 description: item.text || item.description || '',
-                pool: this.getItemPool(itemId)
+                pool: item.pool || this.getItemPool(itemId),
+                unlock: item.unlock || ''
             };
         }
         
@@ -831,7 +834,8 @@ class IsaacAchievementParser {
             quality: this.getItemQuality(itemId),
             type: this.getItemType(itemId),
             description: this.getItemDescription(itemId),
-            pool: this.getItemPool(itemId)
+            pool: this.getItemPool(itemId),
+            unlock: ''
         };
     }
 
@@ -866,6 +870,9 @@ class IsaacAchievementParser {
     }
 
     getItemPool(itemId) {
+        if (this.fullItemsData && this.fullItemsData[itemId]?.pool) {
+            return this.fullItemsData[itemId].pool;
+        }
         // Простая эвристика пулов предметов
         if (itemId <= 100) return "Item Room";
         if (itemId <= 200) return "Devil Room";
@@ -1165,8 +1172,11 @@ class IsaacAchievementParser {
 
     updateItemsTab() {
         const container = document.getElementById('itemsList');
+        const detailBar = document.getElementById('itemsDetailBar');
         const detailName = document.getElementById('itemsDetailName');
         const detailStatus = document.getElementById('itemsDetailStatus');
+        const detailPool = document.getElementById('itemsDetailPool');
+        const detailUnlock = document.getElementById('itemsDetailUnlock');
         const detailIcon = document.getElementById('itemsDetailIcon');
         container.innerHTML = '';
 
@@ -1185,9 +1195,18 @@ class IsaacAchievementParser {
                 detailStatus.textContent = item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН';
                 detailStatus.className = `items-detail-status ${item.found ? 'found' : 'missing'}`;
             }
+            if (detailPool) {
+                detailPool.textContent = item.pool ? `Пул: ${item.pool}` : '';
+                detailPool.hidden = !item.pool;
+            }
+            if (detailUnlock) {
+                detailUnlock.textContent = item.unlock ? `Как открыть: ${item.unlock}` : '';
+                detailUnlock.hidden = !item.unlock;
+            }
             if (detailIcon) {
                 detailIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
             }
+            if (detailBar) detailBar.classList.add('is-active');
         };
 
         const resetItemDetail = () => {
@@ -1197,13 +1216,25 @@ class IsaacAchievementParser {
                 detailStatus.textContent = '';
                 detailStatus.className = 'items-detail-status';
             }
+            if (detailPool) {
+                detailPool.textContent = '';
+                detailPool.hidden = true;
+            }
+            if (detailUnlock) {
+                detailUnlock.textContent = '';
+                detailUnlock.hidden = true;
+            }
             if (detailIcon) detailIcon.style.backgroundImage = '';
+            if (detailBar) detailBar.classList.remove('is-active');
         };
 
         sortedItems.forEach(item => {
             const cell = document.createElement('div');
             cell.className = `item-cell ${item.found ? 'unlocked' : 'locked'}`;
-            cell.title = item.name;
+            const tooltipParts = [item.name];
+            if (item.pool) tooltipParts.push(`Пул: ${item.pool}`);
+            if (item.unlock) tooltipParts.push(`Как открыть: ${item.unlock}`);
+            cell.title = tooltipParts.join('\n');
             cell.dataset.itemId = item.id;
 
             const img = document.createElement('img');

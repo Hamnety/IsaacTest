@@ -1,2162 +1,3600 @@
 {
-  "NEW": {
-    "name": "Unknown Item"
-  },
   "1": {
-    "name": "The Sad Onion"
+    "name": "The Sad Onion",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "2": {
-    "name": "The Inner Eye"
+    "name": "The Inner Eye",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "3": {
-    "name": "Spoon Bender"
+    "name": "Spoon Bender",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "4": {
-    "name": "Cricket's Head"
+    "name": "Cricket's Head",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "5": {
-    "name": "My Reflection"
+    "name": "My Reflection",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "6": {
-    "name": "Number One"
+    "name": "Number One",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "7": {
-    "name": "Blood of the Martyr"
+    "name": "Blood of the Martyr",
+    "pool": "Treasure Room, Angel Room, Wooden Chest, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "8": {
-    "name": "Brother Bobby"
+    "name": "Brother Bobby",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "9": {
-    "name": "Skatole"
+    "name": "Skatole",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "10": {
-    "name": "Halo of Flies"
+    "name": "Halo of Flies",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "11": {
-    "name": "1UP"
+    "name": "1UP",
+    "pool": "Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "12": {
-    "name": "Magic Mushroom"
+    "name": "Magic Mushroom",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "13": {
-    "name": "The Virus"
+    "name": "The Virus",
+    "pool": "Treasure Room, Devil Beggar, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "14": {
-    "name": "Roid Rage"
+    "name": "Roid Rage",
+    "pool": "Treasure Room, Boss, Devil Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "15": {
-    "name": "<3"
+    "name": "<3",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "16": {
-    "name": "Raw Liver"
+    "name": "Raw Liver",
+    "pool": "Secret Room, Greed Boss Item Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "17": {
-    "name": "Skeleton Key"
+    "name": "Skeleton Key",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "18": {
-    "name": "A Dollar"
+    "name": "A Dollar",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "19": {
-    "name": "Boom!"
+    "name": "Boom!",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "20": {
-    "name": "Transcendence"
+    "name": "Transcendence",
+    "pool": "Secret Room, Greed Secret Room",
+    "unlock": "Победить Мамино Сердце 3 раза"
   },
   "21": {
-    "name": "The Compass"
+    "name": "The Compass",
+    "pool": "Shop, Beggar, Crane Game",
+    "unlock": "Открыто со старта"
   },
   "22": {
-    "name": "Lunch"
+    "name": "Lunch",
+    "pool": "Boss, Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "23": {
-    "name": "Dinner"
+    "name": "Dinner",
+    "pool": "Boss, Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "24": {
-    "name": "Dessert"
+    "name": "Dessert",
+    "pool": "Boss, Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "25": {
-    "name": "Breakfast"
+    "name": "Breakfast",
+    "pool": "Boss, Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "26": {
-    "name": "Rotten Meat"
+    "name": "Rotten Meat",
+    "pool": "Boss, Beggar, Rotten Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "27": {
-    "name": "Wooden Spoon"
+    "name": "Wooden Spoon",
+    "pool": "Boss, Wooden Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "28": {
-    "name": "The Belt"
+    "name": "The Belt",
+    "pool": "Boss, Golden Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "29": {
-    "name": "Mom's Underwear"
+    "name": "Mom's Underwear",
+    "pool": "Boss, Golden Chest, Old Chest, Mom's Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "30": {
-    "name": "Mom's Heels"
+    "name": "Mom's Heels",
+    "pool": "Boss, Old Chest, Ultra Secret Room, Mom's Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "31": {
-    "name": "Mom's Lipstick"
+    "name": "Mom's Lipstick",
+    "pool": "Boss, Old Chest, Ultra Secret Room, Mom's Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "32": {
-    "name": "Wire Coat Hanger"
+    "name": "Wire Coat Hanger",
+    "pool": "Boss, Golden Chest, Crane Game, Greed Boss Item Room",
+    "unlock": "Победить Мамино Сердце 4 раза"
   },
   "33": {
-    "name": "The Bible"
+    "name": "The Bible",
+    "pool": "Shop, Library, Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "34": {
-    "name": "The Book of Belial"
+    "name": "The Book of Belial",
+    "pool": "Library, Devil Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "35": {
-    "name": "The Necronomicon"
+    "name": "The Necronomicon",
+    "pool": "Library, Devil Room, Secret Room, Greed Treasure Room, Greed Secret Room, Greed Devil Room",
+    "unlock": "Применить карту XIII - Death 4 раза"
   },
   "36": {
-    "name": "The Poop"
+    "name": "The Poop",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "37": {
-    "name": "Mr. Boom"
+    "name": "Mr. Boom",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "38": {
-    "name": "Tammy's Head"
+    "name": "Tammy's Head",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "39": {
-    "name": "Mom's Bra"
+    "name": "Mom's Bra",
+    "pool": "Treasure Room, Old Chest, Mom's Chest, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "40": {
-    "name": "Kamikaze"
+    "name": "Kamikaze",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "41": {
-    "name": "Mom's Pad"
+    "name": "Mom's Pad",
+    "pool": "Treasure Room, Old Chest, Mom's Chest, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "42": {
-    "name": "Bob's Rotten Head"
+    "name": "Bob's Rotten Head",
+    "pool": "Treasure Room, Rotten Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "44": {
-    "name": "Teleport!"
+    "name": "Teleport!",
+    "pool": "Treasure Room, Crane Game",
+    "unlock": "Открыто со старта"
   },
   "45": {
-    "name": "Yum Heart"
+    "name": "Yum Heart",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "46": {
-    "name": "Lucky Foot"
+    "name": "Lucky Foot",
+    "pool": "Treasure Room, Beggar, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "47": {
-    "name": "Doctor's Remote"
+    "name": "Doctor's Remote",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "48": {
-    "name": "Cupid's Arrow"
+    "name": "Cupid's Arrow",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "49": {
-    "name": "Shoop Da Whoop"
+    "name": "Shoop Da Whoop",
+    "pool": "Treasure Room, Ultra Secret Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "50": {
-    "name": "Steven"
+    "name": "Steven",
+    "pool": "Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "51": {
-    "name": "Pentagram"
+    "name": "Pentagram",
+    "pool": "Boss, Devil Beggar, Curse Room, Devil Room, Ultra Secret Room, Crane Game, Greed Curse Room, Greed Boss Item Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "52": {
-    "name": "Dr. Fetus"
+    "name": "Dr. Fetus",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Мамино Сердце 9 раз"
   },
   "53": {
-    "name": "Magneto"
+    "name": "Magneto",
+    "pool": "Treasure Room, Ultra Secret Room",
+    "unlock": "Открыто со старта"
   },
   "54": {
-    "name": "Treasure Map"
+    "name": "Treasure Map",
+    "pool": "Shop, Beggar",
+    "unlock": "Открыто со старта"
   },
   "55": {
-    "name": "Mom's Eye"
+    "name": "Mom's Eye",
+    "pool": "Treasure Room, Old Chest, Mom's Chest, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "56": {
-    "name": "Lemon Mishap"
+    "name": "Lemon Mishap",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "57": {
-    "name": "Distant Admiration"
+    "name": "Distant Admiration",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "58": {
-    "name": "Book of Shadows"
+    "name": "Book of Shadows",
+    "pool": "Treasure Room, Library",
+    "unlock": "Открыто со старта"
   },
   "60": {
-    "name": "The Ladder"
+    "name": "The Ladder",
+    "pool": "Shop, Wooden Chest",
+    "unlock": "Открыто со старта"
   },
   "62": {
-    "name": "Charm of the Vampire"
+    "name": "Charm of the Vampire",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "63": {
-    "name": "The Battery"
+    "name": "The Battery",
+    "pool": "Shop, Battery Bum, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "64": {
-    "name": "Steam Sale"
+    "name": "Steam Sale",
+    "pool": "Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "65": {
-    "name": "Anarchist Cookbook"
+    "name": "Anarchist Cookbook",
+    "pool": "Treasure Room, Library, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "66": {
-    "name": "The Hourglass"
+    "name": "The Hourglass",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "67": {
-    "name": "Sister Maggy"
+    "name": "Sister Maggy",
+    "pool": "Treasure Room, Ultra Secret Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "68": {
-    "name": "Technology"
+    "name": "Technology",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "69": {
-    "name": "Chocolate Milk"
+    "name": "Chocolate Milk",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "70": {
-    "name": "Growth Hormones"
+    "name": "Growth Hormones",
+    "pool": "Boss, Devil Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "71": {
-    "name": "Mini Mush"
+    "name": "Mini Mush",
+    "pool": "Treasure Room, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "72": {
-    "name": "Rosary"
+    "name": "Rosary",
+    "pool": "Treasure Room, Angel Room, Ultra Secret Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "73": {
-    "name": "Cube of Meat"
+    "name": "Cube of Meat",
+    "pool": "Ultra Secret Room, Baby Shop, Greed Shop, Greed Curse Room, Greed Boss Item Room",
+    "unlock": "Победить Маму"
   },
   "74": {
-    "name": "A Quarter"
+    "name": "A Quarter",
+    "pool": "Golden Chest, Devil Room, Greed Devil Room",
+    "unlock": "Победить Мамино Сердце 8 раз"
   },
   "75": {
-    "name": "PhD"
+    "name": "PhD",
+    "pool": "Treasure Room, Shop, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "76": {
-    "name": "X-Ray Vision"
+    "name": "X-Ray Vision",
+    "pool": "Treasure Room, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "77": {
-    "name": "My Little Unicorn"
+    "name": "My Little Unicorn",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "78": {
-    "name": "Book of Revelations"
+    "name": "Book of Revelations",
+    "pool": "Treasure Room, Library, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Победить Босса-Всадника"
   },
   "79": {
-    "name": "The Mark"
+    "name": "The Mark",
+    "pool": "Devil Beggar, Curse Room, Devil Room, Ultra Secret Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "80": {
-    "name": "The Pact"
+    "name": "The Pact",
+    "pool": "Devil Beggar, Curse Room, Devil Room, Ultra Secret Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "81": {
-    "name": "Dead Cat"
+    "name": "Dead Cat",
+    "pool": "Red Chest, Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "82": {
-    "name": "Lord of the Pit"
+    "name": "Lord of the Pit",
+    "pool": "Devil Beggar, Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "83": {
-    "name": "The Nail"
+    "name": "The Nail",
+    "pool": "Devil Beggar, Devil Room, Greed Devil Room",
+    "unlock": "Завершить Босс Раш за Азазеля"
   },
   "84": {
-    "name": "We Need To Go Deeper!"
+    "name": "We Need To Go Deeper!",
+    "pool": "Devil Room, Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "85": {
-    "name": "Deck of Cards"
+    "name": "Deck of Cards",
+    "pool": "Treasure Room, Shop, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "86": {
-    "name": "Monstro's Tooth"
+    "name": "Monstro's Tooth",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Пройти первую главу"
   },
   "87": {
-    "name": "Loki's Horns"
+    "name": "Loki's Horns",
+    "pool": "Treasure Room, Devil Beggar, Greed Treasure Room",
+    "unlock": "Убить Локии (Разделенная версия Локи)"
   },
   "88": {
-    "name": "Little Chubby"
+    "name": "Little Chubby",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Пройти вторую главу"
   },
   "89": {
-    "name": "Spider Bite"
+    "name": "Spider Bite",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "90": {
-    "name": "The Small Rock"
+    "name": "The Small Rock",
+    "pool": "Crane Game",
+    "unlock": "Разрушить 100 меченых камней"
   },
   "91": {
-    "name": "Spelunker Hat"
+    "name": "Spelunker Hat",
+    "pool": "Treasure Room, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "92": {
-    "name": "Super Bandage"
+    "name": "Super Bandage",
+    "pool": "Treasure Room, Boss, Greed Treasure Room, Greed Boss Item Room",
+    "unlock": "Собрать полную Пластырь-девочку из четырех Ball of Bandages"
   },
   "93": {
-    "name": "The Gamekid"
+    "name": "The Gamekid",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Посетить Аркадную комнату 10 раз"
   },
   "94": {
-    "name": "Sack of Pennies"
+    "name": "Sack of Pennies",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Айзека за Каина"
   },
   "95": {
-    "name": "Robo-Baby"
+    "name": "Robo-Baby",
+    "pool": "Treasure Room, Baby Shop, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "96": {
-    "name": "Little C.H.A.D."
+    "name": "Little C.H.A.D.",
+    "pool": "Treasure Room, Ultra Secret Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Убить Ч.А.Д.а в качестве босса этажа, который открывается за прохождение второй главы 30 раз"
   },
   "97": {
-    "name": "The Book of Sin"
+    "name": "The Book of Sin",
+    "pool": "Treasure Room, Library, Devil Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Победить каждого из Семи Смертных Грехов"
   },
   "98": {
-    "name": "The Relic"
+    "name": "The Relic",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Победить Айзека за Магдалену"
   },
   "99": {
-    "name": "Little Gish"
+    "name": "Little Gish",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Убить Гиша в качестве босса этажа, который открывается за прохождение третьей главы 20 раз"
   },
   "100": {
-    "name": "Little Steven"
+    "name": "Little Steven",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Победить Стивена в качестве босса этажа, который открывается за прохождение первой главы 40 раз"
   },
   "101": {
-    "name": "The Halo"
+    "name": "The Halo",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Boss Item Room, Greed Angel Room",
+    "unlock": "Убить Маму, Мамино Сердце или Оно Живое активацией item:[The Bible]"
   },
   "102": {
-    "name": "Mom's Bottle of Pills"
+    "name": "Mom's Bottle of Pills",
+    "pool": "Treasure Room, Shop, Old Chest, Beggar, Devil Beggar, Mom's Chest, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "103": {
-    "name": "The Common Cold"
+    "name": "The Common Cold",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "104": {
-    "name": "The Parasite"
+    "name": "The Parasite",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Получить за забег два \"мертвых\" предмета"
   },
   "105": {
-    "name": "The D6"
+    "name": "The D6",
+    "pool": "Treasure Room, Ultra Secret Room, Crane Game, Greed Shop",
+    "unlock": "Победить Айзека за ???"
   },
   "106": {
-    "name": "Mr. Mega"
+    "name": "Mr. Mega",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Уничтожить 10 меченых камней"
   },
   "107": {
-    "name": "Pinking Shears"
+    "name": "Pinking Shears",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "108": {
-    "name": "The Wafer"
+    "name": "The Wafer",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "109": {
-    "name": "Money = Power"
+    "name": "Money = Power",
+    "pool": "Treasure Room, Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "110": {
-    "name": "Mom's Contacts"
+    "name": "Mom's Contacts",
+    "pool": "Treasure Room, Old Chest, Ultra Secret Room, Mom's Chest, Greed Treasure Room",
+    "unlock": "Собрать три предмета мамы за забег"
   },
   "111": {
-    "name": "The Bean"
+    "name": "The Bean",
+    "pool": "Treasure Room, Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "112": {
-    "name": "Guardian Angel"
+    "name": "Guardian Angel",
+    "pool": "Angel Room, Baby Shop, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "113": {
-    "name": "Demon Baby"
+    "name": "Demon Baby",
+    "pool": "Treasure Room, Devil Room, Baby Shop, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Победить Ламба за Азазеля"
   },
   "114": {
-    "name": "Mom's Knife"
+    "name": "Mom's Knife",
+    "pool": "Treasure Room, Old Chest, Devil Room, Mom's Chest, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Победить Сатану за Айзека"
   },
   "115": {
-    "name": "Ouija Board"
+    "name": "Ouija Board",
+    "pool": "Treasure Room, Devil Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "116": {
-    "name": "9 Volt"
+    "name": "9 Volt",
+    "pool": "Shop, Battery Bum, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "117": {
-    "name": "Dead Bird"
+    "name": "Dead Bird",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "118": {
-    "name": "Brimstone"
+    "name": "Brimstone",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "119": {
-    "name": "Blood Bag"
+    "name": "Blood Bag",
+    "pool": "Ultra Secret Room",
+    "unlock": "Воспользоваться машиной по сдачи крови 30 раз"
   },
   "120": {
-    "name": "Odd Mushroom (Thin)"
+    "name": "Odd Mushroom (Thin)",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Boss Item Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "121": {
-    "name": "Odd Mushroom (Thick)"
+    "name": "Odd Mushroom (Thick)",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Boss Item Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "122": {
-    "name": "Whore of Babylon"
+    "name": "Whore of Babylon",
+    "pool": "Devil Beggar, Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "123": {
-    "name": "Monster Manual"
+    "name": "Monster Manual",
+    "pool": "Treasure Room, Library, Devil Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "124": {
-    "name": "Dead Sea Scrolls"
+    "name": "Dead Sea Scrolls",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "125": {
-    "name": "Bobby-Bomb"
+    "name": "Bobby-Bomb",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "126": {
-    "name": "Razor Blade"
+    "name": "Razor Blade",
+    "pool": "Treasure Room, Devil Beggar, Curse Room, Greed Treasure Room, Greed Curse Room",
+    "unlock": "Победить Сатану за Еву"
   },
   "127": {
-    "name": "Forget Me Now"
+    "name": "Forget Me Now",
+    "pool": "Treasure Room, Devil Beggar, Devil Room, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Победить Сатану за ???"
   },
   "128": {
-    "name": "Forever Alone"
+    "name": "Forever Alone",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "129": {
-    "name": "Bucket of Lard"
+    "name": "Bucket of Lard",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "130": {
-    "name": "A Pony"
+    "name": "A Pony",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "131": {
-    "name": "Bomb Bag"
+    "name": "Bomb Bag",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Сатану за Каина"
   },
   "132": {
-    "name": "A Lump of Coal"
+    "name": "A Lump of Coal",
+    "pool": "Greed Treasure Room, Greed Boss Item Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "133": {
-    "name": "Guppy's Paw"
+    "name": "Guppy's Paw",
+    "pool": "Red Chest, Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "134": {
-    "name": "Guppy's Tail"
+    "name": "Guppy's Tail",
+    "pool": "Red Chest, Curse Room, Devil Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "135": {
-    "name": "IV Bag"
+    "name": "IV Bag",
+    "pool": "Ultra Secret Room",
+    "unlock": "Открыто со старта"
   },
   "136": {
-    "name": "Best Friend"
+    "name": "Best Friend",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "137": {
-    "name": "Remote Detonator"
+    "name": "Remote Detonator",
+    "pool": "Treasure Room, Shop, Bomb Bum, Ultra Secret Room, Crane Game, Greed Treasure Room, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "138": {
-    "name": "Stigmata"
+    "name": "Stigmata",
+    "pool": "Treasure Room, Angel Room, Wooden Chest, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "139": {
-    "name": "Mom's Purse"
+    "name": "Mom's Purse",
+    "pool": "Shop, Old Chest, Mom's Chest, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "140": {
-    "name": "Bob's Curse"
+    "name": "Bob's Curse",
+    "pool": "Treasure Room, Red Chest, Bomb Bum, Rotten Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "141": {
-    "name": "Pageant Boy"
+    "name": "Pageant Boy",
+    "pool": "Boss",
+    "unlock": "Открыто со старта"
   },
   "142": {
-    "name": "Scapular"
+    "name": "Scapular",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "143": {
-    "name": "Speed Ball"
+    "name": "Speed Ball",
+    "pool": "Treasure Room, Boss, Devil Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "144": {
-    "name": "Bum Friend"
+    "name": "Bum Friend",
+    "pool": "Treasure Room, Beggar, Baby Shop",
+    "unlock": "Открыто со старта"
   },
   "145": {
-    "name": "Guppy's Head"
+    "name": "Guppy's Head",
+    "pool": "Red Chest, Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "146": {
-    "name": "Prayer Card"
+    "name": "Prayer Card",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "147": {
-    "name": "Notched Axe"
+    "name": "Notched Axe",
+    "pool": "Shop, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "148": {
-    "name": "Infestation"
+    "name": "Infestation",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "149": {
-    "name": "Ipecac"
+    "name": "Ipecac",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Мамино Сердце 6 раз"
   },
   "150": {
-    "name": "Tough Love"
+    "name": "Tough Love",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "151": {
-    "name": "The Mulligan"
+    "name": "The Mulligan",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "152": {
-    "name": "Technology 2"
+    "name": "Technology 2",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "153": {
-    "name": "Mutant Spider"
+    "name": "Mutant Spider",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "154": {
-    "name": "Chemical Peel"
+    "name": "Chemical Peel",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "155": {
-    "name": "The Peeper"
+    "name": "The Peeper",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "156": {
-    "name": "Habit"
+    "name": "Habit",
+    "pool": "Shop, Angel Room, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "157": {
-    "name": "Bloody Lust"
+    "name": "Bloody Lust",
+    "pool": "Treasure Room, Devil Room, Ultra Secret Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Победить Айзека за Самсона"
   },
   "158": {
-    "name": "Crystal Ball"
+    "name": "Crystal Ball",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "159": {
-    "name": "Spirit of the Night"
+    "name": "Spirit of the Night",
+    "pool": "Devil Beggar, Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "160": {
-    "name": "Crack The Sky"
+    "name": "Crack The Sky",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "161": {
-    "name": "Ankh"
+    "name": "Ankh",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "162": {
-    "name": "Celtic Cross"
+    "name": "Celtic Cross",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Победить ??? за Магдалену"
   },
   "163": {
-    "name": "Ghost Baby"
+    "name": "Ghost Baby",
+    "pool": "Treasure Room, Devil Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "164": {
-    "name": "The Candle"
+    "name": "The Candle",
+    "pool": "Shop, Greed Shop",
+    "unlock": "900 монет в донат машине"
   },
   "165": {
-    "name": "Cat-o-nine-tails"
+    "name": "Cat-o-nine-tails",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "166": {
-    "name": "D20"
+    "name": "D20",
+    "pool": "Treasure Room, Ultra Secret Room, Crane Game, Greed Shop",
+    "unlock": "Победить ??? за Айзека"
   },
   "167": {
-    "name": "Harlequin Baby"
+    "name": "Harlequin Baby",
+    "pool": "Treasure Room, Ultra Secret Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "168": {
-    "name": "Epic Fetus"
+    "name": "Epic Fetus",
+    "pool": "Treasure Room, Secret Room, Greed Secret Room",
+    "unlock": "Выполнить Испытание #19 - The Family Man"
   },
   "169": {
-    "name": "Polyphemus"
+    "name": "Polyphemus",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "170": {
-    "name": "Daddy Longlegs"
+    "name": "Daddy Longlegs",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "171": {
-    "name": "Spider Butt"
+    "name": "Spider Butt",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "172": {
-    "name": "Sacrificial Dagger"
+    "name": "Sacrificial Dagger",
+    "pool": "Treasure Room, Devil Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Победить ??? за Еву"
   },
   "173": {
-    "name": "Mitre"
+    "name": "Mitre",
+    "pool": "Treasure Room, Angel Room",
+    "unlock": "Открыто со старта"
   },
   "174": {
-    "name": "Rainbow Baby"
+    "name": "Rainbow Baby",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "175": {
-    "name": "Dad's Key"
+    "name": "Dad's Key",
+    "pool": "Treasure Room, Old Chest, Key Master, Greed Treasure Room",
+    "unlock": "Собрать 2 части ключа с Ангелов"
   },
   "176": {
-    "name": "Stem Cells"
+    "name": "Stem Cells",
+    "pool": "Treasure Room, Boss, Ultra Secret Room, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "177": {
-    "name": "Portable Slot"
+    "name": "Portable Slot",
+    "pool": "Beggar, Ultra Secret Room",
+    "unlock": "Открыто со старта"
   },
   "178": {
-    "name": "Holy Water"
+    "name": "Holy Water",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "179": {
-    "name": "Fate"
+    "name": "Fate",
+    "pool": "Golden Chest",
+    "unlock": "Победить ??? за ???"
   },
   "180": {
-    "name": "The Black Bean"
+    "name": "The Black Bean",
+    "pool": "Treasure Room, Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "181": {
-    "name": "White Pony"
+    "name": "White Pony",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "182": {
-    "name": "Sacred Heart"
+    "name": "Sacred Heart",
+    "pool": "Angel Room, Ultra Secret Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "183": {
-    "name": "Toothpicks"
+    "name": "Toothpicks",
+    "pool": "Boss, Wooden Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "184": {
-    "name": "Holy Grail"
+    "name": "Holy Grail",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "185": {
-    "name": "Dead Dove"
+    "name": "Dead Dove",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "186": {
-    "name": "Blood Rights"
+    "name": "Blood Rights",
+    "pool": "Treasure Room, Devil Room, Greed Treasure Room",
+    "unlock": "Победить Сатану за Самсона"
   },
   "187": {
-    "name": "Guppy's Hairball"
+    "name": "Guppy's Hairball",
+    "pool": "Devil Room, Greed Devil Room",
+    "unlock": "Получить превращение Guppy"
   },
   "188": {
-    "name": "Abel"
+    "name": "Abel",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Победить Агнца за Каина"
   },
   "189": {
-    "name": "SMB Super Fan"
+    "name": "SMB Super Fan",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Выполнить Испытание #14 - It's in the Cards"
   },
   "190": {
-    "name": "Pyro"
+    "name": "Pyro",
+    "pool": "Treasure Room, Bomb Bum, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "191": {
-    "name": "3 Dollar Bill"
+    "name": "3 Dollar Bill",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "192": {
-    "name": "Telepathy for Dummies"
+    "name": "Telepathy for Dummies",
+    "pool": "Treasure Room, Library, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "193": {
-    "name": "Meat!"
+    "name": "Meat!",
+    "pool": "Boss, Ultra Secret Room, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "194": {
-    "name": "Magic 8 Ball"
+    "name": "Magic 8 Ball",
+    "pool": "Boss, Golden Chest, Crane Game, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "195": {
-    "name": "Mom's Coin Purse"
+    "name": "Mom's Coin Purse",
+    "pool": "Shop, Boss, Old Chest, Beggar, Devil Beggar, Mom's Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "196": {
-    "name": "Squeezy"
+    "name": "Squeezy",
+    "pool": "Boss, Golden Chest, Crane Game, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "197": {
-    "name": "Jesus Juice"
+    "name": "Jesus Juice",
+    "pool": "Boss, Angel Room, Greed Boss Item Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "198": {
-    "name": "Box"
+    "name": "Box",
+    "pool": "Boss, Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "199": {
-    "name": "Mom's Key"
+    "name": "Mom's Key",
+    "pool": "Shop, Old Chest, Key Master, Mom's Chest, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "200": {
-    "name": "Mom's Eyeshadow"
+    "name": "Mom's Eyeshadow",
+    "pool": "Treasure Room, Old Chest, Mom's Chest, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "201": {
-    "name": "Iron Bar"
+    "name": "Iron Bar",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "202": {
-    "name": "Midas Touch"
+    "name": "Midas Touch",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "203": {
-    "name": "Humbling Bundle"
+    "name": "Humbling Bundle",
+    "pool": "Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "204": {
-    "name": "Fanny Pack"
+    "name": "Fanny Pack",
+    "pool": "Shop, Beggar, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "205": {
-    "name": "Sharp Plug"
+    "name": "Sharp Plug",
+    "pool": "Shop, Battery Bum, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "206": {
-    "name": "Guillotine"
+    "name": "Guillotine",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "207": {
-    "name": "Ball of Bandages"
+    "name": "Ball of Bandages",
+    "pool": "Baby Shop, Greed Boss Item Room",
+    "unlock": "Победить Маму"
   },
   "208": {
-    "name": "Champion Belt"
+    "name": "Champion Belt",
+    "pool": "Shop, Ultra Secret Room, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "209": {
-    "name": "Butt Bombs"
+    "name": "Butt Bombs",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "210": {
-    "name": "Gnawed Leaf"
+    "name": "Gnawed Leaf",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "211": {
-    "name": "Spiderbaby"
+    "name": "Spiderbaby",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "212": {
-    "name": "Guppy's Collar"
+    "name": "Guppy's Collar",
+    "pool": "Red Chest, Curse Room, Devil Room, Crane Game, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "213": {
-    "name": "Lost Contact"
+    "name": "Lost Contact",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "214": {
-    "name": "Anemic"
+    "name": "Anemic",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "215": {
-    "name": "Goat Head"
+    "name": "Goat Head",
+    "pool": "Curse Room, Devil Room",
+    "unlock": "Открыто со старта"
   },
   "216": {
-    "name": "Ceremonial Robes"
+    "name": "Ceremonial Robes",
+    "pool": "Devil Beggar, Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "217": {
-    "name": "Mom's Wig"
+    "name": "Mom's Wig",
+    "pool": "Treasure Room, Old Chest, Mom's Chest, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "218": {
-    "name": "Placenta"
+    "name": "Placenta",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "219": {
-    "name": "Old Bandage"
+    "name": "Old Bandage",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "220": {
-    "name": "Sad Bombs"
+    "name": "Sad Bombs",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "221": {
-    "name": "Rubber Cement"
+    "name": "Rubber Cement",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Мамино Сердце 2 раза"
   },
   "222": {
-    "name": "Anti-Gravity"
+    "name": "Anti-Gravity",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "223": {
-    "name": "Pyromaniac"
+    "name": "Pyromaniac",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "224": {
-    "name": "Cricket's Body"
+    "name": "Cricket's Body",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "225": {
-    "name": "Gimpy"
+    "name": "Gimpy",
+    "pool": "Treasure Room, Devil Beggar, Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "226": {
-    "name": "Black Lotus"
+    "name": "Black Lotus",
+    "pool": "Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "227": {
-    "name": "Piggy Bank"
+    "name": "Piggy Bank",
+    "pool": "Treasure Room, Shop, Crane Game",
+    "unlock": "Открыто со старта"
   },
   "228": {
-    "name": "Mom's Perfume"
+    "name": "Mom's Perfume",
+    "pool": "Treasure Room, Old Chest, Mom's Chest, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "229": {
-    "name": "Monstro's Lung"
+    "name": "Monstro's Lung",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "230": {
-    "name": "Abaddon"
+    "name": "Abaddon",
+    "pool": "Devil Beggar, Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Победить ??? за Азазель"
   },
   "231": {
-    "name": "Ball of Tar"
+    "name": "Ball of Tar",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "232": {
-    "name": "Stop Watch"
+    "name": "Stop Watch",
+    "pool": "Shop, Crane Game, Greed Shop",
+    "unlock": "999 монет в донат машине"
   },
   "233": {
-    "name": "Tiny Planet"
+    "name": "Tiny Planet",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "234": {
-    "name": "Infestation 2"
+    "name": "Infestation 2",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "236": {
-    "name": "E. Coli"
+    "name": "E. Coli",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "237": {
-    "name": "Death's Touch"
+    "name": "Death's Touch",
+    "pool": "Treasure Room, Devil Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Выполнить Испытание #17 - Waka Waka"
   },
   "238": {
-    "name": "Key Piece #1"
+    "name": "Key Piece #1",
+    "pool": "Без пула",
+    "unlock": "Убить ??? или Агнца"
   },
   "239": {
-    "name": "Key Piece #2"
+    "name": "Key Piece #2",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "240": {
-    "name": "Experimental Treatment"
+    "name": "Experimental Treatment",
+    "pool": "Treasure Room, Boss, Devil Beggar, Greed Boss Item Room",
+    "unlock": "Победить Мамино Сердце 7 раз"
   },
   "241": {
-    "name": "Contract From Below"
+    "name": "Contract From Below",
+    "pool": "Devil Beggar, Curse Room, Devil Room",
+    "unlock": "Открыто со старта"
   },
   "242": {
-    "name": "Infamy"
+    "name": "Infamy",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "243": {
-    "name": "Trinity Shield"
+    "name": "Trinity Shield",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "244": {
-    "name": "Tech.5"
+    "name": "Tech.5",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Выполнить Испытание #18 - The Host"
   },
   "245": {
-    "name": "20/20"
+    "name": "20/20",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "246": {
-    "name": "Blue Map"
+    "name": "Blue Map",
+    "pool": "Shop, Beggar, Greed Shop",
+    "unlock": "10 монет в донат машине"
   },
   "247": {
-    "name": "BFFS!"
+    "name": "BFFS!",
+    "pool": "Shop, Ultra Secret Room, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "248": {
-    "name": "Hive Mind"
+    "name": "Hive Mind",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "249": {
-    "name": "There's Options"
+    "name": "There's Options",
+    "pool": "Shop",
+    "unlock": "50 монет в донат машине"
   },
   "250": {
-    "name": "Bogo Bombs"
+    "name": "Bogo Bombs",
+    "pool": "Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "251": {
-    "name": "Starter Deck"
+    "name": "Starter Deck",
+    "pool": "Shop, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "252": {
-    "name": "Little Baggy"
+    "name": "Little Baggy",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Собрать 2 шприца за забег"
   },
   "253": {
-    "name": "Magic Scab"
+    "name": "Magic Scab",
+    "pool": "Boss, Ultra Secret Room, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "254": {
-    "name": "Blood Clot"
+    "name": "Blood Clot",
+    "pool": "Boss, Ultra Secret Room, Greed Treasure Room, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "255": {
-    "name": "Screw"
+    "name": "Screw",
+    "pool": "Boss, Golden Chest, Crane Game, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "256": {
-    "name": "Hot Bombs"
+    "name": "Hot Bombs",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "257": {
-    "name": "Fire Mind"
+    "name": "Fire Mind",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "258": {
-    "name": "Missing No."
+    "name": "Missing No.",
+    "pool": "Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "259": {
-    "name": "Dark Matter"
+    "name": "Dark Matter",
+    "pool": "Devil Beggar, Devil Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "260": {
-    "name": "Black Candle"
+    "name": "Black Candle",
+    "pool": "Shop, Curse Room, Greed Shop, Greed Curse Room",
+    "unlock": "150 монет в донат машине"
   },
   "261": {
-    "name": "Proptosis"
+    "name": "Proptosis",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "262": {
-    "name": "Missing Page 2"
+    "name": "Missing Page 2",
+    "pool": "Devil Beggar, Devil Room, Secret Room, Greed Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "263": {
-    "name": "Clear Rune"
+    "name": "Clear Rune",
+    "pool": "Secret Room, Crane Game, Greed Secret Room",
+    "unlock": "Выполнить Испытание #30 - The Guardian"
   },
   "264": {
-    "name": "Smart Fly"
+    "name": "Smart Fly",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "265": {
-    "name": "Dry Baby"
+    "name": "Dry Baby",
+    "pool": "Treasure Room, Devil Room, Baby Shop, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "266": {
-    "name": "Juicy Sack"
+    "name": "Juicy Sack",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "267": {
-    "name": "Robo-Baby 2.0"
+    "name": "Robo-Baby 2.0",
+    "pool": "Treasure Room, Baby Shop, Crane Game, Greed Treasure Room",
+    "unlock": "Завершить Испытание #16 - Computer Savvy"
   },
   "268": {
-    "name": "Rotten Baby"
+    "name": "Rotten Baby",
+    "pool": "Treasure Room, Devil Room, Baby Shop, Rotten Beggar, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "269": {
-    "name": "Headless Baby"
+    "name": "Headless Baby",
+    "pool": "Treasure Room, Devil Room, Baby Shop, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "270": {
-    "name": "Leech"
+    "name": "Leech",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "271": {
-    "name": "Mystery Sack"
+    "name": "Mystery Sack",
+    "pool": "Treasure Room, Beggar, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Победить Агнца за Идена"
   },
   "272": {
-    "name": "BBF"
+    "name": "BBF",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "273": {
-    "name": "Bob's Brain"
+    "name": "Bob's Brain",
+    "pool": "Treasure Room, Baby Shop, Rotten Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "274": {
-    "name": "Best Bud"
+    "name": "Best Bud",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "275": {
-    "name": "Lil' Brimstone"
+    "name": "Lil' Brimstone",
+    "pool": "Treasure Room, Devil Room, Baby Shop, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "276": {
-    "name": "Isaac's Heart"
+    "name": "Isaac's Heart",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Победить Айзека за Потерянного"
   },
   "277": {
-    "name": "Lil' Haunt"
+    "name": "Lil' Haunt",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "278": {
-    "name": "Dark Bum"
+    "name": "Dark Bum",
+    "pool": "Treasure Room, Devil Beggar, Devil Room, Baby Shop",
+    "unlock": "Открыто со старта"
   },
   "279": {
-    "name": "Big Fan"
+    "name": "Big Fan",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "280": {
-    "name": "Sissy Long Legs"
+    "name": "Sissy Long Legs",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "281": {
-    "name": "Punching Bag"
+    "name": "Punching Bag",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "282": {
-    "name": "How To Jump"
+    "name": "How To Jump",
+    "pool": "Treasure Room, Library",
+    "unlock": "Открыто со старта"
   },
   "283": {
-    "name": "D100"
+    "name": "D100",
+    "pool": "Treasure Room, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "284": {
-    "name": "D4"
+    "name": "D4",
+    "pool": "Treasure Room, Crane Game, Greed Shop",
+    "unlock": "Уничтожить 40 игровых автоматов"
   },
   "285": {
-    "name": "D10"
+    "name": "D10",
+    "pool": "Treasure Room, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "286": {
-    "name": "Blank Card"
+    "name": "Blank Card",
+    "pool": "Shop, Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Айзека за Идена"
   },
   "287": {
-    "name": "Book of Secrets"
+    "name": "Book of Secrets",
+    "pool": "Treasure Room, Library, Secret Room",
+    "unlock": "Победить Сатану за Идена"
   },
   "288": {
-    "name": "Box of Spiders"
+    "name": "Box of Spiders",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "289": {
-    "name": "Red Candle"
+    "name": "Red Candle",
+    "pool": "Shop, Ultra Secret Room, Greed Shop",
+    "unlock": "400 монет в донат машине"
   },
   "290": {
-    "name": "The Jar"
+    "name": "The Jar",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "291": {
-    "name": "Flush!"
+    "name": "Flush!",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "292": {
-    "name": "The Satanic Bible"
+    "name": "The Satanic Bible",
+    "pool": "Treasure Room, Library, Devil Room, Greed Devil Room",
+    "unlock": "Победить Айзека за Азазель"
   },
   "293": {
-    "name": "Head of Krampus"
+    "name": "Head of Krampus",
+    "pool": "Без пула",
+    "unlock": "Победить Крампуса"
   },
   "294": {
-    "name": "Butter Bean"
+    "name": "Butter Bean",
+    "pool": "Treasure Room, Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "295": {
-    "name": "Magic Fingers"
+    "name": "Magic Fingers",
+    "pool": "Treasure Room, Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "296": {
-    "name": "Converter"
+    "name": "Converter",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "297": {
-    "name": "Pandora's Box"
+    "name": "Pandora's Box",
+    "pool": "Shop, Red Chest, Greed Shop",
+    "unlock": "Победить Агнца за Лазаря"
   },
   "298": {
-    "name": "Unicorn Stump"
+    "name": "Unicorn Stump",
+    "pool": "Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "299": {
-    "name": "Taurus"
+    "name": "Taurus",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "300": {
-    "name": "Aries"
+    "name": "Aries",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "301": {
-    "name": "Cancer"
+    "name": "Cancer",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "302": {
-    "name": "Leo"
+    "name": "Leo",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "303": {
-    "name": "Virgo"
+    "name": "Virgo",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "304": {
-    "name": "Libra"
+    "name": "Libra",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "305": {
-    "name": "Scorpio"
+    "name": "Scorpio",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "306": {
-    "name": "Sagittarius"
+    "name": "Sagittarius",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "307": {
-    "name": "Capricorn"
+    "name": "Capricorn",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "308": {
-    "name": "Aquarius"
+    "name": "Aquarius",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "309": {
-    "name": "Pisces"
+    "name": "Pisces",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "310": {
-    "name": "Eve's Mascara"
+    "name": "Eve's Mascara",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "311": {
-    "name": "Judas' Shadow"
+    "name": "Judas' Shadow",
+    "pool": "Devil Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "312": {
-    "name": "Maggy's Bow"
+    "name": "Maggy's Bow",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "313": {
-    "name": "Holy Mantle"
+    "name": "Holy Mantle",
+    "pool": "Treasure Room, Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "314": {
-    "name": "Thunder Thighs"
+    "name": "Thunder Thighs",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "315": {
-    "name": "Strange Attractor"
+    "name": "Strange Attractor",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "316": {
-    "name": "Cursed Eye"
+    "name": "Cursed Eye",
+    "pool": "Treasure Room, Red Chest, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "317": {
-    "name": "Mysterious Liquid"
+    "name": "Mysterious Liquid",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "318": {
-    "name": "Gemini"
+    "name": "Gemini",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "319": {
-    "name": "Cain's Other Eye"
+    "name": "Cain's Other Eye",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "320": {
-    "name": "???'s Only Friend"
+    "name": "???'s Only Friend",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "321": {
-    "name": "Samson's Chains"
+    "name": "Samson's Chains",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "322": {
-    "name": "Mongo Baby"
+    "name": "Mongo Baby",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "323": {
-    "name": "Isaac's Tears"
+    "name": "Isaac's Tears",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Айзека за Айзека"
   },
   "324": {
-    "name": "Undefined"
+    "name": "Undefined",
+    "pool": "Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "325": {
-    "name": "Scissors"
+    "name": "Scissors",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "100 раз завершить забег смертью"
   },
   "326": {
-    "name": "Breath of Life"
+    "name": "Breath of Life",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "327": {
-    "name": "The Polaroid"
+    "name": "The Polaroid",
+    "pool": "Без пула",
+    "unlock": "Пройти Собор 5 раз"
   },
   "328": {
-    "name": "The Negative"
+    "name": "The Negative",
+    "pool": "Без пула",
+    "unlock": "Пройти Преисподнюю 5 раз"
   },
   "329": {
-    "name": "The Ludovico Technique"
+    "name": "The Ludovico Technique",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "330": {
-    "name": "Soy Milk"
+    "name": "Soy Milk",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "331": {
-    "name": "Godhead"
+    "name": "Godhead",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Полностью закрыть листок прогресса за Потерянного"
   },
   "332": {
-    "name": "Lazarus' Rags"
+    "name": "Lazarus' Rags",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Победить Айзека за Лазаря"
   },
   "333": {
-    "name": "The Mind"
+    "name": "The Mind",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Победить Сатану за Потерянного"
   },
   "334": {
-    "name": "The Body"
+    "name": "The Body",
+    "pool": "Treasure Room, Angel Room, Ultra Secret Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Победить ??? за Потерянного"
   },
   "335": {
-    "name": "The Soul"
+    "name": "The Soul",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Победить Агнца за Потерянного"
   },
   "336": {
-    "name": "Dead Onion"
+    "name": "Dead Onion",
+    "pool": "Treasure Room, Rotten Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "337": {
-    "name": "Broken Watch"
+    "name": "Broken Watch",
+    "pool": "Shop, Crane Game",
+    "unlock": "Открыто со старта"
   },
   "338": {
-    "name": "Boomerang"
+    "name": "Boomerang",
+    "pool": "Shop, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "339": {
-    "name": "Safety Pin"
+    "name": "Safety Pin",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "340": {
-    "name": "Caffeine Pill"
+    "name": "Caffeine Pill",
+    "pool": "Boss, Devil Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "341": {
-    "name": "Torn Photo"
+    "name": "Torn Photo",
+    "pool": "Boss, Golden Chest, Old Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "342": {
-    "name": "Blue Cap"
+    "name": "Blue Cap",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "343": {
-    "name": "Latch Key"
+    "name": "Latch Key",
+    "pool": "Boss, Golden Chest, Key Master, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "344": {
-    "name": "Match Book"
+    "name": "Match Book",
+    "pool": "Boss, Golden Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "345": {
-    "name": "Synthoil"
+    "name": "Synthoil",
+    "pool": "Boss, Devil Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "346": {
-    "name": "A Snack"
+    "name": "A Snack",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "347": {
-    "name": "Diplopia"
+    "name": "Diplopia",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "348": {
-    "name": "Placebo"
+    "name": "Placebo",
+    "pool": "Shop, Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "349": {
-    "name": "Wooden Nickel"
+    "name": "Wooden Nickel",
+    "pool": "Shop, Wooden Chest, Greed Treasure Room",
+    "unlock": "33 монеты в донат машине жадности"
   },
   "350": {
-    "name": "Toxic Shock"
+    "name": "Toxic Shock",
+    "pool": "Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "351": {
-    "name": "Mega Bean"
+    "name": "Mega Bean",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "352": {
-    "name": "Glass Cannon"
+    "name": "Glass Cannon",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "353": {
-    "name": "Bomber Boy"
+    "name": "Bomber Boy",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "354": {
-    "name": "Crack Jacks"
+    "name": "Crack Jacks",
+    "pool": "Boss, Golden Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "355": {
-    "name": "Mom's Pearls"
+    "name": "Mom's Pearls",
+    "pool": "Boss, Golden Chest, Old Chest, Mom's Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "356": {
-    "name": "Car Battery"
+    "name": "Car Battery",
+    "pool": "Shop, Battery Bum, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "357": {
-    "name": "Box of Friends"
+    "name": "Box of Friends",
+    "pool": "Shop, Crane Game, Greed Treasure Room",
+    "unlock": "Завершить режим жадности за Айзека"
   },
   "358": {
-    "name": "The Wiz"
+    "name": "The Wiz",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "359": {
-    "name": "8 Inch Nails"
+    "name": "8 Inch Nails",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "360": {
-    "name": "Incubus"
+    "name": "Incubus",
+    "pool": "Devil Room, Baby Shop, Greed Devil Room",
+    "unlock": "Победить Хаша за Лилит"
   },
   "361": {
-    "name": "Fate's Reward"
+    "name": "Fate's Reward",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Победить Хаша за ???"
   },
   "362": {
-    "name": "Lil Chest"
+    "name": "Lil Chest",
+    "pool": "Treasure Room, Beggar, Wooden Chest, Crane Game, Greed Treasure Room",
+    "unlock": "Завершить режим жадности за Айзека"
   },
   "363": {
-    "name": "Sworn Protector"
+    "name": "Sworn Protector",
+    "pool": "Angel Room, Baby Shop, Greed Angel Room",
+    "unlock": "Победить Хаша за Потерянного"
   },
   "364": {
-    "name": "Friend Zone"
+    "name": "Friend Zone",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "365": {
-    "name": "Lost Fly"
+    "name": "Lost Fly",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "366": {
-    "name": "Scatter Bombs"
+    "name": "Scatter Bombs",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "367": {
-    "name": "Sticky Bombs"
+    "name": "Sticky Bombs",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "368": {
-    "name": "Epiphora"
+    "name": "Epiphora",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "369": {
-    "name": "Continuum"
+    "name": "Continuum",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "370": {
-    "name": "Mr. Dolly"
+    "name": "Mr. Dolly",
+    "pool": "Boss, Golden Chest, Crane Game, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "371": {
-    "name": "Curse of the Tower"
+    "name": "Curse of the Tower",
+    "pool": "Treasure Room, Red Chest, Curse Room, Greed Treasure Room, Greed Curse Room",
+    "unlock": "Открыто со старта"
   },
   "372": {
-    "name": "Charged Baby"
+    "name": "Charged Baby",
+    "pool": "Shop, Baby Shop, Battery Bum, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "373": {
-    "name": "Dead Eye"
+    "name": "Dead Eye",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "374": {
-    "name": "Holy Light"
+    "name": "Holy Light",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "375": {
-    "name": "Host Hat"
+    "name": "Host Hat",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "376": {
-    "name": "Restock"
+    "name": "Restock",
+    "pool": "Shop, Beggar",
+    "unlock": "Открыто со старта"
   },
   "377": {
-    "name": "Bursting Sack"
+    "name": "Bursting Sack",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "378": {
-    "name": "Number two"
+    "name": "Number two",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "379": {
-    "name": "Pupula Duplex"
+    "name": "Pupula Duplex",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "380": {
-    "name": "Pay To Play"
+    "name": "Pay To Play",
+    "pool": "Shop, Greed Treasure Room, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "381": {
-    "name": "Eden's Blessing"
+    "name": "Eden's Blessing",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Хаша за Идена"
   },
   "382": {
-    "name": "Friendly Ball"
+    "name": "Friendly Ball",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "383": {
-    "name": "Tear Detonator"
+    "name": "Tear Detonator",
+    "pool": "Shop, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "384": {
-    "name": "Lil Gurdy"
+    "name": "Lil Gurdy",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "385": {
-    "name": "Bumbo"
+    "name": "Bumbo",
+    "pool": "Treasure Room, Beggar, Baby Shop",
+    "unlock": "Открыто со старта"
   },
   "386": {
-    "name": "D12"
+    "name": "D12",
+    "pool": "Treasure Room, Crane Game, Greed Shop",
+    "unlock": "Победить Хаша за Каина"
   },
   "387": {
-    "name": "Censer"
+    "name": "Censer",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Завершить режим жадности за Магдалену"
   },
   "388": {
-    "name": "Key Bum"
+    "name": "Key Bum",
+    "pool": "Treasure Room, Key Master, Secret Room, Baby Shop",
+    "unlock": "Завершить режим жадности за Лазаря"
   },
   "389": {
-    "name": "Rune Bag"
+    "name": "Rune Bag",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Победить Айзека за Лилит"
   },
   "390": {
-    "name": "Seraphim"
+    "name": "Seraphim",
+    "pool": "Treasure Room, Angel Room, Baby Shop, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "391": {
-    "name": "Betrayal"
+    "name": "Betrayal",
+    "pool": "Treasure Room, Devil Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Победить Хаша за Иуду"
   },
   "392": {
-    "name": "Zodiac"
+    "name": "Zodiac",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Завершить режим жадности за Потерянного"
   },
   "393": {
-    "name": "Serpent's Kiss"
+    "name": "Serpent's Kiss",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Сатану за Лилит"
   },
   "394": {
-    "name": "Marked"
+    "name": "Marked",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "395": {
-    "name": "Tech X"
+    "name": "Tech X",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "396": {
-    "name": "Ventricle Razor"
+    "name": "Ventricle Razor",
+    "pool": "Shop",
+    "unlock": "Открыто со старта"
   },
   "397": {
-    "name": "Tractor Beam"
+    "name": "Tractor Beam",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "398": {
-    "name": "God's Flesh"
+    "name": "God's Flesh",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "399": {
-    "name": "Maw of the Void"
+    "name": "Maw of the Void",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Победить Хаша за Азазеля"
   },
   "400": {
-    "name": "Spear of Destiny"
+    "name": "Spear of Destiny",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "401": {
-    "name": "Explosivo"
+    "name": "Explosivo",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "402": {
-    "name": "Chaos"
+    "name": "Chaos",
+    "pool": "Shop, Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "403": {
-    "name": "Spider Mod"
+    "name": "Spider Mod",
+    "pool": "Shop, Baby Shop, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "404": {
-    "name": "Farting Baby"
+    "name": "Farting Baby",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Победить Хаша за Айзека"
   },
   "405": {
-    "name": "GB Bug"
+    "name": "GB Bug",
+    "pool": "Treasure Room, Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Завершить режим жадности за Идена"
   },
   "406": {
-    "name": "D8"
+    "name": "D8",
+    "pool": "Treasure Room, Crane Game, Greed Shop",
+    "unlock": "Выполнить Испытание #28 - Pride Day"
   },
   "407": {
-    "name": "Purity"
+    "name": "Purity",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Победить Хаша за Магдалену"
   },
   "408": {
-    "name": "Athame"
+    "name": "Athame",
+    "pool": "Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Победить Хаша за Еву"
   },
   "409": {
-    "name": "Empty Vessel"
+    "name": "Empty Vessel",
+    "pool": "Devil Beggar, Devil Room, Greed Devil Room",
+    "unlock": "Победить Хаша за Лазаря"
   },
   "410": {
-    "name": "Evil Eye"
+    "name": "Evil Eye",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "411": {
-    "name": "Lusty Blood"
+    "name": "Lusty Blood",
+    "pool": "Treasure Room, Devil Room, Ultra Secret Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Завершить режим жадности за Самсона"
   },
   "412": {
-    "name": "Cambion Conception"
+    "name": "Cambion Conception",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Победить ??? за Азазель"
   },
   "413": {
-    "name": "Immaculate Conception"
+    "name": "Immaculate Conception",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Завершить Босс Раш за Лилит"
   },
   "414": {
-    "name": "More Options"
+    "name": "More Options",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "415": {
-    "name": "Crown of Light"
+    "name": "Crown of Light",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "416": {
-    "name": "Deep Pockets"
+    "name": "Deep Pockets",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Победить ??? за Хранителя"
   },
   "417": {
-    "name": "Succubus"
+    "name": "Succubus",
+    "pool": "Devil Room, Baby Shop, Greed Devil Room",
+    "unlock": "Победить Агнца за Лилит"
   },
   "418": {
-    "name": "Fruit Cake"
+    "name": "Fruit Cake",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "419": {
-    "name": "Teleport 2.0"
+    "name": "Teleport 2.0",
+    "pool": "Treasure Room, Crane Game",
+    "unlock": "Открыто со старта"
   },
   "420": {
-    "name": "Black Powder"
+    "name": "Black Powder",
+    "pool": "Devil Beggar, Devil Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "421": {
-    "name": "Kidney Bean"
+    "name": "Kidney Bean",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "422": {
-    "name": "Glowing Hour Glass"
+    "name": "Glowing Hour Glass",
+    "pool": "Treasure Room, Shop, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "423": {
-    "name": "Circle of Protection"
+    "name": "Circle of Protection",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "424": {
-    "name": "Sack Head"
+    "name": "Sack Head",
+    "pool": "Shop, Secret Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "425": {
-    "name": "Night Light"
+    "name": "Night Light",
+    "pool": "Shop, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "426": {
-    "name": "Obsessed Fan"
+    "name": "Obsessed Fan",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "427": {
-    "name": "Mine Crafter"
+    "name": "Mine Crafter",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "428": {
-    "name": "PJs"
+    "name": "PJs",
+    "pool": "Boss, Golden Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "429": {
-    "name": "Head of the Keeper"
+    "name": "Head of the Keeper",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "430": {
-    "name": "Papa Fly"
+    "name": "Papa Fly",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "431": {
-    "name": "Multidimensional Baby"
+    "name": "Multidimensional Baby",
+    "pool": "Treasure Room, Devil Room, Baby Shop, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "432": {
-    "name": "Glitter Bombs"
+    "name": "Glitter Bombs",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "433": {
-    "name": "My Shadow"
+    "name": "My Shadow",
+    "pool": "Devil Room, Greed Devil Room",
+    "unlock": "Завершить режим жадности за Иуду"
   },
   "434": {
-    "name": "Jar of Flies"
+    "name": "Jar of Flies",
+    "pool": "Shop, Greed Treasure Room, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "435": {
-    "name": "Lil Loki"
+    "name": "Lil Loki",
+    "pool": "Treasure Room, Ultra Secret Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "436": {
-    "name": "Milk!"
+    "name": "Milk!",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "437": {
-    "name": "D7"
+    "name": "D7",
+    "pool": "Treasure Room, Crane Game",
+    "unlock": "Открыто со старта"
   },
   "438": {
-    "name": "Binky"
+    "name": "Binky",
+    "pool": "Boss, Golden Chest, Crane Game, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "439": {
-    "name": "Mom's Box"
+    "name": "Mom's Box",
+    "pool": "Shop, Old Chest, Wooden Chest, Mom's Chest, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "440": {
-    "name": "Kidney Stone"
+    "name": "Kidney Stone",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Выполнить Испытание #29 - Onan's Streak"
   },
   "441": {
-    "name": "Mega Blast"
+    "name": "Mega Blast",
+    "pool": "Devil Room, Greed Devil Room",
+    "unlock": "Победить Мега Сатану за всех не Порченых персонажей"
   },
   "442": {
-    "name": "Dark Prince's Crown"
+    "name": "Dark Prince's Crown",
+    "pool": "Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Победить Делирия за Азазеля"
   },
   "443": {
-    "name": "Apple!"
+    "name": "Apple!",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "444": {
-    "name": "Lead Pencil"
+    "name": "Lead Pencil",
+    "pool": "Treasure Room, Golden Chest, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "445": {
-    "name": "Dog Tooth"
+    "name": "Dog Tooth",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "446": {
-    "name": "Dead Tooth"
+    "name": "Dead Tooth",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "447": {
-    "name": "Linger Bean"
+    "name": "Linger Bean",
+    "pool": "Treasure Room, Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "448": {
-    "name": "Shard of Glass"
+    "name": "Shard of Glass",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "449": {
-    "name": "Metal Plate"
+    "name": "Metal Plate",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "450": {
-    "name": "Eye of Greed"
+    "name": "Eye of Greed",
+    "pool": "Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Завершить усложненный режим жадности за Хранителя"
   },
   "451": {
-    "name": "Tarot Cloth"
+    "name": "Tarot Cloth",
+    "pool": "Shop, Curse Room, Crane Game, Greed Shop, Greed Curse Room",
+    "unlock": "Открыто со старта"
   },
   "452": {
-    "name": "Varicose Veins"
+    "name": "Varicose Veins",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "453": {
-    "name": "Compound Fracture"
+    "name": "Compound Fracture",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Делирия за Лазаря"
   },
   "454": {
-    "name": "Polydactyly"
+    "name": "Polydactyly",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "455": {
-    "name": "Dad's Lost Coin"
+    "name": "Dad's Lost Coin",
+    "pool": "Boss, Golden Chest, Old Chest, Beggar, Greed Boss Item Room",
+    "unlock": "Завершить усложненный режим жадности за Потерянного"
   },
   "456": {
-    "name": "Midnight Snack"
+    "name": "Midnight Snack",
+    "pool": "Boss, Golden Chest, Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "457": {
-    "name": "Cone Head"
+    "name": "Cone Head",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "458": {
-    "name": "Belly Button"
+    "name": "Belly Button",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "459": {
-    "name": "Sinus Infection"
+    "name": "Sinus Infection",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "460": {
-    "name": "Glaucoma"
+    "name": "Glaucoma",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "461": {
-    "name": "Parasitoid"
+    "name": "Parasitoid",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "462": {
-    "name": "Eye of Belial"
+    "name": "Eye of Belial",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Завершить усложненный режим жадности за Иуду"
   },
   "463": {
-    "name": "Sulfuric Acid"
+    "name": "Sulfuric Acid",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "464": {
-    "name": "Glyph of Balance"
+    "name": "Glyph of Balance",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Завершить усложненный режим жадности за Магдалену"
   },
   "465": {
-    "name": "Analog Stick"
+    "name": "Analog Stick",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "466": {
-    "name": "Contagion"
+    "name": "Contagion",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "467": {
-    "name": "Finger!"
+    "name": "Finger!",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "468": {
-    "name": "Shade"
+    "name": "Shade",
+    "pool": "Curse Room, Devil Room, Baby Shop, Greed Curse Room, Greed Devil Room",
+    "unlock": "Победить Делирия за Иуду"
   },
   "469": {
-    "name": "Depression"
+    "name": "Depression",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "470": {
-    "name": "Hushy"
+    "name": "Hushy",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Победить Хаша за Аполлиона"
   },
   "471": {
-    "name": "Lil Monstro"
+    "name": "Lil Monstro",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "472": {
-    "name": "King Baby"
+    "name": "King Baby",
+    "pool": "Shop, Baby Shop, Greed Shop",
+    "unlock": "Победить Делирия за ???"
   },
   "473": {
-    "name": "Big Chubby"
+    "name": "Big Chubby",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "474": {
-    "name": "Broken Glass Cannon"
+    "name": "Broken Glass Cannon",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "475": {
-    "name": "Plan C"
+    "name": "Plan C",
+    "pool": "Shop, Red Chest, Devil Beggar, Curse Room, Devil Room, Ultra Secret Room, Greed Shop, Greed Curse Room",
+    "unlock": "Завершить усложненный режим жадности за Лазаря"
   },
   "476": {
-    "name": "D1"
+    "name": "D1",
+    "pool": "Treasure Room, Crane Game, Greed Shop",
+    "unlock": "Завершить усложненный режим жадности за Айзека"
   },
   "477": {
-    "name": "Void"
+    "name": "Void",
+    "pool": "Devil Room, Angel Room, Greed Shop",
+    "unlock": "Победить Делирия за Аполлиона"
   },
   "478": {
-    "name": "Pause"
+    "name": "Pause",
+    "pool": "Treasure Room, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "479": {
-    "name": "Smelter"
+    "name": "Smelter",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Победить Оно Живое за Аполлиона в сложном режиме"
   },
   "480": {
-    "name": "Compost"
+    "name": "Compost",
+    "pool": "Shop, Rotten Beggar",
+    "unlock": "Открыто со старта"
   },
   "481": {
-    "name": "Dataminer"
+    "name": "Dataminer",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "482": {
-    "name": "Clicker"
+    "name": "Clicker",
+    "pool": "Treasure Room, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "483": {
-    "name": "Mama Mega!"
+    "name": "Mama Mega!",
+    "pool": "Shop, Bomb Bum, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "484": {
-    "name": "Wait What?"
+    "name": "Wait What?",
+    "pool": "Treasure Room, Beggar, Без пула, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "485": {
-    "name": "Crooked Penny"
+    "name": "Crooked Penny",
+    "pool": "Treasure Room, Shop, Beggar, Greed Shop",
+    "unlock": "Победить Делирия за Хранителя"
   },
   "486": {
-    "name": "Dull Razor"
+    "name": "Dull Razor",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Победить Делирия за Еву"
   },
   "487": {
-    "name": "Potato Peeler"
+    "name": "Potato Peeler",
+    "pool": "Shop, Devil Beggar, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "488": {
-    "name": "Metronome"
+    "name": "Metronome",
+    "pool": "Treasure Room, Wooden Chest, Crane Game, Greed Shop",
+    "unlock": "Завершить усложненный режим жадности за Идена"
   },
   "489": {
-    "name": "D infinity"
+    "name": "D infinity",
+    "pool": "Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Делирия за Айзека"
   },
   "490": {
-    "name": "Eden's Soul"
+    "name": "Eden's Soul",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Делирия за Идена"
   },
   "491": {
-    "name": "Acid Baby"
+    "name": "Acid Baby",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "492": {
-    "name": "YO LISTEN!"
+    "name": "YO LISTEN!",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "493": {
-    "name": "Adrenaline"
+    "name": "Adrenaline",
+    "pool": "Treasure Room, Devil Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "494": {
-    "name": "Jacob's Ladder"
+    "name": "Jacob's Ladder",
+    "pool": "Treasure Room, Battery Bum, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "495": {
-    "name": "Ghost Pepper"
+    "name": "Ghost Pepper",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "496": {
-    "name": "Euthanasia"
+    "name": "Euthanasia",
+    "pool": "Treasure Room, Devil Beggar, Curse Room, Greed Treasure Room, Greed Curse Room",
+    "unlock": "Победить Делирия за Лилит"
   },
   "497": {
-    "name": "Camo Undies"
+    "name": "Camo Undies",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "498": {
-    "name": "Duality"
+    "name": "Duality",
+    "pool": "Devil Room, Angel Room",
+    "unlock": "Завершить усложненный режим жадности за Лилит"
   },
   "499": {
-    "name": "Eucharist"
+    "name": "Eucharist",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Делирия за Магдалену"
   },
   "500": {
-    "name": "Sack of Sacks"
+    "name": "Sack of Sacks",
+    "pool": "Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Завершить усложненный режим жадности за Каина"
   },
   "501": {
-    "name": "Greed's Gullet"
+    "name": "Greed's Gullet",
+    "pool": "Secret Room, Greed Secret Room",
+    "unlock": "Выполнить Испытание #35 - Pong"
   },
   "502": {
-    "name": "Large Zit"
+    "name": "Large Zit",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "503": {
-    "name": "Little Horn"
+    "name": "Little Horn",
+    "pool": "Devil Beggar, Curse Room, Devil Room, Greed Treasure Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "504": {
-    "name": "Brown Nugget"
+    "name": "Brown Nugget",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Завершить режим жадности за Аполлиона"
   },
   "505": {
-    "name": "Poke Go"
+    "name": "Poke Go",
+    "pool": "Shop, Crane Game",
+    "unlock": "Открыто со старта"
   },
   "506": {
-    "name": "BackStabber"
+    "name": "BackStabber",
+    "pool": "Treasure Room, Devil Room, Ultra Secret Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "507": {
-    "name": "Sharp Straw"
+    "name": "Sharp Straw",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "508": {
-    "name": "Mom's Razor"
+    "name": "Mom's Razor",
+    "pool": "Treasure Room, Old Chest, Mom's Chest, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "509": {
-    "name": "Bloodshot Eye"
+    "name": "Bloodshot Eye",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "510": {
-    "name": "Delirious"
+    "name": "Delirious",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Делирия"
   },
   "511": {
-    "name": "Angry Fly"
+    "name": "Angry Fly",
+    "pool": "Treasure Room, Ultra Secret Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Получить трансформацию Beelzebub"
   },
   "512": {
-    "name": "Black Hole"
+    "name": "Black Hole",
+    "pool": "Treasure Room, Greed Treasure Room, Greed Shop",
+    "unlock": "Убить 20 Portal"
   },
   "513": {
-    "name": "Bozo"
+    "name": "Bozo",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Разрушить 5 радужных какашек"
   },
   "514": {
-    "name": "Broken Modem"
+    "name": "Broken Modem",
+    "pool": "Shop, Greed Treasure Room",
+    "unlock": "Пройти 7 ежедневных забегов"
   },
   "515": {
-    "name": "Mystery Gift"
+    "name": "Mystery Gift",
+    "pool": "Shop, Crane Game, Greed Treasure Room, Greed Shop",
+    "unlock": "Разрушить 500 камней"
   },
   "516": {
-    "name": "Sprinkler"
+    "name": "Sprinkler",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room, Greed Shop",
+    "unlock": "Пройти первую главу без получения урона"
   },
   "517": {
-    "name": "Fast Bombs"
+    "name": "Fast Bombs",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Убить Маленького Рога 20 раз"
   },
   "518": {
-    "name": "Buddy in a Box"
+    "name": "Buddy in a Box",
+    "pool": "Shop, Baby Shop, Crane Game, Greed Treasure Room, Greed Shop",
+    "unlock": "Получить 5 фамильяров в одном забеге"
   },
   "519": {
-    "name": "Lil Delirium"
+    "name": "Lil Delirium",
+    "pool": "Devil Room, Angel Room, Baby Shop, Greed Devil Room, Greed Angel Room",
+    "unlock": "Победить Делирия"
   },
   "520": {
-    "name": "Jumper Cables"
+    "name": "Jumper Cables",
+    "pool": "Shop, Battery Bum, Greed Treasure Room",
+    "unlock": "Подобрать предмет-батарейку при наличии другого предмета-батарейки или item:[AAA Battery] / item:[Watch Battery]"
   },
   "521": {
-    "name": "Coupon"
+    "name": "Coupon",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Купить 50 вещей в Магазине, у Дьявола или в Черном рынке"
   },
   "522": {
-    "name": "Telekinesis"
+    "name": "Telekinesis",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Пройти вторую главу без получения урона"
   },
   "523": {
-    "name": "Moving Box"
+    "name": "Moving Box",
+    "pool": "Shop",
+    "unlock": "Применить item:[Pandora's Box] в Темной комнате"
   },
   "524": {
-    "name": "Technology Zero"
+    "name": "Technology Zero",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Собрать за забег два предмета с тематикой лазера"
   },
   "525": {
-    "name": "Leprosy"
+    "name": "Leprosy",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Пройти третью главу без получения урона"
   },
   "526": {
-    "name": "7 Seals"
+    "name": "7 Seals",
+    "pool": "Devil Room, Angel Room, Greed Devil Room, Greed Angel Room",
+    "unlock": "Победить всех всадников"
   },
   "527": {
-    "name": "Mr. Me!"
+    "name": "Mr. Me!",
+    "pool": "Shop, Key Master, Wooden Chest, Crane Game, Greed Shop",
+    "unlock": "Открыть 20 закрытых сундуков"
   },
   "528": {
-    "name": "Angelic Prism"
+    "name": "Angelic Prism",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить 10 ангелов"
   },
   "529": {
-    "name": "Pop!"
+    "name": "Pop!",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Пройти четвертую главу без получения урона"
   },
   "530": {
-    "name": "Death's List"
+    "name": "Death's List",
+    "pool": "Devil Room",
+    "unlock": "Купить 25 предметов у Дьявола"
   },
   "531": {
-    "name": "Haemolacria"
+    "name": "Haemolacria",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Подобрать item:[Blood Clot] 10 раз"
   },
   "532": {
-    "name": "Lachryphagy"
+    "name": "Lachryphagy",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Получить 10 повышений слёз в забеге"
   },
   "533": {
-    "name": "Trisagion"
+    "name": "Trisagion",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Взять 25 предметов у Ангела"
   },
   "534": {
-    "name": "Schoolbag"
+    "name": "Schoolbag",
+    "pool": "Shop, Golden Chest, Greed Shop",
+    "unlock": "Посетить все магазины в забеге"
   },
   "535": {
-    "name": "Blanket"
+    "name": "Blanket",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Поспать в кровати 10 раз"
   },
   "536": {
-    "name": "Sacrificial Altar"
+    "name": "Sacrificial Altar",
+    "pool": "Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Купить 50 предметов у Дьявола"
   },
   "537": {
-    "name": "Lil Spewer"
+    "name": "Lil Spewer",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Умереть от собственного выстрела, используя item:[Ipecac], пилюлю Horf! или item:[Bob's Rotten Head]"
   },
   "538": {
-    "name": "Marbles"
+    "name": "Marbles",
+    "pool": "Boss, Crane Game, Greed Boss Item Room",
+    "unlock": "Применить пилюлю Gulp! 5 раз за забег. Активация item:[Placebo] считается."
   },
   "539": {
-    "name": "Mystery Egg"
+    "name": "Mystery Egg",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Одновременно иметь трех дружественных монстров"
   },
   "540": {
-    "name": "Flat Stone"
+    "name": "Flat Stone",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Получить предмет Rubber Cement 5 раз"
   },
   "541": {
-    "name": "Marrow"
+    "name": "Marrow",
+    "pool": "Boss, Ultra Secret Room, Greed Boss Item Room",
+    "unlock": "Победить Оно Живое за Забытого"
   },
   "542": {
-    "name": "Slipped Rib"
+    "name": "Slipped Rib",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Айзека за Забытого"
   },
   "543": {
-    "name": "Hallowed Ground"
+    "name": "Hallowed Ground",
+    "pool": "Treasure Room, Angel Room, Greed Treasure Room, Greed Angel Room",
+    "unlock": "Победить Хаша за Забытого"
   },
   "544": {
-    "name": "Pointy Rib"
+    "name": "Pointy Rib",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Сатану за Забытого"
   },
   "545": {
-    "name": "Book of the Dead"
+    "name": "Book of the Dead",
+    "pool": "Treasure Room, Library, Devil Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Победить Делирия за Забытого"
   },
   "546": {
-    "name": "Dad's Ring"
+    "name": "Dad's Ring",
+    "pool": "Old Chest, Secret Room, Greed Secret Room",
+    "unlock": "Завершить усложненный режим жадности за Забытого"
   },
   "547": {
-    "name": "Divorce Papers"
+    "name": "Divorce Papers",
+    "pool": "Boss, Old Chest, Greed Boss Item Room",
+    "unlock": "Завершить Босс Раш за Забытого"
   },
   "548": {
-    "name": "Jaw Bone"
+    "name": "Jaw Bone",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить ??? за Забытого"
   },
   "549": {
-    "name": "Brittle Bones"
+    "name": "Brittle Bones",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Агнца за Забытого"
   },
   "550": {
-    "name": "Broken Shovel"
+    "name": "Broken Shovel",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "551": {
-    "name": "Broken Shovel"
+    "name": "Broken Shovel",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "552": {
-    "name": "Mom's Shovel"
+    "name": "Mom's Shovel",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "553": {
-    "name": "Mucormycosis"
+    "name": "Mucormycosis",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "554": {
-    "name": "2Spooky"
+    "name": "2Spooky",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "555": {
-    "name": "Golden Razor"
+    "name": "Golden Razor",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Получить 99 монет и потратить их все"
   },
   "556": {
-    "name": "Sulfur"
+    "name": "Sulfur",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "557": {
-    "name": "Fortune Cookie"
+    "name": "Fortune Cookie",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "558": {
-    "name": "Eye Sore"
+    "name": "Eye Sore",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "559": {
-    "name": "120 Volt"
+    "name": "120 Volt",
+    "pool": "Treasure Room, Battery Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "560": {
-    "name": "It Hurts"
+    "name": "It Hurts",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "561": {
-    "name": "Almond Milk"
+    "name": "Almond Milk",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "562": {
-    "name": "Rock Bottom"
+    "name": "Rock Bottom",
+    "pool": "Secret Room, Greed Secret Room",
+    "unlock": "Завершить Босс Раш за Иакова и Исава"
   },
   "563": {
-    "name": "Nancy Bombs"
+    "name": "Nancy Bombs",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "564": {
-    "name": "A Bar of Soap"
+    "name": "A Bar of Soap",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "565": {
-    "name": "Blood Puppy"
+    "name": "Blood Puppy",
+    "pool": "Treasure Room, Red Chest, Curse Room, Ultra Secret Room, Baby Shop, Greed Treasure Room, Greed Curse Room",
+    "unlock": "Победить Матерь за Лилит"
   },
   "566": {
-    "name": "Dream Catcher"
+    "name": "Dream Catcher",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "567": {
-    "name": "Paschal Candle"
+    "name": "Paschal Candle",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "568": {
-    "name": "Divine Intervention"
+    "name": "Divine Intervention",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Хаша за Бетани"
   },
   "569": {
-    "name": "Blood Oath"
+    "name": "Blood Oath",
+    "pool": "Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "570": {
-    "name": "Playdough Cookie"
+    "name": "Playdough Cookie",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "571": {
-    "name": "Orphan Socks"
+    "name": "Orphan Socks",
+    "pool": "Golden Chest, Secret Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "572": {
-    "name": "Eye of the Occult"
+    "name": "Eye of the Occult",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "573": {
-    "name": "Immaculate Heart"
+    "name": "Immaculate Heart",
+    "pool": "Angel Room, Ultra Secret Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "574": {
-    "name": "Monstrance"
+    "name": "Monstrance",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "575": {
-    "name": "The Intruder"
+    "name": "The Intruder",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "576": {
-    "name": "Dirty Mind"
+    "name": "Dirty Mind",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Выполнить Испытание #36 - Scat Man"
   },
   "577": {
-    "name": "Damocles"
+    "name": "Damocles",
+    "pool": "Devil Room, Greed Devil Room",
+    "unlock": "Победить Агнца за Иакова и Исава"
   },
   "578": {
-    "name": "Free Lemonade"
+    "name": "Free Lemonade",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "579": {
-    "name": "Spirit Sword"
+    "name": "Spirit Sword",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Выполнить Испытание #39 - Isaac's Awakening"
   },
   "580": {
-    "name": "Red Key"
+    "name": "Red Key",
+    "pool": "Red Chest, Key Master, Curse Room, Secret Room, Ultra Secret Room, Mom's Chest",
+    "unlock": "Открыть Мамин сундук в Доме"
   },
   "581": {
-    "name": "Psy Fly"
+    "name": "Psy Fly",
+    "pool": "Treasure Room, Key Master, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "582": {
-    "name": "Wavy Cap"
+    "name": "Wavy Cap",
+    "pool": "Secret Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "583": {
-    "name": "Rocket in a Jar"
+    "name": "Rocket in a Jar",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "584": {
-    "name": "Book of Virtues"
+    "name": "Book of Virtues",
+    "pool": "Library, Angel Room, Greed Angel Room",
+    "unlock": "Победить Айзека за Бетани"
   },
   "585": {
-    "name": "Alabaster Box"
+    "name": "Alabaster Box",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Победить Агнца за Бетани"
   },
   "586": {
-    "name": "The Stairway"
+    "name": "The Stairway",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Айзека за Иакова и Исава"
   },
   "588": {
-    "name": "Sol"
+    "name": "Sol",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "589": {
-    "name": "Luna"
+    "name": "Luna",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "590": {
-    "name": "Mercurius"
+    "name": "Mercurius",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "591": {
-    "name": "Venus"
+    "name": "Venus",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "592": {
-    "name": "Terra"
+    "name": "Terra",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "593": {
-    "name": "Mars"
+    "name": "Mars",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "594": {
-    "name": "Jupiter"
+    "name": "Jupiter",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "595": {
-    "name": "Saturnus"
+    "name": "Saturnus",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "596": {
-    "name": "Uranus"
+    "name": "Uranus",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "597": {
-    "name": "Neptunus"
+    "name": "Neptunus",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "598": {
-    "name": "Pluto"
+    "name": "Pluto",
+    "pool": "Planetarium",
+    "unlock": "Открыто со старта"
   },
   "599": {
-    "name": "Voodoo Head"
+    "name": "Voodoo Head",
+    "pool": "Shop, Crane Game",
+    "unlock": "Открыто со старта"
   },
   "600": {
-    "name": "Eye Drops"
+    "name": "Eye Drops",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "601": {
-    "name": "Act of Contrition"
+    "name": "Act of Contrition",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Открыто со старта"
   },
   "602": {
-    "name": "Member Card"
+    "name": "Member Card",
+    "pool": "Shop, Greed Treasure Room",
+    "unlock": "Потратить 40+ монет в одном магазине"
   },
   "603": {
-    "name": "Battery Pack"
+    "name": "Battery Pack",
+    "pool": "Shop, Battery Bum, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "604": {
-    "name": "Mom's Bracelet"
+    "name": "Mom's Bracelet",
+    "pool": "Shop, Old Chest, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "605": {
-    "name": "The Scooper"
+    "name": "The Scooper",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "606": {
-    "name": "Ocular Rift"
+    "name": "Ocular Rift",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "607": {
-    "name": "Boiled Baby"
+    "name": "Boiled Baby",
+    "pool": "Treasure Room, Ultra Secret Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "608": {
-    "name": "Freezer Baby"
+    "name": "Freezer Baby",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "609": {
-    "name": "Eternal D6"
+    "name": "Eternal D6",
+    "pool": "Treasure Room, Secret Room, Crane Game, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Матерь за ???"
   },
   "610": {
-    "name": "Bird Cage"
+    "name": "Bird Cage",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Победить Матерь за Еву"
   },
   "611": {
-    "name": "Larynx"
+    "name": "Larynx",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Зверя за Порченого Самсона"
   },
   "612": {
-    "name": "Lost Soul"
+    "name": "Lost Soul",
+    "pool": "Treasure Room, Secret Room, Baby Shop, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Победить Матерь за Потерянного"
   },
   "614": {
-    "name": "Blood Bombs"
+    "name": "Blood Bombs",
+    "pool": "Treasure Room, Bomb Bum, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "615": {
-    "name": "Lil' Dumpy"
+    "name": "Lil' Dumpy",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "616": {
-    "name": "Bird's Eye"
+    "name": "Bird's Eye",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "617": {
-    "name": "Lodestone"
+    "name": "Lodestone",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "618": {
-    "name": "Rotten Tomato"
+    "name": "Rotten Tomato",
+    "pool": "Treasure Room, Ultra Secret Room, Rotten Beggar, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "619": {
-    "name": "Birthright"
+    "name": "Birthright",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Победить ??? за Иакова и Исава"
   },
   "621": {
-    "name": "Red Stew"
+    "name": "Red Stew",
+    "pool": "Shop, Ultra Secret Room, Greed Shop",
+    "unlock": "Победить Сатану за Иакова и Исава"
   },
   "622": {
-    "name": "Genesis"
+    "name": "Genesis",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Завершить усложненный режим жадности за Иакова и Исава"
   },
   "623": {
-    "name": "Sharp Key"
+    "name": "Sharp Key",
+    "pool": "Shop, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "624": {
-    "name": "Booster Pack"
+    "name": "Booster Pack",
+    "pool": "Shop, Boss, Crane Game, Greed Shop, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "625": {
-    "name": "Mega Mush"
+    "name": "Mega Mush",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Пройти все цели за обычных персонажей в сложном режиме"
   },
   "626": {
-    "name": "Knife Piece 1"
+    "name": "Knife Piece 1",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "627": {
-    "name": "Knife Piece 2"
+    "name": "Knife Piece 2",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "628": {
-    "name": "Death Certificate"
+    "name": "Death Certificate",
+    "pool": "Secret Room, Greed Secret Room",
+    "unlock": "Пройти всё за всех на сложном режиме"
   },
   "629": {
-    "name": "Bot Fly"
+    "name": "Bot Fly",
+    "pool": "Treasure Room, Key Master, Baby Shop, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "631": {
-    "name": "Meat Cleaver"
+    "name": "Meat Cleaver",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Матерь за Айзека"
   },
   "632": {
-    "name": "Evil Charm"
+    "name": "Evil Charm",
+    "pool": "Secret Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "633": {
-    "name": "Dogma"
+    "name": "Dogma",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "634": {
-    "name": "Purgatory"
+    "name": "Purgatory",
+    "pool": "Devil Room, Angel Room, Greed Devil Room, Greed Angel Room",
+    "unlock": "Выполнить Испытание #38 - Baptism by Fire"
   },
   "635": {
-    "name": "Stitches"
+    "name": "Stitches",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "636": {
-    "name": "R Key"
+    "name": "R Key",
+    "pool": "Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "637": {
-    "name": "Knockout Drops"
+    "name": "Knockout Drops",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "638": {
-    "name": "Eraser"
+    "name": "Eraser",
+    "pool": "Shop, Crane Game, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "639": {
-    "name": "Yuck Heart"
+    "name": "Yuck Heart",
+    "pool": "Treasure Room, Rotten Beggar, Greed Treasure Room",
+    "unlock": "Победить Матерь за Магдалену"
   },
   "640": {
-    "name": "Urn of Souls"
+    "name": "Urn of Souls",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Сатану за Бетани"
   },
   "641": {
-    "name": "Akeldama"
+    "name": "Akeldama",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Матерь за Иуду"
   },
   "642": {
-    "name": "Magic Skin"
+    "name": "Magic Skin",
+    "pool": "Shop, Red Chest, Curse Room, Greed Curse Room",
+    "unlock": "Победить Матерь за Иакова и Исава"
   },
   "643": {
-    "name": "Revelation"
+    "name": "Revelation",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Матерь за Бетани"
   },
   "644": {
-    "name": "Consolation Prize"
+    "name": "Consolation Prize",
+    "pool": "Boss, Golden Chest, Crane Game, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "645": {
-    "name": "Tinytoma"
+    "name": "Tinytoma",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "646": {
-    "name": "Brimstone bombs"
+    "name": "Brimstone bombs",
+    "pool": "Bomb Bum, Devil Room, Greed Devil Room",
+    "unlock": "Убить босса Hornfel"
   },
   "647": {
-    "name": "4.5 Volt"
+    "name": "4.5 Volt",
+    "pool": "Shop, Battery Bum, Greed Shop",
+    "unlock": "Открыто со старта"
   },
   "649": {
-    "name": "Fruity Plum"
+    "name": "Fruity Plum",
+    "pool": "Treasure Room, Key Master, Baby Shop, Crane Game, Greed Treasure Room",
+    "unlock": "Убить босса Baby Plum 10 раз"
   },
   "650": {
-    "name": "Plum Flute"
+    "name": "Plum Flute",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Пощадить босса Baby Plum"
   },
   "651": {
-    "name": "Star of Bethlehem"
+    "name": "Star of Bethlehem",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Делирия за Бетани"
   },
   "652": {
-    "name": "Cube Baby"
+    "name": "Cube Baby",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "653": {
-    "name": "Vade Retro"
+    "name": "Vade Retro",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Завершить усложненный режим жадности за Бетани"
   },
   "654": {
-    "name": "False PHD"
+    "name": "False PHD",
+    "pool": "Red Chest, Curse Room, Devil Room, Ultra Secret Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Открыто со старта"
   },
   "655": {
-    "name": "Spin to Win"
+    "name": "Spin to Win",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "657": {
-    "name": "Vasculitis"
+    "name": "Vasculitis",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "658": {
-    "name": "Giant Cell"
+    "name": "Giant Cell",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "659": {
-    "name": "Tropicamide"
+    "name": "Tropicamide",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "660": {
-    "name": "Card Reading"
+    "name": "Card Reading",
+    "pool": "Shop",
+    "unlock": "Открыто со старта"
   },
   "661": {
-    "name": "Quints"
+    "name": "Quints",
+    "pool": "Treasure Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "663": {
-    "name": "Tooth and Nail"
+    "name": "Tooth and Nail",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Открыто со старта"
   },
   "664": {
-    "name": "Binge Eater"
+    "name": "Binge Eater",
+    "pool": "Secret Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "665": {
-    "name": "Guppy's Eye"
+    "name": "Guppy's Eye",
+    "pool": "Red Chest, Curse Room, Devil Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Победить Матерь за Каина"
   },
   "667": {
-    "name": "Strawman"
+    "name": "Strawman",
+    "pool": "Secret Room, Greed Treasure Room, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Зверя за Порченого Хранителя"
   },
   "668": {
-    "name": "Dad's Note"
+    "name": "Dad's Note",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "669": {
-    "name": "Sausage"
+    "name": "Sausage",
+    "pool": "Secret Room, Greed Secret Room",
+    "unlock": "Открыто со старта"
   },
   "670": {
-    "name": "Options?"
+    "name": "Options?",
+    "pool": "Shop",
+    "unlock": "Победить Зверя за Айзека"
   },
   "671": {
-    "name": "Candy Heart"
+    "name": "Candy Heart",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Победить Зверя за Магдалену"
   },
   "672": {
-    "name": "A Pound of Flesh"
+    "name": "A Pound of Flesh",
+    "pool": "Devil Beggar, Devil Room",
+    "unlock": "Победить Зверя за Каина"
   },
   "673": {
-    "name": "Redemption"
+    "name": "Redemption",
+    "pool": "Без пула",
+    "unlock": "Победить Зверя за Иуду"
   },
   "674": {
-    "name": "Spirit Shackles"
+    "name": "Spirit Shackles",
+    "pool": "Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Зверя за Забытого"
   },
   "675": {
-    "name": "Cracked Orb"
+    "name": "Cracked Orb",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room",
+    "unlock": "Победить Зверя за Еву"
   },
   "676": {
-    "name": "Empty Heart"
+    "name": "Empty Heart",
+    "pool": "Treasure Room, Devil Beggar, Greed Treasure Room",
+    "unlock": "Победить Зверя за Самсона"
   },
   "677": {
-    "name": "Astral Projection"
+    "name": "Astral Projection",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Победить Зверя за Лазаря"
   },
   "678": {
-    "name": "C Section"
+    "name": "C Section",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Победить Зверя за Лилит"
   },
   "679": {
-    "name": "Lil Abaddon"
+    "name": "Lil Abaddon",
+    "pool": "Devil Room, Baby Shop, Greed Devil Room",
+    "unlock": "Победить Зверя за Азазеля"
   },
   "680": {
-    "name": "Montezuma's Revenge"
+    "name": "Montezuma's Revenge",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Зверя за ???"
   },
   "681": {
-    "name": "Lil Portal"
+    "name": "Lil Portal",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Матерь за Аполлиона"
   },
   "682": {
-    "name": "Worm Friend"
+    "name": "Worm Friend",
+    "pool": "Treasure Room, Ultra Secret Room, Baby Shop, Greed Treasure Room",
+    "unlock": "Победить Зверя за Аполлиона"
   },
   "683": {
-    "name": "Bone Spurs"
+    "name": "Bone Spurs",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Матерь за Забытого"
   },
   "684": {
-    "name": "Hungry Soul"
+    "name": "Hungry Soul",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Победить Зверя за Потерянного"
   },
   "685": {
-    "name": "Jar of Wisps"
+    "name": "Jar of Wisps",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Зверя за Бетани"
   },
   "686": {
-    "name": "Soul Locket"
+    "name": "Soul Locket",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Завершить режим жадности за Бетани"
   },
   "687": {
-    "name": "Friend Finder"
+    "name": "Friend Finder",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Победить Зверя за Иакова и Исава"
   },
   "688": {
-    "name": "Inner Child"
+    "name": "Inner Child",
+    "pool": "Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Завершить режим жадности за Иакова и Исава"
   },
   "689": {
-    "name": "Glitched Crown"
+    "name": "Glitched Crown",
+    "pool": "Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Зверя за Порченого Айзека"
   },
   "690": {
-    "name": "Belly Jelly"
+    "name": "Belly Jelly",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Зверя за Порченую Магдалену"
   },
   "691": {
-    "name": "Sacred Orb"
+    "name": "Sacred Orb",
+    "pool": "Angel Room, Secret Room, Greed Shop, Greed Secret Room, Greed Angel Room",
+    "unlock": "Победить Зверя за Порченого Потерянного"
   },
   "692": {
-    "name": "Sanguine Bond"
+    "name": "Sanguine Bond",
+    "pool": "Curse Room, Devil Room, Ultra Secret Room, Greed Shop, Greed Curse Room, Greed Devil Room",
+    "unlock": "Победить Зверя за Порченого Иуду"
   },
   "693": {
-    "name": "The Swarm"
+    "name": "The Swarm",
+    "pool": "Treasure Room, Key Master, Greed Treasure Room",
+    "unlock": "Победить Зверя за Порченого ???"
   },
   "694": {
-    "name": "Heartbreak"
+    "name": "Heartbreak",
+    "pool": "Curse Room, Devil Room, Ultra Secret Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Победить Зверя за Порченую Еву"
   },
   "695": {
-    "name": "Bloody Gust"
+    "name": "Bloody Gust",
+    "pool": "Treasure Room, Devil Room, Ultra Secret Room, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Победить Матерь за Самсона"
   },
   "696": {
-    "name": "Salvation"
+    "name": "Salvation",
+    "pool": "Angel Room, Greed Angel Room",
+    "unlock": "Победить Зверя за Порченого Лазаря"
   },
   "697": {
-    "name": "Vanishing Twin"
+    "name": "Vanishing Twin",
+    "pool": "Curse Room, Secret Room, Baby Shop",
+    "unlock": "Победить Хаша за Иакова и Исава"
   },
   "698": {
-    "name": "Twisted Pair"
+    "name": "Twisted Pair",
+    "pool": "Devil Room, Baby Shop, Greed Devil Room",
+    "unlock": "Победить Зверя за Порченую Лилит"
   },
   "699": {
-    "name": "Azazel's Rage"
+    "name": "Azazel's Rage",
+    "pool": "Devil Room, Greed Devil Room",
+    "unlock": "Победить Зверя за Порченого Азазеля"
   },
   "700": {
-    "name": "Echo Chamber"
+    "name": "Echo Chamber",
+    "pool": "Secret Room, Ultra Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Зверя за Порченого Аполлиона"
   },
   "701": {
-    "name": "Isaac's Tomb"
+    "name": "Isaac's Tomb",
+    "pool": "Secret Room, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Зверя за Порченого Забытого"
   },
   "702": {
-    "name": "Vengeful Spirit"
+    "name": "Vengeful Spirit",
+    "pool": "Curse Room, Devil Room, Ultra Secret Room, Greed Curse Room, Greed Devil Room",
+    "unlock": "Победить Зверя за Порченую Бетани"
   },
   "703": {
-    "name": "Esau Jr."
+    "name": "Esau Jr.",
+    "pool": "Treasure Room, Secret Room, Ultra Secret Room, Greed Treasure Room, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Зверя за Порченого Иакова"
   },
   "704": {
-    "name": "Berserk!"
+    "name": "Berserk!",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Победить Делирия за Порченого Самсона"
   },
   "705": {
-    "name": "Dark Arts"
+    "name": "Dark Arts",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Победить Делирия за Порченого Иуду"
   },
   "706": {
-    "name": "Abyss"
+    "name": "Abyss",
+    "pool": "Devil Room, Ultra Secret Room, Greed Devil Room",
+    "unlock": "Победить Делирия за Порченого Аполлиона"
   },
   "707": {
-    "name": "Supper"
+    "name": "Supper",
+    "pool": "Boss, Beggar, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "708": {
-    "name": "Stapler"
+    "name": "Stapler",
+    "pool": "Boss, Golden Chest, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "709": {
-    "name": "Suplex!"
+    "name": "Suplex!",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Победить Делирия за Иакова и Исава"
   },
   "710": {
-    "name": "Bag of Crafting"
+    "name": "Bag of Crafting",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Делирия за Порченого Каина"
   },
   "711": {
-    "name": "Flip"
+    "name": "Flip",
+    "pool": "Curse Room, Secret Room, Ultra Secret Room, Greed Shop, Greed Curse Room, Greed Secret Room",
+    "unlock": "Победить Делирия за Порченого Лазаря"
   },
   "712": {
-    "name": "Lemegeton"
+    "name": "Lemegeton",
+    "pool": "Library, Devil Room, Greed Devil Room",
+    "unlock": "Победить Делирия за Порченую Бетани"
   },
   "713": {
-    "name": "Sumptorium"
+    "name": "Sumptorium",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Делирия за Порченую Еву"
   },
   "714": {
-    "name": "Recall"
+    "name": "Recall",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "715": {
-    "name": "Hold"
+    "name": "Hold",
+    "pool": "Без пула",
+    "unlock": "Открыто со старта"
   },
   "716": {
-    "name": "Keeper's Sack"
+    "name": "Keeper's Sack",
+    "pool": "Shop, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Победить Матерь за Хранителя"
   },
   "717": {
-    "name": "Keeper's Kin"
+    "name": "Keeper's Kin",
+    "pool": "Treasure Room, Secret Room, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Победить Делирия за Порченого Хранителя"
   },
   "719": {
-    "name": "Keeper's Box"
+    "name": "Keeper's Box",
+    "pool": "Shop, Secret Room, Wooden Chest, Greed Treasure Room, Greed Secret Room",
+    "unlock": "Победить Зверя за Хранителя"
   },
   "720": {
-    "name": "Everything Jar"
+    "name": "Everything Jar",
+    "pool": "Treasure Room, Crane Game, Greed Treasure Room",
+    "unlock": "Победить Зверя за Идена"
   },
   "721": {
-    "name": "TMTRAINER"
+    "name": "TMTRAINER",
+    "pool": "Secret Room, Greed Treasure Room, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Зверя за Порченого Идена"
   },
   "722": {
-    "name": "Anima Sola"
+    "name": "Anima Sola",
+    "pool": "Treasure Room, Greed Treasure Room, Greed Shop",
+    "unlock": "Победить Делирия за Порченого Иакова"
   },
   "723": {
-    "name": "Spindown Dice"
+    "name": "Spindown Dice",
+    "pool": "Treasure Room, Secret Room, Crane Game, Greed Shop, Greed Secret Room",
+    "unlock": "Победить Делирия за Порченого Айзека"
   },
   "724": {
-    "name": "Hypercoagulation"
+    "name": "Hypercoagulation",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Победить Делирия за Порченую Магдалену"
   },
   "725": {
-    "name": "IBS"
+    "name": "IBS",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Делирия за Порченого ???"
   },
   "726": {
-    "name": "Hemoptysis"
+    "name": "Hemoptysis",
+    "pool": "Treasure Room, Ultra Secret Room, Greed Treasure Room",
+    "unlock": "Победить Делирия за Порченого Азазеля"
   },
   "727": {
-    "name": "Ghost Bombs"
+    "name": "Ghost Bombs",
+    "pool": "Treasure Room, Bomb Bum, Greed Treasure Room",
+    "unlock": "Победить Делирия за Порченого Потерянного"
   },
   "728": {
-    "name": "Gello"
+    "name": "Gello",
+    "pool": "Treasure Room, Devil Room, Ultra Secret Room, Baby Shop, Greed Treasure Room, Greed Devil Room",
+    "unlock": "Победить Делирия за Порченую Лилит"
   },
   "729": {
-    "name": "Decap Attack"
+    "name": "Decap Attack",
+    "pool": "Treasure Room, Greed Treasure Room",
+    "unlock": "Победить Делирия за Порченого Забытого"
   },
   "730": {
-    "name": "Glass Eye"
+    "name": "Glass Eye",
+    "pool": "Boss, Golden Chest, Crane Game, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "731": {
-    "name": "Stye"
+    "name": "Stye",
+    "pool": "Boss, Greed Boss Item Room",
+    "unlock": "Открыто со старта"
   },
   "732": {
-    "name": "Mom's Ring"
+    "name": "Mom's Ring",
+    "pool": "Golden Chest, Old Chest, Mom's Chest, Greed Shop",
+    "unlock": "Открыто со старта"
+  },
+  "NEW": {
+    "name": "Unknown Item"
   }
 }
