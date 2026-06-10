@@ -763,30 +763,26 @@ input[type="file"] {
 }
 
 .items-detail-bar {
-    display: flex;
-    align-items: center;
+    display: none;
+    align-items: flex-start;
     gap: 14px;
     padding: 10px 14px;
-    background: rgba(240, 236, 228, 0.65);
-    border: 2px solid var(--ink);
-    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.12);
-    min-height: 58px;
-    position: sticky;
-    bottom: 0;
-    z-index: 2;
-    transition: background 0.15s ease;
-}
-
-.items-detail-bar.is-active {
     background:
         var(--tex-paper-scrap),
         linear-gradient(160deg, #f5f0e6 0%, #ebe4d6 100%);
     background-size: 128px 128px, cover;
-    min-height: 72px;
-    align-items: flex-start;
+    border: 2px solid var(--ink);
     box-shadow:
         2px 2px 0 rgba(0, 0, 0, 0.14),
         inset 0 0 20px rgba(255, 255, 255, 0.35);
+    min-height: 72px;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+}
+
+.items-detail-bar.is-active {
+    display: flex;
 }
 
 .items-detail-icon {
@@ -912,8 +908,7 @@ input[type="file"] {
 }
 
 .character-status {
-    font-size: 0.78rem;
-    font-weight: bold;
+    font-size: 0.7rem;
     margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 0.11em;
@@ -956,7 +951,6 @@ input[type="file"] {
 .bosses-title {
     color: var(--ink-muted);
     font-size: 0.7rem;
-    font-weight: bold;
     margin-bottom: 5px;
     letter-spacing: 0.12em;
     line-height: 1.45;
