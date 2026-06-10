@@ -984,10 +984,10 @@ class IsaacAchievementParser {
             div.innerHTML = `
                 <div class="achievement-main-info">
                     <div class="achievement-text-info">
-                        <div style="font-size: 0.9rem; font-weight: bold; color: #1a1a1a; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
+                        <div style="font-size: 1rem; font-weight: bold; color: #1a1a1a; margin-bottom: 8px; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word;">
                             #${achievement.id} ${achievement.name}
                         </div>
-                        <div style="color: #4a4540; font-size: 0.75rem; margin: 4px 0; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">
+                        <div style="color: #4a4540; font-size: 0.8rem; margin: 4px 0; line-height: 1.4; word-wrap: break-word; overflow-wrap: break-word;">
                             ${achievement.unlockCondition}
                         </div>
                         <div class="status-bottom ${achievement.unlocked ? 'unlocked' : 'locked'}">
@@ -1024,7 +1024,7 @@ class IsaacAchievementParser {
                 bossesList = `
                     <div class="bosses-section">
                         <div class="bosses-title">
-                            ${isTainted ? 'Убитые боссы (объединенные достижения)' : 'Убитые боссы'} (${defeatedBosses.length}/${totalBosses})
+                            Убитые боссы (${defeatedBosses.length}/${totalBosses})
                         </div>
                         <div class="bosses-list">
                             ${defeatedBosses.map(boss => {
