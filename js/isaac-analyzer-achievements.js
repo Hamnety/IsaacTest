@@ -477,6 +477,7 @@ class IsaacAchievementParser {
         // Анализируем персонажей на основе достижений
         this.analysisResults.characters = [];
         let unlockedCharacters = 0;
+        let completedCharacters = 0;
         
         for (const [characterId, characterData] of Object.entries(ISAAC_GAME_DATA.characters)) {
             const id = parseInt(characterId);
@@ -491,6 +492,11 @@ class IsaacAchievementParser {
             }
             
             if (isUnlocked) unlockedCharacters++;
+
+            const defeatedBosses = this.getCharacterDefeatedBosses(id, isUnlocked);
+            const isFullyCompleted = defeatedBosses.length > 0 &&
+                defeatedBosses.every(boss => boss.defeated);
+            if (isFullyCompleted) completedCharacters++;
             
             this.analysisResults.characters.push({
                 id: id,
@@ -498,7 +504,8 @@ class IsaacAchievementParser {
                 unlocked: isUnlocked,
                 unlockCondition: this.getAchievementUnlockCondition(characterData.unlockAchievement),
                 completionMarks: this.getCharacterCompletionMarks(id, isUnlocked),
-                defeatedBosses: this.getCharacterDefeatedBosses(id, isUnlocked)
+                defeatedBosses,
+                bossesCompleted: isFullyCompleted
             });
         }
         
@@ -620,11 +627,12 @@ class IsaacAchievementParser {
         this.analysisResults.statistics = {
             achievementsUnlocked: this.analysisResults.achievements.filter(a => a.unlocked).length,
             charactersUnlocked: unlockedCharacters,
+            charactersCompleted: completedCharacters,
             challengesCompleted: completedChallenges,
             itemsFound: foundItems
         };
         
-        this.analysisResults.debugInfo.push(`Персонажи: ${unlockedCharacters}/${ISAAC_GAME_DATA.totals.characters} разблокировано`);
+        this.analysisResults.debugInfo.push(`Персонажи: ${completedCharacters}/${ISAAC_GAME_DATA.totals.characters} полностью пройдено (${unlockedCharacters} разблокировано)`);
         this.analysisResults.debugInfo.push(`Челленджи: ${completedChallenges}/${ISAAC_GAME_DATA.totals.challenges} завершено`);
         this.analysisResults.debugInfo.push(`Предметы: ${foundItems}/${ISAAC_GAME_DATA.totals.items} найдено`);
     }
@@ -924,10 +932,10 @@ class IsaacAchievementParser {
         document.getElementById('achievementsProgress').style.width = 
             `${(stats.achievementsUnlocked / Math.max(this.analysisResults.achievements.length, 1) * 100)}%`;
         
-        document.getElementById('charactersCount').textContent = stats.charactersUnlocked;
-        document.getElementById('charactersTotal').textContent = `из ${ISAAC_GAME_DATA.totals.characters} разблокировано`;
+        document.getElementById('charactersCount').textContent = stats.charactersCompleted;
+        document.getElementById('charactersTotal').textContent = `из ${ISAAC_GAME_DATA.totals.characters} пройдено`;
         document.getElementById('charactersProgress').style.width = 
-            `${(stats.charactersUnlocked / ISAAC_GAME_DATA.totals.characters * 100)}%`;
+            `${(stats.charactersCompleted / ISAAC_GAME_DATA.totals.characters * 100)}%`;
         
         document.getElementById('challengesCount').textContent = stats.challengesCompleted;
         document.getElementById('challengesTotal').textContent = `из ${ISAAC_GAME_DATA.totals.challenges} завершено`;
@@ -1031,7 +1039,7 @@ class IsaacAchievementParser {
                 bossesList = `
                     <div class="bosses-section">
                         <div class="bosses-title">
-                            Убитые боссы (${defeatedBosses.length}/${totalBosses})
+                            Убитые боссы: ${defeatedBosses.length}/${totalBosses}
                         </div>
                         <div class="bosses-list">
                             ${defeatedBosses.map(boss => {
@@ -1052,7 +1060,7 @@ class IsaacAchievementParser {
                         
                         ${undefeatedBosses.length > 0 ? `
                             <div class="bosses-title" style="margin-top: 12px; color: #4a4540;">
-                                Не убитые боссы (${undefeatedBosses.length}/${totalBosses})
+                                Не убитые боссы: ${undefeatedBosses.length}/${totalBosses}
                             </div>
                             <div class="bosses-list">
                                 ${undefeatedBosses.map(boss => {
