@@ -1165,76 +1165,70 @@ class IsaacAchievementParser {
 
     updateItemsTab() {
         const container = document.getElementById('itemsList');
+        const detailName = document.getElementById('itemsDetailName');
+        const detailStatus = document.getElementById('itemsDetailStatus');
+        const detailIcon = document.getElementById('itemsDetailIcon');
         container.innerHTML = '';
-        
+
         const sortedItems = [...this.analysisResults.items].sort((a, b) => {
             if (a.found && !b.found) return -1;
             if (!a.found && b.found) return 1;
             return 0;
         });
-        
-        // Показываем ВСЕ предметы в упрощенном виде
+
+        const showItemDetail = (item, cell) => {
+            container.querySelectorAll('.item-cell-active').forEach(el => el.classList.remove('item-cell-active'));
+            if (cell) cell.classList.add('item-cell-active');
+
+            if (detailName) detailName.textContent = item.name;
+            if (detailStatus) {
+                detailStatus.textContent = item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН';
+                detailStatus.className = `items-detail-status ${item.found ? 'found' : 'missing'}`;
+            }
+            if (detailIcon) {
+                detailIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
+            }
+        };
+
+        const resetItemDetail = () => {
+            container.querySelectorAll('.item-cell-active').forEach(el => el.classList.remove('item-cell-active'));
+            if (detailName) detailName.textContent = 'Наведи на предмет';
+            if (detailStatus) {
+                detailStatus.textContent = '';
+                detailStatus.className = 'items-detail-status';
+            }
+            if (detailIcon) detailIcon.style.backgroundImage = '';
+        };
+
         sortedItems.forEach(item => {
-            const div = document.createElement('div');
-            div.className = `item-card items-card ${item.found ? 'unlocked' : 'locked'}`;
-            
-            // Создаем иконку предмета
-            const itemIcon = document.createElement('div');
-            itemIcon.className = 'item-icon';
-            itemIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
-            
-            // Загружаем изображение для получения оригинальных размеров
-            const img = new Image();
-            img.onload = () => {
-                // Устанавливаем размеры контейнера с учетом масштабирования 0.6
-                const scaledWidth = Math.round(img.width * 0.6);
-                const scaledHeight = Math.round(img.height * 0.6);
-                itemIcon.style.width = `${scaledWidth}px`;
-                itemIcon.style.height = `${scaledHeight}px`;
-                itemIcon.style.backgroundImage = `url('img/items/${item.id}.png')`;
-            };
-            img.onerror = () => {
-                // Если изображение не загрузилось, используем стандартный размер с масштабированием
-                itemIcon.style.width = '19px'; // 32 * 0.6
-                itemIcon.style.height = '19px'; // 32 * 0.6
-                itemIcon.style.backgroundColor = '#ddd6c8';
-                itemIcon.style.display = 'flex';
-                itemIcon.style.alignItems = 'center';
-                itemIcon.style.justifyContent = 'center';
-                itemIcon.style.fontSize = '12px';
-                itemIcon.style.color = '#7a746c';
-                itemIcon.textContent = '?';
-            };
+            const cell = document.createElement('div');
+            cell.className = `item-cell ${item.found ? 'unlocked' : 'locked'}`;
+            cell.title = item.name;
+            cell.dataset.itemId = item.id;
+
+            const img = document.createElement('img');
             img.src = `img/items/${item.id}.png`;
-            
-            // Создаем контейнер для текста
-            const textContainer = document.createElement('div');
-            textContainer.style.cssText = `
-                display: flex;
-                flex-direction: column;
-                flex: 1;
-                margin-right: 6px;
-                min-width: 0;
-                overflow: hidden;
-            `;
-            
-            textContainer.innerHTML = `
-                <div class="item-title" style="font-size: 1rem; font-weight: bold; color: #1a1a1a; line-height: 1.3; word-wrap: break-word; overflow-wrap: break-word; hyphens: auto;">
-                    ${item.name}
-                </div>
-            `;
-            
-            // Создаем статус
-            const statusDiv = document.createElement('div');
-            statusDiv.className = `status-bottom ${item.found ? 'unlocked' : 'locked'}`;
-            statusDiv.textContent = item.found ? '✓ НАЙДЕН' : '✗ НЕ НАЙДЕН';
-            
-            // Добавляем все элементы в карточку
-            div.appendChild(itemIcon);
-            div.appendChild(textContainer);
-            div.appendChild(statusDiv);
-            container.appendChild(div);
+            img.alt = item.name;
+            img.loading = 'lazy';
+            img.onerror = () => {
+                img.remove();
+                const fallback = document.createElement('span');
+                fallback.className = 'item-cell-fallback';
+                fallback.textContent = '?';
+                cell.appendChild(fallback);
+            };
+
+            cell.appendChild(img);
+            cell.addEventListener('mouseenter', () => showItemDetail(item, cell));
+            cell.addEventListener('focus', () => showItemDetail(item, cell));
+            container.appendChild(cell);
         });
+
+        const panel = container.closest('.items-collection-panel');
+        if (panel && !panel.dataset.detailBound) {
+            panel.dataset.detailBound = 'true';
+            panel.addEventListener('mouseleave', resetItemDetail);
+        }
     }
 
 
@@ -1265,7 +1259,7 @@ class IsaacAchievementParser {
             if (!tab) return;
             
             // Находим контейнеры с контентом (исключаем фильтры)
-            const contentContainers = tab.querySelectorAll('.item-grid, #achievementsList');
+            const contentContainers = tab.querySelectorAll('.item-grid, #achievementsList, #itemsList');
             contentContainers.forEach(container => {
                 container.innerHTML = '';
             });
@@ -1349,7 +1343,7 @@ class IsaacAchievementParser {
         if (!tab) return;
         
         // Находим контейнеры с контентом (исключаем фильтры)
-        const contentContainers = tab.querySelectorAll('.item-grid, #achievementsList');
+        const contentContainers = tab.querySelectorAll('.item-grid, #achievementsList, #itemsList');
         contentContainers.forEach(container => {
             container.innerHTML = '';
         });
@@ -1359,9 +1353,9 @@ class IsaacAchievementParser {
         const tab = document.getElementById(`${tabName}Tab`);
         if (!tab) return;
         
-        const container = tab.querySelector('.item-grid, #achievementsList');
+        const container = tab.querySelector('.item-grid, #achievementsList, #itemsList');
         if (!container) return;
-        
+
         container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: #4a4540;">
                 <div class="spinner" style="margin-bottom: 20px; font-size: 2rem;"></div>
@@ -1379,9 +1373,9 @@ class IsaacAchievementParser {
         const tab = document.getElementById(`${tabName}Tab`);
         if (!tab) return;
         
-        const container = tab.querySelector('.item-grid, #achievementsList');
+        const container = tab.querySelector('.item-grid, #achievementsList, #itemsList');
         if (!container) return;
-        
+
         container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #4a4540;">
                 <div class="spinner" style="margin-bottom: 15px;"></div>
@@ -1442,12 +1436,15 @@ class IsaacAchievementParser {
         } else if (dataType === 'challenges') {
             container = tab.querySelector('.challenges-grid');
         } else {
-            container = tab.querySelector('.item-grid');
+            container = tab.querySelector('#itemsList, .items-collection');
         }
         
         if (!container) return;
 
-        const items = container.querySelectorAll('.item-card, .achievement-category');
+        const itemSelector = dataType === 'items'
+            ? '.item-cell'
+            : '.item-card, .achievement-category';
+        const items = container.querySelectorAll(itemSelector);
         
         items.forEach(item => {
             let shouldShow = true;

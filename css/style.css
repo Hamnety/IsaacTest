@@ -312,7 +312,7 @@ h1 {
 }
 
 .description-note p {
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     color: var(--ink-muted);
     line-height: 1.5;
     margin-bottom: 4px;
@@ -380,7 +380,7 @@ h1 {
 .file-location-simple {
     margin-top: 8px;
     color: var(--ink-faint);
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -754,25 +754,123 @@ input[type="file"] {
     line-height: 1.3;
 }
 
-/* Item cards */
-.item-card.items-card {
-    flex-direction: row;
+/* Items collection — Isaac "Stuff I Found" style */
+.items-collection-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.items-detail-bar {
+    display: flex;
     align-items: center;
-    min-height: 64px;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.55);
+    border: 2px solid var(--ink);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.12);
+    min-height: 58px;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
 }
 
-.item-card.items-card .status-bottom {
-    margin-top: 0;
-    margin-left: auto;
-    padding-top: 0;
-}
-
-.item-icon {
+.items-detail-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    margin-right: 8px;
-    flex-shrink: 0;
+    image-rendering: pixelated;
+    border: 2px solid var(--paper-shadow);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.items-detail-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.items-detail-name {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+.items-detail-status {
+    font-size: 0.7rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.09em;
+    margin-top: 3px;
+}
+
+.items-detail-status.found {
+    color: var(--blood);
+}
+
+.items-detail-status.missing {
+    color: var(--ink-muted);
+}
+
+.items-collection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 56px));
+    gap: 5px;
+    justify-content: start;
+    animation: fadeInUp 0.25s ease-out;
+}
+
+.item-cell {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.35);
+    border: 2px solid var(--paper-shadow);
+    cursor: default;
+    transition: border-color 0.12s, background 0.12s, transform 0.12s;
+    box-sizing: border-box;
+}
+
+.item-cell:hover,
+.item-cell.item-cell-active {
+    border-color: var(--blood);
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.06);
+    z-index: 1;
+}
+
+.item-cell.unlocked {
+    opacity: 1;
+}
+
+.item-cell.locked {
+    opacity: 0.42;
+    filter: grayscale(0.65) brightness(0.92);
+}
+
+.item-cell.locked:hover {
+    opacity: 0.65;
+}
+
+.item-cell img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    image-rendering: pixelated;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.item-cell .item-cell-fallback {
+    font-size: 0.65rem;
+    color: var(--ink-faint);
 }
 
 /* Character cards */
