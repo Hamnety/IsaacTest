@@ -16,26 +16,36 @@
         <div class="wall-doodle wall-doodle-right" aria-hidden="true">$</div>
 
         <div class="container">
-            <header class="paper-sheet paper-header">
-                <div class="logo">
-                    <img src="img/icon1.png" alt="Isaac Save Analyzer" class="logo-icon">
-                    <div>
-                        <h1>Isaac Save Analyzer</h1>
-                        <p class="subtitle">Achievement Based</p>
+            <div class="paper-wrap">
+                <span class="pushpin pushpin-left" aria-hidden="true"></span>
+                <span class="pushpin pushpin-right" aria-hidden="true"></span>
+                <header class="paper-sheet paper-header">
+                    <div class="logo">
+                        <img src="img/icon1.png" alt="Isaac Save Analyzer" class="logo-icon">
+                        <div>
+                            <h1>Isaac Save Analyzer</h1>
+                            <p class="subtitle">Achievement Based</p>
+                        </div>
                     </div>
-                </div>
-            </header>
+                </header>
+            </div>
 
             <main class="main-content">
-                <section class="paper-sheet paper-main">
+                <div class="paper-wrap">
+                    <span class="pushpin pushpin-left" aria-hidden="true"></span>
+                    <span class="pushpin pushpin-right" aria-hidden="true"></span>
+                    <section class="paper-sheet paper-main">
                     <h2 class="content-title">ДОСТИЖЕНИЯ</h2>
 
-                    <aside class="paper-scrap description-note">
+                    <div class="paper-scrap-wrap">
+                        <span class="pushpin pushpin-sm pushpin-center" aria-hidden="true"></span>
+                        <aside class="paper-scrap description-note">
                         <p>Сайт находится в разработке, информация на сайте</p>
                         <p>Сайт не хранит ваши данные, все данные обрабатываются локально на вашем устройстве</p>
                         <p>Исходный код основан на <a href="https://zamiell.github.io/isaac-save-viewer/">Isaac Save Viewer</a> от Zamiell</p>
                         <p>Если есть предложения, пишите на почту: cuddleguinc.9098483@gmail.com</p>
-                    </aside>
+                        </aside>
+                    </div>
 
                     <div class="upload-zone" id="uploadZone">
                         <div class="upload-icon-wrap">
@@ -62,29 +72,41 @@
 
                     <div class="analysis-section" id="analysisSection">
                         <div class="stats-grid">
-                            <div class="paper-scrap stat-card">
+                            <div class="paper-scrap-wrap">
+                                <span class="pushpin pushpin-sm pushpin-center" aria-hidden="true"></span>
+                                <div class="paper-scrap stat-card">
                                 <div class="stat-title"><i class="fas fa-trophy"></i> Достижения</div>
                                 <div class="stat-value" id="achievementsCount">0</div>
                                 <div class="stat-subtitle" id="achievementsTotal">из 0 получено</div>
                                 <div class="progress-bar"><div class="progress-fill" id="achievementsProgress"></div></div>
+                                </div>
                             </div>
-                            <div class="paper-scrap stat-card">
+                            <div class="paper-scrap-wrap">
+                                <span class="pushpin pushpin-sm pushpin-center" aria-hidden="true"></span>
+                                <div class="paper-scrap stat-card">
                                 <div class="stat-title"><i class="fas fa-user"></i> Персонажи</div>
                                 <div class="stat-value" id="charactersCount">0</div>
                                 <div class="stat-subtitle" id="charactersTotal">из 34 разблокировано</div>
                                 <div class="progress-bar"><div class="progress-fill" id="charactersProgress"></div></div>
+                                </div>
                             </div>
-                            <div class="paper-scrap stat-card">
+                            <div class="paper-scrap-wrap">
+                                <span class="pushpin pushpin-sm pushpin-center" aria-hidden="true"></span>
+                                <div class="paper-scrap stat-card">
                                 <div class="stat-title"><i class="fas fa-tasks"></i> Челленджи</div>
                                 <div class="stat-value" id="challengesCount">0</div>
                                 <div class="stat-subtitle" id="challengesTotal">из 45 завершено</div>
                                 <div class="progress-bar"><div class="progress-fill" id="challengesProgress"></div></div>
+                                </div>
                             </div>
-                            <div class="paper-scrap stat-card">
+                            <div class="paper-scrap-wrap">
+                                <span class="pushpin pushpin-sm pushpin-center" aria-hidden="true"></span>
+                                <div class="paper-scrap stat-card">
                                 <div class="stat-title"><i class="fas fa-gem"></i> Предметы</div>
                                 <div class="stat-value" id="itemsCount">0</div>
                                 <div class="stat-subtitle" id="itemsTotal">из 732 найдено</div>
                                 <div class="progress-bar"><div class="progress-fill" id="itemsProgress"></div></div>
+                                </div>
                             </div>
                         </div>
 
@@ -96,7 +118,10 @@
                                 <button class="tab-button" data-tab="items">Предметы</button>
                             </nav>
 
-                            <div class="paper-sheet paper-panel">
+                            <div class="paper-wrap paper-wrap-panel">
+                                <span class="pushpin pushpin-left" aria-hidden="true"></span>
+                                <span class="pushpin pushpin-right" aria-hidden="true"></span>
+                                <div class="paper-sheet paper-panel">
                                 <div class="tab-content active" id="achievementsTab">
                                     <div class="filter-controls">
                                         <button class="filter-button active" data-filter="all">Все</button>
@@ -133,10 +158,12 @@
                                     </div>
                                     <div class="item-grid" id="itemsList"></div>
                                 </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                    </section>
+                </div>
             </main>
         </div>
     </div>
